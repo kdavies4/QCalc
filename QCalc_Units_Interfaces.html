@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Units.Interfaces</title>
+<meta name="title" content="Modelica units based on quantity calculus">
+<meta name="keywords" content="quantities unit conversion natural SI CGS Planck Hartree">
+<meta name="date" content="2014-8-19">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Partial classes">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
+<link rel="shortcut icon" href="images/favicon.ico">
+<script type="text/javascript" src="javascripts/analytics.js"></script>
+</head>
+<body>
+<span itemscope itemtype="http://schema.org/SoftwareApplication">
+<div class="sidebar">
+  <div class="sidebarwrapper">
+  <a href="index.html">
+
+<h2>QCalc</h2>
+
+</a>
+  <p align=center><a href="index.html">
+    <img src="images/favicon.svg" alt="Logo" width=150>
+  </a></p>
+
+<h3>Table of Contents</h3>
+
+<ul>
+    <li><a href="QCalc_UsersGuide.html">User's Guide</a></li>
+    <li><a href="QCalc_Units.html">Units</a></li>
+    <li><a href="QCalc_Quantities.html">Quantities</a></li>
+    <li><a href="QCalc_Blocks.html">Blocks</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="document">
+  <div class="documentwrapper">
+    <div class="bodywrapper">
+      <div class="body">
+
+<h2><a name="QCalc.Units.Interfaces"></a><a href="QCalc_Units.html#QCalc.Units">QCalc.Units</a>.Interfaces</h2>
+
+<p>
+<b>Partial classes</b><br>
+</p>
+
+<h3>Information</h3>
+
+<p>Extends from <a href="QCalc_Icons_InterfacesPackage.html#QCalc.Icons.InterfacesPackage">Icons.InterfacesPackage</a> (Icon for packages containing interfaces (from MSL 3.2.1)).</p>
+
+<h3>Package Content</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="images/QCalc.Units.Interfaces.NonscalarUnitS.png" alt="QCalc.Units.Interfaces.NonscalarUnit" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a>
+</td>
+<td>Partial operator record for a nonscalar unit</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Units.Interfaces.NonscalarUnitS.png" alt="QCalc.Units.Interfaces.degC" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">degC</a>
+</td>
+<td>degree Celsius (degC)</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Units.Interfaces.NonscalarUnitS.png" alt="QCalc.Units.Interfaces.Np" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.Np">Np</a>
+</td>
+<td>neper (Np) (in terms of amplitude ratio, not power ratio)</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Units.Interfaces.NonscalarUnitS.png" alt="QCalc.Units.Interfaces.B" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.B">B</a>
+</td>
+<td>bel (B) (in terms of power ratio, not amplitude ratio)</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Units.Interfaces.NonscalarUnitS.png" alt="QCalc.Units.Interfaces.dB" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.dB">dB</a>
+</td>
+<td>decibel (dB) (in terms of power ratio, not amplitude ratio)</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Units.Interfaces.NonscalarUnitS.png" alt="QCalc.Units.Interfaces.kPag" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">kPag</a>
+</td>
+<td>kilopascal, gauge (kPag)</td>
+</tr>
+</table>
+<hr>
+
+<h2><a name="QCalc.Units.Interfaces.NonscalarUnit"></a><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces">QCalc.Units.Interfaces</a>.NonscalarUnit</h2>
+
+<p>
+<b>Partial operator record for a nonscalar unit</b>
+</p>
+
+<h3>Parameters</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">partial </span><span style="color: blue">record</span> NonscalarUnit <span style="color: #006400">
+  &quot;Partial operator record for a nonscalar unit&quot;</span>
+  <span style="color: blue">replaceable </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Q.Interfaces.Quantity</a>;
+
+  <span style="color: blue">operator</span> &#39;*&#39; <span style="color: #006400">
+    &quot;Multiplication is overloaded to map a number to a quantity&quot;</span>
+
+    <span style="color: blue">partial </span><span style="color: blue">function</span> num2qty <span style="color: #006400">&quot;Convert a number to a quantity&quot;</span>
+      <span style="color: blue">input </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
+      <span style="color: blue">replaceable </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a> selfDummy <span style="color: #006400">
+        &quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
+    <span style="color: blue">end </span>num2qty;
+
+  <span style="color: blue">end </span>&#39;*&#39;;
+
+  <span style="color: blue">operator</span> &#39;/&#39; <span style="color: #006400">&quot;Division is overloaded to map a quantity to a number&quot;</span>
+
+    <span style="color: blue">partial </span><span style="color: blue">function</span> qty2num <span style="color: #006400">&quot;Convert a quantity to a number&quot;</span>
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
+      <span style="color: blue">replaceable </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a> selfDummy <span style="color: #006400">
+        &quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
+    <span style="color: blue">end </span>qty2num;
+
+  <span style="color: blue">end </span>&#39;/&#39;;
+<span style="color: blue">end </span>NonscalarUnit;
+</div>
+<hr>
+
+<h2><a name="QCalc.Units.Interfaces.degC"></a><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces">QCalc.Units.Interfaces</a>.degC</h2>
+
+<p>
+<b>degree Celsius (degC)</b>
+</p>
+
+<h3>Information</h3>
+
+<p>Extends from <a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a> (Partial operator record for a nonscalar unit).</p>
+
+<h3>Parameters</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">record</span> degC <span style="color: #006400">&quot;degree Celsius (degC)&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a>;
+
+  <span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a>;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
+
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">degC</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      q := (n + 273.15)*K;
+    <span style="color: blue">end </span>num2qty;
+
+  <span style="color: blue">end </span>&#39;*&#39;;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
+
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">degC</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      n := q/K - 273.15;
+    <span style="color: blue">end </span>qty2num;
+
+  <span style="color: blue">end </span>&#39;/&#39;;
+
+<span style="color: blue">end </span>degC;
+</div>
+<hr>
+
+<h2><a name="QCalc.Units.Interfaces.Np"></a><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces">QCalc.Units.Interfaces</a>.Np</h2>
+
+<p>
+<b>neper (Np) (in terms of amplitude ratio, not power ratio)</b>
+</p>
+
+<h3>Information</h3>
+
+<p>Extends from <a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a> (Partial operator record for a nonscalar unit).</p>
+
+<h3>Parameters</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">record</span> Np <span style="color: #006400">&quot;neper (Np) (in terms of amplitude ratio, not power ratio)&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a>;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.Np">Np</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      q := <span style="color: red">exp</span>(n);
+    <span style="color: blue">end </span>num2qty;
+  <span style="color: blue">end </span>&#39;*&#39;;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.Np">Np</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      n := <span style="color: red">log</span>(q);
+    <span style="color: blue">end </span>qty2num;
+  <span style="color: blue">end </span>&#39;/&#39;;
+<span style="color: blue">end </span>Np;
+</div>
+<hr>
+
+<h2><a name="QCalc.Units.Interfaces.B"></a><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces">QCalc.Units.Interfaces</a>.B</h2>
+
+<p>
+<b>bel (B) (in terms of power ratio, not amplitude ratio)</b>
+</p>
+
+<h3>Information</h3>
+
+<p>Extends from <a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a> (Partial operator record for a nonscalar unit).</p>
+
+<h3>Parameters</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">record</span> B <span style="color: #006400">&quot;bel (B) (in terms of power ratio, not amplitude ratio)&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a>;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.B">B</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      q := 10^n;
+    <span style="color: blue">end </span>num2qty;
+  <span style="color: blue">end </span>&#39;*&#39;;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.B">B</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      n := <span style="color: red">log10</span>(q);
+    <span style="color: blue">end </span>qty2num;
+  <span style="color: blue">end </span>&#39;/&#39;;
+<span style="color: blue">end </span>B;
+</div>
+<hr>
+
+<h2><a name="QCalc.Units.Interfaces.dB"></a><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces">QCalc.Units.Interfaces</a>.dB</h2>
+
+<p>
+<b>decibel (dB) (in terms of power ratio, not amplitude ratio)</b>
+</p>
+
+<h3>Information</h3>
+
+<p>Extends from <a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a> (Partial operator record for a nonscalar unit).</p>
+
+<h3>Parameters</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">record</span> dB <span style="color: #006400">
+  &quot;decibel (dB) (in terms of power ratio, not amplitude ratio)&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a>;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.dB">dB</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      q := 10^(Prefixes.d*n);
+    <span style="color: blue">end </span>num2qty;
+  <span style="color: blue">end </span>&#39;*&#39;;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.dB">dB</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      n := <span style="color: red">log10</span>(q)/Prefixes.d;
+    <span style="color: blue">end </span>qty2num;
+  <span style="color: blue">end </span>&#39;/&#39;;
+<span style="color: blue">end </span>dB;
+</div>
+<hr>
+
+<h2><a name="QCalc.Units.Interfaces.kPag"></a><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces">QCalc.Units.Interfaces</a>.kPag</h2>
+
+<p>
+<b>kilopascal, gauge (kPag)</b>
+</p>
+
+<h3>Information</h3>
+
+<p>Extends from <a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a> (Partial operator record for a nonscalar unit).</p>
+
+<h3>Parameters</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">record</span> kPag <span style="color: #006400">&quot;kilopascal, gauge (kPag)&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a>;
+  <span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a>;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">kPag</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      q := n*kPa + atm;
+    <span style="color: blue">end </span>num2qty;
+  <span style="color: blue">end </span>&#39;*&#39;;
+
+  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
+    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+
+      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">kPag</a> selfDummy;
+
+    <span style="color: blue">algorithm </span>
+      n := (q - atm)/kPa;
+    <span style="color: blue">end </span>qty2num;
+  <span style="color: blue">end </span>&#39;/&#39;;
+
+<span style="color: blue">end </span>kPag;
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Tue Aug 19 21:53:58 2014.
+</div>
+
+</span></body></html>

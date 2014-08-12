@@ -1,0 +1,26 @@
+# Temporary, locked, and synchronization files
+*~
+*.asv
+*.bak
+*.bak-mo
+.~lock*
+.fuse_hidden*
+
+# Simulation files (in case they're generated inside the repo)
+*.exe
+*.mat
+buildlog.txt
+dsfinal.txt
+dsin.txt
+dslog.txt
+dsmodel.c
+dsmodel.mof
+dsu.txt
+dymosim
+request
+status
+
+# Generated files
+QCalc/help
+build/
+*.pyc

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Units.Bases</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Sets of base constants and units">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../Resources/Documentation/ModelicaDoc.css">
+<link rel="shortcut icon" href="../Resources/Documentation/favicon.ico">
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebarwrapper">
+  <a href="QCalc.html">
+
+<h2>QCalc</h2>
+
+</a>
+  <p align=center><a href="QCalc.html">
+    <img src="../Resources/Documentation/favicon.svg" alt="Logo" width=150>
+  </a></p>
+
+<h3>Table of Contents</h3>
+
+<ul>
+    <li><a href="QCalc_UsersGuide.html">User's Guide</a></li>
+    <li><a href="QCalc_Units.html">Units</a></li>
+    <li><a href="QCalc_Quantities.html">Quantities</a></li>
+    <li><a href="QCalc_Blocks.html">Blocks</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="document">
+  <div class="documentwrapper">
+    <div class="bodywrapper">
+      <div class="body">
+
+<h2><a name="QCalc.Units.Bases"></a><a href="QCalc_Units.html#QCalc.Units">QCalc.Units</a>.Bases</h2>
+
+<p>
+<b>Sets of base constants and units</b><br>
+</p>
+
+<h3>Information</h3>
+
+<p>The records in this package define the basis of
+  various unit systems by setting the base constants.  The dimensions of the
+  quantities and units (in the <code>unit</code> attribute, see
+  <a href="QCalc_Quantities.html#QCalc.Quantities">Quantities</a>) are not re-adjusted, but they
+  should be.  For example, if the speed of light is nondimensionalized, then
+  length and time are the same dimension.  However, it is tedious to update the dimensions
+  of all of the quantities, so instead
+  we just set a normalized constant to one and leave the dimensions as they are.</p>
+
+  <p>For more information, please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units">Units</a> package.</p>
+<p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package">Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
+
+<h3>Package Content</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Bases.HartreeS.png" alt="QCalc.Units.Bases.Hartree" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Hartree">Hartree</a>
+</td>
+<td>Base constants for Hartree atomic units</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Bases.HartreeS.png" alt="QCalc.Units.Bases.SIKmol" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases.SIKmol">SIKmol</a>
+</td>
+<td>Base constants for SI with <i>k</i><sub>F</sub> and <i>R</i> normalized instead of K and mol</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Bases.HartreeS.png" alt="QCalc.Units.Bases.Base" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base">Base</a>
+</td>
+<td>Base constants</td>
+</tr>
+</table>
+<hr>
+
+<h2><img src="QCalc.Units.Bases.HartreeI.png" alt="QCalc.Units.Bases.Hartree" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Bases.Hartree"></a><a href="QCalc_Units_Bases.html#QCalc.Units.Bases">QCalc.Units.Bases</a>.Hartree</h2>
+<p>
+<b>Base constants for Hartree atomic units</b>
+</p>
+
+<h3>Information</h3>
+
+<p>Hartree units impose that:
+  <ol>
+  <li>the elementary charge is one (<i>e</i> = 1),</li>
+  <li>the reduced Planck constant is one (<i>h</i>&nbsp;rad = 1),</li>
+  <li>the electric force constant is one (<i>k</i><sub>C</sub> = 1), and</li>
+  <li>the mass of an electron is one (<i>M</i><sub>e</sub> = 1).
+  </ol></p>
+
+<p>Please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units">Units</a> package.</p>
+<p>Extends from <a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base">Base</a> (Base constants).</p>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">record</span> Hartree <span style="color: #006400">&quot;Base constants for Hartree atomic units&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base">Base</a>(
+    <span style="color: blue">final </span>R_inf=299792458e-7*pi/25812.8074434,
+    <span style="color: blue">final </span>c=1/(2*R_inf),
+    <span style="color: blue">final </span>k_J=2,
+    <span style="color: blue">final </span>R_K=1,
+    k_Aprime=2*pi*R_K/c);
+<span style="color: blue">end </span>Hartree;
+</div>
+<hr>
+
+<h2><img src="QCalc.Units.Bases.HartreeI.png" alt="QCalc.Units.Bases.SIKmol" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Bases.SIKmol"></a><a href="QCalc_Units_Bases.html#QCalc.Units.Bases">QCalc.Units.Bases</a>.SIKmol</h2>
+<p>
+<b>Base constants for SI with <i>k</i><sub>F</sub> and <i>R</i> normalized instead of K and mol</b>
+</p>
+
+<h3>Information</h3>
+
+<p>The values of the un-normalized SI base units are (see
+  <a href="../Resources/Documentation/QCalc/Bases/unit-systems.cdf">Resources/unit-systems.cdf</a>):</p>
+  <ul>
+  <li>K &asymp; 8.61733e-5</li>
+  <li>mol &asymp; 96485.3</li>
+  </ul>
+
+<p>For more information, please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units">Units</a> package.</p>
+<p>Extends from <a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base">Base</a> (Base constants).</p>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">record</span> SIKmol <span style="color: #006400">
+  &quot;Base constants for SI with <i>k</i><sub>F</sub> and <i>R</i> normalized instead of K and mol&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base">Base</a>(
+    <span style="color: blue">final </span>R_inf=10973731.568539*2*pi,
+    <span style="color: blue">final </span>c=299792458,
+    <span style="color: blue">final </span>k_J=483597.870e9*2*pi,
+    <span style="color: blue">final </span>R_K=25812.8074434/(2*pi),
+    <span style="color: blue">final </span>k_F=1,
+    <span style="color: blue">final </span>R=1,
+    <span style="color: blue">final </span>k_Aprime=2*pi*R_K/c);
+<span style="color: blue">end </span>SIKmol;
+</div>
+<hr>
+
+<h2><img src="QCalc.Units.Bases.HartreeI.png" alt="QCalc.Units.Bases.Base" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Bases.Base"></a><a href="QCalc_Units_Bases.html#QCalc.Units.Bases">QCalc.Units.Bases</a>.Base</h2>
+<p>
+<b>Base constants</b>
+</p>
+
+<h3>Information</h3>
+
+<p>Please see the notes in the Modelica code and the documentation of the
+  <a href="QCalc_Units.html#QCalc.Units">Units</a> package.</p>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Record">Icons.Record</a> (Icon for records (from MSL 3.2.1)).</p>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">record</span> Base <span style="color: #006400">&quot;Base constants&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Record">Icons.Record</a>;
+
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Q.Wavenumber</a> R_inf=1 <span style="color: #006400">
+    &quot;<a href="http://en.wikipedia.org/wiki/Rydberg_constant">Rydberg constant</a> (<i>R</i><sub>&infin;</sub>)&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> c=1 <span style="color: #006400">
+    &quot;<a href="http://en.wikipedia.org/wiki/Speed_of_light">speed of light</a>&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> k_J=1 <span style="color: #006400">
+    &quot;<a href="http://en.wikipedia.org/wiki/Josephson_constant">Josephson constant</a> (<i>k</i><sub>J</sub>)&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">Q.MagneticFluxSpecific</a> R_K=1 <span style="color: #006400">
+    &quot;<a href="http://en.wikipedia.org/wiki/Von_Klitzing_constant">von Klitzing constant</a> (<i>R</i><sub>K</sub>)&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> k_F=1 <span style="color: #006400">
+    &quot;<a href="http://en.wikipedia.org/wiki/Faraday_constant">Faraday constant</a> (<i>k</i><sub>F</sub>)&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> R=1 <span style="color: #006400">
+    &quot;<a href="http://en.wikipedia.org/wiki/Gas_constant">gas constant</a>&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_Aprime=1 <span style="color: #006400">
+    &quot;modified Ampere constant (<i>k</i><sub>A</sub> cyc/&alpha;)&quot;</span>;
+  <span style="color: blue">constant </span>Boolean rational=true <span style="color: #006400">&quot;true if the unit system is rationalized&quot;</span>;
+
+<span style="color: blue">end </span>Base;
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Tue Aug 19 21:53:58 2014.
+</div>
+
+</body>
+</html>

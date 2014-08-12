@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Blocks</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Imperative models to convert units">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../Resources/Documentation/ModelicaDoc.css">
+<link rel="shortcut icon" href="../Resources/Documentation/favicon.ico">
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebarwrapper">
+  <a href="QCalc.html">
+
+<h2>QCalc</h2>
+
+</a>
+  <p align=center><a href="QCalc.html">
+    <img src="../Resources/Documentation/icon.gif" alt="Logo" width=150>
+  </a></p>
+
+<h3>Table of Contents</h3>
+
+<ul>
+    <li><a href="QCalc_UsersGuide.html">User's Guide</a></li>
+    <li><a href="QCalc_Units.html">Units</a></li>
+    <li><a href="QCalc_Quantities.html">Quantities</a></li>
+    <li><a href="QCalc_Blocks.html">Blocks</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="document">
+  <div class="documentwrapper">
+    <div class="bodywrapper">
+      <div class="body">
+
+<h2><a name="QCalc.Blocks"></a><a href="QCalc.html#QCalc">QCalc</a>.Blocks</h2>
+
+<p>
+<b>Imperative models to convert units</b><br>
+</p>
+
+<h3>Information</h3>
+
+<p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package">QCalc.Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
+
+<h3>Package Content</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="QCalc.Blocks.Num2QtyS.png" alt="QCalc.Blocks.Num2Qty" width="20" height="20" align="top">&nbsp;<a href="QCalc_Blocks.html#QCalc.Blocks.Num2Qty">Num2Qty</a>
+</td>
+<td>Convert a number to a quantity using a nonscalar unit</td>
+</tr>
+<tr>
+<td><img src="QCalc.Blocks.Qty2NumS.png" alt="QCalc.Blocks.Qty2Num" width="20" height="20" align="top">&nbsp;<a href="QCalc_Blocks.html#QCalc.Blocks.Qty2Num">Qty2Num</a>
+</td>
+<td>Convert a quantity to a number using a nonscalar unit</td>
+</tr>
+</table>
+<hr>
+
+<h2><img src="QCalc.Blocks.Num2QtyI.png" alt="QCalc.Blocks.Num2Qty" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Blocks.Num2Qty"></a><a href="QCalc_Blocks.html#QCalc.Blocks">QCalc.Blocks</a>.Num2Qty</h2>
+<p>
+<b>Convert a number to a quantity using a nonscalar unit</b>
+<br>
+<br><img src="QCalc.Blocks.Num2QtyD.png" alt="QCalc.Blocks.Num2Qty">
+</p>
+
+<h3>Information</h3>
+
+<p>To convert a number to a quantity using a scalar unit (i.e., a unit that involves just multiplication),
+    instead use
+    <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Math.html#Modelica.Blocks.Math.Gain">Modelica.Blocks.Math.Gain</a> with <i>k</i>
+    set to the unit.</p>
+
+<h3>Parameters</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a></td><td>u</td><td>redeclare QCalc.Units.Interf&hellip;</td><td>Nonscalar unit</td></tr>
+</table>
+
+<h3>Connectors</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Connectors">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>input <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">RealInput</a></td><td>n</td><td>Connector for the number</td></tr>
+<tr><td>output <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">RealOutput</a></td><td>q</td><td>Connector for the quantity</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">block</span> Num2Qty <span style="color: #006400">&quot;Convert a number to a quantity using a nonscalar unit&quot;</span>
+
+  <span style="color: blue">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">QCalc.Units.Interfaces.NonscalarUnit</a> u <span style="color: #006400">&quot;Nonscalar unit&quot;</span>;
+
+  <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">Modelica.Blocks.Interfaces.RealInput</a> n <span style="color: #006400">&quot;Connector for the number&quot;</span>;
+  <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">Modelica.Blocks.Interfaces.RealOutput</a> q <span style="color: #006400">&quot;Connector for the quantity&quot;</span>;
+
+<span style="color: blue">equation </span>
+  q = n*u;
+
+<span style="color: blue">end </span>Num2Qty;
+</div>
+<hr>
+
+<h2><img src="QCalc.Blocks.Qty2NumI.png" alt="QCalc.Blocks.Qty2Num" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Blocks.Qty2Num"></a><a href="QCalc_Blocks.html#QCalc.Blocks">QCalc.Blocks</a>.Qty2Num</h2>
+<p>
+<b>Convert a quantity to a number using a nonscalar unit</b>
+<br>
+<br><img src="QCalc.Blocks.Qty2NumD.png" alt="QCalc.Blocks.Qty2Num">
+</p>
+
+<h3>Information</h3>
+
+<p>To convert a quantity to a number using a scalar unit,
+    instead use
+    <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Math.html#Modelica.Blocks.Math.Gain">Modelica.Blocks.Math.Gain</a> with <i>k</i>
+    set to the reciprocal of the unit.</p>
+
+<h3>Parameters</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a></td><td>u</td><td>redeclare QCalc.Units.Interf&hellip;</td><td>Nonscalar unit</td></tr>
+</table>
+
+<h3>Connectors</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Connectors">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>input <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">RealInput</a></td><td>q</td><td>Connector for the quantity</td></tr>
+<tr><td>output <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">RealOutput</a></td><td>n</td><td>Connector for the number</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">block</span> Qty2Num <span style="color: #006400">&quot;Convert a quantity to a number using a nonscalar unit&quot;</span>
+
+  <span style="color: blue">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">QCalc.Units.Interfaces.NonscalarUnit</a> u <span style="color: #006400">&quot;Nonscalar unit&quot;</span>;
+
+  <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">Modelica.Blocks.Interfaces.RealInput</a> q <span style="color: #006400">&quot;Connector for the quantity&quot;</span>;
+  <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">Modelica.Blocks.Interfaces.RealOutput</a> n <span style="color: #006400">&quot;Connector for the number&quot;</span>;
+
+<span style="color: blue">equation </span>
+  q = n*u;
+
+<span style="color: blue">end </span>Qty2Num;
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Tue Aug 19 21:25:32 2014.
+</div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc - Modelica units based on quantity calculus</title>
+<meta name="title" content="Modelica units based on quantity calculus">
+<meta name="keywords" content="quantities unit conversion natural SI CGS Planck Hartree">
+<meta name="date" content="2014-8-19">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Units based on quantity calculus">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
+<link rel="shortcut icon" href="images/favicon.ico">
+<script type="text/javascript" src="javascripts/analytics.js"></script>
+</head>
+<body>
+<span itemscope itemtype="http://schema.org/SoftwareApplication">
+<div class="sidebar">
+  <div class="sidebarwrapper">
+  <a href="index.html">
+
+<h2>QCalc</h2>
+
+</a>
+  <p align=center><a href="index.html">
+    <img src="images/favicon.svg" alt="Logo" width=150>
+  </a></p>
+
+<h3>Table of Contents</h3>
+
+<ul>
+    <li><a href="QCalc_UsersGuide.html">User's Guide</a></li>
+    <li><a href="QCalc_Units.html">Units</a></li>
+    <li><a href="QCalc_Quantities.html">Quantities</a></li>
+    <li><a href="QCalc_Blocks.html">Blocks</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="document">
+  <div class="documentwrapper">
+    <div class="bodywrapper">
+      <div class="body">
+
+<h2><a name="QCalc"></a>QCalc</h2>
+
+<p>
+<b>Units based on quantity calculus</b><br>
+</p>
+
+<h3>Information</h3>
+
+<p>QCalc is a free, open-source <a href="https://www.modelica.org/">Modelica</a>
+    library to represent quantities using various units, including but not
+    limited to <a href="http://en.wikipedia.org/wiki/International_System_of_Units">SI</a>.
+    The approach is based on
+    <a href="http://en.wikipedia.org/wiki/Quantity_calculus">quantity calculus</a>
+(hence the name "QCalc").</p>
+
+<h4><a name="usage">Usage:</a></h4>
+
+<p>QCalc can be used like this:</p>
+
+ <pre>
+    import Q = QCalc.Quantities;
+    import U = QCalc.Units;
+    Q.Pressure p = U.atm + 50*U.Pa; </pre>
+
+<p>Nonscalar units such as <a href="http://en.wikipedia.org/wiki/Celsius">Celsius</a>
+and <a href="http://en.wikipedia.org/wiki/Decibel">decibel</a> are also supported.
+The <code>*</code> and <code>/</code> operators are overloaded
+to call the unit's transformation and its inverse, respectively.  For example, this will give a value of
+x = 100:</p>
+
+ <pre>
+    Real x = (0*U.degC + 100*U.K)/U.degC;</pre>
+
+<p>and this will too:</p>
+
+ <pre>
+    Real x = (10/U.dB + 10/U.dB)*U.dB;</pre>
+
+<p>since we have multiplied the numbers by adding their logarithms.</p>
+
+ <p>The quantities are not directly compatible with the
+ <a href="https://github.com/modelica/Modelica">Modelica Standard Library</a>
+ (MSL) since MSL expresses quantities in
+ <a href="http://en.wikipedia.org/wiki/International_System_of_Units">SI</a> units.
+ To convert between QCalc and MSL, create an adapter with equations like this:</p>
+
+ <pre>
+    p = p_SI*U.Pa;</pre>
+
+<p>where <code>p</code> is pressure as a quantity (in QCalc), <code>p_SI</code> is pressure in
+<a href="http://en.wikipedia.org//wiki/Pascal_(unit)">pascal</a> (in MSL), and <code>U.Pa</code> is
+the <a href="http://en.wikipedia.org//wiki/Pascal_(unit)">pascal</a> from <a href="QCalc_Units.html#QCalc.Units">QCalc.Units</a>.</p>
+
+    <p>Please see the
+    <a href="QCalc_UsersGuide.html#QCalc.UsersGuide.GettingStarted">getting started page</a> for more information.
+    If you wish to use the same approach with <a href="https://www.modelica.org/">Modelica</a> results in
+    <a href="https://www.python.org/">Python</a>,
+    consider <a href="http://kdavies4.github.io/ModelicaRes/">ModelicaRes</a>
+    and <a href="http://kdavies4.github.io/natu/">natu</a>.</p>
+
+    <p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica License 2</b>
+<br>Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/">Hawaii Natural Energy Institute</a> and <a href="http://www.gtrc.gatech.edu/">Georgia Tech Research Corporation</a>.</p>
+
+    <p><i>This Modelica package is <u>free</u> software and the use is completely
+    at <u>your own risk</u>; it can be redistributed and/or modified under the
+    terms of the Modelica License 2. For license conditions (including the
+    disclaimer of warranty) see
+    <a href="QCalc_UsersGuide.html#QCalc.UsersGuide.License">
+    QCalc.UsersGuide.License</a>
+    or visit <a href="http://www.modelica.org/licenses/ModelicaLicense2">
+    http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
+<p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package">Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
+
+<h3>Package Content</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="images/QCalc.UsersGuideS.png" alt="QCalc.UsersGuide" width="20" height="20" align="top">&nbsp;<a href="QCalc_UsersGuide.html#QCalc.UsersGuide">UsersGuide</a>
+</td>
+<td>User&#39;s Guide</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.UnitsS.png" alt="QCalc.Units" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units.html#QCalc.Units">Units</a>
+</td>
+<td>Constants and units of physical measure</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.QuantitiesS.png" alt="QCalc.Quantities" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities">Quantities</a>
+</td>
+<td>Types to represent physical values</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.IconsS.png" alt="QCalc.Icons" width="20" height="20" align="top">&nbsp;<a href="QCalc_Icons.html#QCalc.Icons">Icons</a>
+</td>
+<td>Package of icons</td>
+</tr>
+</table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Tue Aug 19 21:53:57 2014.
+</div>
+
+</span></body></html>

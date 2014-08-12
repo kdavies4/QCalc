@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.UsersGuide.ReleaseNotes</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Release notes">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="../Resources/Documentation/ModelicaDoc.css">
+<link rel="shortcut icon" href="../Resources/Documentation/favicon.ico">
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebarwrapper">
+  <a href="QCalc.html">
+
+<h2>QCalc</h2>
+
+</a>
+  <p align=center><a href="QCalc.html">
+    <img src="../Resources/Documentation/favicon.svg" alt="Logo" width=150>
+  </a></p>
+
+<h3>Table of Contents</h3>
+
+<ul>
+    <li><a href="QCalc_UsersGuide.html">User's Guide</a></li>
+    <li><a href="QCalc_Units.html">Units</a></li>
+    <li><a href="QCalc_Quantities.html">Quantities</a></li>
+    <li><a href="QCalc_Blocks.html">Blocks</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="document">
+  <div class="documentwrapper">
+    <div class="bodywrapper">
+      <div class="body"><h2><img src="QCalc.UsersGuide.ReleaseNotesI.png" alt="QCalc.UsersGuide.ReleaseNotes" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.UsersGuide.ReleaseNotes"></a><a href="QCalc_UsersGuide.html#QCalc.UsersGuide">QCalc.UsersGuide</a>.ReleaseNotes</h2>
+
+<p>After version 1.0.0, the changes in each release of <a href="QCalc.html#QCalc">QCalc</a> will be
+summarized in subsections below.  Until then, please see the
+<a href="https://github.com/kdavies4/QCalc/commits/master">commit log of the master branch</a>.
+The
+<a href="QCalc_UsersGuide_ReleaseNotes.html#QCalc.UsersGuide.ReleaseNotes.VersionManagement">version management subsection</a>
+describes how the library is developed and maintained using the
+<a href="http://git-scm.com/">git version control system</a>.</p>
+
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.ReleaseNotes">Icons.ReleaseNotes</a> (Icon for release notes in documentation (from MSL 3.2.1)).</p>
+
+<h3>Package Content</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="QCalc.UsersGuide.ReleaseN40cafefd90407251ementS.png" alt="QCalc.UsersGuide.ReleaseNotes.VersionManagement" width="20" height="20" align="top">&nbsp;<a href="QCalc_UsersGuide_ReleaseNotes.html#QCalc.UsersGuide.ReleaseNotes.VersionManagement">VersionManagement</a>
+</td>
+<td>Version management</td>
+</tr>
+</table>
+<hr>
+
+<h2><img src="QCalc.UsersGuide.ReleaseNotesI.png" alt="QCalc.UsersGuide.ReleaseNotes.VersionManagement" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.UsersGuide.ReleaseNotes.VersionManagement"></a><a href="QCalc_UsersGuide_ReleaseNotes.html#QCalc.UsersGuide.ReleaseNotes">QCalc.UsersGuide.ReleaseNotes</a>.VersionManagement</h2>
+
+<p><a href="QCalc.html#QCalc">QCalc</a> is maintained with three main branches on GitHub at
+<a href="https://github.com/kdavies4/QCalc">https://github.com/kdavies4/QCalc</a>:</p>
+
+<h4><a href="https://github.com/kdavies4/QCalc/tree/master">master</a></h4>
+
+<p>This branch contains the released versions.  The version numbers have the form of Major.Minor.Patch in accordance with the
+<a href="http://semver.org/spec/v2.0.0.html">Semantic Versioning Specification</a>.  All of the commits on this branch
+are tagged with the version number (e.g., v1.0.0).
+Each tag message contains a one-line summary of the changes in the version.</p>
+
+<p>The <code>version</code> and <code>versionDate</code>
+entries of the annotation of the top-level
+package (<a href="QCalc.html#QCalc">QCalc</a>) are populated appropriately, e.g.,
+         <pre>  annotation(version     = "1.0.0",
+             versionDate = "2014-01-25 16:41:20Z");</pre>
+The name of the folder that contains the Modelica source files has
+the form of "QCalc Major.Minor.Patch" (e.g., "QCalc 1.0.0").</p>
+
+TODO Update:
+
+<h4><a href="https://github.com/kdavies4/QCalc/tree/develop">develop</a></h4>
+
+<p>All development work is done on this branch or its sub-branches.  This branch and its
+sub-branches are typically only accessed by library developers, not by library users.
+Once finished, all sub-branches are merged
+back into the main develop branch (with option <code>--no-ff</code>) and eventually deleted.</p>
+
+<p>The <code>version</code> and <code>versionDate</code>
+entries of the annotation of the top-level
+package (<a href="QCalc.html#QCalc">QCalc</a>) are left blank in this branch, e.g.,
+         <pre>  annotation(version     = "",
+             versionDate = "");</pre>
+The name of the folder that contains the Modelica source files is "QCalc".</p>
+
+<h4><a href="https://github.com/kdavies4/QCalc/tree/gh-pages">gh-pages</a></h4>
+
+<p>This is an orphan branch for the web page of the library, which is hosted at
+<a href="http://kdavies4.github.io/QCalc/">http://kdavies4.github.io/QCalc/</a>.
+All of the content is built from the Modelica documentation of the library.
+This branch does not contain the Modelica source files or other
+distribution files.</p>
+
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.ReleaseNotes">Icons.ReleaseNotes</a> (Icon for release notes in documentation (from MSL 3.2.1)).</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Tue Aug 19 21:53:57 2014.
+</div>
+
+</body>
+</html>
