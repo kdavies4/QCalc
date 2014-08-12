@@ -1,0 +1,10 @@
+// Set some options to help with the development of the QCalc package.
+
+// Debugging and development options
+// The settings below are all the non-default ones.  Comment the lines to use
+// the defaults.
+Advanced.StoreProtectedVariables = true "Store protected variables when simulating";
+Advanced.OutputModelicaCodeWithAliasVariables = true "List eliminated alias variables when outputting dsmodel in Modelica style";
+Advanced.AutoFormatting = true "Automatic indentation of code. Can be changed without new translation of model";
+Advanced.TranslationInCommandLog = true "Also include translation log in command log";
+// Note:  Dymola's list() function lists all possible settings.

@@ -1,0 +1,33 @@
+// Script to load the QCalc library in Dymola, with custom settings
+
+// ------------
+// Settings
+// ------------
+
+// Options to (possibly) increase simulation performance
+// The settings below are all the non-default ones.  Comment the lines to use
+// the defaults.
+Advanced.ImprovedPackageConstants = true "Improved code generation for package constants";
+
+// ------------
+// Startup
+// ------------
+// Load the QCalc package.
+Advanced.CheckUnits = false "Check unit consistency of equations";
+openModel("QCalc/package.mo");
+cd("..");
+
+// Establish the unit system.
+QCalc.Units.setup();
+
+// Work in the directory above the QCalc package.
+cd("..")
+
+// Save a static, translated copy of the values of all the constants and units.
+// The constants and units will also be available in the workspace, but only
+// until the next model is simulated.  To load the and retain the variables
+// until Dymola is closed, translate a model besides QCalc.Units.Evaluate and
+// then run "units.mos" as a script.
+Advanced.OutputModelicaCode = true "Output dsmodel in Modelica style";
+translateModel("QCalc.Units.Examples.Evaluate");
+Modelica.Utilities.Files.copy("dsmodel.mof", "units.mos", true);
