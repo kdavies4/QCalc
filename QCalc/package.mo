@@ -23,7 +23,7 @@ annotation (
     <a href=\"http://en.wikipedia.org/wiki/Quantity_calculus\">quantity calculus</a> 
 (hence the name \"QCalc\").</p>
 
-<h4>Usage:</h4>
+<h4><a name=\"usage\">Usage:</a></h4>
 
 <p>In Dymola, it is necessary to turn off unit checking.  In the command
 window, enter:
@@ -32,8 +32,8 @@ window, enter:
     Advanced.CheckUnits = false
  </pre>
     
-This setting is applied in the \"load.mos\" file, which can be used to open the
-package.</p>
+    This setting is applied in <a href=\"modelica://QCalc/../load.mos\">load.mos</a>, 
+    which can be used to open the package.</p>
 
 <p>QCalc can be used like this:</p>
 
@@ -42,7 +42,9 @@ package.</p>
     import U = QCalc.Units;
     Q.Pressure p = U.atm + 50*U.Pa; </pre> 
 
-<p>Nonscalar units are also supported.  The <code>*</code> and <code>/</code> operators are overloaded
+<p>Nonscalar units such as <a href=\"http://en.wikipedia.org/wiki/Celsius\">Celsius</a>  
+and <a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> are also supported.  
+The <code>*</code> and <code>/</code> operators are overloaded
 to call the unit's transformation and its inverse, respectively.  For example, this will give a value of
 x = 100:
 

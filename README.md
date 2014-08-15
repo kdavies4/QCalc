@@ -20,9 +20,9 @@ package.
     import U = QCalc.Units;
     Q.Pressure p = U.atm + 50*U.Pa;
 
-Nonscalar units are also supported.  The `*` and `/` operators are overloaded to
-call the unit's transformation and its inverse, respectively.  For example, this
-will give a value of x = 100:
+Nonscalar units such as [Celsius] and [decibel] are also supported.  The `*` and
+`/` operators are overloaded to call the unit's transformation and its inverse,
+respectively.  For example, this will give a value of x = 100:
 
     Real x = (0*U.degC + 100*U.K)/U.degC;
 
@@ -50,10 +50,10 @@ accessed [online](http://kdavies4.github.com/QCalc) or
 
 [QCalc] is published under the Modelica License 2 (see the
 [User's Guide](http://kdavies4.github.com/QCalc/QCalc_UsersGuide.html#Units.UsersGuide.License)).
-Please share any improvements you make, preferably as a pull request to the
-``master`` branch of the [GitHub repository].  If you find a bug, have a
-suggestion, or just want to leave a comment, please
-[open an issue](https://github.com/kdavies4/QCalc/issues/new).
+If you find a bug, have a suggestion, or just want to leave a comment, please
+[open an issue](https://github.com/kdavies4/QCalc/issues/new).  If possible,
+please share any fixes and improvements as pull requests to the `master` branch of
+the [GitHub repository].
 
 
 [QCalc]: http://kdavies4.github.io/QCalc/
@@ -61,5 +61,7 @@ suggestion, or just want to leave a comment, please
 [SI]: http://en.wikipedia.org/wiki/International_System_of_Units
 [quantity calculus]: http://en.wikipedia.org/wiki/Quantity_calculus
 [Modelica Standard Library]: https://github.com/modelica/Modelica
+[Celsius]: http://en.wikipedia.org/wiki/Celsius
+[decibel]: http://en.wikipedia.org/wiki/Decibel
 [pascal]: http://en.wikipedia.org//wiki/Pascal_(unit)
 [GitHub repository]: https://github.com/kdavies4/QCalc

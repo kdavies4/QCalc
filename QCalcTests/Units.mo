@@ -386,7 +386,7 @@ package Units "Tests for QCalc.Units"
         "Loschmidt constant (273.15 K, 100 kPa)");
       test(101.325*kPa/(k_B*273.15*K)/(2.6867805E25/m^3), name=
         "Loschmidt constant (273.15 K, 101.325 kPa)");
-      test(mu_0/(12.566370614E-7*N/A^2), name="mag. constant");
+      test(mu_0*cyc^2/(12.566370614E-7*N/A^2), name="mag. constant");
       test(Phi_0/(2.067833758E-15*Wb), name="mag. flux quantum");
       test(R/(8.3144621*J/(mol*K)), name="molar gas constant");
       test(g/mol/(1E-3*kg/mol), name="molar mass constant");

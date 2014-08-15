@@ -4,8 +4,6 @@ package Quantities "Types to represent physical values"
   import QCalc.Quantities.Interfaces.Quantity;
   extends Icons.Package;
 
-  // TODO doc: note that the dimensions are written such that k_F = 1 and R = 1. => charge is a number and temperature is a potential
-
   // Generated from QCalc/Resources/quantities.xls, 2014-8-14
   type Acceleration = Quantity (final unit="L/T2");
   type Amount = Quantity (final unit="N", min=0);
@@ -117,21 +115,41 @@ package Quantities "Types to represent physical values"
       extends Real;
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
                 -100},{100,100}}), graphics={Rectangle(
-                  lineColor={160,160,164},
-                  fillColor={160,160,164},
-                  fillPattern=FillPattern.Solid,
-                  extent={{-100,-100},{100,100}},
-                  radius=25.0),Text(
-                  lineColor={255,255,255},
-                  extent={{-90,-50},{90,50}},
-                  textString="Q")}), Documentation(info="<html>
+              lineColor={160,160,164},
+              fillColor={160,160,164},
+              fillPattern=FillPattern.Solid,
+              extent={{-100,-100},{100,100}},
+              radius=25.0), Text(
+              lineColor={255,255,255},
+              extent={{-90,-50},{90,50}},
+              textString="Q")}), Documentation(info="<html>
 <p>
 This icon is designed for a <b>Real</b> type that is used as a physical quantity.
 </p>
 </html>"));
     end Quantity;
   end Interfaces;
-  annotation (Documentation(info="<html><p>This package contains quantities (<code>Real</code> types)
+  annotation (Documentation(info="<html>  
+  **: note that the dimensions are written such that k_F = 1 and R = 1. => charge is a number and temperature is a potential
+  
+    <p>Although the <a href=\"http://en.wikipedia.org/wiki/Faraday_constant\">Faraday constant</a> 
+  (<i>k</i><sub>F</sub> or 96485.3399&nbsp;C/mol) and the 
+  <a href=\"http://en.wikipedia.org/wiki/Gas_constant\">gas constant</a> 
+  (<i>R</i> or 8.314472&nbsp;J/(mol&nbsp;K)) are among the independent constants, 
+  the dimensions are written as if they are normalized to one. 
+  The normalization of the <a href=\"http://en.wikipedia.org/wiki/Faraday_constant\">Faraday constant</a> implies that 
+the <a href=\"http://en.wikipedia.org/wiki/Coulomb\">coulomb</a> (C) is an amount which is 
+proportional to the <a href=\"http://en.wikipedia.org/wiki/Mole_(unit)\">mole</a> (mol). 
+
+The additional normalization of 
+the <a href=\"http://en.wikipedia.org/wiki/Gas_constant\">gas constant</a>
+(R or 8.314472&nbsp;J/(mol&nbsp;K)) implies that thermodynamic temperature is a potential
+
+the <a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a> (K) is a potential which is proportional to the 
+<a href=\"http://en.wikipedia.org/wiki/Volt\">volt</a> (V or 
+J/C).</p>
+
+  <p>This package contains quantities (<code>Real</code> types)
   that are instantiated
   to represent physical values (<code>Real</code> variables).  The
 <code>unit</code> attribute of each quantity is used to denote the
