@@ -3,8 +3,7 @@ QCalc
 
 [QCalc] is a free, open-source [Modelica] library to represent quantities using
 various units, including but not limited to [SI].  The approach is based on
-[quantity calculus](http://en.wikipedia.org/wiki/Quantity_calculus) (hence the
-name "QCalc").
+[quantity calculus] (hence the name "QCalc").
 
 ### Usage
 
@@ -21,9 +20,19 @@ package.
     import U = QCalc.Units;
     Q.Pressure p = U.atm + 50*U.Pa;
 
+Nonscalar units are also supported. For example, this will give a value of x = 100:
+
+    Real x = (0*U.degC + 100*U.K)/U.degC;
+
+and this will too:
+
+    Real x = (10/U.dB + 10/U.dB)*U.dB;
+
+since we have multiplied the numbers by adding their logarithms.
+
 The quantities are not directly compatible with the [Modelica Standard Library]
-(MSL) since MSL expresses quantities in [SI] units.  To convert between [QCalc]
-and MSL, create an adapter with equations like this:
+since MSL expresses quantities in [SI] units.  To convert between [QCalc] and
+MSL, create an adapter with equations like this:
 
     p = p_SI*U.Pa;
 
@@ -32,8 +41,8 @@ where `p` is pressure as a quantity (in [QCalc]), `p_SI` is pressure in
 the [pascal] from `QCalc.Units`.
 
 More information is available in the documentation, which can be
-accessed [online](http://kdavies4.github.com/QCalc) or from the documentation
-layer of the Modelica code (starting at the [top level](QCalc/package.mo)).
+accessed [online](http://kdavies4.github.com/QCalc) or
+[from the top level of the package](QCalc/package.mo).
 
 ### License terms and development
 
@@ -48,6 +57,7 @@ suggestion, or just want to leave a comment, please
 [QCalc]: http://kdavies4.github.io/QCalc/
 [Modelica]: https://www.modelica.org/
 [SI]: http://en.wikipedia.org/wiki/International_System_of_Units
+[quantity calculus]: http://en.wikipedia.org/wiki/Quantity_calculus
 [Modelica Standard Library]: https://github.com/modelica/Modelica
 [pascal]: http://en.wikipedia.org//wiki/Pascal_(unit)
 [GitHub repository]: https://github.com/kdavies4/QCalc

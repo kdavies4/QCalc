@@ -1231,36 +1231,8 @@ encompass other systems of units.</p>
     "<html><a href=http://en.wikipedia.org/wiki/Sievert>sievert</a></html>";
   final constant Q.TimeReciprocal Bq=1/s
     "<html><a href=http://en.wikipedia.org/wiki/Becquerel>becquerel</a></html>";
-
-  record degC
-    "<html><a href=http://en.wikipedia.org/wiki/Celsius>degree Celsius</a> (&deg;C)</html>"
-    extends Interfaces.NonscalarUnit;
-
-    function extends num2qty
-      "Convert from temperature in Celsius to temperature as a quantity"
-      extends Icons.Function;
-
-      input Real T_degC "Temperature in degree Celsius";
-      output Q.TemperatureAbsolute T "Thermodynamic temperature";
-
-    algorithm
-      T := (T_degC + 273.15)*K;
-      annotation (Inline=true, inverse(T_degC=qty2num(T)));
-    end num2qty;
-
-    function extends qty2num
-      "Convert from temperature as a quantity to temperature in Celsius"
-      extends Icons.Function;
-
-      input Q.TemperatureAbsolute T "Thermodynamic temperature";
-      output Real T_degC "Temperature in degree Celsius";
-
-    algorithm
-      T_degC := T/K - 273.15;
-      annotation (Inline=true, inverse(T=num2qty(T_degC)));
-    end qty2num;
-
-  end degC;
+  final constant Interfaces.degC degC
+    "<html><a href=http://en.wikipedia.org/wiki/Celsius>degree Celsius</a> (&deg;C)</html>";
 
   // -------------------------------------------------------------------------
   // Non-SI units accepted for use with SI units [BIPM2006, Table 6]
@@ -1317,87 +1289,12 @@ encompass other systems of units.</p>
     "<html><a href=http://en.wikipedia.org/wiki/Nautical_mile>nautical mile</a></html>";
   final constant Q.Velocity kn=nmi/hr
     "<html><a href=http://en.wikipedia.org/wiki/Knot_(unit)>knot</a></html>";
-
-  record Np
-    "<html><a href=http://en.wikipedia.org/wiki/Neper>neper</a> (in terms of amplitude ratio, not power ratio)</a></html>"
-    extends Interfaces.NonscalarUnit;
-
-    function extends num2qty "Convert from a number to a quantity"
-      extends Icons.Function;
-
-      input Real x_Np "Amplitude ratio in nepers";
-      output Q.Number x "Amplitude ratio";
-
-    algorithm
-      x := exp(x_Np);
-      annotation (Inline=true, inverse(x_Np=qty2num(x)));
-    end num2qty;
-
-    function extends qty2num "Convert from a quantity to a number"
-      extends Icons.Function;
-
-      input Q.Number x "Amplitude ratio";
-      output Real x_Np "Amplitude ratio in nepers";
-
-    algorithm
-      x_Np := log(x);
-      annotation (Inline=true, inverse(x=num2qty(x_Np)));
-    end qty2num;
-
-  end Np;
-
-  record B "bel (in terms of power ratio, not amplitude ratio)"
-    extends Interfaces.NonscalarUnit;
-
-    function extends num2qty "Convert from a number to a quantity"
-      extends Icons.Function;
-
-      input Real x_B "Power ratio in bels";
-      output Q.Number x "Power ratio";
-
-    algorithm
-      x := 10^x_B;
-      annotation (Inline=true, inverse(x_B=qty2num(x)));
-    end num2qty;
-
-    function extends qty2num "Convert from a quantity to a number"
-      extends Icons.Function;
-
-      input Q.Number x "Power ratio";
-      output Real x_B "Power ratio in bels";
-
-    algorithm
-      x_B := log10(x);
-      annotation (Inline=true, inverse(x=num2qty(x_B)));
-    end qty2num;
-  end B;
-
-  record dB
-    "<html><a href=http://en.wikipedia.org/wiki/Decibel>decibel</a> (in terms of power ratio, not amplitude ratio)</html>"
-    extends Interfaces.NonscalarUnit;
-
-    function extends num2qty "Convert from a number to a quantity"
-      extends Icons.Function;
-
-      input Real x_dB "Power ratio in decibels";
-      output Q.Number x "Power ratio";
-
-    algorithm
-      x := 10^(Prefixes.d*x_dB);
-      annotation (Inline=true, inverse(x_dB=qty2num(x)));
-    end num2qty;
-
-    function extends qty2num "Convert from a quantity to a number"
-      extends Icons.Function;
-
-      input Q.Number x "Power ratio";
-      output Real x_dB "Power ratio in decibels";
-
-    algorithm
-      x_dB := log10(x)/Prefixes.d;
-      annotation (Inline=true, inverse(x=num2qty(x_dB)));
-    end qty2num;
-  end dB;
+  final constant Interfaces.Np Np
+    "<html><a href=http://en.wikipedia.org/wiki/Neper>neper</a> (in terms of amplitude ratio, not power ratio)</a></html>";
+  final constant Interfaces.B B
+    "bel (in terms of power ratio, not amplitude ratio)";
+  final constant Interfaces.dB dB
+    "<html><a href=http://en.wikipedia.org/wiki/Decibel>decibel</a> (in terms of power ratio, not amplitude ratio)</html>";
 
   // -------------------------------------------------------------------------
   // Non-SI units associated with the CGS and the CGS-Gaussian system of units
@@ -1524,67 +1421,180 @@ encompass other systems of units.</p>
   // aka dalton (Da)
   final constant Q.Density M=mol/L
     "<html><a href=http://en.wikipedia.org/wiki/Molar_concentration#Units>molar</a></html>";
-
-  record kPag "kilopascal, gauge"
-    extends Interfaces.NonscalarUnit;
-
-    function extends num2qty
-      "Convert from gauge pressure in kilopascals to absolute pressure as a quantity"
-      extends Icons.Function;
-
-      input Real p_kPag "Gauge pressure in kilopascals";
-      output Q.PressureAbsolute p "Absolute pressure";
-
-    algorithm
-      p := p_kPag*kPa + atm;
-      annotation (Inline=true, inverse(p_kPag=qty2num(p)));
-    end num2qty;
-
-    function extends qty2num
-      "Convert from absolute pressure as a quantity to gauge pressure in kilopascals"
-      extends Icons.Function;
-
-      input Q.PressureAbsolute p "Absolute pressure";
-      output Real p_kPag "Gauge pressure in kilopascals";
-
-    algorithm
-      p_kPag := (p - atm)/kPa;
-      annotation (Inline=true, inverse(p=num2qty(p_kPag)));
-    end qty2num;
-  end kPag;
+  final constant Interfaces.kPag kPag "kilopascal, gauge";
 
   package Interfaces "Partial classes"
     extends Icons.InterfacesPackage;
 
-    record NonscalarUnit "Partial record for a nonscalar unit"
+    partial record NonscalarUnit "Partial operator record for a nonscalar unit"
+      replaceable type Quantity = Q.Interfaces.Quantity;
 
-      partial function num2qty "Convert a number to a quantity"
-        extends Icons.Function;
+      operator '*' "Multiplication is overloaded to map a number to a quantity"
 
-      end num2qty;
+        partial function num2qty "Convert a number to a quantity"
+          input Real n "Number";
+          replaceable input NonscalarUnit selfDummy
+            "2nd argument is the unit itself; contains no data";
+          output Quantity q "Quantity";
+          annotation (Inline=true, inverse(n='/'.qty2num(q, selfDummy)));
+        end num2qty;
 
-      function qty2num "Convert a quantity to a number"
-        extends Icons.Function;
+      end '*';
 
-      end qty2num;
+      operator '/' "Division is overloaded to map a quantity to a number"
 
-      annotation (Icon(graphics={
-            Text(
-              extent={{-115,155},{115,105}},
-              textString="%name",
-              lineColor={0,0,255}),
-            Rectangle(
-              extent={{-100,100},{100,-100}},
-              lineColor={0,0,0},
-              fillColor={215,230,240},
-              fillPattern=FillPattern.Solid),
-            Text(
-              extent={{-94,94},{94,-94}},
-              lineColor={0,0,0},
-              fillColor={181,181,181},
-              fillPattern=FillPattern.Solid,
-              textString="U")}));
+        partial function qty2num "Convert a quantity to a number"
+          input Quantity q "Quantity";
+          replaceable input NonscalarUnit selfDummy
+            "2nd argument is the unit itself; contains no data";
+          output Real n "Number";
+          annotation (Inline=true, inverse(q='*'.num2qty(n, selfDummy)));
+        end qty2num;
+
+      end '/';
     end NonscalarUnit;
+
+    record degC
+      "<html><a href=http://en.wikipedia.org/wiki/Celsius>degree Celsius</a> (&deg;C)</html>"
+      extends NonscalarUnit;
+
+      redeclare type Quantity = Q.Temperature;
+
+      operator extends '*'
+
+        function extends num2qty
+
+          redeclare input degC selfDummy;
+
+        algorithm
+          q := (n + 273.15)*K;
+          annotation (Inline=true, inverse(n='/'.qty2num(q, selfDummy)));
+        end num2qty;
+
+      end '*';
+
+      operator extends '/'
+
+        function extends qty2num
+
+          redeclare input degC selfDummy;
+
+        algorithm
+          n := q/K - 273.15;
+          annotation (Inline=true, inverse(q='*'.num2qty(n, selfDummy)));
+        end qty2num;
+
+      end '/';
+
+    end degC;
+
+    record Np
+      "<html><a href=http://en.wikipedia.org/wiki/Neper>neper</a> (in terms of amplitude ratio, not power ratio)</a></html>"
+      extends Interfaces.NonscalarUnit;
+
+      operator extends '*'
+        function extends num2qty
+
+          redeclare input Np selfDummy;
+
+        algorithm
+          q := exp(n);
+          annotation (Inline=true, inverse(n='/'.qty2num(q, selfDummy)));
+        end num2qty;
+      end '*';
+
+      operator extends '/'
+        function extends qty2num
+
+          redeclare input Np selfDummy;
+
+        algorithm
+          n := log(q);
+          annotation (Inline=true, inverse(q='*'.num2qty(n, selfDummy)));
+        end qty2num;
+      end '/';
+    end Np;
+
+    record B "bel (in terms of power ratio, not amplitude ratio)"
+      extends Interfaces.NonscalarUnit;
+
+      operator extends '*'
+        function extends num2qty
+
+          redeclare input B selfDummy;
+
+        algorithm
+          q := 10^n;
+          annotation (Inline=true, inverse(n='/'.qty2num(q, selfDummy)));
+        end num2qty;
+      end '*';
+
+      operator extends '/'
+        function extends qty2num
+
+          redeclare input B selfDummy;
+
+        algorithm
+          n := log10(q);
+          annotation (Inline=true, inverse(q='*'.num2qty(n, selfDummy)));
+        end qty2num;
+      end '/';
+    end B;
+
+    record dB
+      "<html><a href=http://en.wikipedia.org/wiki/Decibel>decibel</a> (in terms of power ratio, not amplitude ratio)</html>"
+      extends Interfaces.NonscalarUnit;
+
+      operator extends '*'
+        function extends num2qty
+
+          redeclare input dB selfDummy;
+
+        algorithm
+          q := 10^(Prefixes.d*n);
+          annotation (Inline=true, inverse(n='/'.qty2num(q, selfDummy)));
+        end num2qty;
+      end '*';
+
+      operator extends '/'
+        function extends qty2num
+
+          redeclare input dB selfDummy;
+
+        algorithm
+          n := log10(q)/Prefixes.d;
+          annotation (Inline=true, inverse(q='*'.num2qty(n, selfDummy)));
+        end qty2num;
+      end '/';
+    end dB;
+
+    record kPag "kilopascal, gauge"
+      extends Interfaces.NonscalarUnit;
+      redeclare type Quantity = Q.Pressure;
+
+      operator extends '*'
+        function extends num2qty
+
+          redeclare input kPag selfDummy;
+
+        algorithm
+          q := n*kPa + atm;
+          annotation (Inline=true, inverse(n='/'.qty2num(q, selfDummy)));
+        end num2qty;
+      end '*';
+
+      operator extends '/'
+        function extends qty2num
+
+          redeclare input kPag selfDummy;
+
+        algorithm
+          n := (q - atm)/kPa;
+          annotation (Inline=true, inverse(q='*'.num2qty(n, selfDummy)));
+        end qty2num;
+      end '/';
+
+    end kPag;
   end Interfaces;
 
   annotation (

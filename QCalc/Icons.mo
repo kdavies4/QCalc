@@ -7,13 +7,13 @@ package Icons "Package of icons"
 
     annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
               {100,100}}), graphics={Rectangle(
-            extent={{-100,-100},{100,100}},
-            lineColor={0,0,127},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid), Text(
-            extent={{-150,150},{150,110}},
-            textString="%name",
-            lineColor={0,0,255})}), Documentation(info="<html>
+              extent={{-100,-100},{100,100}},
+              lineColor={0,0,127},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-150,150},{150,110}},
+              textString="%name",
+              lineColor={0,0,255})}), Documentation(info="<html>
 <p>
 Block that has only the basic icon for an input/output
 block (no declarations, no equations). Most blocks
@@ -55,15 +55,16 @@ from this block.
 
     annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
               -100},{100,100}}), graphics={Ellipse(
-            lineColor={75,138,73},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid,
-            extent={{-100,-100},{100,100}}), Polygon(
-            lineColor={0,0,255},
-            fillColor={75,138,73},
-            pattern=LinePattern.None,
-            fillPattern=FillPattern.Solid,
-            points={{-36,60},{64,0},{-36,-60},{-36,60}})}), Documentation(info="<html>
+              lineColor={75,138,73},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid,
+              extent={{-100,-100},{100,100}}),Polygon(
+              lineColor={0,0,255},
+              fillColor={75,138,73},
+              pattern=LinePattern.None,
+              fillPattern=FillPattern.Solid,
+              points={{-36,60},{64,0},{-36,-60},{-36,60}})}), Documentation(
+          info="<html>
 <p>This icon indicates an example. The play button suggests that the example can be executed.</p>
 </html>"));
   end Example;
@@ -263,23 +264,5 @@ This icon is indicates a record.
 </html>"));
 
   end ReleaseNotes;
-
-  type TypeReal "Icon for Real types (from MSL 3.2.1)"
-    extends Real;
-    annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={Rectangle(
-              lineColor={160,160,164},
-              fillColor={160,160,164},
-              fillPattern=FillPattern.Solid,
-              extent={{-100.0,-100.0},{100.0,100.0}},
-              radius=25.0),Text(
-              lineColor={255,255,255},
-              extent={{-90.0,-50.0},{90.0,50.0}},
-              textString="R")}), Documentation(info="<html>
-<p>
-This icon is designed for a <b>Real</b> type.
-</p>
-</html>"));
-  end TypeReal;
 
 end Icons;

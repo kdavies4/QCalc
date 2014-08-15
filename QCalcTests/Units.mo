@@ -98,15 +98,9 @@ package Units "Tests for QCalc.Units"
       // Wb/A.
       //
       // Celcius
-      assertValue(
-            degC.num2qty(100),
-            373.15*K,
-            name="degC.num2qty") "Number to quantity";
-      assertValue(
-            degC.qty2num(degC.num2qty(1)),
-            1,
-            name="degC.qty2num")
-        "Quantity to number (via round-trip calculation)";
+      test(100*degC/(373.15*K), name="Table 3: degC: num2qty");
+      test(1*degC/degC, name="Table 3: degC: qty2num")
+        "via round-trip calculation";
       //
       test(lm/(cd*sr), name="Table 3: lm");
       test(lx/(lm/m^2), name="Table 3: lx");
@@ -175,9 +169,18 @@ package Units "Tests for QCalc.Units"
       test(nmi/(1852*m), name="Table 8: nmi");
       test(b/(1e-28*m^2), name="Table 8: b");
       test(kn/((1852/3600)*m/s), name="Table 8: kn");
-      test(Np.num2qty(1)/exp(1), name="Table 8: Np");
-      test(B.num2qty(1)/10, name="Table 8: B");
-      test(dB.num2qty(1)/10^0.1, name="Table 8: dB");
+      //
+      // neper
+      test(1*Np/exp(1), name="Table 8: Np: num2qty");
+      test(1*Np/Np, name="Table 8: Np: qty2num") "via round-trip calculation";
+      //
+      // bel
+      test(1*B/10, name="Table 8: B: num2qty");
+      test(1*B/B, name="Table 8: B: qty2num") "via round-trip calculation";
+      //
+      // decibel
+      test(1*dB/10^0.1, name="Table 8: dB: num2qty");
+      test(1*dB/dB, name="Table 8: dB: qty2num") "via round-trip calculation";
 
       // -------------------------------------------------------------------------
       // Non-SI units associated with the CGS and the CGS-Gaussian system of units
@@ -442,7 +445,6 @@ package Units "Tests for QCalc.Units"
     end testNIST;
 
     function testOther "Test other units"
-      import XogenyTest.assertValue;
       import QCalcTests.Utilities.print2;
       import QCalc.Units.*;
 
@@ -452,19 +454,15 @@ package Units "Tests for QCalc.Units"
       input String space="" "Leading space in the log entry";
       output Boolean ok "true, if all tests passed";
 
+    protected
+      function test = XogenyTest.assertValue (final expected=1);
+
     algorithm
       print2(space + "- Other units", logFile);
 
       // kPag
-      assertValue(
-            kPag.num2qty(101.325),
-            2*atm,
-            name="kPag.num2qty") "Number to quantity";
-      assertValue(
-            kPag.qty2num(kPag.num2qty(1)),
-            1,
-            name="kPag.qty2num")
-        "Quantity to number (via round-trip calculation)";
+      test(101.325*kPag/(2*atm), name="kPag.num2qty");
+      test(1*kPag/kPag, name="kPag.qty2num") "via round-trip calculation";
 
       ok := true;
       annotation (Documentation(info="<html><p>This function call will fail if any of the functions return an
@@ -472,5 +470,26 @@ package Units "Tests for QCalc.Units"
   The input is the name of a log file where the results should be written.</p></html>"));
     end testOther;
     annotation (Icon(graphics));
+    model testModel
+      import XogenyTest.assertValue;
+
+      import Q = QCalc.Quantities;
+      import U = QCalc.Units;
+
+    equation
+      assertValue(
+            U.atm + 50*U.kPa,
+            50*U.kPag,
+            name="kPag");
+      assertValue(
+            (0*U.degC + 100*U.K)/U.degC,
+            100,
+            name="degC");
+      assertValue(
+            (10/U.dB + 10/U.dB)*U.dB,
+            100,
+            name="dB");
+
+    end testModel;
   end Tests;
 end Units;

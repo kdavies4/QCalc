@@ -1,100 +1,100 @@
 within QCalc;
 package Quantities "Types to represent physical values"
 
-  import QCalc.Icons.TypeReal;
+  import QCalc.Quantities.Interfaces.Quantity;
   extends Icons.Package;
 
   // TODO** doc: note that the dimensions are written such that k_F = 1 and R = 1. => charge is a number and temperature is a potential
 
   // Generated from QCalc/Resources/quantities.xls, 2014-8-14
-  type Acceleration = TypeReal (final unit="L/T2");
-  type Amount = TypeReal (final unit="N", min=0);
-  type AmountReciprocal = TypeReal (final unit="1/N", min=0)
+  type Acceleration = Quantity (final unit="L/T2");
+  type Amount = Quantity (final unit="N", min=0);
+  type AmountReciprocal = Quantity (final unit="1/N", min=0)
     "Reciprocal of amount";
-  type Angle = TypeReal (final unit="A");
-  type Angle2 = TypeReal (final unit="A2") "Solid angle";
-  type Area = TypeReal (final unit="L2", min=0);
-  type Capacitance = TypeReal (final unit="N2.T2/(L2.M)", min=0);
-  type ConductanceElectrical = TypeReal (final unit="N2.T/(L2.M)", min=0)
+  type Angle = Quantity (final unit="A");
+  type Angle2 = Quantity (final unit="A2") "Solid angle";
+  type Area = Quantity (final unit="L2", min=0);
+  type Capacitance = Quantity (final unit="N2.T2/(L2.M)", min=0);
+  type ConductanceElectrical = Quantity (final unit="N2.T/(L2.M)", min=0)
     "Electrical conductance";
-  type ConductivityElectrical = TypeReal (final unit="N2.T/(L3.M)", min=0)
+  type ConductivityElectrical = Quantity (final unit="N2.T/(L3.M)", min=0)
     "Electrical conductivity";
-  type Current = TypeReal (final unit="N/T");
-  type CurrentAreic = TypeReal (final unit="N/(L2.T)") "Areic current";
-  type Density = TypeReal (final unit="N/L3", min=0);
-  type Diffusivity = TypeReal (final unit="L2/T", min=0);
-  type Energy = TypeReal (final unit="L2.M/T2");
-  type Fluidity = TypeReal (final unit="L.T/M", min=0);
-  type Force = TypeReal (final unit="L.M/T2");
-  type ForceSpecific = TypeReal (final unit="L.M/(N.T2)") "Specific force";
-  type Frequency = TypeReal (final unit="A/T");
-  type Illuminance = TypeReal (final unit="J.A2");
-  type Inductance = TypeReal (final unit="L2.M/N2", min=0);
-  type Length = TypeReal (final unit="L", min=0);
-  type LengthSpecific = TypeReal (final unit="L/N", min=0) "Specific length";
-  type LengthSpecificMassSpecific = TypeReal (final unit="L.M/N2", min=0)
+  type Current = Quantity (final unit="N/T");
+  type CurrentAreic = Quantity (final unit="N/(L2.T)") "Areic current";
+  type Density = Quantity (final unit="N/L3", min=0);
+  type Diffusivity = Quantity (final unit="L2/T", min=0);
+  type Energy = Quantity (final unit="L2.M/T2");
+  type Fluidity = Quantity (final unit="L.T/M", min=0);
+  type Force = Quantity (final unit="L.M/T2");
+  type ForceSpecific = Quantity (final unit="L.M/(N.T2)") "Specific force";
+  type Frequency = Quantity (final unit="A/T");
+  type Illuminance = Quantity (final unit="J.A2");
+  type Inductance = Quantity (final unit="L2.M/N2", min=0);
+  type Length = Quantity (final unit="L", min=0);
+  type LengthSpecific = Quantity (final unit="L/N", min=0) "Specific length";
+  type LengthSpecificMassSpecific = Quantity (final unit="L.M/N2", min=0)
     "Specific length times specific mass";
-  type Luminance = TypeReal (final unit="J/L2");
-  type LuminousEmittance = TypeReal (final unit="J.A2/L2") "Luminous emittance";
-  type LuminousIntensity = TypeReal (final unit="J") "Luminous intensity";
-  type MagneticDipoleMoment = TypeReal (final unit="A.L2.N/T")
+  type Luminance = Quantity (final unit="J/L2");
+  type LuminousEmittance = Quantity (final unit="J.A2/L2") "Luminous emittance";
+  type LuminousIntensity = Quantity (final unit="J") "Luminous intensity";
+  type MagneticDipoleMoment = Quantity (final unit="A.L2.N/T")
     "Magnetic dipole moment";
-  type MagneticFieldAux = TypeReal (final unit="A.N/(L.T)")
+  type MagneticFieldAux = Quantity (final unit="A.N/(L.T)")
     "Auxiliary magnetic field";
-  type MagneticFlux = TypeReal (final unit="L2.M/(A.N.T)") "Magnetic flux";
-  type MagneticFluxAreic = TypeReal (final unit="M/(A.N.T)")
+  type MagneticFlux = Quantity (final unit="L2.M/(A.N.T)") "Magnetic flux";
+  type MagneticFluxAreic = Quantity (final unit="M/(A.N.T)")
     "Areic magnetic flux";
-  type MagneticFluxReciprocal = TypeReal (final unit="A.N.T/(L2.M)")
+  type MagneticFluxReciprocal = Quantity (final unit="A.N.T/(L2.M)")
     "Reciprocal of magnetic flux";
-  type MagneticFluxSpecific = TypeReal (final unit="L2.M/(A.N2.T)")
+  type MagneticFluxSpecific = Quantity (final unit="L2.M/(A.N2.T)")
     "Specific magnetic flux";
-  type MagnetomotiveForce = TypeReal (final unit="A.N/T") "Magnetomotive force";
-  type Mass = TypeReal (final unit="M", min=0);
-  type MassSpecific = TypeReal (final unit="M/N", min=0) "Specific mass";
-  type MassVolumic = TypeReal (final unit="M/L3", min=0) "Volumic mass";
-  type Mobility = TypeReal (final unit="N.T/M", min=0);
-  type MomentumRotational = TypeReal (final unit="L2.M/(A.T)")
+  type MagnetomotiveForce = Quantity (final unit="A.N/T") "Magnetomotive force";
+  type Mass = Quantity (final unit="M", min=0);
+  type MassSpecific = Quantity (final unit="M/N", min=0) "Specific mass";
+  type MassVolumic = Quantity (final unit="M/L3", min=0) "Volumic mass";
+  type Mobility = Quantity (final unit="N.T/M", min=0);
+  type MomentumRotational = Quantity (final unit="L2.M/(A.T)")
     "Rotational momentum";
-  type Number = TypeReal (final unit="1");
-  type NumberAbsolute = TypeReal (final unit="1", min=0) "Absolute number";
-  type Permeability = TypeReal (final unit="L.M/(A2.N2)", min=0);
-  type Permittivity = TypeReal (final unit="N2.T2/(L3.M)", min=0);
-  type PermittivityReciprocal = TypeReal (final unit="L3.M/(N2.T2)", min=0)
+  type Number = Quantity (final unit="1");
+  type NumberAbsolute = Quantity (final unit="1", min=0) "Absolute number";
+  type Permeability = Quantity (final unit="L.M/(A2.N2)", min=0);
+  type Permittivity = Quantity (final unit="N2.T2/(L3.M)", min=0);
+  type PermittivityReciprocal = Quantity (final unit="L3.M/(N2.T2)", min=0)
     "Reciprocal of permittivity";
-  type Potential = TypeReal (final unit="L2.M/(N.T2)");
-  type PotentialAbsolute = TypeReal (final unit="L2.M/(N.T2)", min=0)
+  type Potential = Quantity (final unit="L2.M/(N.T2)");
+  type PotentialAbsolute = Quantity (final unit="L2.M/(N.T2)", min=0)
     "Absolute potential";
-  type PotentialPerWavenumber = TypeReal (final unit="L3.M/(A.N.T2)")
+  type PotentialPerWavenumber = Quantity (final unit="L3.M/(A.N.T2)")
     "Potential per wavenumber";
-  type Power = TypeReal (final unit="L2.M/T3");
-  type PowerArea = TypeReal (final unit="L4.M/T3") "Power times area";
-  type PowerAreic = TypeReal (final unit="M/T3") "Areic power";
-  type PowerAreicPerPotential4 = TypeReal (final unit="N4.T5/(L8.M3)")
+  type Power = Quantity (final unit="L2.M/T3");
+  type PowerArea = Quantity (final unit="L4.M/T3") "Power times area";
+  type PowerAreic = Quantity (final unit="M/T3") "Areic power";
+  type PowerAreicPerPotential4 = Quantity (final unit="N4.T5/(L8.M3)")
     "Areic power per 4th power of potential";
-  type Pressure = TypeReal (final unit="M/(L.T2)");
-  type PressureAbsolute = TypeReal (final unit="M/(L.T2)", min=0)
+  type Pressure = Quantity (final unit="M/(L.T2)");
+  type PressureAbsolute = Quantity (final unit="M/(L.T2)", min=0)
     "Absolute pressure";
-  type PressureLineic = TypeReal (final unit="M/(L2.T2)") "Lineic pressure";
-  type ResistanceElectrical = TypeReal (final unit="L2.M/(N2.T)", min=0)
+  type PressureLineic = Quantity (final unit="M/(L2.T2)") "Lineic pressure";
+  type ResistanceElectrical = Quantity (final unit="L2.M/(N2.T)", min=0)
     "Electrical resistance";
-  type ResistanceFluid = TypeReal (final unit="M/(L.N.T)", min=0)
+  type ResistanceFluid = Quantity (final unit="M/(L.N.T)", min=0)
     "Fluid resistance";
-  type Resistivity = TypeReal (final unit="L.T/N", min=0);
-  type SurfaceTension = TypeReal (final unit="M/T2") "Surface tension";
-  type Time = TypeReal (final unit="T");
-  type TimeAbsolute = TypeReal (final unit="T", min=0) "Absolute time";
-  type TimeReciprocal = TypeReal (final unit="1/T") "Reciprocal of time";
-  type Velocity = TypeReal (final unit="L/T");
-  type Velocity2 = TypeReal (final unit="L2/T2") "Squared velocity";
-  type Viscosity = TypeReal (final unit="M/(L.T)", min=0);
-  type Volume = TypeReal (final unit="L3", min=0);
-  type VolumeSpecific = TypeReal (final unit="L3/N") "Specific volume";
-  type VolumeSpecificAbsolute = TypeReal (final unit="L3/N", min=0)
+  type Resistivity = Quantity (final unit="L.T/N", min=0);
+  type SurfaceTension = Quantity (final unit="M/T2") "Surface tension";
+  type Time = Quantity (final unit="T");
+  type TimeAbsolute = Quantity (final unit="T", min=0) "Absolute time";
+  type TimeReciprocal = Quantity (final unit="1/T") "Reciprocal of time";
+  type Velocity = Quantity (final unit="L/T");
+  type Velocity2 = Quantity (final unit="L2/T2") "Squared velocity";
+  type Viscosity = Quantity (final unit="M/(L.T)", min=0);
+  type Volume = Quantity (final unit="L3", min=0);
+  type VolumeSpecific = Quantity (final unit="L3/N") "Specific volume";
+  type VolumeSpecificAbsolute = Quantity (final unit="L3/N", min=0)
     "Absolute specific volume";
-  type Wavelength = TypeReal (final unit="L/A");
-  type WavelengthVelocity = TypeReal (final unit="L2/(A.T)")
+  type Wavelength = Quantity (final unit="L/A");
+  type WavelengthVelocity = Quantity (final unit="L2/(A.T)")
     "Wavelength times velocity";
-  type Wavenumber = TypeReal (final unit="A/L");
+  type Wavenumber = Quantity (final unit="A/L");
   // -------- end from QCalc/Resources/quantities.xls
 
   // Aliases that imply special display units
@@ -111,6 +111,26 @@ package Quantities "Types to represent physical values"
   type TemperatureAbsolute = PotentialAbsolute (displayUnit="degC")
     "Absolute temperature";
 
+  package Interfaces "Partial classes"
+    extends Icons.InterfacesPackage;
+    type Quantity "Icon for a Quantity (special Real type)"
+      extends Real;
+      annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+                -100},{100,100}}), graphics={Rectangle(
+              lineColor={160,160,164},
+              fillColor={160,160,164},
+              fillPattern=FillPattern.Solid,
+              extent={{-100,-100},{100,100}},
+              radius=25.0), Text(
+              lineColor={255,255,255},
+              extent={{-90,-50},{90,50}},
+              textString="Q")}), Documentation(info="<html>
+<p>
+This icon is designed for a <b>Real</b> type that is used as a physical quantity.
+</p>
+</html>"));
+    end Quantity;
+  end Interfaces;
   annotation (Documentation(info="<html><p>This package contains quantities (<code>Real</code> types)
   that are instantiated
   to represent physical values (<code>Real</code> variables).  The
