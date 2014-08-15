@@ -618,31 +618,66 @@ recognized by Dymola.</p>
   package Examples "Examples"
     extends Icons.ExamplesPackage;
     model Evaluate "Evaluate the values assigned to constants and units"
-      extends Icons.Example;
 
-      // **add/update/reorder these to match the Units package:
+      extends Icons.Example;
 
       // -------------------------------------------------------------------------
       // Mathematical constants
+
       final constant Q.Number pi=U.pi "pi";
+
       // -------------------------------------------------------------------------
-      // Independent base physical constants and units
-      final constant Q.Angle cyc=U.cyc "cycle";
+      // Base physical constants
       final constant Q.Wavenumber R_inf=U.R_inf "Rydberg constant";
-      final constant Q.Velocity c=U.c "speed of light in vacuum";
-      final constant Q.ConductanceElectrical G_0=U.G_0 "conductance quantum";
-      final constant Q.MagneticFlux Phi_0=U.Phi_0 "magnetic flux quantum";
+      final constant Q.Velocity c=U.c "speed of light";
+      final constant Q.MagneticFluxReciprocal k_J=U.k_J "Josephson constant";
+      final constant Q.MagneticFluxSpecific R_K=U.R_K "von Klitzing constant";
       final constant Q.Number k_F=U.k_F "Faraday constant";
       final constant Q.Number R=U.R "gas constant";
+      final constant Q.LengthSpecificMassSpecific k_Aprime=U.k_Aprime
+        "modified Ampere constant";
+
       // -------------------------------------------------------------------------
-      // SI units that depend on transcendental and arbitrated empirical numbers
+      // Derived physical constants
+
+      final constant Q.MagneticFlux Phi_0=U.Phi_0
+        "magnetic flux quantum (&Phi;<sub>0</sub>)";
+      final constant Q.ConductanceElectrical G_0=U.G_0 "conductance quantum";
+      final constant Q.Amount e=U.e "elementary charge";
+      final constant Q.MomentumRotational h=U.h "Planck constant";
+      final constant Q.AmountReciprocal N_A=U.N_A "Avogadro constant";
+      final constant Q.Amount k_B=U.k_B "Boltzmann constant";
+      final constant Q.Angle cyc=U.cyc "cycle";
+      final constant Q.PowerArea c_1=U.c_1 "first radiation constant";
+      final constant Q.PotentialPerWavenumber c_2=U.c_2
+        "second radiation constant";
+      final constant Q.MagneticFluxReciprocal c_3_f=U.c_3_f
+        "Wien frequency displacement constant";
+      final constant Q.PotentialPerWavenumber c_3_lambda=U.c_3_lambda
+        "Wien wavelength displacement constant";
+      final constant Q.PowerAreicPerPotential4 sigma=U.sigma
+        "Stefan-Boltzmann constant";
+      final constant Q.Energy Ry=U.Ry "Rydberg energy";
+      final constant Q.Energy Ha=U.Ha "Hartree energy";
+      final constant Q.Temperature T_H=U.T_H "Hartree temperature";
+
+      // -------------------------------------------------------------------------
+      // Mathematical relations
       final constant Q.Angle rad=U.rad "radian";
+
+      // -------------------------------------------------------------------------
+      // Empirical relations
       final constant Q.Length m=U.m "metre";
       final constant Q.Time s=U.s "second";
       final constant Q.MagneticFlux Wb=U.Wb "weber";
       final constant Q.ConductanceElectrical S=U.S "siemens";
       final constant Q.Amount mol=U.mol "mole";
       final constant Q.Potential K=U.K "kelvin";
+
+      // -------------------------------------------------------------------------
+      // SI units decoupled from the base constants
+      final constant Q.LuminousIntensity cd=U.cd "candela";
+
       // -------------------------------------------------------------------------
       // SI base units [BIPM2006, Table 1] and intermediate units
       final constant Q.Frequency Hz=U.Hz "hertz";
@@ -652,63 +687,109 @@ recognized by Dymola.</p>
       final constant Q.Energy J=U.J "joule";
       final constant Q.Velocity2 Gy=U.Gy "gray";
       final constant Q.Mass kg=U.kg "kilogram ";
-      final constant Q.Power W=U.W "watt";
-      final constant Q.Power lm=U.lm "lumen";
-      final constant Q.Angle2 sr=U.sr "steradian";
-      final constant Q.LuminousIntensity cd=U.cd "candela";
+      final constant Q.Mass g=U.g "gram ";
+
       // -------------------------------------------------------------------------
       // SI derived units with special names and symbols [BIPM2006, Table 3]
+      final constant Q.Angle2 sr=U.sr "steradian";
+      final constant Q.Power lm=U.lm "lumen";
+      final constant Q.Power W=U.W "watt";
       final constant Q.Force N=U.N "newton";
       final constant Q.Pressure Pa=U.Pa "pascal";
       final constant Q.MagneticFluxAreic T=U.T "tesla";
       final constant Q.PowerAreic lx=U.lx "lux";
       final constant Q.Capacitance F=U.F "farad";
-      final constant Q.ResistanceElectrical ohm=U.ohm "ohm (Omega)";
+      final constant Q.ResistanceElectrical ohm=U.ohm "ohm";
       final constant Q.Inductance H=U.H "henry";
       final constant Q.Current kat=U.kat "katal";
-      final constant Q.Mass g=U.g "gram";
+      final constant Q.Velocity2 Sv=U.Sv "sievert";
+      final constant Q.TimeReciprocal Bq=U.Bq "becquerel";
+
       // -------------------------------------------------------------------------
       // Non-SI units accepted for use with SI units [BIPM2006, Table 6]
       final constant Q.Time min=U.min "minute";
       final constant Q.Time hr=U.hr "hour";
       final constant Q.Time d=U.d "day";
       final constant Q.Angle deg=U.deg "degree";
-      final constant Q.Volume L=U.L "liter (L or l)";
+      final constant Q.Volume L=U.L "liter";
+
       // -------------------------------------------------------------------------
-      // Derived physical constants and units
-      // Electrical -- involving conductance
-      final constant Q.Number alpha=U.alpha "fine-structure constant";
+      // Other non-SI units [BIPM2006, Table 8]
+      final constant Q.Acceleration g_0=U.g_0 "standard gravity";
+      final constant Q.Length cm=U.cm "centimetre";
+      final constant Q.Volume cc=U.cc "cubic centimeter";
+      final constant Q.PressureLineic Hg=U.Hg
+        "force per volume of mercury under standard gravity";
+      final constant Q.Length mm=U.mm "millimetre";
+      final constant Q.Pressure mmHg=mm*Hg "millimeter of mercury";
+      final constant Q.Pressure kPa=U.kPa "kilopascal";
+      final constant Q.Pressure bar=U.bar "bar";
+      final constant Q.Area b=U.b "barn";
+      final constant Q.Length angstrom=U.angstrom "angstrom";
+      final constant Q.Length nmi=U.nmi "nautical mile";
+      final constant Q.Velocity kn=U.kn "knot";
+
+      // -------------------------------------------------------------------------
+      // Non-SI units associated with the CGS and the CGS-Gaussian system of units
+      // [BIPM2006, Table 9]
+      final constant Q.Acceleration Gal=U.Gal "gal";
+      final constant Q.Force dyn=U.dyn "dyne";
+      final constant Q.Energy erg=U.erg "erg";
+      final constant Q.Pressure Ba=U.Ba "barye";
+      final constant Q.Viscosity P=U.P "poise";
+      final constant Q.Diffusivity St=U.St "stokes";
+      final constant Q.Luminance sb=U.sb "stilb";
+      final constant Q.Illuminance ph=U.ph "phot";
+      final constant Q.Current abA=U.abA "abampere";
+      final constant Q.Amount abC=U.abC "abcoloumb";
+      final constant Q.Potential abV=U.abV "abvolt";
+      final constant Q.MagneticFlux Mx=U.Mx "maxwell";
+      final constant Q.MagneticFluxAreic Gs=U.Gs "gauss";
+      final constant Q.MagneticFlux pole=U.pole "unit pole";
+      final constant Q.MagneticFieldAux Oe=U.Oe "oersted";
+      final constant Q.Capacitance abF=U.abF "abfarad";
+      final constant Q.ResistanceElectrical abohm=U.abohm "abohm";
+      final constant Q.Inductance abH=U.abH "abhenry";
+
+      // -------------------------------------------------------------------------
+      // Constants related to Ampere's force law
+      constant Q.LengthSpecificMassSpecific k_A=U.k_A "Ampere constant";
+      constant Q.PermittivityReciprocal k_C=U.k_C "Coulomb constant";
+      final constant Q.Permittivity epsilon_0=U.epsilon_0 "electric constant";
+      final constant Q.Permeability mu_0=U.mu_0 "magnetic constant ";
       final constant Q.ResistanceElectrical Z_0=U.Z_0
         "characteristic impedance of vacuum";
-      final constant Q.Permeability mu_0=U.mu_0 "magnetic constant";
-      final constant Q.Permittivity epsilon_0=U.epsilon_0 "electric constant";
-      // Electromagnetism -- involving conductance and magnetic flux
-      final constant Q.Amount q=U.e "elementary charge";
-      final constant Q.Energy eV=U.eV "electron volt";
-      final constant Q.MomentumRotational h=U.h "Planck constant";
-      final constant Q.Energy Ha=U.Ha "Hartree energy";
-      // Chemistry
-      final constant Q.AmountReciprocal N_A=U.N_A "Avogadro constant";
-      // Thermal physics
-      final constant Q.Amount k_B=U.k_B "Boltzmann constant";
-      final constant Q.PowerAreicPerPotential4 sigma=U.sigma
-        "Stefan-Boltzmann constant";
-      final constant Q.PowerArea c_1=U.c_1 "first radiation constant";
-      final constant Q.PotentialPerWavenumber c_2=U.c_2
-        "second radiation constant";
-      final constant Q.PotentialPerWavenumber c_3_f=U.c_3_f
-        "Wien frequency displacement law constant";
-      final constant Q.MagneticFluxReciprocal c_3_lambda=U.c_3_lambda
-        "Wien wavelength displacement law constant";
+      final constant Q.Angle alpha=U.alpha "fine-structure constant";
+      final constant Q.Length a_0=U.a_0 "Bohr radius";
+      final constant Q.Wavelength lambda_e=U.lambda_e
+        "electron Compton wavelength";
+      final constant Q.WavelengthVelocity kappa=U.kappa
+        "quantum of circulation";
+      final constant Q.MassSpecific m_e=U.m_e "specific electron rest mass";
+      final constant Q.LengthSpecific r_e=U.r_e
+        "specific classical electron radius";
+      final constant Q.MagneticDipoleMoment mu_B=U.mu_B "Bohr magnetron";
+      final constant Q.Mass M_e=U.M_e "mass of an electron";
+      final constant Q.Time t_H=U.t_H "Hartree time";
+      final constant Q.Length l_n=U.l_n "natural unit of length";
+      final constant Q.Time t_n=U.t_n "natural unit of time";
+
       // -------------------------------------------------------------------------
-      // Other selected non-SI units from [BIPM2006, Table 8]
-      final constant Q.Pressure bar=U.bar "bar";
-      final constant Q.Length angstrom=U.angstrom "angstrom";
-      final constant Q.Angle2 sp=U.sp "spat";
+      // Other
+      final constant Q.Time y=U.y "Julian year";
+      final constant Q.Length ly=U.ly "light year";
+      final constant Q.Length au=U.au "astronomical unit";
+      final constant Q.Length pc=U.pc "parsec";
       final constant Q.Pressure atm=U.atm "atmosphere";
-      final constant Q.Length cm=U.cm "centimetre";
-      final constant Q.Volume cc=U.cc "cubic centimetre";
+      final constant Q.Pressure Torr=U.Torr "torr";
+      final constant Q.Energy Wh=U.Wh "watt hour";
+      final constant Q.Energy eV=U.eV "electron volt";
+      final constant Q.Angle2 sp=U.sp "spat";
+      final constant Q.Frequency rpm=U.rpm "revolution per minute";
       final constant Q.Number '%'=U.'%' "percent";
+      final constant Q.MagnetomotiveForce AT=U.AT "ampere-turn";
+      final constant Q.Area D=U.D "darcy";
+      final constant Q.Mass u=U.u "unified atomic mass unit";
       final constant Q.Density M=U.M "molar";
 
       annotation (Documentation(info="<html><p>This model may be used to calculate the values of the
@@ -1023,20 +1104,20 @@ encompass other systems of units.</p>
   // -------------------------------------------------------------------------
   replaceable constant Bases.SIKmol base constrainedby Bases.Base
     "Scalable base constants";
-  constant Q.Wavenumber R_inf=base.R_inf
+  final constant Q.Wavenumber R_inf=base.R_inf
     "<html><a href=http://en.wikipedia.org/wiki/Rydberg_constant>Rydberg constant</a> (<i>R</i><sub>&infin;</sub>)</html>";
-  constant Q.Velocity c=base.c
+  final constant Q.Velocity c=base.c
     "<html><a href=http://en.wikipedia.org/wiki/Speed_of_light>speed of light</a></html>";
   // aka Planck, Stoney, or natural unit of velocity
-  constant Q.MagneticFluxReciprocal k_J=base.k_J
+  final constant Q.MagneticFluxReciprocal k_J=base.k_J
     "<html><a href=http://en.wikipedia.org/wiki/Josephson_constant>Josephson constant</a> (<i>k</i><sub>J</sub>)</html>";
-  constant Q.MagneticFluxSpecific R_K=base.R_K
+  final constant Q.MagneticFluxSpecific R_K=base.R_K
     "<html><a href=http://en.wikipedia.org/wiki/Von_Klitzing_constant>von Klitzing constant</a> (<i>R</i><sub>K</sub>)</html>";
-  constant Q.Number k_F=base.k_F
+  final constant Q.Number k_F=base.k_F
     "<html><a href=http://en.wikipedia.org/wiki/Faraday_constant>Faraday constant</a> (<i>k</i><sub>F</sub>)</html>";
-  constant Q.Number R=base.R
+  final constant Q.Number R=base.R
     "<html><a href=http://en.wikipedia.org/wiki/Gas_constant>gas constant</a></html>";
-  constant Q.LengthSpecificMassSpecific k_Aprime=base.k_Aprime
+  final constant Q.LengthSpecificMassSpecific k_Aprime=base.k_Aprime
     "<html>modified Ampere constant (<i>k</i><sub>A</sub> cyc/&alpha;)</html>";
 
   // -------------------------------------------------------------------------
@@ -1107,7 +1188,7 @@ encompass other systems of units.</p>
     "<html>Hartree temperature (<i>T</i><sub>H</sub>)</html>";
 
   // -------------------------------------------------------------------------
-  // SI mathematical relations
+  // Mathematical relations
   // -------------------------------------------------------------------------
   final constant Q.Angle rad=cyc/(2*pi)
     "<html><a href=http://en.wikipedia.org/wiki/Rad_(unit)>radian</a></html>";
@@ -1115,7 +1196,7 @@ encompass other systems of units.</p>
   // used instead, where the cycle (cyc) is an independent base unit.
 
   // -------------------------------------------------------------------------
-  // SI empirical relations
+  // Empirical relations
   // -------------------------------------------------------------------------
   constant Q.Length m=10973731.568539*cyc/R_inf
     "<html><a href=http://en.wikipedia.org/wiki/Metre>metre</a></html>";
@@ -1490,7 +1571,7 @@ encompass other systems of units.</p>
 
     record Np
       "<html><a href=http://en.wikipedia.org/wiki/Neper>neper</a> (in terms of amplitude ratio, not power ratio)</a></html>"
-      extends Interfaces.NonscalarUnit;
+      extends NonscalarUnit;
 
       operator extends '*'
         function extends num2qty
@@ -1516,7 +1597,7 @@ encompass other systems of units.</p>
     end Np;
 
     record B "bel (in terms of power ratio, not amplitude ratio)"
-      extends Interfaces.NonscalarUnit;
+      extends NonscalarUnit;
 
       operator extends '*'
         function extends num2qty
@@ -1543,7 +1624,7 @@ encompass other systems of units.</p>
 
     record dB
       "<html><a href=http://en.wikipedia.org/wiki/Decibel>decibel</a> (in terms of power ratio, not amplitude ratio)</html>"
-      extends Interfaces.NonscalarUnit;
+      extends NonscalarUnit;
 
       operator extends '*'
         function extends num2qty
@@ -1569,7 +1650,7 @@ encompass other systems of units.</p>
     end dB;
 
     record kPag "kilopascal, gauge"
-      extends Interfaces.NonscalarUnit;
+      extends NonscalarUnit;
       redeclare type Quantity = Q.Pressure;
 
       operator extends '*'
@@ -1764,7 +1845,7 @@ relations are between
 <i>k</i><sub>F</sub> and mol, and
 <i>R</i> and K.
 The cycle (cyc) is defined independently, but the candela (cd) is considered a 
-derived unit (1/683&nbsp;W/sr). **update</p>
+derived unit (1/683&nbsp;W/sr). TODO update</p>
   
 <p>Although the Faraday constant (<i>k</i><sub>F</sub> or 
 96485.3399&nbsp;C/mol) and the gas constant (<i>R</i> or 

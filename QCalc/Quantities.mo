@@ -4,7 +4,7 @@ package Quantities "Types to represent physical values"
   import QCalc.Quantities.Interfaces.Quantity;
   extends Icons.Package;
 
-  // TODO** doc: note that the dimensions are written such that k_F = 1 and R = 1. => charge is a number and temperature is a potential
+  // TODO doc: note that the dimensions are written such that k_F = 1 and R = 1. => charge is a number and temperature is a potential
 
   // Generated from QCalc/Resources/quantities.xls, 2014-8-14
   type Acceleration = Quantity (final unit="L/T2");
@@ -117,14 +117,14 @@ package Quantities "Types to represent physical values"
       extends Real;
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
                 -100},{100,100}}), graphics={Rectangle(
-              lineColor={160,160,164},
-              fillColor={160,160,164},
-              fillPattern=FillPattern.Solid,
-              extent={{-100,-100},{100,100}},
-              radius=25.0), Text(
-              lineColor={255,255,255},
-              extent={{-90,-50},{90,50}},
-              textString="Q")}), Documentation(info="<html>
+                  lineColor={160,160,164},
+                  fillColor={160,160,164},
+                  fillPattern=FillPattern.Solid,
+                  extent={{-100,-100},{100,100}},
+                  radius=25.0),Text(
+                  lineColor={255,255,255},
+                  extent={{-90,-50},{90,50}},
+                  textString="Q")}), Documentation(info="<html>
 <p>
 This icon is designed for a <b>Real</b> type that is used as a physical quantity.
 </p>

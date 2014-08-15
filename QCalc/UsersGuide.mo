@@ -5,8 +5,8 @@ package UsersGuide "User's Guide"
   class GettingStarted "Getting started"
     extends Icons.Information;
     annotation (preferredView="info", Documentation(info="<html>
-      **show example of conversion to MSL/SI
-      **list units and constants that involve angle
+      TODO show example of conversion to MSL/SI
+      TODO list units and constants that involve angle
   
     <p>These are the suggested steps to begin using QCalc:</p>
     <ol>

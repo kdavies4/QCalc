@@ -469,8 +469,9 @@ package Units "Tests for QCalc.Units"
   incorrect result.  It will return <code>true</code> if all of the functions pass.
   The input is the name of a log file where the results should be written.</p></html>"));
     end testOther;
-    annotation (Icon(graphics));
+
     model testModel
+      extends QCalc.Icons.Example;
       import XogenyTest.assertValue;
 
       import Q = QCalc.Quantities;
@@ -491,5 +492,6 @@ package Units "Tests for QCalc.Units"
             name="dB");
 
     end testModel;
+    annotation (Icon(graphics));
   end Tests;
 end Units;

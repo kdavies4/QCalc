@@ -20,7 +20,9 @@ package.
     import U = QCalc.Units;
     Q.Pressure p = U.atm + 50*U.Pa;
 
-Nonscalar units are also supported. For example, this will give a value of x = 100:
+Nonscalar units are also supported.  The `*` and `/` operators are overloaded to
+call the unit's transformation and its inverse, respectively.  For example, this
+will give a value of x = 100:
 
     Real x = (0*U.degC + 100*U.K)/U.degC;
 
