@@ -1,11 +1,11 @@
 within QCalcTests;
 package Units "Tests for QCalc.Units"
   extends QCalc.Icons.Package;
-  package Tests "Package of tests"
+  package Tests
     extends Icons.TestPackage;
 
-    function callAll
-      "<html>Call all of the test functions for <a href=\"modelica://QCalc.Units\">QCalc.Units</a></html>"
+    function runAll
+      "<html>Run all of the test functions and models for <a href=\"modelica://QCalc.Units\">QCalc.Units</a></html>"
       import QCalcTests.Utilities.print2;
       extends QCalc.Icons.Function;
 
@@ -20,11 +20,13 @@ package Units "Tests for QCalc.Units"
       print2(space + "- QCalc.Units", logFile);
       space2 := space + "  ";
       ok := testMath(logFile, space2) and testBIPM(logFile, space2) and
-        testNIST(logFile, space2) and testOther(logFile, space2);
+        testNIST(logFile, space2) and testOther(logFile, space2) and
+        simulateModel("QCalcTests.Units.Tests.testModel(logFile=\"" + logFile
+         + "\", space=\"" + space2 + "\")");
       annotation (Documentation(info="<html><p>This function call will fail if any of the functions return an
   incorrect result.  It will return <code>true</code> if all of the functions pass.
   The input is the name of a log file where the results should be written.</p></html>"));
-    end callAll;
+    end runAll;
 
     function testMath "Test the math constants and relations"
 
@@ -444,7 +446,7 @@ package Units "Tests for QCalc.Units"
   The input is the name of a log file where the results should be written.</p></html>"));
     end testNIST;
 
-    function testOther "Test other units"
+    function testOther "Test other units and constants"
       import QCalcTests.Utilities.print2;
       import QCalc.Units.*;
 
@@ -458,7 +460,7 @@ package Units "Tests for QCalc.Units"
       function test = XogenyTest.assertValue (final expected=1);
 
     algorithm
-      print2(space + "- Other units", logFile);
+      print2(space + "- Other units and constants", logFile);
 
       test(k_A/(1e-7*N/A^2), name="k_A");
       test(k_C/(k_A*c^2), name="k_C");
@@ -473,14 +475,19 @@ package Units "Tests for QCalc.Units"
   The input is the name of a log file where the results should be written.</p></html>"));
     end testOther;
 
-    model testModel
-      extends QCalc.Icons.Example;
+    model testModel "Test various unit calculations in a model"
       import XogenyTest.assertValue;
+      import QCalcTests.Utilities.print2;
+      extends QCalc.Icons.Example;
 
-      import Q = QCalc.Quantities;
-      import U = QCalc.Units;
+      parameter String logFile="UnitsTestLog.md" "Name of the log file";
+      parameter String space="" "Leading space in the log entry";
+
+    initial equation
+      print2(space + "- Model with units", logFile);
 
     equation
+
       assertValue(
             U.atm + 50*U.kPa,
             50*U.kPag,

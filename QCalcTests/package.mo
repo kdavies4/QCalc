@@ -1,6 +1,10 @@
 within ;
 package QCalcTests "Tests for QCalc"
-extends QCalc.Icons.Package;
+extends Icons.TestPackage;
+
+import Q = QCalc.Quantities;
+import U = QCalc.Units;
+
 
 
 

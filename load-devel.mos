@@ -1,6 +1,6 @@
-// Set some options to help with the development of the QCalc package.
+RunScript("load.mos");
 
-// Debugging and development options
+// Set some options to help with debugging and development.
 // The settings below are all the non-default ones.  Comment the lines to use
 // the defaults.
 Advanced.StoreProtectedVariables = true "Store protected variables when simulating";

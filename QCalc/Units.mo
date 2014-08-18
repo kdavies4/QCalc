@@ -2,7 +2,8 @@
 package Units "Constants and units of physical measure"
   extends Icons.Package;
 
-  function setup "Establish conversions to display quantities in units"
+  replaceable function setup
+    "Establish conversions to display quantities in units"
     // import Modelica.Utilities.Streams.print;
     extends Icons.Function;
 
@@ -606,8 +607,8 @@ package Units "Constants and units of physical measure"
         -atm/Pa) "Pressure in Pag";
 
     // print("Done.");
-    annotation ( Commands(executeCall=QCalc.Units.setup()
-          "Re-initialize the units."),                                                Documentation(info="<html><p>This function has no inputs or outputs.  It is essentially a script.
+    annotation (Commands(executeCall=QCalc.Units.setup()
+          "Re-initialize the units."), Documentation(info="<html><p>This function has no inputs or outputs.  It is essentially a script.
 The <code>defineDefaultDisplayUnit</code> and <code>defineUnitConversion</code> functions
 used here are not defined in the Modelica language (as of version 3.3) but are
 recognized by Dymola.</p>
@@ -617,13 +618,19 @@ recognized by Dymola.</p>
   end setup;
 
   record UnitSystem "Base constants for the unit system"
-     extends U.Bases.Base(final R_inf=U.R_inf,final c=U.c,
-     final k_J=U.k_J,final R_K=U.R_K,final k_F=U.k_F,final R=U.R, final rational=U.base.rational);
+    extends U.Bases.Base(
+      final R_inf=U.R_inf,
+      final c=U.c,
+      final k_J=U.k_J,
+      final R_K=U.R_K,
+      final k_F=U.k_F,
+      final R=U.R,
+      final rational=U.base.rational);
 
     annotation (Documentation(info="<html><p>Drop this record into your top-level model
   to record the values of the base constants.  It is necessary to know the values of the 
-  base constants in order to interpret the results.</p></html>"),
-      Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
+  base constants in order to interpret the results.</p></html>"), Icon(
+          coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
               100}}), graphics));
   end UnitSystem;
 
@@ -818,8 +825,8 @@ recognized by Dymola.</p>
             extent={{-20,-10},{20,10}},
             rotation=0,
             origin={0,0})));
-      annotation ( Commands(executeCall=QCalc.Units.setup()
-            "Re-initialize the units."),                                                Diagram(graphics));
+      annotation (Commands(executeCall=QCalc.Units.setup()
+            "Re-initialize the units."), Diagram(graphics));
     end Display;
 
     model ExampleModel "Model that uses all of the quantities"
@@ -919,10 +926,12 @@ recognized by Dymola.</p>
         "Wavelength times velocity";
       parameter Q.Wavenumber Wavenumber=1*U.rad/U.m "Wavenumber";
       // -------- end from QCalc/Resources/quantities.xls
-      annotation ( Commands(executeCall=QCalc.Units.setup()
-            "Re-initialize the units."),                                                Diagram(coordinateSystem(preserveAspectRatio=false, extent={{
-                -100,-100},{100,100}})), Icon(coordinateSystem(
-              preserveAspectRatio=false, extent={{-100,-100},{100,100}})));
+      annotation (
+        Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
+        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+                {100,100}})),
+        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
+                100,100}})));
     end ExampleModel;
     annotation (Commands(executeCall=QCalc.Units.setup()
           "Re-initialize the units."));
@@ -975,7 +984,7 @@ encompass other systems of units.</p>
             executeCall=QCalc.Units.setup() "Re-initialize the units."));
     end Hartree;
 
-      /* TODO: Fix these:
+    /* TODO: Fix these:
   record LH 
     "<html>Base constants and units for Lorentz-Heaviside units (&mu;<sub>0</sub> = &epsilon;<sub>0</sub> = 1)</html>"
     extends Base(final c=1,final R_K=25812.8074434/(4*pi*299792458e-7));
@@ -1096,7 +1105,7 @@ encompass other systems of units.</p>
     final constant Real a=1e-18 "atto";
     final constant Real z=1e-21 "zepto";
     final constant Real y=1e-24 "yocto";
-  annotation (Commands(executeCall=QCalc.Units.setup()
+    annotation (Commands(executeCall=QCalc.Units.setup()
           "Re-initialize the units."));
   end Prefixes;
 
@@ -1335,7 +1344,7 @@ encompass other systems of units.</p>
     "<html><a href=\"http://en.wikipedia.org/wiki/Day\">day</a></html>";
   final constant Q.Angle deg=cyc/360
     "<html><a href=\"http://en.wikipedia.org/wiki/Degree_(angle)\">degree</a> (&deg;)</html>";
-    // aka degree of arc, arc degree, or arcdegree
+  // aka degree of arc, arc degree, or arcdegree
   final constant Q.Angle arcmin=deg/60
     "<html><a href=\"http://en.wikipedia.org/wiki/Arcminute\">arcminute</a></html>";
   final constant Q.Angle arcsec=arcmin/60
@@ -1545,8 +1554,7 @@ encompass other systems of units.</p>
       end '/';
     end NonscalarUnit;
 
-    record degC
-      "<html><a href=\"http://en.wikipedia.org/wiki/Celsius\">degree Celsius</a> (&deg;C)</html>"
+    record degC "degree Celsius (degC)"
       extends NonscalarUnit;
 
       redeclare type Quantity = Q.Temperature;
@@ -1579,8 +1587,7 @@ encompass other systems of units.</p>
 
     end degC;
 
-    record Np
-      "<html><a href=\"http://en.wikipedia.org/wiki/Neper\">neper</a> (in terms of amplitude ratio, not power ratio)</a></html>"
+    record Np "neper (Np) (in terms of amplitude ratio, not power ratio)"
       extends NonscalarUnit;
 
       operator extends '*'
@@ -1606,7 +1613,7 @@ encompass other systems of units.</p>
       end '/';
     end Np;
 
-    record B "bel (in terms of power ratio, not amplitude ratio)"
+    record B "bel (B) (in terms of power ratio, not amplitude ratio)"
       extends NonscalarUnit;
 
       operator extends '*'
@@ -1632,8 +1639,7 @@ encompass other systems of units.</p>
       end '/';
     end B;
 
-    record dB
-      "<html><a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> (in terms of power ratio, not amplitude ratio)</html>"
+    record dB "decibel (dB) (in terms of power ratio, not amplitude ratio)"
       extends NonscalarUnit;
 
       operator extends '*'
@@ -1659,7 +1665,7 @@ encompass other systems of units.</p>
       end '/';
     end dB;
 
-    record kPag "kilopascal, gauge"
+    record kPag "kilopascal, gauge (kPag)"
       extends NonscalarUnit;
       redeclare type Quantity = Q.Pressure;
 
