@@ -1,6 +1,6 @@
 within QCalc;
 package Icons "Package of icons"
-  extends Icons.Package;
+  extends IconsPackage;
 
   partial block Block
     "Basic graphical layout of input/output block (from MSL 3.2.1)"
@@ -87,6 +87,28 @@ from this block.
 <p>This icon indicates a package that contains executable examples.</p>
 </html>"));
   end ExamplesPackage;
+
+  partial package IconsPackage
+    "Icon for packages containing icons (from MSL 3.2.1)"
+    extends Package;
+    annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+              -100},{100,100}}), graphics={Polygon(
+            origin={-8.167,-17},
+            fillColor={128,128,128},
+            pattern=LinePattern.None,
+            fillPattern=FillPattern.Solid,
+            points={{-15.833,20.0},{-15.833,30.0},{14.167,40.0},{24.167,20.0},{
+                4.167,-30.0},{14.167,-30.0},{24.167,-30.0},{24.167,-40.0},{-5.833,
+                -50.0},{-15.833,-30.0},{4.167,20.0},{-5.833,20.0}},
+            smooth=Smooth.Bezier,
+            lineColor={0,0,0}), Ellipse(
+            origin={-0.5,56.5},
+            fillColor={128,128,128},
+            pattern=LinePattern.None,
+            fillPattern=FillPattern.Solid,
+            extent={{-12.5,-12.5},{12.5,12.5}},
+            lineColor={0,0,0})}));
+  end IconsPackage;
 
   partial function Function "Icon for functions (from MSL 3.2.1)"
 
@@ -280,4 +302,27 @@ This icon is indicates a record.
 
   end ReleaseNotes;
 
+  partial package TypesPackage
+    "Icon for packages containing type definitions (from MSL 3.2.1)"
+    extends Package;
+    annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+              -100},{100,100}}), graphics={Polygon(
+            origin={-12.167,-23},
+            fillColor={128,128,128},
+            pattern=LinePattern.None,
+            fillPattern=FillPattern.Solid,
+            points={{12.167,65},{14.167,93},{36.167,89},{24.167,20},{4.167,-30},
+                {14.167,-30},{24.167,-30},{24.167,-40},{-5.833,-50},{-15.833,
+                -30},{4.167,20},{12.167,65}},
+            smooth=Smooth.Bezier,
+            lineColor={0,0,0}), Polygon(
+            origin={2.7403,1.6673},
+            fillColor={128,128,128},
+            pattern=LinePattern.None,
+            fillPattern=FillPattern.Solid,
+            points={{49.2597,22.3327},{31.2597,24.3327},{7.2597,18.3327},{-26.7403,
+              10.3327},{-46.7403,14.3327},{-48.7403,6.3327},{-32.7403,0.3327},{-6.7403,
+              4.3327},{33.2597,14.3327},{49.2597,14.3327},{49.2597,22.3327}},
+            smooth=Smooth.Bezier)}));
+  end TypesPackage;
 end Icons;

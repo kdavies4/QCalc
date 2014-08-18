@@ -95,6 +95,5 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
     http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
   Icon(graphics),
   version="",
-  versionDate="",
-  uses(Modelica(version="3.2")));
+  versionDate="");
 end QCalc;

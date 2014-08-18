@@ -729,11 +729,11 @@ recognized by Dymola.</p>
       // Other non-SI units [BIPM2006, Table 8]
       final constant Q.Acceleration g_0=U.g_0 "standard gravity";
       final constant Q.Length cm=U.cm "centimetre";
-      final constant Q.Volume cc=U.cc "cubic centimeter";
+      final constant Q.Volume cc=U.cc "cubic centimetre";
       final constant Q.PressureLineic Hg=U.Hg
         "force per volume of mercury under standard gravity";
       final constant Q.Length mm=U.mm "millimetre";
-      final constant Q.Pressure mmHg=mm*Hg "millimeter of mercury";
+      final constant Q.Pressure mmHg=mm*Hg "millimetre of mercury";
       final constant Q.Pressure kPa=U.kPa "kilopascal";
       final constant Q.Pressure bar=U.bar "bar";
       final constant Q.Area b=U.b "barn";
@@ -1367,7 +1367,7 @@ encompass other systems of units.</p>
     "<html><a href=\"https://en.wikipedia.org/wiki/Millimetre\">millimetre</a></html>";
   // Not in Table 8 but useful for the definition below
   final constant Q.Pressure mmHg=mm*Hg
-    "<html><a href=\"http://en.wikipedia.org/wiki/Millimeter_of_mercury\">millimeter of mercury</a></html>";
+    "<html><a href=\"http://en.wikipedia.org/wiki/Millimeter_of_mercury\">millimetre of mercury</a></html>";
   final constant Q.Pressure kPa=Prefixes.k*Pa "kilopascal";
   // Not defined in [BIPM2006] but useful here
   final constant Q.Pressure bar=100*kPa
@@ -1748,7 +1748,7 @@ the name of the physical quantity.  For example, the
 <code>unit</code> of \"m/s\" and a <code>quantity</code> of \"Velocity\".  
 If an instance of <a href=\"modelica://Modelica.SIunits.Velocity\">Velocity</a> 
 has a <code>value</code> of one (<i>v</i> = 1), then it is 
-meant that \"the value of velocity is one meter per second.\"  Again, the 
+meant that \"the value of velocity is one metre per second.\"  Again, the 
 <code>value</code> attribute represents the number, or the value of the 
 quantity divided by the unit, not the value of the quantity itself.</p>
 
@@ -1762,7 +1762,7 @@ context of the statement by <a href=\"http://www.bipm.org/\">BIPM</a> (above). O
 conversion is built in.  The essence of unit conversion is that the 
 phrase \"value of quantity in unit\" typically means \"value of 
 quantity divided by unit.\"  Continuing with the previous example, 
-<i>v</i> is divided by m/s in order to display <i>v</i> in meters per 
+<i>v</i> is divided by m/s in order to display <i>v</i> in metres per 
 second (as a number).  If another unit of length like the foot is 
 established by the appropriate relation (ft &asymp; 0.3048&nbsp;m) and 
 <i>v</i> is divided by ft/s, the result is velocity in feet per second 
@@ -2173,9 +2173,9 @@ Rather, angle in radians is the ratio of arclength to radius
 (&theta;)   is dimensionless, only that angle and radian (rad) have the 
 same dimension.   In <a href=\"modelica://QCalc\">QCalc</a>, that 
 dimension is called angle.   The common (and correct) understanding is 
-that the radian (rad) is a unit of angle,   just as the meter (m) is a 
+that the radian (rad) is a unit of angle,   just as the metre (m) is a 
 unit of length.  The dimensionality of the radian  is angle, just as 
-the dimensionality of the meter is length.<a href=\"#ref2\" title=\"Jump 
+the dimensionality of the metre is length.<a href=\"#ref2\" title=\"Jump 
 back to footnote 2 in the text.\">&#8629;</a></small></p>
 
 <p id=\"fn3\"><small>3. The spat (sp) is the solid angle of one sphere, just 

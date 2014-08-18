@@ -2,7 +2,7 @@ within QCalc;
 package Quantities "Types to represent physical values"
 
   import QCalc.Quantities.Interfaces.Quantity;
-  extends Icons.Package;
+  extends Icons.TypesPackage;
 
   // Generated from QCalc/Resources/quantities.xls, 2014-8-14
   type Acceleration = Quantity (final unit="L/T2");
