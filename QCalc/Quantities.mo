@@ -130,25 +130,6 @@ This icon is designed for a <b>Real</b> type that is used as a physical quantity
     end Quantity;
   end Interfaces;
   annotation (Documentation(info="<html>  
-  **: note that the dimensions are written such that k_F = 1 and R = 1. => charge is a number and temperature is a potential
-  
-    <p>Although the <a href=\"http://en.wikipedia.org/wiki/Faraday_constant\">Faraday constant</a> 
-  (<i>k</i><sub>F</sub> or 96485.3399&nbsp;C/mol) and the 
-  <a href=\"http://en.wikipedia.org/wiki/Gas_constant\">gas constant</a> 
-  (<i>R</i> or 8.314472&nbsp;J/(mol&nbsp;K)) are among the independent constants, 
-  the dimensions are written as if they are normalized to one. 
-  The normalization of the <a href=\"http://en.wikipedia.org/wiki/Faraday_constant\">Faraday constant</a> implies that 
-the <a href=\"http://en.wikipedia.org/wiki/Coulomb\">coulomb</a> (C) is an amount which is 
-proportional to the <a href=\"http://en.wikipedia.org/wiki/Mole_(unit)\">mole</a> (mol). 
-
-The additional normalization of 
-the <a href=\"http://en.wikipedia.org/wiki/Gas_constant\">gas constant</a>
-(R or 8.314472&nbsp;J/(mol&nbsp;K)) implies that thermodynamic temperature is a potential
-
-the <a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a> (K) is a potential which is proportional to the 
-<a href=\"http://en.wikipedia.org/wiki/Volt\">volt</a> (V or 
-J/C).</p>
-
   <p>This package contains quantities (<code>Real</code> types)
   that are instantiated
   to represent physical values (<code>Real</code> variables).  The
@@ -159,8 +140,11 @@ J/C).</p>
   are combined according to the rules established for unit strings
   [<a href=\"modelica://QCalc.UsersGuide.References.Modelica2010\">Modelica2010</a>, p.&nbsp;210].  
   The abbreviations (A, L, M, N, T) are applied in alphabetical order in each numerator and denominator.  
-  Temperature and charge are derived dimensions
-  (see the <a href=\"modelica://QCalc.Units\">Units</a> package).
+  Temperature and charge are considered derived dimensions as if the 
+  <a href=\"http://en.wikipedia.org/wiki/Faraday_constant\">Faraday constant</a> 
+  (<i>k</i><sub>F</sub> or 96485.3399&nbsp;C/mol) and the 
+  <a href=\"http://en.wikipedia.org/wiki/Gas_constant\">gas constant</a> 
+  (<i>R</i> or 8.314472&nbsp;J/(mol&nbsp;K)) are nondimensionalized.
   The <code>quantity</code> attribute of each quantity is not used since it is redundant in this context.
   The <code>displayUnit</code> attribute is
   only used for quantities that imply a certain display unit.  For example, 
@@ -170,7 +154,7 @@ display unit of K.  Some quantities have minimum values
 (e.g., <code>min=0</code> for <a href=\"modelica://QCalc.Quantities.PressureAbsolute\">PressureAbsolute</a>).</p>
 
   <p>This  package (<a href=\"modelica://QCalc.Quantities\">Quantities</a>) is abbreviated as <code>Q</code> throughout
-  the rest of <a href=\"modelica://QCalc.Units\">Units</a>.
+  the rest of <a href=\"modelica://QCalc\">QCalc</a>.
 Most quantities are named with adjectives following the noun so that related
   quantities are grouped when alphabetized.</p>
 
@@ -178,7 +162,8 @@ Most quantities are named with adjectives following the noun so that related
   have been established [<a href=\"modelica://QCalc.UsersGuide.References.Mattsson2008\">Mattsson2008</a>,
   <a href=\"modelica://QCalc.UsersGuide.References.Broman2008\">Broman2008</a>,
   <a href=\"modelica://QCalc.UsersGuide.References.Aronsson2009\">Aronsson2009</a>] and can, in theory, be applied to
-  dimension checking instead.</p>
+  dimension checking instead.  However, this does not work in Dymola as of 2014, so unit checking must be turned
+  off (<code>Advanced.CheckUnits = false</code>).</p>
 
 <p>For more information, please see the
   documentation of the <a href=\"modelica://QCalc.Units\">Units</a> package.</p>

@@ -149,9 +149,9 @@ package Units "Tests for QCalc.Units"
       // [BIPM2006, Table 7]
       test(eV/(1.60217653e-19*J), name="Table 7: eV");
       test(u/(1.66053886e-27*kg), name="Table 7: u");
-      test(au/(1.49597870691e11*J), name="Table 7: au");
+      test(au/(1.49597870691e11*m), name="Table 7: au");
       test(c/(299792458*m/s), name="Table 7: c");
-      test(h*rad/(1.05457168e-34*J), name="Table 7: h");
+      test(h*rad/(1.05457168e-34*J*s), name="Table 7: h");
       test(M_e/(9.1093826e-31*kg), name="Table 7: M_e");
       test(t_n/(1.2880886677e-21*s), name="Table 7: t_n");
       test(e/(1.60217653e-19*C), name="Table 7: e");
@@ -221,7 +221,7 @@ package Units "Tests for QCalc.Units"
 
       // Generated from QCalcTest/Resources/NIST.xls, 2014-8-14
       // Units of angle (cyc and rad) appear throughout the tests below because
-      // QCalc is explicit in angle (see Qcalc.UsersGuide).
+      // QCalc is explicit in angle (see Qcalc.Units).
       test(u/(1.660538921E-27*kg), name="atomic mass constant");
       test(u*c^2/(1.492417954E-10*J), name=
         "atomic mass constant energy equivalent");
@@ -459,6 +459,9 @@ package Units "Tests for QCalc.Units"
 
     algorithm
       print2(space + "- Other units", logFile);
+
+      test(k_A/(1e-7*N/A^2), name="k_A");
+      test(k_C/(k_A*c^2), name="k_C");
 
       // kPag
       test(101.325*kPag/(2*atm), name="kPag.num2qty");

@@ -71,12 +71,6 @@ package UsersGuide "User's Guide"
       annotation (preferredView="info", DocumentationClass=false);
     end 'massic';
 
-    class 'material' "<html>1. (<i>noun</i>) particles, atoms, or molecules (i.e., matter)<br>
-2. (<i>adj</i>) of particles, atoms, or molecules</html>"
-
-      annotation (preferredView="info", DocumentationClass=false);
-    end 'material';
-
     class 'specific'
       "<html>adjective that indicates the quotient of the following quantity and its associated <a href=\"modelica://QCalc.UsersGuide.Glossary.'chemical amount'\">chemical amount</a> [&times;&nbsp;N<sup>-1</sup>]</html>"
 
@@ -220,7 +214,7 @@ The name of the folder that contains the Modelica source files has
 the form of \"QCalc Major.Minor.Patch\" (e.g., \"QCalc 1.0.0\").
 </p>
 
-TODO:
+TODO Update:
 
 <h4><a href=\"https://github.com/kdavies4/QCalc/tree/develop\">develop</a></h4>
 
