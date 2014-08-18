@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Units.Examples</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Examples&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 9pt; font-family: Courier, monospace; white-space: pre; }
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { border: 1px solid #808080; vertical-align: top; }
+th      { border: 1px solid #808080; vertical-align: top; font-weight: bold; }
+table   { border: 1px solid #808080; border-collapse: collapse; }
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Examples<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="QCalc.Units.Examples"></a><a href="QCalc_Units.html#QCalc.Units"
+>QCalc.Units</a>.Examples</h2>
+<p>
+<b>Examples</b><br>
+</p>
+<h3>Information</h3>
+<p>Extends from <a href="QCalc_Icons_ExamplesPackage.html#QCalc.Icons.ExamplesPackage"
+>Icons.ExamplesPackage</a> (Icon for packages containing runnable examples (from MSL 3.2.1)).</p>
+<h3>Package Content</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Examples.EvaluateS.png" alt="QCalc.Units.Examples.Evaluate" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Examples.html#QCalc.Units.Examples.Evaluate"
+>Evaluate</a>
+</td>
+<td>Evaluate the values assigned to constants and units</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Evaluate<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.Examples.EvaluateI.png" alt="QCalc.Units.Examples.Evaluate" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Examples.Evaluate"></a><a href="QCalc_Units_Examples.html#QCalc.Units.Examples"
+>QCalc.Units.Examples</a>.Evaluate</h2>
+<p>
+<b>Evaluate the values assigned to constants and units</b>
+</p>
+<h3>Information</h3>
+<p>This model may be used to calculate the values of the
+  constants and units.</p>
+
+<p>For more information, please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Example"
+>Icons.Example</a> (Icon for runnable examples (from MSL 3.2.1)).</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">model</span> Evaluate <span style="color: #006400">&quot;Evaluate the values assigned to constants and units&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Example"
+>Icons.Example</a>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// Mathematical constants</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> pi=U.pi <span style="color: #006400">&quot;pi&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// SI prefixes [BIPM2006, Table 5]</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> yotta=U.yotta <span style="color: #006400">&quot;yotta (Y)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> zetta=U.zetta <span style="color: #006400">&quot;zetta (Z)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> exa=U.exa <span style="color: #006400">&quot;exa (E)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> peta=U.peta <span style="color: #006400">&quot;peta (P)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> tera=U.tera <span style="color: #006400">&quot;tera (T)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> giga=U.giga <span style="color: #006400">&quot;giga (G)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> mega=U.mega <span style="color: #006400">&quot;mega (M)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> kilo=U.kilo <span style="color: #006400">&quot;kilo (k)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> hecto=U.hecto <span style="color: #006400">&quot;hecto (h)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> deca=U.deca <span style="color: #006400">&quot;deca (da)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> deci=U.deci <span style="color: #006400">&quot;deci (d)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> centi=U.centi <span style="color: #006400">&quot;centi (c)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> milli=U.milli <span style="color: #006400">&quot;milli (m)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> micro=U.micro <span style="color: #006400">&quot;micro (u)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> nano=U.nano <span style="color: #006400">&quot;nano (n)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> pico=U.pico <span style="color: #006400">&quot;pico (p)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> femto=U.femto <span style="color: #006400">&quot;femto (f)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> atto=U.atto <span style="color: #006400">&quot;atto (a)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> zepto=U.zepto <span style="color: #006400">&quot;zepto (z)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> yocto=U.yocto <span style="color: #006400">&quot;yocto (y)&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// Independent base physical constants and units</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle"
+>Q.Angle</a> cyc=U.cyc <span style="color: #006400">&quot;cycle&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber"
+>Q.Wavenumber</a> R_inf=U.R_inf <span style="color: #006400">&quot;Rydberg constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity"
+>Q.Velocity</a> c=U.c <span style="color: #006400">&quot;speed of light in vacuum&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ConductanceElectrical"
+>Q.ConductanceElectrical</a> G_0=U.G_0 <span style="color: #006400">&quot;conductance quantum&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux"
+>Q.MagneticFlux</a> Phi_0=U.Phi_0 <span style="color: #006400">&quot;magnetic flux quantum&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> k_F=U.k_F <span style="color: #006400">&quot;Faraday constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> R=U.R <span style="color: #006400">&quot;gas constant&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// SI units that depend on transcendental and arbitrated empirical numbers</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle"
+>Q.Angle</a> rad=U.rad <span style="color: #006400">&quot;radian&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> m=U.m <span style="color: #006400">&quot;meter&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> s=U.s <span style="color: #006400">&quot;second&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux"
+>Q.MagneticFlux</a> Wb=U.Wb <span style="color: #006400">&quot;weber&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ConductanceElectrical"
+>Q.ConductanceElectrical</a> S=U.S <span style="color: #006400">&quot;siemens&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Q.Amount</a> mol=U.mol <span style="color: #006400">&quot;mole&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential"
+>Q.Potential</a> K=U.K <span style="color: #006400">&quot;kelvin&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// SI base units [BIPM2006, Table 1] and intermediate units</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency"
+>Q.Frequency</a> Hz=U.Hz <span style="color: #006400">&quot;hertz&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential"
+>Q.Potential</a> V=U.V <span style="color: #006400">&quot;volt&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current"
+>Q.Current</a> A=U.A <span style="color: #006400">&quot;ampere&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Q.Amount</a> C=U.C <span style="color: #006400">&quot;coulomb&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy"
+>Q.Energy</a> J=U.J <span style="color: #006400">&quot;joule&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2"
+>Q.Velocity2</a> Gy=U.Gy <span style="color: #006400">&quot;gray&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass"
+>Q.Mass</a> kg=U.kg <span style="color: #006400">&quot;kilogram &quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power"
+>Q.Power</a> W=U.W <span style="color: #006400">&quot;watt&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power"
+>Q.Power</a> lm=U.lm <span style="color: #006400">&quot;lumen&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2"
+>Q.Angle2</a> sr=U.sr <span style="color: #006400">&quot;steradian&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerRadiant"
+>Q.PowerRadiant</a> cd=U.cd <span style="color: #006400">&quot;candela&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// SI derived units with special names and symbols [BIPM2006, Table 3]</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force"
+>Q.Force</a> N=U.N <span style="color: #006400">&quot;newton&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure"
+>Q.Pressure</a> Pa=U.Pa <span style="color: #006400">&quot;pascal&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic"
+>Q.MagneticFluxAreic</a> T=U.T <span style="color: #006400">&quot;tesla&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreic"
+>Q.PowerAreic</a> lx=U.lx <span style="color: #006400">&quot;lux&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance"
+>Q.Capacitance</a> F=U.F <span style="color: #006400">&quot;farad&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceElectrical"
+>Q.ResistanceElectrical</a> ohm=U.ohm <span style="color: #006400">&quot;ohm (Omega)&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance"
+>Q.Inductance</a> H=U.H <span style="color: #006400">&quot;henry&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current"
+>Q.Current</a> kat=U.kat <span style="color: #006400">&quot;katal&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass"
+>Q.Mass</a> g=U.g <span style="color: #006400">&quot;gram&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// Non-SI units accepted for use with SI units [BIPM2006, Table 6]</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> min=U.min <span style="color: #006400">&quot;minute&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> hr=U.hr <span style="color: #006400">&quot;hour&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> day=U.day <span style="color: #006400">&quot;day&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle"
+>Q.Angle</a> degree=U.degree <span style="color: #006400">&quot;degree&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume"
+>Q.Volume</a> L=U.L <span style="color: #006400">&quot;liter (L or l)&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// Derived physical constants and units</span>
+  <span style="color: #006400">// Electrical -- involving conductance</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> alpha=U.alpha <span style="color: #006400">&quot;fine-structure constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceElectrical"
+>Q.ResistanceElectrical</a> Z_0=U.Z_0 <span style="color: #006400">
+    &quot;characteristic impedance of vacuum&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability"
+>Q.Permeability</a> mu_0=U.mu_0 <span style="color: #006400">&quot;magnetic constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity"
+>Q.Permittivity</a> epsilon_0=U.epsilon_0 <span style="color: #006400">&quot;electric constant&quot;</span>;
+  <span style="color: #006400">// Electromagnetism -- involving conductance and magnetic flux</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Q.Amount</a> q=U.e <span style="color: #006400">&quot;elementary charge&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy"
+>Q.Energy</a> eV=U.eV <span style="color: #006400">&quot;electron volt&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational"
+>Q.MomentumRotational</a> h=U.h <span style="color: #006400">&quot;Planck constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy"
+>Q.Energy</a> E_h=U.E_h <span style="color: #006400">&quot;Hartree energy&quot;</span>;
+  <span style="color: #006400">// Chemistry</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal"
+>Q.AmountReciprocal</a> N_A=U.N_A <span style="color: #006400">&quot;Avogadro constant&quot;</span>;
+  <span style="color: #006400">// Thermal physics</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Q.Amount</a> k_B=U.k_B <span style="color: #006400">&quot;Boltzmann constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4"
+>Q.PowerAreicPerPotential4</a> sigma=U.sigma <span style="color: #006400">
+    &quot;Stefan-Boltzmann constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea"
+>Q.PowerArea</a> c_1=U.c_1 <span style="color: #006400">&quot;first radiation constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber"
+>Q.PotentialPerWavenumber</a> c_2=U.c_2 <span style="color: #006400">&quot;second radiation constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber"
+>Q.PotentialPerWavenumber</a> c_3_f=U.c_3_f <span style="color: #006400">
+    &quot;Wien frequency displacement law constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal"
+>Q.MagneticFluxReciprocal</a> c_3_lambda=U.c_3_lambda <span style="color: #006400">
+    &quot;Wien wavelength displacement law constant&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// Other selected non-SI units from [BIPM2006, Table 8]</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure"
+>Q.Pressure</a> bar=U.bar <span style="color: #006400">&quot;bar&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> angstrom=U.angstrom <span style="color: #006400">&quot;angstrom&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// Additional units that are useful for fuel cells</span>
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2"
+>Q.Angle2</a> sp=U.sp <span style="color: #006400">&quot;spat&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure"
+>Q.Pressure</a> atm=U.atm <span style="color: #006400">&quot;atmosphere&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure"
+>Q.Pressure</a> kPa=U.kPa <span style="color: #006400">&quot;kilopascal&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy"
+>Q.Energy</a> kJ=U.kJ <span style="color: #006400">&quot;kilojoule&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> ms=U.ms <span style="color: #006400">&quot;millisecond&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current"
+>Q.Current</a> mA=U.mA <span style="color: #006400">&quot;milliampere&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> cm=U.cm <span style="color: #006400">&quot;centimeter&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> mm=U.mm <span style="color: #006400">&quot;millimeter&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> um=U.um <span style="color: #006400">&quot;micrometer&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> nm=U.nm <span style="color: #006400">&quot;nanometer&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume"
+>Q.Volume</a> cc=U.cc <span style="color: #006400">&quot;cubic centimeter&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> &#39;%&#39;=U.'%' <span style="color: #006400">&quot;percent&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Density"
+>Q.Density</a> M=U.M <span style="color: #006400">&quot;molar&quot;</span>;
+<span style="color: blue">end </span>Evaluate;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Tue Aug 12 11:54:05 2014.
+</address>
+</body>
+</html>

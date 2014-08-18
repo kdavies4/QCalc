@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Tests</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Top-level package of tests&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 9pt; font-family: Courier, monospace; white-space: pre; }
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { border: 1px solid #808080; vertical-align: top; }
+th      { border: 1px solid #808080; vertical-align: top; font-weight: bold; }
+table   { border: 1px solid #808080; border-collapse: collapse; }
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Tests<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="QCalc.Tests"></a><a href="QCalc.html#QCalc"
+>QCalc</a>.Tests</h2>
+<p>
+<b>Top-level package of tests</b><br>
+</p>
+<h3>Information</h3>
+<p>Extends from <a href="QCalc_Icons_TestPackage.html#QCalc.Icons.TestPackage"
+>Icons.TestPackage</a> (Icon for a text package).</p>
+<h3>Package Content</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="QCalc.Tests.callAllS.png" alt="QCalc.Tests.callAll" width="20" height="20" align="top">&nbsp;<a href="QCalc_Tests.html#QCalc.Tests.callAll"
+>callAll</a>
+</td>
+<td>Call all of the test functions for <a href="modelica://Units">Units</a></td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE callAll<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Tests.callAllI.png" alt="QCalc.Tests.callAll" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Tests.callAll"></a><a href="QCalc_Tests.html#QCalc.Tests"
+>QCalc.Tests</a>.callAll</h2>
+<p>
+<b>Call all of the test functions for <a href="modelica://Units">Units</a></b>
+</p>
+<h3>Information</h3>
+<p>This function call will fail if any of the functions return an
+  incorrect result.  It will return <code>true</code> if all of the functions pass.
+  There are no inputs.</p>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Function"
+>Icons.Function</a> (Icon for functions (from MSL 3.2.1)).</p>
+<h3>Inputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>String</td><td>logFile</td><td>&quot;UnitsTestLog.txt&quot;</td><td>Filename where the log of all functions is stored</td></tr>
+</table>
+<h3>Outputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>Boolean</td><td>ok</td><td>true, if all tests passed</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">function</span> callAll <span style="color: #006400">
+  &quot;</pre>Call all of the test functions for <a href=\"modelica://Units\">Units</a><pre>&quot;</span>
+  <span style="color: blue">import </span><a href="file:////opt/dymola/Modelica/Library/Modelica%203.2/help/Modelica_Utilities_Files.html#Modelica.Utilities.Files"
+>Modelica.Utilities.Files</a>;
+  <span style="color: blue">import </span><a href="file:////opt/dymola/Modelica/Library/Modelica%203.2/help/Modelica_Utilities_Streams.html#Modelica.Utilities.Streams.print"
+>Modelica.Utilities.Streams.print</a>;
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Function"
+>Icons.Function</a>;
+  <span style="color: blue">input </span>String logFile=&quot;UnitsTestLog.txt&quot; <span style="color: #006400">
+    &quot;Filename where the log of all functions is stored&quot;</span>;
+  <span style="color: blue">output </span>Boolean ok <span style="color: #006400">&quot;true, if all tests passed&quot;</span>;
+<span style="color: blue">protected </span>
+  String file;
+<span style="color: blue">algorithm </span>
+  file := <span style="color: red">Files.fullPathName</span>(logFile);
+  <span style="color: red">print</span>(&quot;... callAll(...) is logged in &quot; + file);
+  <span style="color: blue">if </span>file &lt;&gt; &quot;&quot;<span style="color: blue"> then</span>
+    <span style="color: red">Files.removeFile</span>(file);
+  <span style="color: blue">end if</span>;
+  ok := <span style="color: red">Units.callAll</span>(logFile);
+<span style="color: blue">end </span>callAll;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Tue Aug 12 11:54:05 2014.
+</address>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Utilities</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;General supporting functions&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 9pt; font-family: Courier, monospace; white-space: pre; }
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { border: 1px solid #808080; vertical-align: top; }
+th      { border: 1px solid #808080; vertical-align: top; font-weight: bold; }
+table   { border: 1px solid #808080; border-collapse: collapse; }
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Utilities<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="QCalc.Utilities"></a><a href="QCalc.html#QCalc"
+>QCalc</a>.Utilities</h2>
+<p>
+<b>General supporting functions</b><br>
+</p>
+<h3>Information</h3>
+<pre>
+</pre>
+  <p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica License 2</b><br>
+Copyright &copy; 2007&ndash;2014, <a href="http://www.hnei.hawaii.edu/">Hawaii Natural Energy Institute</a> and <a href="http://www.gtrc.gatech.edu/">Georgia Tech Research Corporation</a>.</p>
+
+<p><i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>;
+it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the
+disclaimer of warranty) see <a href="QCalc_UsersGuide.html#QCalc.UsersGuide.License"
+>
+QCalc.UsersGuide.License</a> or visit <a href="http://www.modelica.org/licenses/ModelicaLicense2">
+http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
+
+<p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package"
+>Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
+<h3>Package Content</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="QCalc.Utilities.TimeS.png" alt="QCalc.Utilities.Time" width="20" height="20" align="top">&nbsp;<a href="QCalc_Utilities_Time.html#QCalc.Utilities.Time"
+>Time</a>
+</td>
+<td>Functions to check translation time</td>
+</tr>
+<tr>
+<td><img src="QCalc.Utilities.print2S.png" alt="QCalc.Utilities.print2" width="20" height="20" align="top">&nbsp;<a href="QCalc_Utilities.html#QCalc.Utilities.print2"
+>print2</a>
+</td>
+<td>Print a string to the standard output as well as a file</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE print2<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="QCalc.Utilities.print2"></a><a href="QCalc_Utilities.html#QCalc.Utilities"
+>QCalc.Utilities</a>.print2</h2>
+<p>
+<b>Print a string to the standard output as well as a file</b>
+</p>
+<h3>Inputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>String</td><td>string</td><td>&quot;&quot;</td><td>String to be printed</td></tr>
+<tr><td>String</td><td>fileName</td><td>&quot;&quot;</td><td>File where to print (empty string is the terminal)</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">function</span> print2 <span style="color: #006400">
+  &quot;Print a string to the standard output as well as a file&quot;</span>
+
+  <span style="color: blue">import </span><a href="file:////opt/dymola/Modelica/Library/Modelica%203.2/help/Modelica_Utilities_Streams.html#Modelica.Utilities.Streams.print"
+>Modelica.Utilities.Streams.print</a>;
+
+  <span style="color: blue">input </span>String string=&quot;&quot; <span style="color: #006400">&quot;String to be printed&quot;</span>;
+  <span style="color: blue">input </span>String fileName=&quot;&quot; <span style="color: #006400">&quot;File where to print (empty string is the terminal)&quot;</span>;
+
+<span style="color: blue">algorithm </span>
+  <span style="color: red">print</span>(string);
+  <span style="color: red">print</span>(string, fileName);
+<span style="color: blue">end </span>print2;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Tue Aug 12 11:54:05 2014.
+</address>
+</body>
+</html>

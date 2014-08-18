@@ -1,0 +1,327 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Units.Bases</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Sets of base constants and units&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 9pt; font-family: Courier, monospace; white-space: pre; }
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { border: 1px solid #808080; vertical-align: top; }
+th      { border: 1px solid #808080; vertical-align: top; font-weight: bold; }
+table   { border: 1px solid #808080; border-collapse: collapse; }
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Bases<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="QCalc.Units.Bases"></a><a href="QCalc_Units.html#QCalc.Units"
+>QCalc.Units</a>.Bases</h2>
+<p>
+<b>Sets of base constants and units</b><br>
+</p>
+<h3>Information</h3>
+
+  <p>Some systems of units
+  are not compatible with <a href="modelica://Units">Units</a>.
+  Although the structure of the <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package 
+  is general, the models in <a href="modelica://Units">Units</a>
+  require that the Faraday and gas constants are
+  normalized to one.  It follows that <i>k</i><sub>B</sub> = <i>q</i>.  
+  This is not
+  the case for the Planck, Rydberg, and Natural systems of units
+  [<a href="http://en.wikipedia.org/wiki/Natural_units">http://en.wikipedia.org/wiki/Natural_units</a>].</p>
+
+  <p>The quasi-SI
+  sets in this package are named by listing (in alphabetical order) the two units (out of A, cd, K, kg, m, mol, and s) that are
+  <i>not</i> normalized for the sake of normalizing the Faraday and gas constants. 
+  There are eight possible systems of this type (<a href="modelica://QCalc.Units.Bases.SIAK">SIAK</a>,
+  <a href="modelica://QCalc.Units.Bases.SIAm">SIAm</a>,
+  <a href="modelica://QCalc.Units.Bases.SIAs">SIAs</a>,
+  <a href="QCalc_Units_Bases.html#QCalc.Units.Bases.SIKmol"
+>SIKmol</a>,
+  <a href="modelica://QCalc.Units.Bases.SIKs">SIKs</a>,
+  <a href="modelica://QCalc.Units.Bases.SImmol">SImmol</a>,
+  <a href="modelica://QCalc.Units.Bases.SIms">SIms</a>, and
+  <a href="modelica://QCalc.Units.Bases.SImols">SImols</a>).</p>
+
+  <p>For more information, please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+<p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package"
+>Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
+<h3>Package Content</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Bases.GaussianS.png" alt="QCalc.Units.Bases.Gaussian" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Gaussian"
+>Gaussian</a>
+</td>
+<td>Base constants and units for Gaussian units (<i>k</i><sub>A</sub> = <i>k</i><sub>C</sub> = 1)</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Bases.GaussianS.png" alt="QCalc.Units.Bases.Hartree" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Hartree"
+>Hartree</a>
+</td>
+<td>Base constants and units for Hartree atomic units</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Bases.GaussianS.png" alt="QCalc.Units.Bases.LH" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases.LH"
+>LH</a>
+</td>
+<td>Base constants and units for Lorentz-Heaviside units (&mu;<sub>0</sub> = &epsilon;<sub>0</sub> = 1)</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Bases.GaussianS.png" alt="QCalc.Units.Bases.Stoney" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Stoney"
+>Stoney</a>
+</td>
+<td>Base constants and units for Stoney units</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Bases.GaussianS.png" alt="QCalc.Units.Bases.SIKmol" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases.SIKmol"
+>SIKmol</a>
+</td>
+<td>Base constants and units for SI with <i>k</i><sub>F</sub> and <i>R</i> normalized instead of K and mol</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.Bases.GaussianS.png" alt="QCalc.Units.Bases.Base" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base"
+>Base</a>
+</td>
+<td>Base constants and units</td>
+</tr>
+</table>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Gaussian<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.Bases.GaussianI.png" alt="QCalc.Units.Bases.Gaussian" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Bases.Gaussian"></a><a href="QCalc_Units_Bases.html#QCalc.Units.Bases"
+>QCalc.Units.Bases</a>.Gaussian</h2>
+<p>
+<b>Base constants and units for Gaussian units (<i>k</i><sub>A</sub> = <i>k</i><sub>C</sub> = 1)</b>
+</p>
+<h3>Information</h3>
+<p>Gaussian systems of units impose that:</p>
+  <ol>
+  <li>the magnetic force constant is one (<i>k</i><sub>A</sub> = 1) (&rArr; <i>R</i><sub>K</sub>/<i>c</i> = 2&pi;/&alpha;) and</li>
+  <li>the electric force constant is one (<i>k</i><sub>C</sub> = 1) (&rArr; <i>R</i><sub>K</sub> <i>c</i> = 2&pi;/&alpha;).</li>
+  </ol>
+  <p>This implies that <i>c</i> = 1 and <i>R</i><sub>K</sub> = 2&pi;/&alpha;.</p>
+
+<p>The Gaussian conditions are not sufficient
+to fully establish the values of the base constants and units of the
+<a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.  Gaussian units
+encompass other systems of units.</p>
+
+<p>For more information, please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+<p>Extends from <a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base"
+>Base</a> (Base constants and units).</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">record</span> Gaussian <span style="color: #006400">
+  &quot;</pre>Base constants and units for Gaussian units (<i>k</i><sub>A</sub> = <i>k</i><sub>C</sub> = 1)<pre>&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base"
+>Base</a>(<span style="color: blue">final </span>c=1,<span style="color: blue">final </span>R_K=25812.8074434/299792458e-7);
+<span style="color: blue">end </span>Gaussian;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Hartree<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.Bases.GaussianI.png" alt="QCalc.Units.Bases.Hartree" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Bases.Hartree"></a><a href="QCalc_Units_Bases.html#QCalc.Units.Bases"
+>QCalc.Units.Bases</a>.Hartree</h2>
+<p>
+<b>Base constants and units for Hartree atomic units</b>
+</p>
+<h3>Information</h3>
+
+<p>Stoney units impose that:
+  <ol> 
+  <li>the elementary charge is one (<i>q</i> = 1),</li>
+  <li>Planck's constant is two pi (<i>h</i> = 2&pi;),</li>
+  <li>the electric force constant is one (<i>k</i><sub>C</sub> = 1), and</li>
+  <li>the mass of an electron is one (4&pi;&nbsp;&nbsp;<i>k</i><sub>A</sub>&nbsp;<i>R</i><sub>&infin;</sub>&nbsp;<i>q</i><sup>2</sup> = &alpha;<sup>3</sup>).
+  </ol></p>
+  
+<p>Please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+<p>Extends from <a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base"
+>Base</a> (Base constants and units).</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">record</span> Hartree <span style="color: #006400">&quot;Base constants and units for Hartree atomic units&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base"
+>Base</a>(
+    <span style="color: blue">final </span>R_inf=299792458e-7*pi/25812.8074434,
+    <span style="color: blue">final </span>c=1/(2*R_inf),
+    <span style="color: blue">final </span>k_J=2,
+    <span style="color: blue">final </span>R_K=1,
+    k_Aprime=2*pi*R_K/c);
+<span style="color: blue">end </span>Hartree;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE LH<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.Bases.GaussianI.png" alt="QCalc.Units.Bases.LH" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Bases.LH"></a><a href="QCalc_Units_Bases.html#QCalc.Units.Bases"
+>QCalc.Units.Bases</a>.LH</h2>
+<p>
+<b>Base constants and units for Lorentz-Heaviside units (&mu;<sub>0</sub> = &epsilon;<sub>0</sub> = 1)</b>
+</p>
+<h3>Information</h3>
+<p>Lorentz-Heaviside systems of units impose that:</p>
+  <ol>
+  <li>the magnetic constant is one (&mu;<sub>0</sub> = 1) (&rArr; <i>R</i><sub>K</sub>/<i>c</i> = 1/(2&alpha;)) and</li>
+  <li>the electric constant is one (&epsilon;<sub>0</sub> = 1) (&rArr; <i>R</i><sub>K</sub>&nbsp;<i>c</i> = 1/(2&alpha;)).</li>
+  </ol>
+  <p>This implies that <i>c</i> = 1 and <i>R</i><sub>K</sub> = 1/(2&alpha;).</p>
+
+<p>The Lorentz-Heaviside conditions are not sufficient
+to fully establish the values of the base constants and units of the
+<a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.  Lorentz-Heaviside units
+encompass other systems of units.</p>
+
+<p>For more information, please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+<p>Extends from <a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base"
+>Base</a> (Base constants and units).</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">record</span> LH <span style="color: #006400">
+  &quot;</pre>Base constants and units for Lorentz-Heaviside units (&mu;<sub>0</sub> = &epsilon;<sub>0</sub> = 1)<pre>&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base"
+>Base</a>(<span style="color: blue">final </span>c=1,<span style="color: blue">final </span>R_K=25812.8074434/(4*pi*299792458e-7));
+<span style="color: blue">end </span>LH;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Stoney<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.Bases.GaussianI.png" alt="QCalc.Units.Bases.Stoney" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Bases.Stoney"></a><a href="QCalc_Units_Bases.html#QCalc.Units.Bases"
+>QCalc.Units.Bases</a>.Stoney</h2>
+<p>
+<b>Base constants and units for Stoney units</b>
+</p>
+<h3>Information</h3>
+<p>Stoney units are 
+  <a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Gaussian"
+>Gaussian</a> units 
+  (<i>k</i><sub>A</sub> = <i>k</i><sub>C</sub> = 1) which also impose that:
+  <ol> 
+  <li>the elementary charge is one (<i>q</i> = 1) and</li>
+  <li>the gravitational constant is one (although not included in the <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package).
+  </ol></p>
+
+<p>For more information, please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+<p>Extends from <a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Gaussian"
+>Gaussian</a> (Base constants and units for Gaussian units (<i>k</i><sub>A</sub> = <i>k</i><sub>C</sub> = 1)).</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">record</span> Stoney <span style="color: #006400">&quot;Base constants and units for Stoney units&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Gaussian"
+>Gaussian</a>(<span style="color: blue">final </span>k_J=4*pi*299792458e-7/25812.8074434);
+<span style="color: blue">end </span>Stoney;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE SIKmol<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.Bases.GaussianI.png" alt="QCalc.Units.Bases.SIKmol" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Bases.SIKmol"></a><a href="QCalc_Units_Bases.html#QCalc.Units.Bases"
+>QCalc.Units.Bases</a>.SIKmol</h2>
+<p>
+<b>Base constants and units for SI with <i>k</i><sub>F</sub> and <i>R</i> normalized instead of K and mol</b>
+</p>
+<h3>Information</h3>
+<p>The values of the un-normalized SI base units are (see
+  <a href="">Resources/unit-systems.cdf</a>):</p>
+  <ul>
+  <li>K &asymp; 8.61733e-5</li>
+  <li>mol &asymp; 96485.3</li>
+  </ul>
+
+<p>For more information, please see the documentation for the
+  <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+<p>Extends from <a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base"
+>Base</a> (Base constants and units).</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">record</span> SIKmol <span style="color: #006400">
+  &quot;</pre>Base constants and units for SI with <i>k</i><sub>F</sub> and <i>R</i> normalized instead of K and mol<pre>&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base"
+>Base</a>(
+    <span style="color: blue">final </span>R_inf=10973731.568539*2*pi,
+    <span style="color: blue">final </span>c=299792458,
+    <span style="color: blue">final </span>k_J=483597.870e9/(2*pi),
+    <span style="color: blue">final </span>R_K=25812.8074434/(2*pi));
+<span style="color: blue">end </span>SIKmol;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Base<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.Bases.GaussianI.png" alt="QCalc.Units.Bases.Base" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.Bases.Base"></a><a href="QCalc_Units_Bases.html#QCalc.Units.Bases"
+>QCalc.Units.Bases</a>.Base</h2>
+<p>
+<b>Base constants and units</b>
+</p>
+<h3>Information</h3>
+<p>Please see the notes in the Modelica code and the documentation of the
+  <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Record"
+>Icons.Record</a> (Icon for records (from MSL 3.2.1)).</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">record</span> Base <span style="color: #006400">&quot;Base constants and units&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Record"
+>Icons.Record</a>;
+
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber"
+>Q.Wavenumber</a> R_inf=1 <span style="color: #006400">
+    &quot;</pre><a href=http://en.wikipedia.org/wiki/Rydberg_constant>Rydberg constant</a> (<i>R</i><sub>&infin;</sub>)<pre>&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity"
+>Q.Velocity</a> c=1 <span style="color: #006400">
+    &quot;</pre><a href=http://en.wikipedia.org/wiki/Speed_of_light>speed of light</a><pre>&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal"
+>Q.MagneticFluxReciprocal</a> k_J=1 <span style="color: #006400">
+    &quot;</pre><a href=http://en.wikipedia.org/wiki/Josephson_constant>Josephson constant</a> (<i>k</i><sub>J</sub>)<pre>&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific"
+>Q.MagneticFluxSpecific</a> R_K=1 <span style="color: #006400">
+    &quot;</pre><a href=http://en.wikipedia.org/wiki/Von_Klitzing_constant>von Klitzing constant</a> (<i>R</i><sub>K</sub>)<pre>&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> k_F=1 <span style="color: #006400">
+    &quot;</pre><a href=http://en.wikipedia.org/wiki/Faraday_constant>Faraday constant</a> (<i>k</i><sub>F</sub>)<pre>&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> R=1 <span style="color: #006400">
+    &quot;</pre><a href=http://en.wikipedia.org/wiki/Gas_constant>gas constant</a><pre>&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific"
+>Q.LengthSpecificMassSpecific</a> k_Aprime=1 <span style="color: #006400">
+    &quot;</pre>modified Ampere constant (<i>k</i><sub>A</sub> cyc/&alpha;)<pre>&quot;</span>;
+
+<span style="color: blue">end </span>Base;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Tue Aug 12 11:54:05 2014.
+</address>
+</body>
+</html>

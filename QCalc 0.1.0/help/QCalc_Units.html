@@ -1,0 +1,1999 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Units</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Constants and units of physical measure&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 9pt; font-family: Courier, monospace; white-space: pre; }
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { border: 1px solid #808080; vertical-align: top; }
+th      { border: 1px solid #808080; vertical-align: top; font-weight: bold; }
+table   { border: 1px solid #808080; border-collapse: collapse; }
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Units<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="QCalc.Units"></a><a href="QCalc.html#QCalc"
+>QCalc</a>.Units</h2>
+<p>
+<b>Constants and units of physical measure</b><br>
+</p>
+<h3>Information</h3>
+  
+<p>The information below has been updated and adapted from 
+[<a href="modelica://QCalc.UsersGuide.Publications.Davies2012b">Davies2012b</a>].  
+That paper also offers suggestions as to how the approach might be 
+better integrated in the <a href="http://www.modelica.org">Modelica 
+language</a>.  For more information, please also see the documentation 
+of the <a href="QCalc_Quantities.html#QCalc.Quantities"
+>Quantities</a> package.</p>
+
+<p><b>Introduction:</b></p>
+
+<p>Mathematical models of physical systems use variables to represent 
+physical quantities. As stated by the Bureau International des Poids et 
+Mesures (BIPM) [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.BIPM2006"
+>BIPM2006</a>, 
+p.&nbsp;103]:</p> <blockquote> "The value of a quantity 
+is generally expressed as the product of a number and a unit.  The unit 
+is simply a particular example of the quantity concerned which is used as 
+a reference, and the number is the ratio of the value of the quantity to 
+the unit." </blockquote> <p>In general, a unit may be the product of 
+other units, whether they are base units or units derived from the base 
+units in the same manner.</p>
+
+<p>In <a href="http://www.modelica.org">Modelica</a>, a physical 
+quantity is represented by a variable which is an instance of the 
+<code>Real</code> type.  Its <code>value</code> attribute is a number 
+associated with the value of the quantity (not the value of the quantity 
+itself, as will be shown).  Usually the <code>value</code> attribute is 
+not referenced explicitly because it is automatically returned when the 
+variable itself is referenced. The <code>unit</code> attribute is a string that 
+describes the unit by which the value of the quantity has been divided to 
+arrive at the number.  The <code>displayUnit</code> attribute (also a 
+string) describes the unit by which the value of the quantity should be 
+divided to arrive at the number as it is entered by or presented to the 
+user.  The <code>Real</code> type contains other attributes as well, 
+including the <code>quantity</code> string.</p>
+
+<p>The <a href="file:////opt/dymola/Modelica/Library/Modelica%203.2/help/Modelica_SIunits.html#Modelica.SIunits"
+>SIunits</a> package of the 
+<a href="file:////opt/dymola/Modelica/Library/Modelica%203.2/help/Modelica.html#Modelica"
+>Modelica Standard Library</a> contains 
+types that extend from the <code>Real</code> type.  The type definitions 
+modify the <code>unit</code>, <code>displayUnit</code>, and 
+<code>quantity</code> attributes (among others) to represent various 
+physical quantities.  The <code>unit</code> and <code>displayUnit</code> 
+attributes are based on the International System of Units (Syst&egrave;me 
+international d'unit&eacute;s, SI). The <code>quantity</code> string is 
+the name of the physical quantity.  For example, the 
+<a href="file:////opt/dymola/Modelica/Library/Modelica%203.2/help/Modelica_SIunits.html#Modelica.SIunits.Velocity"
+>Velocity</a>  type has a 
+<code>unit</code> of "m/s" and a <code>quantity</code> of "Velocity".  
+If an instance of <a href="file:////opt/dymola/Modelica/Library/Modelica%203.2/help/Modelica_SIunits.html#Modelica.SIunits.Velocity"
+>Velocity</a> 
+has a <code>value</code> of one (<i>v</i> = 1), then it is 
+meant that "the value of velocity is one meter per second."  Again, the 
+<code>value</code> attribute represents the number, or the value of the 
+quantity divided by the unit, not the value of the quantity itself.</p>
+
+<p>This conflict is solved in <a href="modelica://Units">Units</a> 
+by establishing units as mathematical entities and writing 
+<i>v</i> = 1&nbsp;m/s (in code, <code>v = 1*U.m/U.s</code> or simply 
+<code>v = U.m/U.s</code>, where <code>U</code> is an abbreviation for this 
+package). Here, the variable <i>v</i> directly represents the quantity. 
+Its <code>value</code> attribute is truly the value of the quantity in the 
+context of the statement by BIPM (above). One advantage is that unit 
+conversion is handled naturally.  The essence of unit conversion is the 
+phrase "value of a quantity in a unit" typically means "value of a 
+quantity divided by a unit."  Continuing with the previous example, 
+<i>v</i> is divided by m/s in order to display <i>v</i> in meters per 
+second (as a number).  If another unit of length like the foot is 
+established by the appropriate relation (ft &asymp; 0.3048&nbsp;m) and 
+<i>v</i> is divided by ft/s, the result is velocity in feet per second 
+(&sim;3.2894).  Some units such as &deg;C, Pag, and dB involve offsets or 
+nonlinear transformations between the value of the quantity and the 
+number; these are described by functions besides simple division.</p>
+
+<p><b>Method:</b></p>
+
+<p>In <a href="modelica://Units">Units</a>, each unit is a constant 
+quantity. The values of the units, like other quantities, is the product 
+of a number and a unit. Therefore, units may be derived from other units 
+(e.g., cyc = 2&pi;&nbsp;rad). This recursive definition leaves several 
+units (in SI, 7) that are locally independent and must be established 
+universally.  These base units are established by the "particular example 
+of the quantity concerned which is used as a reference" quoted previously 
+[<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.BIPM2006"
+>BIPM2006</a>].  
+The choice of the base units is somewhat arbitrary [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Fritzson2004"
+>Fritzson2004</a>, 
+p.&nbsp;375], but regardless, there are a number of 
+units that must be defined by example.</p> 
+
+<p>If only SI will be used, then it is easiest to set each of the base 
+units of SI equal to one&mdash;the meter (m), kilogram (kg), second (s), 
+ampere (A), kelvin (K), mole (mol), and candela (cd).  This is implicitly 
+the case in the <a href="file:////opt/dymola/Modelica/Library/Modelica%203.2/help/Modelica_SIunits.html#Modelica.SIunits"
+>SIunits</a> 
+package, but again, it hardly captures the idea that the value of a 
+quantity is the product of a number and a unit.</p>
+
+<p>Instead, in <a href="modelica://Units">Units</a>, the base units are 
+established by universal physical constants (except the unit cycle, which 
+is physically arbitrary). The "particular example of the quantity" 
+[<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.BIPM2006"
+>BIPM2006</a>] is 
+an experiment that yields precise and universally repeatable results in 
+determining a constant rather than a prototype (e.g., the International 
+Prototype of the Kilogram) which is carefully controlled and distributed 
+via replicas. This method of defining the base units from measured 
+physical quantities (rather than vice versa) is natural and reflects the 
+way that standards organizations (e.g., <a href="http://www.nist.gov/">NIST</a>) 
+define units. A system of units is considered to be natural if 
+all of its base units are established by universal physical constants. 
+Often, those universal constants are defined to be equal to one, but the 
+values can be chosen to scale the numerical values of variables during 
+simulation.</p>
+
+<p>There are physical systems where typical quantities are many orders of 
+magnitude larger or smaller than the related product of powers of base SI 
+units (e.g., the domains of astrophysics and atomic physics).  In modeling 
+and simulating those systems, it may be advantageous to choose 
+appropriately small or large values (respectively) for the corresponding 
+base units so that the product of the number (large or small in magnitude) 
+and the unit (small or large, respectively) is well-scaled.  Products of 
+this type are often involved in initial conditions or parameter 
+expressions, which are not time-varying.  Therefore, the number and the 
+unit can be multiplied before the dynamic simulation.  During the 
+simulation, only the value is important.  After the simulation, the 
+trajectory of the value may be divided by the unit for display.  This 
+scaling is usually unnecessary due to the wide range and appropriate 
+distribution of the real numbers that are representable in floating 
+point.  The Modelica language specification recommends that floating point 
+numbers be represented in at least IEEE double precision, which covers 
+magnitudes from &sim;2.225&times;10<sup>-308</sup> to 
+&sim;1.798&times;10<sup>308</sup> [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Modelica2010"
+>Modelica2010</a>,
+ p.&nbsp;13]. However, in some cases it may be preferable to scale the 
+units and use lower precision for the sake of computational performance.  
+There are fields of research where, even today, simulations are sometimes 
+performed in single precision [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Brown2011"
+>Brown2011</a>, 
+<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Hess2008"
+>Hess2008</a>] and 
+where scaling is a concern [<a href="modelica://QCalc.UsersGuide.References.Rapaport2004">Rapaport2004</a>, 
+p.&nbsp;29].</p> 
+
+<p>The method is neutral with regards to not only the values of the base 
+units, but also the choice of the base units and even the number of base 
+units.  This is an advantage because many systems of units besides SI are 
+used in science and engineering. As mentioned previously, the choice of 
+base units is somewhat arbitrary, and different systems of units are based 
+on different choices.  Some systems of units have fewer base units (lower 
+rank) than SI, since additional constraints are added that exchange base 
+units for derived units.  For example, the Planck, Stoney, Hartree, and 
+Rydberg systems of units define the Boltzmann constant to be equal to one 
+(<i>k</i><sub>B</sub> = 1) 
+[<a href="http://en.wikipedia.org/wiki/Natural_units">http://en.wikipedia.org/wiki/Natural_units</a>]. 
+The unit K is eliminated 
+[<a href="modelica://QCalc.UsersGuide.References.Greiner1995">Greiner1995</a>, 
+p.&nbsp;386] or, more precisely, considered a derived 
+unit instead of a base unit.  In SI, the kelvin would be derived from the 
+units kilogram, meter, and second (K &asymp; 
+1.381&times;10<sup>-23</sup>&nbsp;kg&nbsp;m<sup>2</sup>/s<sup>2</sup>).</p> 
+
+<p>There are seven independent units and constants in the 
+<a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package (cyc, 
+<i>R</i><sub>&infin;</sub>, <i>c</i>, <i>G</i><sub>0</sub>, &Phi;<sub>0</sub>,  
+<i>k</i><sub>F</sub>, and <i>R</i>; see 
+<a href="QCalc_Units_Bases.html#QCalc.Units.Bases"
+>Units.Bases</a>), which are related 
+to the seven SI base units (m, kg, s, A, K, mol, and cd). The primary 
+relations are between 
+<i>R</i><sub>&infin;</sub> and m,
+<i>c</i> and s,
+<i>G</i><sub>0</sub> and A, 
+&Phi;<sub>0</sub> and V,
+<i>k</i><sub>F</sub> and mol, and
+<i>R</i> and K.
+The cycle (cyc) is defined independently, but the candela (cd) is considered a 
+derived unit (1/683&nbsp;W/sr).</p>
+  
+<p>Although the Faraday constant (<i>k</i><sub>F</sub> or 
+96485.3399&nbsp;C/mol) and the gas constant (<i>R</i> or 
+8.314472&nbsp;J/(mol&nbsp;K)) are among the independent constants, 
+they are normalized to one in order to simplify the model equations 
+and allow electrons and chemical species to be to represented by the 
+same base <a href="modelica://Units.Species.Species">Species</a> 
+model. The normalization of the Faraday constant implies that 
+the coulomb (C) is an amount (not necessarily of charge) which is 
+proportional to the mole (mol). The additional normalization of 
+the gas constant (R or 8.314472&nbsp;J/(mol&nbsp;K)) implies that 
+the kelvin (K) is a potential which is proportional to the volt (V or 
+J/C).</p>
+  
+  
+<p><b>Implementation:</b></p>
+
+<p>The units and constants are defined as variables in this 
+<a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.  Each is a 
+<code>constant</code> of the appropriate type from the 
+<a href="QCalc_Quantities.html#QCalc.Quantities"
+>Quantities</a> package. The first 
+section of this package establishes mathematical constants.  The next section 
+establishes the independent constants and units, which grouped in a 
+<code>replaceable</code> subpackage.  The third section  establishes the 
+constants and units which may be derived from the base units and constants 
+using  transcendental and accepted empirical relations.  The rest of the 
+code establishes the SI prefixes  and the remaining derived units and 
+constants.  The SI prefixes are included in their  unabbreviated form in 
+order to avoid naming conflicts.  All of the primary units of SI  are 
+included (Tables 1 and 3 of  [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.BIPM2006"
+>BIPM2006</a>]) except 
+for &deg;C, since  it involves an offset.  Other units such as the 
+atmosphere (atm) are included for convenience.  Some units that include 
+prefixes are defined as well (e.g., kg, mm, and kPa).  However,  most 
+prefixes must be given as explicit factors (e.g., 
+<code>U.kilo*U.m</code>).</p>
+ 
+<p>Besides the units and constants, this package also contains functions 
+(e.g., <a href="QCalc_Units.html#QCalc.Units.to_degC"
+>to_degC</a>) that   
+convert quantities from the unit system defined in <a href="modelica://Units">Units</a> 
+to quantities   expressed in units.  These functions are included for units 
+that involve offsets<!-- or other functions besides simple scaling-->.   For 
+conversions that require just a scaling factor, it is simpler to use the 
+units directly.  For example, to convert from potential in volts use <code>v = 
+v_V*U.V</code>,   where <code>v</code> is potential and <code>v_V</code> 
+is potential expressed in volts.</p>
+ 
+<p>This package (<a href="QCalc_Units.html#QCalc.Units"
+>Units</a>) is 
+abbreviated as <code>U</code> for convenience throughout   the rest of 
+<a href="QCalc_Units.html#QCalc.Units"
+>Units</a>.  For example, an initial 
+pressure might be defined as   <i>p</i><sub>IC</sub> = 
+<code>U.atm</code>.</p>
+
+<p>An instance of the <a href="modelica://Units.Conditions.Environment">Environment</a> 
+model is usually included at the top level of a model.  
+It records the base units and constants so that it is possible to 
+re-derive all of the other units and constants.  This is important in 
+order to properly interpret simulation results if the base units and 
+constants are later re-adjusted.</p>
+
+<p>The <a href="QCalc_Units.html#QCalc.Units.setup"
+>Units.setup</a> function 
+establishes unit conversions using the values of the units, constants, and 
+prefixes.  These unit conversions may include offsets. The function also 
+sets the default display units.  It is automatically called when 
+<a href="modelica://Units">Units</a> is loaded from the 
+<a href="">load.mos</a> script.  It can also be called 
+manually from the "Re-initialize the units" command available in the 
+Modelica development environment from the <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> 
+package or any subpackage.  A spreadsheet 
+(<a href="">Resources/quantities.xls</a>) 
+is available to help maintain the quantities, default units, and the setup 
+function.</p>
+
+<p>The values of the units, constants, and prefixes can be evaluated by 
+translating the <a href="QCalc_Units_Examples.html#QCalc.Units.Examples.Evaluate"
+>Units.Examples.Evaluate</a> 
+model.  This defines the values in the workspace of the Modelica development 
+environment. For convenience, the <a href="">load.mos</a> 
+script automatically does this and saves the result as "units.mos" in the working 
+directory.</p>
+ 
+<p>Where the <code>der</code> operator is used in models, it is explicitly 
+divided by the unit second (e.g., <code>der(x)/U.s</code>).  This is 
+necessary because the global variable <code>time</code> is in seconds 
+(i.e., <code>time</code> is a number, not a quantity).</p>
+
+<p>Although it is not necessary due to the acausal nature of 
+<a href="http://www.modelica.org">Modelica</a>, the declarations in this 
+package are sorted so that they can be easily ported to imperative or 
+causal languages (e.g.,   <a href="http://www.python.org">Python</a> 
+and C).  In fact, this has been done in the included 
+<a href="">FCRes</a> 
+module for plotting and analysis.</p>
+
+
+<p><b>Some Notes on Angle:</b></p>
+
+<p>As mentioned in the <a href="QCalc_Quantities.html#QCalc.Quantities"
+>Quantities</a> 
+package, angle is a dimension.  This is different from 
+SI, where angle is considered dimensionless (rad = 1) 
+[<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.BIPM2006"
+>BIPM2006</a>].<sup><a href="QCalc_Units.html#fn1"
+>1</a></sup>
+Units of angle such as cycle (cyc), 
+radian (rad), and degree must be explicitly included in the expression of 
+quantities.  The radian is defined as the cycle divided by two pi (rad = 
+cyc/2&pi;), which is not necessarily one because the cycle is an 
+independent base unit (as mentioned above).  Solid angle has the dimensionality of 
+squared angle; the streradian (sr) is defined as the squared radian 
+(rad<sup>2</sup>), not one. Wavenumber has a dimensionality of angle per 
+length (e.g., can be expressed in cyc/cm) and frequency has a dimensionality of angle per 
+time.  The hertz (Hz) is defined as cyc/s (not 1/s).  The weber (Wb) is 
+defined as V/Hz (not V&nbsp;s) and the henry (H) is defined as V&nbsp;s/A
+(not Wb/A).  Planck's constant (<i>h</i>) can be expressed in J/Hz or 
+J&nbsp;s/rad (not J&nbsp;s).  The magnetic constant and Amp&egrave;re's force 
+constant can be expressed in Wb/(A&nbsp;m), not H/m (see below).</p>
+
+<p>The explicit inclusion of angle has four advantanges.  The first is that it 
+avoids a conflict in the definition of SI units.  BIPM defines the hertz 
+as the reciprocal second (Hz = s<sup>-1</sup>), but states that "[t]he SI 
+unit of frequency is given as the hertz, implying the unit cycles per 
+second" [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.BIPM2006"
+>BIPM2006</a>]. 
+Due to trigonometry (cyc = 2&pi;&nbsp;rad), BIPM's 
+definition of the radian as one (rad = 1) implies that the cycle is two pi 
+(cyc = 2&pi;) and the hertz is not cycles per second but rather cycles per 
+second divided by two pi (Hz = cyc/(2&pi;&nbsp;s)).</p>
+
+<p>The second advantage is that the explicit inclusion of angle avoids the 
+need to use different variables depending on the chosen unit of angle.  If 
+a variable represents a quantity (e.g., angle) directly, then its value 
+does not depend on the chosen unit (e.g., of angle).  A single variable 
+can be used regardless of which unit the angle is ultimately expressed in. 
+For example, frequency is sometimes represented by a variable in hertz 
+(e.g., &nu;) and other times by a variable in radians per second (e.g., 
+&omega;).  If angle is explcit, one variable will suffice (<i>f</i> = 
+&nu;&nbsp;cyc/s = &omega;&nbsp;rad/s).  Likewise, there is no need for the 
+reduced Planck constant (i.e., <i>h</i> &asymp; 
+6.6260e-34&nbsp;J/Hz &asymp; 1.0545e-34&nbsp;J&nbsp;s/rad).</p>
+
+<p>The third advantage appears when the size of a circle (variable <i>S</i>) is 
+described in terms of length per angle&mdash;radius per radian (<i>r</i>/rad) 
+or, equivalently, circumference per cycle.  This simplifies the 
+representation of some common equations.  The circumference of one circle is 
+<i>S</i>&nbsp;cyc, which is preferred over 2&pi;<i>r</i>.  The surface area of 
+one sphere is <i>S</i><sup>2</sup>&nbsp;sp, where sp = 4&pi;&nbsp;sr is the 
+spat, a unit of solid angle.<sup><a href="QCalc_Units.html#fn2"
+>2</a></sup>
+
+<!--Coulomb's force law can be expressed using the electric constant (&epsilon;<sub>0</sub>) without 
+a explicit factor of 1/4&pi;:  
+<blockquote>
+ <i>F</i> = (1/&epsilon;<sub>0</sub>)&nbsp;<i>q</i><sub>1</sub><i>q</i><sub>2</sub>/(<i>S</i><sup>2</sup>&nbsp;sp)
+</blockquote>
+where <i>S</i><sup>2</sup>&nbsp;sp is the surface area of the sphere centered between and touching the charges 
+(<i>q</i><sub>1</sub> and <i>q</i><sub>2</sub>).
+Since <i>S</i> = <i>r</i>/rad, sp = 4&pi;&nbsp;sr, and sr = rad<sup>2</sup>,
+this is
+<blockquote>
+ <i>F</i> = <i>k</i><sub>C</sub>&nbsp;<i>q</i><sub>1</sub><i>q</i><sub>2</sub>/<i>r</i><sup>2</sup>
+ </blockquote>
+where <i>k</i><sub>C</sub> is the electric constant, which is 
+1/(4*&pi;&epsilon;<sub>0</sub>) as expected.
+Thus, there is no real 
+need to maintain the electric force constant as a separate variable from 
+the electric constant.-->
+
+Amp&egrave;re's force law can be expressed using the magnetic constant (&mu;<sub>0</sub>) without 
+an explicit factor of 1/2&pi;:  
+<blockquote>
+ <i>F</i> = &mu;<sub>0</sub>&nbsp;<i>I</i><sub>1</sub><i>I</i><sub>2</sub>&nbsp;<i>L</i>/<i>S</i>
+</blockquote>
+where <i>I</i><sub>1</sub> and <i>I</i><sub>2</sub> are the currents, 
+<i>L</i> is the length of each wire, and <i>F</i> is the force between the wires.  
+Since <i>S</i> = <i>r</i>/rad, rad = cyc/2&pi;, and 
+&mu;<sub>0</sub> = 4&pi;&times;10<sup>−7</sup>&nbsp;Wb/(A&nbsp;m), where 
+Wb = V/Hz = V&nbsp;s/cyc, this is
+<blockquote>
+ <i>F</i> = 2<i>k</i><sub>A</sub>&nbsp;<i>I</i><sub>1</sub><i>I</i><sub>2</sub>&nbsp;<i>L</i>/<i>r</i>
+</blockquote>
+where <i>k</i><sub>A</sub> is the magnetic force constant 
+(10<sup>−7</sup>&nbsp;N/A<sup>2</sup>) as expected.  Thus, there is no real 
+need to maintain the magnetic force constant as a separate variable from 
+the magnetic constant.  
+Based on the properties presented in
+<a href="modelica://Units.Characteristics.'e-'.Gas">Units.Characteristics.'e-'.Gas</a>,
+the magnetic force constant is the product of the specific electron mass and the 
+specific electron radius.
+The inductance of a solenoid can be expressed as 
+&mu;<i>N</i><i>A</i>/<i>L</i>&prime;, where &mu; is the permeability 
+(product of relative permeability and &mu;<sub>0</sub>, with the same
+dimensionality as &mu;<sub>0</sub>) and <i>A</i> is the projected cross-sectional 
+area of the solenoid.  The variable <i>N</i> represents the
+number of turns, which is dimensionless.<sup><a href="QCalc_Units.html#fn3"
+>3</a></sup>
+<i>L</i>&prime; is the pitch&mdash;the length of the solenoid divided by the
+wrapped angle.  Its dimensionality is length per angle.  Therefore, the angle 
+in the denominators of &mu; and <i>L</i>&prime; cancel; angle does not
+appear in the dimensionality of inductance.
+</p>
+
+
+<p>Finally, the potential confusion with energy and torque in SI 
+[<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.BIPM2006"
+>BIPM2006</a>] can
+be eliminated using explicit angles and the concept of the size of a circle.  If torque is 
+expressed as the product of force and the size of the circular path (not 
+radius), then it has the dimensionality of energy per angle, which is clearly
+distinct from energy.  The angle cancels in the expression of rotational
+power as the product of torque and rotational velocity (angle per time).</p>
+
+<hr>
+
+<p id="fn1"><small>1. The common argument that angle is 
+dimensionless ("angle is a ratio of lengths") is flawed.    It is not 
+correct to say that "angle is the ratio of arclength to radius."    
+Rather, angle in radians is the ratio of arclength to radius   
+(&theta;/rad = <i>L</i>/<i>r</i>).  It is not necessary that angle 
+(&theta;)   is dimensionless, only that angle and radian (rad) have the 
+same dimension.   In <a href="modelica://Units">Units</a>, that 
+dimension is called angle.   The common (and correct) understanding is 
+that the radian (rad) is a unit of angle,   just as the meter (m) is a 
+unit of length.  The dimensionality of the radian  is angle, just as 
+the dimensionality of the meter is length.<a href="QCalc_Units.html#ref1"
+>&#8629;</a></small></p>
+
+<p id="fn2"><small>2. The spat (sp) is the solid angle of one sphere, just 
+as the cycle (cyc) is the angle of one circle.  For mnemonic purposes, sp can be 
+considered as the abbreviation for sphere as well as spat.<a href="QCalc_Units.html#ref2"
+>&#8629;</a></small></p>
+
+<p id="fn3"><small>3. The number of turns (<i>N</i>) is the wrapped angle 
+(&Theta;) expressed in cycles (i.e., turns): <i>N</i> = &Theta;/cyc.  Therefore, it
+is a dimensionless ratio.<a href="QCalc_Units.html#ref3"
+>&#8629;</a></small></p>
+
+<p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica 
+License 2</b><br> Copyright &copy; 2007&ndash;2014, <a href="
+http://www.hnei.hawaii.edu/">Hawaii Natural Energy Institute</a> and <a 
+href="http://www.gtrc.gatech.edu/">Georgia Tech Research 
+Corporation</a>.</p>
+ 
+<p><i>This Modelica package is <u>free</u> software and the use is 
+completely at <u>your own risk</u>; it can be redistributed and/or 
+modified under the terms of the Modelica License 2. For license conditions 
+(including the disclaimer of warranty) see <a href="
+modelica://QCalc.UsersGuide.License"> QCalc.UsersGuide.License</a> or 
+visit <a href="http://www.modelica.org/licenses/ModelicaLicense2"> 
+http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
+
+<p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package"
+>Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
+<h3>Package Content</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="QCalc.Units.setupS.png" alt="QCalc.Units.setup" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units.html#QCalc.Units.setup"
+>setup</a>
+</td>
+<td>Establish conversions to display quantities in units</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.ExamplesS.png" alt="QCalc.Units.Examples" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Examples.html#QCalc.Units.Examples"
+>Examples</a>
+</td>
+<td>Examples</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.BasesS.png" alt="QCalc.Units.Bases" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Bases.html#QCalc.Units.Bases"
+>Bases</a>
+</td>
+<td>Sets of base constants and units</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.from_degCS.png" alt="QCalc.Units.from_degC" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units.html#QCalc.Units.from_degC"
+>from_degC</a>
+</td>
+<td>Convert from temperature in <a href=http://en.wikipedia.org/wiki/Celsius>Celsius</a> to temperature as a quantity</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.from_degCS.png" alt="QCalc.Units.to_degC" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units.html#QCalc.Units.to_degC"
+>to_degC</a>
+</td>
+<td>Convert from temperature as a quantity to temperature in <a href=http://en.wikipedia.org/wiki/Celsius>Celsius</a><html><em>Error:Found no end-tag in HTML-documentation</em></td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.from_degCS.png" alt="QCalc.Units.from_kPag" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units.html#QCalc.Units.from_kPag"
+>from_kPag</a>
+</td>
+<td>Convert from gauge pressure in kilopascals to absolute pressure as a quantity</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.from_degCS.png" alt="QCalc.Units.to_kPag" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units.html#QCalc.Units.to_kPag"
+>to_kPag</a>
+</td>
+<td>Convert from absolute pressure as a quantity to gauge pressure in kilopascals</td>
+</tr>
+<tr>
+<td>pi=2*acos(0)</td>
+<td>pi (<i>&pi;</i>)</td>
+</tr>
+<tr>
+<td>yotta=1e24</td>
+<td>yotta (Y)</td>
+</tr>
+<tr>
+<td>zetta=1e21</td>
+<td>zetta (Z)</td>
+</tr>
+<tr>
+<td>exa=1e18</td>
+<td>exa (E)</td>
+</tr>
+<tr>
+<td>peta=1e15</td>
+<td>peta (P)</td>
+</tr>
+<tr>
+<td>tera=1e12</td>
+<td>tera (T)</td>
+</tr>
+<tr>
+<td>giga=1e9</td>
+<td>giga (G)</td>
+</tr>
+<tr>
+<td>mega=1e6</td>
+<td>mega (M)</td>
+</tr>
+<tr>
+<td>kilo=1e3</td>
+<td>kilo (k)</td>
+</tr>
+<tr>
+<td>hecto=1e2</td>
+<td>hecto (h)</td>
+</tr>
+<tr>
+<td>deca=1e1</td>
+<td>deca (da)</td>
+</tr>
+<tr>
+<td>deci=1e-1</td>
+<td>deci (d)</td>
+</tr>
+<tr>
+<td>centi=1e-2</td>
+<td>centi (c)</td>
+</tr>
+<tr>
+<td>milli=1e-3</td>
+<td>milli (m)</td>
+</tr>
+<tr>
+<td>micro=1e-6</td>
+<td>micro (u)</td>
+</tr>
+<tr>
+<td>nano=1e-9</td>
+<td>nano (n)</td>
+</tr>
+<tr>
+<td>pico=1e-12</td>
+<td>pico (p)</td>
+</tr>
+<tr>
+<td>femto=1e-15</td>
+<td>femto (f)</td>
+</tr>
+<tr>
+<td>atto=1e-18</td>
+<td>atto (a)</td>
+</tr>
+<tr>
+<td>zepto=1e-21</td>
+<td>zepto (z)</td>
+</tr>
+<tr>
+<td>yocto=1e-24</td>
+<td>yocto (y)</td>
+</tr>
+<tr>
+<td>base</td>
+<td>Scalable base constants and units</td>
+</tr>
+<tr>
+<td>R_inf=base.R_inf</td>
+<td><a href=http://en.wikipedia.org/wiki/Rydberg_constant>Rydberg constant</a> (<i>R</i><sub>&infin;</sub>)</td>
+</tr>
+<tr>
+<td>c=base.c</td>
+<td><a href=http://en.wikipedia.org/wiki/Speed_of_light>speed of light</a></td>
+</tr>
+<tr>
+<td>k_J=base.k_J</td>
+<td><a href=http://en.wikipedia.org/wiki/Josephson_constant>Josephson constant</a> (<i>k</i><sub>J</sub>)</td>
+</tr>
+<tr>
+<td>R_K=base.R_K</td>
+<td><a href=http://en.wikipedia.org/wiki/Von_Klitzing_constant>von Klitzing constant</a> (<i>R</i><sub>K</sub>)</td>
+</tr>
+<tr>
+<td>k_F=base.k_F</td>
+<td><a href=http://en.wikipedia.org/wiki/Faraday_constant>Faraday constant</a> (<i>k</i><sub>F</sub>)</td>
+</tr>
+<tr>
+<td>R=base.R</td>
+<td><a href=http://en.wikipedia.org/wiki/Gas_constant>gas constant</a></td>
+</tr>
+<tr>
+<td>k_Aprime=base.k_Aprime</td>
+<td>modified Ampere constant (<i>k</i><sub>A</sub> cyc/&alpha;)</td>
+</tr>
+<tr>
+<td>cyc=1</td>
+<td>cycle</td>
+</tr>
+<tr>
+<td>rad=cyc/(2*pi)</td>
+<td><a href=http://en.wikipedia.org/wiki/Rad_(unit)>radian</a></td>
+</tr>
+<tr>
+<td>m=10973731.568539*cyc/R_inf</td>
+<td>meter</td>
+</tr>
+<tr>
+<td>s=299792458*m/c</td>
+<td>second</td>
+</tr>
+<tr>
+<td>Wb=483597.870e9/k_J</td>
+<td>weber</td>
+</tr>
+<tr>
+<td>S=25812.8074434/R_K</td>
+<td>siemens</td>
+</tr>
+<tr>
+<td>mol=96485.3365*Wb*cyc*S/k_F</td>
+<td>mole</td>
+</tr>
+<tr>
+<td>K=8.3144621*(Wb*cyc)^2*S/(s*mol*R)</td>
+<td>kelvin</td>
+</tr>
+<tr>
+<td>Hz=cyc/s</td>
+<td>hertz</td>
+</tr>
+<tr>
+<td>V=Wb*Hz</td>
+<td>volt</td>
+</tr>
+<tr>
+<td>A=V*S</td>
+<td>ampere</td>
+</tr>
+<tr>
+<td>C=A*s</td>
+<td>coulomb</td>
+</tr>
+<tr>
+<td>J=V*C</td>
+<td>joule</td>
+</tr>
+<tr>
+<td>Gy=(m/s)^2</td>
+<td>gray</td>
+</tr>
+<tr>
+<td>kg=J/Gy</td>
+<td>kilogram</td>
+</tr>
+<tr>
+<td>W=J/s</td>
+<td>watt</td>
+</tr>
+<tr>
+<td>lm=W/683</td>
+<td>lumen</td>
+</tr>
+<tr>
+<td>sr=rad^2</td>
+<td>steradian</td>
+</tr>
+<tr>
+<td>cd=lm/sr</td>
+<td>candela</td>
+</tr>
+<tr>
+<td>N=J/m</td>
+<td>newton</td>
+</tr>
+<tr>
+<td>Pa=N/m^2</td>
+<td>pascal</td>
+</tr>
+<tr>
+<td>T=Wb/m^2</td>
+<td>tesla</td>
+</tr>
+<tr>
+<td>lx=lm/m^2</td>
+<td>lux</td>
+</tr>
+<tr>
+<td>F=s*S</td>
+<td>farad</td>
+</tr>
+<tr>
+<td>ohm=1/S</td>
+<td>ohm (&Omega;)</td>
+</tr>
+<tr>
+<td>H=s/S</td>
+<td>henry</td>
+</tr>
+<tr>
+<td>kat=mol/s</td>
+<td>katal</td>
+</tr>
+<tr>
+<td>g=kg/kilo</td>
+<td>gram</td>
+</tr>
+<tr>
+<td>min=60*s</td>
+<td>minute</td>
+</tr>
+<tr>
+<td>hr=60*min</td>
+<td>hour</td>
+</tr>
+<tr>
+<td>day=24*hr</td>
+<td>day</td>
+</tr>
+<tr>
+<td>degree=cyc/360</td>
+<td>degree (&deg;)</td>
+</tr>
+<tr>
+<td>L=(deci*m)^3</td>
+<td>liter (L or l)</td>
+</tr>
+<tr>
+<td>Phi_0=1/k_J</td>
+<td>**desc, dim</td>
+</tr>
+<tr>
+<td>G_0=2/R_K</td>
+<td>**desc, dim</td>
+</tr>
+<tr>
+<td>alpha=1e-7*pi*c*s*G_0/(m*S)</td>
+<td>fine-structure constant (&alpha;)</td>
+</tr>
+<tr>
+<td>Z_0=4*alpha/G_0</td>
+<td>characteristic impedance of vacuum (<i>Z</i><sub>0</sub>)</td>
+</tr>
+<tr>
+<td>mu_0=Z_0/(c*cyc)</td>
+<td>magnetic constant (&mu;<sub>0</sub>)</td>
+</tr>
+<tr>
+<td>epsilon_0=1/(Z_0*c)</td>
+<td>electric constant (&epsilon;<sub>0</sub>)</td>
+</tr>
+<tr>
+<td>e=G_0*Phi_0*cyc</td>
+<td>elementary charge</td>
+</tr>
+<tr>
+<td>eV=e*V</td>
+<td>electron volt</td>
+</tr>
+<tr>
+<td>h=2*e*Phi_0</td>
+<td>Planck constant</td>
+</tr>
+<tr>
+<td>E_h=2*R_inf*h*c</td>
+<td>Hartree energy (<i>E</i><sub>h</sub>)</td>
+</tr>
+<tr>
+<td>N_A=k_F/e</td>
+<td>Avogadro constant (<i>N</i><sub>A</sub>)</td>
+</tr>
+<tr>
+<td>k_B=R/N_A</td>
+<td>Boltzmann constant (<i>k</i><sub>B</sub>)</td>
+</tr>
+<tr>
+<td>sigma=2*pi^5*k_B^4/(15*(h*cyc)^3*c^2)</td>
+<td>Stefan-Boltzmann constant (&sigma;)</td>
+</tr>
+<tr>
+<td>c_1=2*pi*h*cyc*c^2</td>
+<td>first radiation constant (<i>c</i><sub>1</sub>)</td>
+</tr>
+<tr>
+<td>c_2=h*c/k_B</td>
+<td>second radiation constant (<i>c</i><sub>2</sub>)</td>
+</tr>
+<tr>
+<td>c_3_lambda=c_2/4.965114231744276</td>
+<td>Wien wavelength displacement law constant (<i>c</i><sub>3 &lambda;</sub>)</td>
+</tr>
+<tr>
+<td>c_3_f=2.821439372122079*k_B/h</td>
+<td>Wien frequency displacement law constant (<i>c</i><sub>3 <i>f</i></sub>)</td>
+</tr>
+<tr>
+<td>bar=1e5*Pa</td>
+<td>bar</td>
+</tr>
+<tr>
+<td>angstrom=0.1*nano*m</td>
+<td>angstrom (&#8491;)</td>
+</tr>
+<tr>
+<td>sp=4*pi*sr</td>
+<td>spat</td>
+</tr>
+<tr>
+<td>atm=101325*Pa</td>
+<td>atmosphere</td>
+</tr>
+<tr>
+<td>kPa=kilo*Pa</td>
+<td>kilopascal</td>
+</tr>
+<tr>
+<td>kJ=kilo*J</td>
+<td>kilojoule</td>
+</tr>
+<tr>
+<td>ms=milli*s</td>
+<td>millisecond</td>
+</tr>
+<tr>
+<td>mA=milli*A</td>
+<td>milliampere</td>
+</tr>
+<tr>
+<td>cm=centi*m</td>
+<td>centimeter</td>
+</tr>
+<tr>
+<td>mm=milli*m</td>
+<td>millimeter</td>
+</tr>
+<tr>
+<td>um=micro*m</td>
+<td>micrometer</td>
+</tr>
+<tr>
+<td>nm=nano*m</td>
+<td>nanometer</td>
+</tr>
+<tr>
+<td>cc=cm^3</td>
+<td>cubic centimeter</td>
+</tr>
+<tr>
+<td>'%'=centi</td>
+<td>percent (%)</td>
+</tr>
+<tr>
+<td>M=mol/L</td>
+<td>molar</td>
+</tr>
+<tr>
+<td><img src="QCalc.Units.TestsS.png" alt="QCalc.Units.Tests" width="20" height="20" align="top">&nbsp;<a href="QCalc_Units_Tests.html#QCalc.Units.Tests"
+>Tests</a>
+</td>
+<td>Package of tests</td>
+</tr>
+</table>
+<h3>Types and constants</h3>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> pi=2*<span style="color: red">acos</span>(0) <span style="color: #006400">&quot;</pre>pi (<i>&pi;</i>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> yotta=1e24 <span style="color: #006400">&quot;yotta (Y)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> zetta=1e21 <span style="color: #006400">&quot;zetta (Z)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> exa=1e18 <span style="color: #006400">&quot;exa (E)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> peta=1e15 <span style="color: #006400">&quot;peta (P)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> tera=1e12 <span style="color: #006400">&quot;tera (T)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> giga=1e9 <span style="color: #006400">&quot;giga (G)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> mega=1e6 <span style="color: #006400">&quot;mega (M)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> kilo=1e3 <span style="color: #006400">&quot;kilo (k)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> hecto=1e2 <span style="color: #006400">&quot;hecto (h)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> deca=1e1 <span style="color: #006400">&quot;deca (da)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> deci=1e-1 <span style="color: #006400">&quot;deci (d)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> centi=1e-2 <span style="color: #006400">&quot;centi (c)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> milli=1e-3 <span style="color: #006400">&quot;milli (m)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> micro=1e-6 <span style="color: #006400">&quot;micro (u)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> nano=1e-9 <span style="color: #006400">&quot;nano (n)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> pico=1e-12 <span style="color: #006400">&quot;pico (p)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> femto=1e-15 <span style="color: #006400">&quot;femto (f)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> atto=1e-18 <span style="color: #006400">&quot;atto (a)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> zepto=1e-21 <span style="color: #006400">&quot;zepto (z)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> yocto=1e-24 <span style="color: #006400">&quot;yocto (y)&quot;</span>;</pre>
+<pre><span style="color: blue">replaceable </span><span style="color: blue">constant </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.SIKmol"
+>Bases.SIKmol</a> base <span style="color: blue">constrainedby </span>Bases.Base <span style="color: #006400">
+  &quot;Scalable base constants and units&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber"
+>Q.Wavenumber</a> R_inf=base.R_inf <span style="color: #006400">
+  &quot;</pre><a href=http://en.wikipedia.org/wiki/Rydberg_constant>Rydberg constant</a> (<i>R</i><sub>&infin;</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity"
+>Q.Velocity</a> c=base.c <span style="color: #006400">
+  &quot;</pre><a href=http://en.wikipedia.org/wiki/Speed_of_light>speed of light</a><pre>&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal"
+>Q.MagneticFluxReciprocal</a> k_J=base.k_J <span style="color: #006400">
+  &quot;</pre><a href=http://en.wikipedia.org/wiki/Josephson_constant>Josephson constant</a> (<i>k</i><sub>J</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific"
+>Q.MagneticFluxSpecific</a> R_K=base.R_K <span style="color: #006400">
+  &quot;</pre><a href=http://en.wikipedia.org/wiki/Von_Klitzing_constant>von Klitzing constant</a> (<i>R</i><sub>K</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> k_F=base.k_F <span style="color: #006400">
+  &quot;</pre><a href=http://en.wikipedia.org/wiki/Faraday_constant>Faraday constant</a> (<i>k</i><sub>F</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> R=base.R <span style="color: #006400">
+  &quot;</pre><a href=http://en.wikipedia.org/wiki/Gas_constant>gas constant</a><pre>&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific"
+>Q.LengthSpecificMassSpecific</a> k_Aprime=base.k_Aprime <span style="color: #006400">
+  &quot;</pre>modified Ampere constant (<i>k</i><sub>A</sub> cyc/&alpha;)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle"
+>Q.Angle</a> cyc=1 <span style="color: #006400">&quot;cycle&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle"
+>Q.Angle</a> rad=cyc/(2*pi) <span style="color: #006400">
+  &quot;</pre><a href=http://en.wikipedia.org/wiki/Rad_(unit)>radian</a><pre>&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> m=10973731.568539*cyc/R_inf <span style="color: #006400">&quot;meter&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> s=299792458*m/c <span style="color: #006400">&quot;second&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux"
+>Q.MagneticFlux</a> Wb=483597.870e9/k_J <span style="color: #006400">&quot;weber&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ConductanceElectrical"
+>Q.ConductanceElectrical</a> S=25812.8074434/R_K <span style="color: #006400">&quot;siemens&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Q.Amount</a> mol=96485.3365*Wb*cyc*S/k_F <span style="color: #006400">&quot;mole&quot;</span>;</pre>
+<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential"
+>Q.Potential</a> K=8.3144621*(Wb*cyc)^2*S/(s*mol*R) <span style="color: #006400">&quot;kelvin&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency"
+>Q.Frequency</a> Hz=cyc/s <span style="color: #006400">&quot;hertz&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential"
+>Q.Potential</a> V=Wb*Hz <span style="color: #006400">&quot;volt&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current"
+>Q.Current</a> A=V*S <span style="color: #006400">&quot;ampere&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Q.Amount</a> C=A*s <span style="color: #006400">&quot;coulomb&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy"
+>Q.Energy</a> J=V*C <span style="color: #006400">&quot;joule&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2"
+>Q.Velocity2</a> Gy=(m/s)^2 <span style="color: #006400">&quot;gray&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass"
+>Q.Mass</a> kg=J/Gy <span style="color: #006400">&quot;kilogram&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power"
+>Q.Power</a> W=J/s <span style="color: #006400">&quot;watt&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power"
+>Q.Power</a> lm=W/683 <span style="color: #006400">&quot;lumen&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2"
+>Q.Angle2</a> sr=rad^2 <span style="color: #006400">&quot;steradian&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerRadiant"
+>Q.PowerRadiant</a> cd=lm/sr <span style="color: #006400">&quot;candela&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force"
+>Q.Force</a> N=J/m <span style="color: #006400">&quot;newton&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure"
+>Q.Pressure</a> Pa=N/m^2 <span style="color: #006400">&quot;pascal&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic"
+>Q.MagneticFluxAreic</a> T=Wb/m^2 <span style="color: #006400">&quot;tesla&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreic"
+>Q.PowerAreic</a> lx=lm/m^2 <span style="color: #006400">&quot;lux&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance"
+>Q.Capacitance</a> F=s*S <span style="color: #006400">&quot;farad&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceElectrical"
+>Q.ResistanceElectrical</a> ohm=1/S <span style="color: #006400">&quot;</pre>ohm (&Omega;)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance"
+>Q.Inductance</a> H=s/S <span style="color: #006400">&quot;henry&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current"
+>Q.Current</a> kat=mol/s <span style="color: #006400">&quot;katal&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass"
+>Q.Mass</a> g=kg/kilo <span style="color: #006400">&quot;gram&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> min=60*s <span style="color: #006400">&quot;minute&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> hr=60*min <span style="color: #006400">&quot;hour&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> day=24*hr <span style="color: #006400">&quot;day&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle"
+>Q.Angle</a> degree=cyc/360 <span style="color: #006400">&quot;</pre>degree (&deg;)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume"
+>Q.Volume</a> L=(deci*m)^3 <span style="color: #006400">&quot;liter (L or l)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real Phi_0=1/k_J <span style="color: #006400">&quot;**desc, dim&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real G_0=2/R_K <span style="color: #006400">&quot;**desc, dim&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> alpha=1e-7*pi*c*s*G_0/(m*S) <span style="color: #006400">
+  &quot;</pre>fine-structure constant (&alpha;)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceElectrical"
+>Q.ResistanceElectrical</a> Z_0=4*alpha/G_0 <span style="color: #006400">
+  &quot;</pre>characteristic impedance of vacuum (<i>Z</i><sub>0</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability"
+>Q.Permeability</a> mu_0=Z_0/(c*cyc) <span style="color: #006400">
+  &quot;</pre>magnetic constant (&mu;<sub>0</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity"
+>Q.Permittivity</a> epsilon_0=1/(Z_0*c) <span style="color: #006400">
+  &quot;</pre>electric constant (&epsilon;<sub>0</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Q.Amount</a> e=G_0*Phi_0*cyc <span style="color: #006400">&quot;elementary charge&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy"
+>Q.Energy</a> eV=e*V <span style="color: #006400">&quot;electron volt&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational"
+>Q.MomentumRotational</a> h=2*e*Phi_0 <span style="color: #006400">&quot;Planck constant&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy"
+>Q.Energy</a> E_h=2*R_inf*h*c <span style="color: #006400">
+  &quot;</pre>Hartree energy (<i>E</i><sub>h</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal"
+>Q.AmountReciprocal</a> N_A=k_F/e <span style="color: #006400">
+  &quot;</pre>Avogadro constant (<i>N</i><sub>A</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Q.Amount</a> k_B=R/N_A <span style="color: #006400">
+  &quot;</pre>Boltzmann constant (<i>k</i><sub>B</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4"
+>Q.PowerAreicPerPotential4</a> sigma=2*pi^5*k_B^4/(15*(h*cyc)^3*c^2) <span style="color: #006400">
+  &quot;</pre>Stefan-Boltzmann constant (&sigma;)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea"
+>Q.PowerArea</a> c_1=2*pi*h*cyc*c^2 <span style="color: #006400">
+  &quot;</pre>first radiation constant (<i>c</i><sub>1</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber"
+>Q.PotentialPerWavenumber</a> c_2=h*c/k_B <span style="color: #006400">
+  &quot;</pre>second radiation constant (<i>c</i><sub>2</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber"
+>Q.PotentialPerWavenumber</a> c_3_lambda=c_2/4.965114231744276 <span style="color: #006400">
+  &quot;</pre>Wien wavelength displacement law constant (<i>c</i><sub>3 &lambda;</sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal"
+>Q.MagneticFluxReciprocal</a> c_3_f=2.821439372122079*k_B/h <span style="color: #006400">
+  &quot;</pre>Wien frequency displacement law constant (<i>c</i><sub>3 <i>f</i></sub>)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure"
+>Q.Pressure</a> bar=1e5*Pa <span style="color: #006400">&quot;bar&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> angstrom=0.1*nano*m <span style="color: #006400">&quot;</pre>angstrom (&#8491;)<pre>&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2"
+>Q.Angle2</a> sp=4*pi*sr <span style="color: #006400">&quot;spat&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure"
+>Q.Pressure</a> atm=101325*Pa <span style="color: #006400">&quot;atmosphere&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure"
+>Q.Pressure</a> kPa=kilo*Pa <span style="color: #006400">&quot;kilopascal&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy"
+>Q.Energy</a> kJ=kilo*J <span style="color: #006400">&quot;kilojoule&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Q.Time</a> ms=milli*s <span style="color: #006400">&quot;millisecond&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current"
+>Q.Current</a> mA=milli*A <span style="color: #006400">&quot;milliampere&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> cm=centi*m <span style="color: #006400">&quot;centimeter&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> mm=milli*m <span style="color: #006400">&quot;millimeter&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> um=micro*m <span style="color: #006400">&quot;micrometer&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Q.Length</a> nm=nano*m <span style="color: #006400">&quot;nanometer&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume"
+>Q.Volume</a> cc=cm^3 <span style="color: #006400">&quot;cubic centimeter&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Q.Number</a> &#39;%&#39;=centi <span style="color: #006400">&quot;percent (%)&quot;</span>;</pre>
+<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Density"
+>Q.Density</a> M=mol/L <span style="color: #006400">&quot;molar&quot;</span>;</pre>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE setup<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.setupI.png" alt="QCalc.Units.setup" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.setup"></a><a href="QCalc_Units.html#QCalc.Units"
+>QCalc.Units</a>.setup</h2>
+<p>
+<b>Establish conversions to display quantities in units</b>
+</p>
+<h3>Information</h3>
+<p>This function has no inputs or outputs.  It is essentially a script.
+The <code>defineDefaultDisplayUnit</code> and <code>defineUnitConversion</code> functions
+used here are not defined in the Modelica language (as of version 3.3) but are
+recognized by Dymola.</p>
+
+<p>For more information, please see the documentation for the
+<a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Function"
+>Icons.Function</a> (Icon for functions (from MSL 3.2.1)).</p>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">function</span> setup <span style="color: #006400">&quot;Establish conversions to display quantities in units&quot;</span>
+  <span style="color: #006400">// import Modelica.Utilities.Streams.print;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Function"
+>Icons.Function</a>;
+
+<span style="color: blue">algorithm </span>
+  <span style="color: #006400">// print(&quot;Establishing display units...&quot;);</span>
+
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// Default display units</span>
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// If units other than those in the displayUnit attribute of the quantities</span>
+  <span style="color: #006400">// in QCalc.Quantities should be used by default, then specify them here.</span>
+  <span style="color: #006400">// Be sure that the desired unit is included in a defineUnitConversion</span>
+  <span style="color: #006400">// command below.</span>
+  <span style="color: #006400">// Generated from Units/Resources/quantities.xls, 2014-2-28</span>
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;1/mol&quot;) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A&quot;, &quot;degree&quot;) <span style="color: #006400">&quot;Angle&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A.N.T/(L2.M)&quot;, &quot;1/Wb&quot;) <span style="color: #006400">
+    &quot;Reciprocal of magnetic flux&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A/L&quot;, &quot;rad/m&quot;) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A/T&quot;, &quot;Hz&quot;) <span style="color: #006400">&quot;Frequency&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A2&quot;, &quot;sr&quot;) <span style="color: #006400">&quot;Solid angle&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L&quot;, &quot;cm&quot;) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/(N.T2)&quot;, &quot;V/m&quot;) <span style="color: #006400">&quot;Specific force&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/N2&quot;, &quot;H/m&quot;) <span style="color: #006400">&quot;Permeability&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/T2&quot;, &quot;N&quot;) <span style="color: #006400">&quot;Force&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.N/T&quot;, &quot;A.m&quot;) <span style="color: #006400">&quot;VelocityAmount&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.T/M&quot;, &quot;1/(Pa.s)&quot;) <span style="color: #006400">&quot;Fluidity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.T/N&quot;, &quot;cm/A&quot;) <span style="color: #006400">&quot;Resistivity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.T2/M&quot;, &quot;1/kPa&quot;) <span style="color: #006400">&quot;Reciprocal of pressure&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/(T.s)&quot;, &quot;cm/s2&quot;) <span style="color: #006400">
+    &quot;for derivative of velocity in Dymola&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/N&quot;, &quot;m/mol&quot;) <span style="color: #006400">&quot;Specific length&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/T&quot;, &quot;cm/s&quot;) <span style="color: #006400">&quot;Velocity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/T2&quot;, &quot;m/s2&quot;) <span style="color: #006400">&quot;Acceleration&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2&quot;, &quot;cm2&quot;) <span style="color: #006400">&quot;Area&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.N.T)&quot;, &quot;Wb&quot;) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.T)&quot;, &quot;J.s/rad&quot;) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(A2.T3)&quot;, &quot;cd&quot;) <span style="color: #006400">&quot;Radiant power&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N.T)&quot;, &quot;cm2/s&quot;) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N.T2.s)&quot;, &quot;V/s&quot;) <span style="color: #006400">
+    &quot;for derivative of potential in Dymola&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N.T2)&quot;, &quot;V&quot;) <span style="color: #006400">&quot;Potential&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N.T3)&quot;, &quot;V/s&quot;) <span style="color: #006400">&quot;Rate of potential&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N2.T)&quot;, &quot;ohm&quot;) <span style="color: #006400">&quot;Electrical resistance&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/N2&quot;, &quot;uH&quot;) <span style="color: #006400">&quot;Inductance&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/T2&quot;, &quot;J&quot;) <span style="color: #006400">&quot;Energy&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/T3&quot;, &quot;W&quot;) <span style="color: #006400">&quot;Power&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2/N&quot;, &quot;cm2/C&quot;) <span style="color: #006400">&quot;Specific area&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2/T2&quot;, &quot;J/g&quot;) <span style="color: #006400">&quot;Squared velocity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3&quot;, &quot;cc&quot;) <span style="color: #006400">&quot;Volume&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3.M/(A.N.T2)&quot;, &quot;V.m/rad&quot;) <span style="color: #006400">
+    &quot;Potential per wavenumber&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3.M/(N2.T2)&quot;, &quot;m/H&quot;) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3/(N.s)&quot;, &quot;cc/(C.s)&quot;) <span style="color: #006400">
+    &quot;for derivative of specific volume in Dymola&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3/(N.T)&quot;, &quot;cc/(C.s)&quot;) <span style="color: #006400">&quot;Rate of specific volume&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3/N&quot;, &quot;cc/C&quot;) <span style="color: #006400">&quot;Specific volume&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3/T&quot;, &quot;L/min&quot;) <span style="color: #006400">&quot;Rate of volume&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L4.M/T3&quot;, &quot;W.m2&quot;) <span style="color: #006400">&quot;Power times area&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M&quot;, &quot;g&quot;) <span style="color: #006400">&quot;Mass&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M.T5/L8&quot;, &quot;W/(m2.K4)&quot;) <span style="color: #006400">
+    &quot;Areic power per 4th power of potential&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(A.N.T)&quot;, &quot;T&quot;) <span style="color: #006400">&quot;Areic magnetic flux&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(L.N.T)&quot;, &quot;Pa/A&quot;) <span style="color: #006400">&quot;Fluid resistance&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(L.T2.s)&quot;, &quot;Pa/s&quot;) <span style="color: #006400">
+    &quot;for derivative of pressure in Dymola&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(L.T2)&quot;, &quot;kPa&quot;) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(L.T3)&quot;, &quot;Pa/s&quot;) <span style="color: #006400">&quot;Rate of pressure&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(T2.L.s)&quot;, &quot;Pa/s&quot;) <span style="color: #006400">
+    &quot;for derivative of pressure in Dymola&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/L3&quot;, &quot;g/cc&quot;) <span style="color: #006400">&quot;Volumic mass&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/N&quot;, &quot;g/mol&quot;) <span style="color: #006400">&quot;Specific mass&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/s&quot;, &quot;g/s&quot;) <span style="color: #006400">&quot;for derivative of mass in Dymola&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/T2&quot;, &quot;N/m&quot;) <span style="color: #006400">&quot;Surface tension&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/T3&quot;, &quot;W/m2&quot;) <span style="color: #006400">&quot;Areic power&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N&quot;, &quot;C&quot;) <span style="color: #006400">&quot;Amount&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N.T/M&quot;, &quot;cm2/(V.s)&quot;) <span style="color: #006400">&quot;Mobility&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/(L2.T)&quot;, &quot;A/cm2&quot;) <span style="color: #006400">&quot;Areic current&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/(T.s)&quot;, &quot;A/s&quot;) <span style="color: #006400">
+    &quot;for derivative of current in Dymola&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/L3&quot;, &quot;C/cc&quot;) <span style="color: #006400">&quot;Density&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/s&quot;, &quot;A&quot;) <span style="color: #006400">&quot;for derivative of amount in Dymola&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/T&quot;, &quot;A&quot;) <span style="color: #006400">&quot;Current&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/T2&quot;, &quot;A/s&quot;) <span style="color: #006400">&quot;Rate of current&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T/(L2.M)&quot;, &quot;S&quot;) <span style="color: #006400">&quot;Electrical conductance&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T/(L3.M)&quot;, &quot;S/m&quot;) <span style="color: #006400">&quot;Electrical conductivity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T2/(L2.M)&quot;, &quot;uF&quot;) <span style="color: #006400">&quot;Capacitance&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T2/(L3.M)&quot;, &quot;F/m&quot;) <span style="color: #006400">&quot;Permittivity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;T&quot;, &quot;s&quot;) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// Conversions to display quantities in units</span>
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;1&quot;,
+    &quot;%&quot;,
+    1/'%') <span style="color: #006400">&quot;Number&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;1&quot;,
+    &quot;J/(mol.K)&quot;,
+    mol*K/J) <span style="color: #006400">&quot;Absolute number&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;1/N&quot;,
+    &quot;1/C&quot;,
+    C) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;1/N&quot;,
+    &quot;1/mol&quot;,
+    mol) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;A&quot;,
+    &quot;degree&quot;,
+    1/degree) <span style="color: #006400">&quot;Angle&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;A&quot;,
+    &quot;rad&quot;,
+    1/rad) <span style="color: #006400">&quot;Angle&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;A.N.T/(L2.M)&quot;,
+    &quot;1/Wb&quot;,
+    Wb) <span style="color: #006400">&quot;Reciprocal of magnetic flux&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;A/L&quot;,
+    &quot;cyc/m&quot;,
+    m/cyc) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;A/L&quot;,
+    &quot;rad/m&quot;,
+    m/rad) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;A/T&quot;,
+    &quot;Hz&quot;,
+    1/Hz) <span style="color: #006400">&quot;Frequency&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;A/T&quot;,
+    &quot;rad/s&quot;,
+    s/rad) <span style="color: #006400">&quot;Frequency&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;A2&quot;,
+    &quot;sr&quot;,
+    1/sr) <span style="color: #006400">&quot;Solid angle&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;cm&quot;,
+    1/cm) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;m&quot;,
+    1/m) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;mm&quot;,
+    1/mm) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.M/(N.T2)&quot;,
+    &quot;V/m&quot;,
+    m/V) <span style="color: #006400">&quot;Specific force&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.M/N2&quot;,
+    &quot;H/m&quot;,
+    m/H) <span style="color: #006400">&quot;Permeability&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.M/T2&quot;,
+    &quot;N&quot;,
+    1/N) <span style="color: #006400">&quot;Force&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.N/T&quot;,
+    &quot;A.m&quot;,
+    1/(A*m)) <span style="color: #006400">&quot;VelocityAmount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.N/T&quot;,
+    &quot;mol.m/s&quot;,
+    s/(mol*m)) <span style="color: #006400">&quot;VelocityAmount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.T/M&quot;,
+    &quot;1/(Pa.s)&quot;,
+    Pa*s) <span style="color: #006400">&quot;Fluidity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.T/M&quot;,
+    &quot;cm.s/g&quot;,
+    g/(cm*s)) <span style="color: #006400">&quot;Fluidity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.T/N&quot;,
+    &quot;cm/A&quot;,
+    A/cm) <span style="color: #006400">&quot;Resistivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.T/N&quot;,
+    &quot;m/A&quot;,
+    A/m) <span style="color: #006400">&quot;Resistivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.T/N&quot;,
+    &quot;m.K/W&quot;,
+    W/(m*K)) <span style="color: #006400">&quot;Resistivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.T2/M&quot;,
+    &quot;1/kPa&quot;,
+    kilo*Pa) <span style="color: #006400">&quot;Reciprocal of pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L.T2/M&quot;,
+    &quot;1/Pa&quot;,
+    Pa) <span style="color: #006400">&quot;Reciprocal of pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/(T.s)&quot;,
+    &quot;cm/s2&quot;,
+    s/cm) <span style="color: #006400">&quot;for derivative of velocity in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/(T.s)&quot;,
+    &quot;m/s2&quot;,
+    s/m) <span style="color: #006400">&quot;for derivative of velocity in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/N&quot;,
+    &quot;m/C&quot;,
+    C/m) <span style="color: #006400">&quot;Specific length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/N&quot;,
+    &quot;m/mol&quot;,
+    mol/m) <span style="color: #006400">&quot;Specific length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;cm/s&quot;,
+    s/cm) <span style="color: #006400">&quot;Velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;m/s&quot;,
+    s/m) <span style="color: #006400">&quot;Velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;mm/s&quot;,
+    s/mm) <span style="color: #006400">&quot;Velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;um/s&quot;,
+    s/um) <span style="color: #006400">&quot;Velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/T2&quot;,
+    &quot;cm/s2&quot;,
+    s^2/cm) <span style="color: #006400">&quot;Acceleration&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L/T2&quot;,
+    &quot;m/s2&quot;,
+    s^2/m) <span style="color: #006400">&quot;Acceleration&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2&quot;,
+    &quot;cm2&quot;,
+    1/cm^2) <span style="color: #006400">&quot;Area&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2&quot;,
+    &quot;m2&quot;,
+    1/m^2) <span style="color: #006400">&quot;Area&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(A.N.T)&quot;,
+    &quot;Wb&quot;,
+    1/Wb) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(A.T)&quot;,
+    &quot;J.s/rad&quot;,
+    rad/(J*s)) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(A2.T3)&quot;,
+    &quot;cd&quot;,
+    1/cd) <span style="color: #006400">&quot;Radiant power&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(A2.T3)&quot;,
+    &quot;W/sr&quot;,
+    sr/W) <span style="color: #006400">&quot;Radiant power&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T)&quot;,
+    &quot;cm2/s&quot;,
+    s/cm^2) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T)&quot;,
+    &quot;m2/s&quot;,
+    s/m^2) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T)&quot;,
+    &quot;mm2/s&quot;,
+    s/mm^2) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2.s)&quot;,
+    &quot;K/s&quot;,
+    1/K) <span style="color: #006400">&quot;for derivative of potential in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2.s)&quot;,
+    &quot;V/s&quot;,
+    1/V) <span style="color: #006400">&quot;for derivative of potential in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;J/mol&quot;,
+    mol/J) <span style="color: #006400">&quot;Potential&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;K&quot;,
+    1/K) <span style="color: #006400">&quot;Absolute potential&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;kJ/mol&quot;,
+    mol/kJ) <span style="color: #006400">&quot;Potential&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;V&quot;,
+    1/V) <span style="color: #006400">&quot;Potential&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T3)&quot;,
+    &quot;K/s&quot;,
+    s/K) <span style="color: #006400">&quot;Rate of potential&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T3)&quot;,
+    &quot;V/s&quot;,
+    s/V) <span style="color: #006400">&quot;Rate of potential&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N2.T)&quot;,
+    &quot;ohm&quot;,
+    1/ohm) <span style="color: #006400">&quot;Electrical resistance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/N2&quot;,
+    &quot;H&quot;,
+    1/H) <span style="color: #006400">&quot;Inductance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/N2&quot;,
+    &quot;uH&quot;,
+    1/(micro*H)) <span style="color: #006400">&quot;Inductance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/T2&quot;,
+    &quot;J&quot;,
+    1/J) <span style="color: #006400">&quot;Energy&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/T3&quot;,
+    &quot;lm&quot;,
+    1/lm) <span style="color: #006400">&quot;Power&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/T3&quot;,
+    &quot;W&quot;,
+    1/W) <span style="color: #006400">&quot;Power&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2/N&quot;,
+    &quot;cm2/C&quot;,
+    C/cm^2) <span style="color: #006400">&quot;Specific area&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2/N&quot;,
+    &quot;cm2/mol&quot;,
+    mol/cm^2) <span style="color: #006400">&quot;Specific area&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2/N&quot;,
+    &quot;m2/C&quot;,
+    C/m^2) <span style="color: #006400">&quot;Specific area&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2/N&quot;,
+    &quot;m2/mol&quot;,
+    mol/m^2) <span style="color: #006400">&quot;Specific area&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2/T2&quot;,
+    &quot;J/g&quot;,
+    g/J) <span style="color: #006400">&quot;Squared velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3&quot;,
+    &quot;cc&quot;,
+    1/cc) <span style="color: #006400">&quot;Volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3&quot;,
+    &quot;L&quot;,
+    1/L) <span style="color: #006400">&quot;Volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3&quot;,
+    &quot;m3&quot;,
+    1/m^3) <span style="color: #006400">&quot;Volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3.M/(A.N.T2)&quot;,
+    &quot;K.m/rad&quot;,
+    rad/(K*m)) <span style="color: #006400">&quot;Potential per wavenumber&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3.M/(A.N.T2)&quot;,
+    &quot;V.m/rad&quot;,
+    rad/(V*m)) <span style="color: #006400">&quot;Potential per wavenumber&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3.M/(N2.T2)&quot;,
+    &quot;m/H&quot;,
+    H/m) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/(N.s)&quot;,
+    &quot;cc/(C.s)&quot;,
+    C*s/cc) <span style="color: #006400">&quot;for derivative of specific volume in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/(N.s)&quot;,
+    &quot;m3/(C.s)&quot;,
+    C*s/m^3) <span style="color: #006400">&quot;for derivative of specific volume in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/(N.s)&quot;,
+    &quot;m3/(mol.s)&quot;,
+    mol*s/m^3) <span style="color: #006400">&quot;for derivative of specific volume in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/(N.T)&quot;,
+    &quot;cc/(C.s)&quot;,
+    C*s/cc) <span style="color: #006400">&quot;Rate of specific volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/(N.T)&quot;,
+    &quot;m3/(C.s)&quot;,
+    C*s/m^3) <span style="color: #006400">&quot;Rate of specific volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/(N.T)&quot;,
+    &quot;m3/(mol.s)&quot;,
+    mol*s/m^3) <span style="color: #006400">&quot;Rate of specific volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/N&quot;,
+    &quot;cc/C&quot;,
+    C/cc) <span style="color: #006400">&quot;Specific volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/N&quot;,
+    &quot;m3/C&quot;,
+    C/m^3) <span style="color: #006400">&quot;Specific volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/N&quot;,
+    &quot;m3/mol&quot;,
+    mol/m^3) <span style="color: #006400">&quot;Specific volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/s&quot;,
+    &quot;cc/s&quot;,
+    1/(centi*m)^3) <span style="color: #006400">&quot;for derivative of volume in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/s&quot;,
+    &quot;L/min&quot;,
+    min/(L*s)) <span style="color: #006400">&quot;for derivative of volume in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/s&quot;,
+    &quot;m3/s&quot;,
+    1/m^3) <span style="color: #006400">&quot;for derivative of volume in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/T&quot;,
+    &quot;cc/s&quot;,
+    s/cc) <span style="color: #006400">&quot;Rate of volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/T&quot;,
+    &quot;L/min&quot;,
+    min/L) <span style="color: #006400">&quot;Rate of volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L3/T&quot;,
+    &quot;m3/s&quot;,
+    s/m^3) <span style="color: #006400">&quot;Rate of volume&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L4.M/T3&quot;,
+    &quot;W.m2&quot;,
+    1/(W*m^2)) <span style="color: #006400">&quot;Power times area&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M&quot;,
+    &quot;g&quot;,
+    1/g) <span style="color: #006400">&quot;Mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M&quot;,
+    &quot;kg&quot;,
+    1/kg) <span style="color: #006400">&quot;Mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M.T5/L8&quot;,
+    &quot;W/(m2.K4)&quot;,
+    m^2*K^4/W) <span style="color: #006400">&quot;Areic power per 4th power of potential&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(A.N.T)&quot;,
+    &quot;T&quot;,
+    1/T) <span style="color: #006400">&quot;Areic magnetic flux&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(L.N.T)&quot;,
+    &quot;Pa/A&quot;,
+    A/Pa) <span style="color: #006400">&quot;Fluid resistance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(L.T2.s)&quot;,
+    &quot;Pa/s&quot;,
+    1/Pa) <span style="color: #006400">&quot;for derivative of pressure in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;atm&quot;,
+    1/atm) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;bar&quot;,
+    1/bar) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;kPa&quot;,
+    1/(kilo*Pa)) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;Pa&quot;,
+    1/Pa) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(L.T3)&quot;,
+    &quot;Pa/s&quot;,
+    s/Pa) <span style="color: #006400">&quot;Rate of pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(T2.L.s)&quot;,
+    &quot;Pa/s&quot;,
+    1/Pa) <span style="color: #006400">&quot;for derivative of pressure in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/L3&quot;,
+    &quot;g/cc&quot;,
+    cc/g) <span style="color: #006400">&quot;Volumic mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/L3&quot;,
+    &quot;kg/m3&quot;,
+    m^3/kg) <span style="color: #006400">&quot;Volumic mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/N&quot;,
+    &quot;g/mol&quot;,
+    mol/g) <span style="color: #006400">&quot;Specific mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/N&quot;,
+    &quot;kg/mol&quot;,
+    mol/kg) <span style="color: #006400">&quot;Specific mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/N&quot;,
+    &quot;ug/C&quot;,
+    C/(micro*g)) <span style="color: #006400">&quot;Specific mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/s&quot;,
+    &quot;g/s&quot;,
+    s/g) <span style="color: #006400">&quot;for derivative of mass in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/s&quot;,
+    &quot;kg/s&quot;,
+    s/kg) <span style="color: #006400">&quot;for derivative of mass in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/T2&quot;,
+    &quot;N/m&quot;,
+    m/N) <span style="color: #006400">&quot;Surface tension&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/T3&quot;,
+    &quot;lm/m2&quot;,
+    m^2/lm) <span style="color: #006400">&quot;Areic power&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/T3&quot;,
+    &quot;W/m2&quot;,
+    m^2/W) <span style="color: #006400">&quot;Areic power&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N&quot;,
+    &quot;C&quot;,
+    1/C) <span style="color: #006400">&quot;Amount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N&quot;,
+    &quot;J/K&quot;,
+    K/J) <span style="color: #006400">&quot;Amount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N&quot;,
+    &quot;mol&quot;,
+    1/mol) <span style="color: #006400">&quot;Amount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N&quot;,
+    &quot;e&quot;,
+    1/e) <span style="color: #006400">&quot;Amount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N.T/M&quot;,
+    &quot;C.s/g&quot;,
+    g/(C*s)) <span style="color: #006400">&quot;Mobility&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N.T/M&quot;,
+    &quot;cm2/(V.s)&quot;,
+    V*s/cm^2) <span style="color: #006400">&quot;Mobility&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(L2.T)&quot;,
+    &quot;A/cm2&quot;,
+    cm^2/A) <span style="color: #006400">&quot;Areic current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(L2.T)&quot;,
+    &quot;A/cm2&quot;,
+    cm^2/A) <span style="color: #006400">&quot;Absolute areic current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(L2.T)&quot;,
+    &quot;A/m2&quot;,
+    m^2/A) <span style="color: #006400">&quot;Areic current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(L2.T)&quot;,
+    &quot;A/m2&quot;,
+    m^2/A) <span style="color: #006400">&quot;Absolute areic current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(L2.T)&quot;,
+    &quot;kat/cm2&quot;,
+    cm^2/kat) <span style="color: #006400">&quot;Areic current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(L2.T)&quot;,
+    &quot;kat/cm2&quot;,
+    cm^2/kat) <span style="color: #006400">&quot;Absolute areic current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(L2.T)&quot;,
+    &quot;kat/m2&quot;,
+    m^2/kat) <span style="color: #006400">&quot;Areic current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(L2.T)&quot;,
+    &quot;kat/m2&quot;,
+    m^2/kat) <span style="color: #006400">&quot;Absolute areic current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(T.s)&quot;,
+    &quot;A/s&quot;,
+    1/A) <span style="color: #006400">&quot;for derivative of current in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/(T.s)&quot;,
+    &quot;kat/s&quot;,
+    1/kat) <span style="color: #006400">&quot;for derivative of current in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/L3&quot;,
+    &quot;C/cc&quot;,
+    cc/C) <span style="color: #006400">&quot;Density&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/L3&quot;,
+    &quot;C/m3&quot;,
+    m^3/C) <span style="color: #006400">&quot;Density&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/L3&quot;,
+    &quot;J/(m3.K)&quot;,
+    m^3*K/J) <span style="color: #006400">&quot;Density&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/L3&quot;,
+    &quot;M&quot;,
+    1/M) <span style="color: #006400">&quot;Density&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/s&quot;,
+    &quot;A&quot;,
+    1/C) <span style="color: #006400">&quot;for derivative of amount in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/s&quot;,
+    &quot;kat&quot;,
+    1/mol) <span style="color: #006400">&quot;for derivative of amount in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/s&quot;,
+    &quot;W/K&quot;,
+    K/J) <span style="color: #006400">&quot;for derivative of amount in Dymola&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/T&quot;,
+    &quot;A&quot;,
+    1/A) <span style="color: #006400">&quot;Current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/T&quot;,
+    &quot;kat&quot;,
+    1/kat) <span style="color: #006400">&quot;Current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/T&quot;,
+    &quot;W/K&quot;,
+    K/W) <span style="color: #006400">&quot;Current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/T2&quot;,
+    &quot;A/s&quot;,
+    s/A) <span style="color: #006400">&quot;Rate of current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N/T2&quot;,
+    &quot;kat/s&quot;,
+    s/kat) <span style="color: #006400">&quot;Rate of current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N2.T/(L2.M)&quot;,
+    &quot;S&quot;,
+    1/S) <span style="color: #006400">&quot;Electrical conductance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N2.T/(L3.M)&quot;,
+    &quot;S/m&quot;,
+    m/S) <span style="color: #006400">&quot;Electrical conductivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N2.T2/(L2.M)&quot;,
+    &quot;F&quot;,
+    1/F) <span style="color: #006400">&quot;Capacitance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N2.T2/(L2.M)&quot;,
+    &quot;uF&quot;,
+    1/(micro*F)) <span style="color: #006400">&quot;Capacitance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;N2.T2/(L3.M)&quot;,
+    &quot;F/m&quot;,
+    m/F) <span style="color: #006400">&quot;Permittivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;day&quot;,
+    1/day) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;hr&quot;,
+    1/hr) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;us&quot;,
+    1/(micro*s)) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;ms&quot;,
+    1/(milli*s)) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;min&quot;,
+    1/min) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;s&quot;,
+    1/s) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: #006400">// -------- end from Units/Resources/quantities.xls</span>
+
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400">// Conversions with offsets</span>
+  <span style="color: #006400">// -------------------------------------------------------------------------</span>
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;degC&quot;,
+    1/K,
+    -273.15) <span style="color: #006400">&quot;Temperature in degC&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;degF&quot;,
+    9/(5*K),
+    32 - (9/5)*273.15) <span style="color: #006400">&quot;Temperature in degF&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;kPag&quot;,
+    1/kPa,
+    -atm/kPa) <span style="color: #006400">&quot;Pressure in kPag&quot;</span>;
+
+  <span style="color: #006400">// print(&quot;Done.&quot;);</span>
+<span style="color: blue">end </span>setup;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE from_degC<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.from_degCI.png" alt="QCalc.Units.from_degC" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.from_degC"></a><a href="QCalc_Units.html#QCalc.Units"
+>QCalc.Units</a>.from_degC</h2>
+<p>
+<b>Convert from temperature in <a href=http://en.wikipedia.org/wiki/Celsius>Celsius</a> to temperature as a quantity</b>
+</p>
+<h3>Information</h3>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Conversion"
+>Icons.Conversion</a> (Base icon for conversion functions (from MSL 3.2.1)).</p>
+<h3>Inputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>T_degC</td><td>&nbsp;</td><td>Temperature in degree Celsius</td></tr>
+</table>
+<h3>Outputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.TemperatureAbsolute"
+>TemperatureAbsolute</a></td><td>T</td><td>Thermodynamic temperature [L2.M/(N.T2)]</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">function</span> from_degC <span style="color: #006400">
+  &quot;</pre>Convert from temperature in <a href=http://en.wikipedia.org/wiki/Celsius>Celsius</a> to temperature as a quantity<pre>&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Conversion"
+>Icons.Conversion</a>;
+
+  <span style="color: blue">input </span>Real T_degC <span style="color: #006400">&quot;Temperature in degree Celsius&quot;</span>;
+  <span style="color: blue">output </span><a href="QCalc_Quantities.html#QCalc.Quantities.TemperatureAbsolute"
+>Q.TemperatureAbsolute</a> T <span style="color: #006400">&quot;Thermodynamic temperature&quot;</span>;
+
+<span style="color: blue">algorithm </span>
+  T := (T_degC + 273.15)*K;
+<span style="color: blue">end </span>from_degC;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE to_degC<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.from_degCI.png" alt="QCalc.Units.to_degC" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.to_degC"></a><a href="QCalc_Units.html#QCalc.Units"
+>QCalc.Units</a>.to_degC</h2>
+<p>
+<b>Convert from temperature as a quantity to temperature in <a href=http://en.wikipedia.org/wiki/Celsius>Celsius</a><html><em>Error:Found no end-tag in HTML-documentation</em></b>
+</p>
+<h3>Information</h3>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Conversion"
+>Icons.Conversion</a> (Base icon for conversion functions (from MSL 3.2.1)).</p>
+<h3>Inputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.TemperatureAbsolute"
+>TemperatureAbsolute</a></td><td>T</td><td>&nbsp;</td><td>Thermodynamic temperature [L2.M/(N.T2)]</td></tr>
+</table>
+<h3>Outputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>Real</td><td>T_degC</td><td>Temperature in degree Celsius</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">function</span> to_degC <span style="color: #006400">
+  &quot;</pre>Convert from temperature as a quantity to temperature in <a href=http://en.wikipedia.org/wiki/Celsius>Celsius</a><html>"<em>Error:Found no end-tag in HTML-documentation</em><pre></span>
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Conversion"
+>Icons.Conversion</a>;
+
+  <span style="color: blue">input </span><a href="QCalc_Quantities.html#QCalc.Quantities.TemperatureAbsolute"
+>Q.TemperatureAbsolute</a> T <span style="color: #006400">&quot;Thermodynamic temperature&quot;</span>;
+  <span style="color: blue">output </span>Real T_degC <span style="color: #006400">&quot;Temperature in degree Celsius&quot;</span>;
+
+<span style="color: blue">algorithm </span>
+  T_degC := T/K - 273.15;
+<span style="color: blue">end </span>to_degC;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE from_kPag<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.from_degCI.png" alt="QCalc.Units.from_kPag" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.from_kPag"></a><a href="QCalc_Units.html#QCalc.Units"
+>QCalc.Units</a>.from_kPag</h2>
+<p>
+<b>Convert from gauge pressure in kilopascals to absolute pressure as a quantity</b>
+</p>
+<h3>Information</h3>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Conversion"
+>Icons.Conversion</a> (Base icon for conversion functions (from MSL 3.2.1)).</p>
+<h3>Inputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>p_kPag</td><td>&nbsp;</td><td>Gauge pressure in kilopascals</td></tr>
+</table>
+<h3>Outputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PressureAbsolute"
+>PressureAbsolute</a></td><td>p</td><td>Absolute pressure [M/(L.T2)]</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">function</span> from_kPag <span style="color: #006400">
+  &quot;Convert from gauge pressure in kilopascals to absolute pressure as a quantity&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Conversion"
+>Icons.Conversion</a>;
+
+  <span style="color: blue">input </span>Real p_kPag <span style="color: #006400">&quot;Gauge pressure in kilopascals&quot;</span>;
+  <span style="color: blue">output </span><a href="QCalc_Quantities.html#QCalc.Quantities.PressureAbsolute"
+>Q.PressureAbsolute</a> p <span style="color: #006400">&quot;Absolute pressure&quot;</span>;
+
+<span style="color: blue">algorithm </span>
+  p := p_kPag*kPa + atm;
+<span style="color: blue">end </span>from_kPag;
+</div>
+<hr>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE to_kPag<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><img src="QCalc.Units.from_degCI.png" alt="QCalc.Units.to_kPag" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Units.to_kPag"></a><a href="QCalc_Units.html#QCalc.Units"
+>QCalc.Units</a>.to_kPag</h2>
+<p>
+<b>Convert from absolute pressure as a quantity to gauge pressure in kilopascals</b>
+</p>
+<h3>Information</h3>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Conversion"
+>Icons.Conversion</a> (Base icon for conversion functions (from MSL 3.2.1)).</p>
+<h3>Inputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PressureAbsolute"
+>PressureAbsolute</a></td><td>p</td><td>&nbsp;</td><td>Absolute pressure [M/(L.T2)]</td></tr>
+</table>
+<h3>Outputs</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>Real</td><td>p_kPag</td><td>Gauge pressure in kilopascals</td></tr>
+</table>
+<h3>Modelica definition</h3>
+<div class="modelica"><span style="color: blue">function</span> to_kPag <span style="color: #006400">
+  &quot;Convert from absolute pressure as a quantity to gauge pressure in kilopascals&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Conversion"
+>Icons.Conversion</a>;
+
+  <span style="color: blue">input </span><a href="QCalc_Quantities.html#QCalc.Quantities.PressureAbsolute"
+>Q.PressureAbsolute</a> p <span style="color: #006400">&quot;Absolute pressure&quot;</span>;
+  <span style="color: blue">output </span>Real p_kPag <span style="color: #006400">&quot;Gauge pressure in kilopascals&quot;</span>;
+
+<span style="color: blue">algorithm </span>
+  p_kPag := (p - atm)/kPa;
+<span style="color: blue">end </span>to_kPag;
+</div>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Tue Aug 12 11:54:05 2014.
+</address>
+</body>
+</html>

@@ -1,0 +1,753 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Quantities</title>
+<meta name="HTML-Generator" content="Dymola">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="&quot;Types to represent physical values&quot;">
+<style type="text/css">
+*       { font-size: 10pt; font-family: Arial, sans-serif; }
+.modelica, .modelica * { font-size: 9pt; font-family: Courier, monospace; white-space: pre; }
+h4      { font-size: 10pt; font-weight: bold; color: green; }
+h3      { font-size: 11pt; font-weight: bold; color: green; }
+h2      { font-size: 13pt; font-weight: bold; color: green; }
+address { font-weight: normal; }
+td      { border: 1px solid #808080; vertical-align: top; }
+th      { border: 1px solid #808080; vertical-align: top; font-weight: bold; }
+table   { border: 1px solid #808080; border-collapse: collapse; }
+</style>
+</head>
+<body>
+<!--[if supportFields]><span style="mso-element:field-begin"></span>
+<span style="mso-spacerun:yes"></span>XE Quantities<![endif]-->
+<!--[if supportFields]><span style="mso-element:field-end"></span><![endif]-->
+<h2><a name="QCalc.Quantities"></a><a href="QCalc.html#QCalc"
+>QCalc</a>.Quantities</h2>
+<p>
+<b>Types to represent physical values</b><br>
+</p>
+<h3>Information</h3>
+<p>This package contains quantities (<code>Real</code> types)
+  that are instantiated
+  to represent physical values (<code>Real</code> variables).  The
+<code>unit</code> attribute of each quantity is used to denote the
+  physical dimensionality in terms of fundamental dimensions:
+  angle (A), length (L), mass (M), chemical amount (N), and time (T).<sup><a href="QCalc_Quantities.html#fn1"
+>1</a></sup>  
+  The fundamental dimensions
+  are combined according to the rules established for unit strings
+  [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Modelica2010"
+>Modelica2010</a>, p.&nbsp;210].  
+  The abbreviations (A, L, M, N, T) are applied in alphabetical order in each numerator and denominator.  
+  Temperature and charge are derived dimensions
+  (see the <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package).
+  The <code>quantity</code> attribute of each quantity is not used since it is redundant in this context.
+  The <code>displayUnit</code> attribute is
+  only used for quantities that imply a certain display unit.  For example, 
+  <a href="QCalc_Quantities.html#QCalc.Quantities.Temperature"
+>Temperature</a> is an alias for
+<a href="QCalc_Quantities.html#QCalc.Quantities.Potential"
+>Potential</a> with a default
+display unit of K.  Some quantities have minimum values
+(e.g., <code>min=0</code> for <a href="QCalc_Quantities.html#QCalc.Quantities.PressureAbsolute"
+>PressureAbsolute</a>).</p>
+
+  <p>This  package (<a href="QCalc_Quantities.html#QCalc.Quantities"
+>Quantities</a>) is abbreviated as <code>Q</code> throughout
+  the rest of <a href="QCalc_Units.html#QCalc.Units"
+>Units</a>.
+Most quantities are named with adjectives following the noun so that related
+  quantities are grouped when alphabetized.</p>
+
+  <p>Methods for unit checking
+  have been established [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Mattsson2008"
+>Mattsson2008</a>,
+  <a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Broman2008"
+>Broman2008</a>,
+  <a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Aronsson2009"
+>Aronsson2009</a>] and can, in theory, be applied to
+  dimension checking instead.</p>
+
+<p>For more information, please see the
+  documentation of the <a href="QCalc_Units.html#QCalc.Units"
+>Units</a> package.</p>
+
+    <hr>
+
+    <p id="fn1"><small>1. This misnomer (unit instead of dimension) is necessary because <code>Real</code> 
+    variables do not have a <code>dimension</code>
+    attribute in Modelica.<a href="QCalc_Quantities.html#ref1"
+>&#8629;</a></small></p>
+
+  <p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica License 2</b><br>
+Copyright &copy; 2007&ndash;2014, <a href="http://www.hnei.hawaii.edu/">Hawaii Natural Energy Institute</a> and <a href="http://www.gtrc.gatech.edu/">Georgia Tech Research Corporation</a>.</p>
+
+<p><i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>;
+it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the
+disclaimer of warranty) see <a href="QCalc_UsersGuide.html#QCalc.UsersGuide.License"
+>
+QCalc.UsersGuide.License</a> or visit <a href="http://www.modelica.org/licenses/ModelicaLicense2">
+http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
+
+<p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package"
+>Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
+<h3>Package Content</h3>
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Content">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.ExamplesS.png" alt="QCalc.Quantities.Examples" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities_Examples.html#QCalc.Quantities.Examples"
+>Examples</a>
+</td>
+<td>Examples</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Acceleration" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration"
+>Acceleration</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Amount" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Amount</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.AmountReciprocal" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal"
+>AmountReciprocal</a>
+</td>
+<td>Reciprocal of amount</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Angle" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Angle"
+>Angle</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Angle2" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Angle2"
+>Angle2</a>
+</td>
+<td>Solid angle</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Area" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Area"
+>Area</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.AreaSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.AreaSpecific"
+>AreaSpecific</a>
+</td>
+<td>Specific area</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Capacitance" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance"
+>Capacitance</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ConductanceElectrical" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ConductanceElectrical"
+>ConductanceElectrical</a>
+</td>
+<td>Electrical conductance</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ConductivityElectrical" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ConductivityElectrical"
+>ConductivityElectrical</a>
+</td>
+<td>Electrical conductivity</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Current" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Current"
+>Current</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CurrentAreic" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CurrentAreic"
+>CurrentAreic</a>
+</td>
+<td>Areic current</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CurrentAreicAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CurrentAreicAbsolute"
+>CurrentAreicAbsolute</a>
+</td>
+<td>Absolute areic current</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CurrentRate" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CurrentRate"
+>CurrentRate</a>
+</td>
+<td>Rate of current</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Density" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Density"
+>Density</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Diffusivity" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Diffusivity"
+>Diffusivity</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Energy" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Energy"
+>Energy</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Fluidity" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Fluidity"
+>Fluidity</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Force" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Force"
+>Force</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ForceSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ForceSpecific"
+>ForceSpecific</a>
+</td>
+<td>Specific force</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Frequency" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Frequency"
+>Frequency</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Inductance" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Inductance"
+>Inductance</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Length" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Length"
+>Length</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.LengthSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecific"
+>LengthSpecific</a>
+</td>
+<td>Specific length</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.LengthSpecificMassSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific"
+>LengthSpecificMassSpecific</a>
+</td>
+<td>Specific length times specific mass</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.LengthSpecificPerAngle" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificPerAngle"
+>LengthSpecificPerAngle</a>
+</td>
+<td>Specific length per angle</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.MagneticFlux" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux"
+>MagneticFlux</a>
+</td>
+<td>Magnetic flux</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.MagneticFluxAreic" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic"
+>MagneticFluxAreic</a>
+</td>
+<td>Areic magnetic flux</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.MagneticFluxReciprocal" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal"
+>MagneticFluxReciprocal</a>
+</td>
+<td>Reciprocal of magnetic flux</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.MagneticFluxSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific"
+>MagneticFluxSpecific</a>
+</td>
+<td>Specific magnetic flux</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Mass" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Mass"
+>Mass</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.MassSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.MassSpecific"
+>MassSpecific</a>
+</td>
+<td>Specific mass</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.MassVolumic" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.MassVolumic"
+>MassVolumic</a>
+</td>
+<td>Volumic mass</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Mobility" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Mobility"
+>Mobility</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.MomentumRotational" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational"
+>MomentumRotational</a>
+</td>
+<td>Rotational momentum</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Number" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Number"
+>Number</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.NumberAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.NumberAbsolute"
+>NumberAbsolute</a>
+</td>
+<td>Absolute number</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Permeability" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Permeability"
+>Permeability</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Permittivity" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity"
+>Permittivity</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Potential" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Potential"
+>Potential</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PotentialAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PotentialAbsolute"
+>PotentialAbsolute</a>
+</td>
+<td>Absolute potential</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PotentialPerWavenumber" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber"
+>PotentialPerWavenumber</a>
+</td>
+<td>Potential per wavenumber</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PotentialRate" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PotentialRate"
+>PotentialRate</a>
+</td>
+<td>Rate of potential</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Power" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Power"
+>Power</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PowerArea" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea"
+>PowerArea</a>
+</td>
+<td>Power times area</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PowerAreic" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreic"
+>PowerAreic</a>
+</td>
+<td>Areic power</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PowerAreicPerPotential4" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4"
+>PowerAreicPerPotential4</a>
+</td>
+<td>Areic power per 4th power of potential</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PowerRadiant" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PowerRadiant"
+>PowerRadiant</a>
+</td>
+<td>Radiant power</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Pressure" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Pressure"
+>Pressure</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PressureAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PressureAbsolute"
+>PressureAbsolute</a>
+</td>
+<td>Absolute pressure</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PressureRate" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PressureRate"
+>PressureRate</a>
+</td>
+<td>Rate of pressure</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Compressibility" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Compressibility"
+>Compressibility</a>
+</td>
+<td>Reciprocal of pressure</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ResistanceElectrical" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceElectrical"
+>ResistanceElectrical</a>
+</td>
+<td>Electrical resistance</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ResistanceFluid" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceFluid"
+>ResistanceFluid</a>
+</td>
+<td>Fluid resistance</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Resistivity" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Resistivity"
+>Resistivity</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.SurfaceTension" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.SurfaceTension"
+>SurfaceTension</a>
+</td>
+<td>Surface tension</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Time" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Time"
+>Time</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.TimeAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.TimeAbsolute"
+>TimeAbsolute</a>
+</td>
+<td>Absolute time</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Velocity" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Velocity"
+>Velocity</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Velocity2" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2"
+>Velocity2</a>
+</td>
+<td>Squared velocity</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.VelocityAmount" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.VelocityAmount"
+>VelocityAmount</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Viscosity" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Viscosity"
+>Viscosity</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Volume" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Volume"
+>Volume</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.VolumeRate" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.VolumeRate"
+>VolumeRate</a>
+</td>
+<td>Rate of volume</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.VolumeSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.VolumeSpecific"
+>VolumeSpecific</a>
+</td>
+<td>Specific volume</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.VolumeSpecificAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.VolumeSpecificAbsolute"
+>VolumeSpecificAbsolute</a>
+</td>
+<td>Absolute specific volume</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.VolumeSpecificRate" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.VolumeSpecificRate"
+>VolumeSpecificRate</a>
+</td>
+<td>Rate of specific volume</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Wavenumber" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber"
+>Wavenumber</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CapacityThermal" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CapacityThermal"
+>CapacityThermal</a>
+</td>
+<td>Thermal capacity</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CapacityThermalSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CapacityThermalSpecific"
+>CapacityThermalSpecific</a>
+</td>
+<td>Specific thermal capacity</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CapacityThermalVolumic" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CapacityThermalVolumic"
+>CapacityThermalVolumic</a>
+</td>
+<td>Volumic thermal capacity</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PotentialChemical" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PotentialChemical"
+>PotentialChemical</a>
+</td>
+<td>Chemical potential</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Temperature" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Temperature"
+>Temperature</a>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.TemperatureAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.TemperatureAbsolute"
+>TemperatureAbsolute</a>
+</td>
+<td>Absolute temperature</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.TemperatureRate" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.TemperatureRate"
+>TemperatureRate</a>
+</td>
+<td>Rate of temperature</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ResistivityThermal" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ResistivityThermal"
+>ResistivityThermal</a>
+</td>
+<td>Thermal resistivity</td>
+</tr>
+<tr>
+<td><img src="QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Conductance" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Conductance"
+>Conductance</a>
+</td>
+<td>Conductance</td>
+</tr>
+</table>
+<h3>Types and constants</h3>
+<a name="QCalc.Quantities.Acceleration"></a><pre><span style="color: blue">type</span> Acceleration = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L/T2&quot;);</pre>
+<a name="QCalc.Quantities.Amount"></a><pre><span style="color: blue">type</span> Amount = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N&quot;, min=0);</pre>
+<a name="QCalc.Quantities.AmountReciprocal"></a><pre><span style="color: blue">type</span> AmountReciprocal = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;1/N&quot;, min=0) <span style="color: #006400">
+  &quot;Reciprocal of amount&quot;</span>;</pre>
+<a name="QCalc.Quantities.Angle"></a><pre><span style="color: blue">type</span> Angle = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;A&quot;);</pre>
+<a name="QCalc.Quantities.Angle2"></a><pre><span style="color: blue">type</span> Angle2 = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;A2&quot;) <span style="color: #006400">&quot;Solid angle&quot;</span>;</pre>
+<a name="QCalc.Quantities.Area"></a><pre><span style="color: blue">type</span> Area = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2&quot;, min=0);</pre>
+<a name="QCalc.Quantities.AreaSpecific"></a><pre><span style="color: blue">type</span> AreaSpecific = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2/N&quot;, min=0) <span style="color: #006400">&quot;Specific area&quot;</span>;</pre>
+<a name="QCalc.Quantities.Capacitance"></a><pre><span style="color: blue">type</span> Capacitance = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N2.T2/(L2.M)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.ConductanceElectrical"></a><pre><span style="color: blue">type</span> ConductanceElectrical = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N2.T/(L2.M)&quot;, min=0) <span style="color: #006400">
+  &quot;Electrical conductance&quot;</span>;</pre>
+<a name="QCalc.Quantities.ConductivityElectrical"></a><pre><span style="color: blue">type</span> ConductivityElectrical = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N2.T/(L3.M)&quot;, min=0) <span style="color: #006400">
+  &quot;Electrical conductivity&quot;</span>;</pre>
+<a name="QCalc.Quantities.Current"></a><pre><span style="color: blue">type</span> Current = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N/T&quot;);</pre>
+<a name="QCalc.Quantities.CurrentAreic"></a><pre><span style="color: blue">type</span> CurrentAreic = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N/(L2.T)&quot;) <span style="color: #006400">&quot;Areic current&quot;</span>;</pre>
+<a name="QCalc.Quantities.CurrentAreicAbsolute"></a><pre><span style="color: blue">type</span> CurrentAreicAbsolute = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N/(L2.T)&quot;, min=0) <span style="color: #006400">
+  &quot;Absolute areic current&quot;</span>;</pre>
+<a name="QCalc.Quantities.CurrentRate"></a><pre><span style="color: blue">type</span> CurrentRate = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N/T2&quot;) <span style="color: #006400">&quot;Rate of current&quot;</span>;</pre>
+<a name="QCalc.Quantities.Density"></a><pre><span style="color: blue">type</span> Density = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N/L3&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Diffusivity"></a><pre><span style="color: blue">type</span> Diffusivity = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N.T)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Energy"></a><pre><span style="color: blue">type</span> Energy = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/T2&quot;);</pre>
+<a name="QCalc.Quantities.Fluidity"></a><pre><span style="color: blue">type</span> Fluidity = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L.T/M&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Force"></a><pre><span style="color: blue">type</span> Force = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L.M/T2&quot;);</pre>
+<a name="QCalc.Quantities.ForceSpecific"></a><pre><span style="color: blue">type</span> ForceSpecific = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L.M/(N.T2)&quot;) <span style="color: #006400">&quot;Specific force&quot;</span>;</pre>
+<a name="QCalc.Quantities.Frequency"></a><pre><span style="color: blue">type</span> Frequency = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;A/T&quot;);</pre>
+<a name="QCalc.Quantities.Inductance"></a><pre><span style="color: blue">type</span> Inductance = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/N2&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Length"></a><pre><span style="color: blue">type</span> Length = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L&quot;, min=0);</pre>
+<a name="QCalc.Quantities.LengthSpecific"></a><pre><span style="color: blue">type</span> LengthSpecific = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L/N&quot;, min=0) <span style="color: #006400">&quot;Specific length&quot;</span>;</pre>
+<a name="QCalc.Quantities.LengthSpecificMassSpecific"></a><pre><span style="color: blue">type</span> LengthSpecificMassSpecific = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L.M/N2&quot;, min=0) <span style="color: #006400">
+  &quot;Specific length times specific mass&quot;</span>;</pre>
+<a name="QCalc.Quantities.LengthSpecificPerAngle"></a><pre><span style="color: blue">type</span> LengthSpecificPerAngle = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L/(A.N)&quot;, min=0) <span style="color: #006400">
+  &quot;Specific length per angle&quot;</span>;</pre>
+<a name="QCalc.Quantities.MagneticFlux"></a><pre><span style="color: blue">type</span> MagneticFlux = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.N.T)&quot;) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;</pre>
+<a name="QCalc.Quantities.MagneticFluxAreic"></a><pre><span style="color: blue">type</span> MagneticFluxAreic = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/(A.N.T)&quot;) <span style="color: #006400">
+  &quot;Areic magnetic flux&quot;</span>;</pre>
+<a name="QCalc.Quantities.MagneticFluxReciprocal"></a><pre><span style="color: blue">type</span> MagneticFluxReciprocal = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;A.N.T/(L2.M)&quot;) <span style="color: #006400">
+  &quot;Reciprocal of magnetic flux&quot;</span>;</pre>
+<a name="QCalc.Quantities.MagneticFluxSpecific"></a><pre><span style="color: blue">type</span> MagneticFluxSpecific = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.N2.T)&quot;) <span style="color: #006400">
+  &quot;Specific magnetic flux&quot;</span>;</pre>
+<a name="QCalc.Quantities.Mass"></a><pre><span style="color: blue">type</span> Mass = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M&quot;, min=0);</pre>
+<a name="QCalc.Quantities.MassSpecific"></a><pre><span style="color: blue">type</span> MassSpecific = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/N&quot;, min=0) <span style="color: #006400">&quot;Specific mass&quot;</span>;</pre>
+<a name="QCalc.Quantities.MassVolumic"></a><pre><span style="color: blue">type</span> MassVolumic = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/L3&quot;, min=0) <span style="color: #006400">&quot;Volumic mass&quot;</span>;</pre>
+<a name="QCalc.Quantities.Mobility"></a><pre><span style="color: blue">type</span> Mobility = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N.T/M&quot;, min=0);</pre>
+<a name="QCalc.Quantities.MomentumRotational"></a><pre><span style="color: blue">type</span> MomentumRotational = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.T)&quot;) <span style="color: #006400">
+  &quot;Rotational momentum&quot;</span>;</pre>
+<a name="QCalc.Quantities.Number"></a><pre><span style="color: blue">type</span> Number = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;1&quot;);</pre>
+<a name="QCalc.Quantities.NumberAbsolute"></a><pre><span style="color: blue">type</span> NumberAbsolute = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;1&quot;, min=0) <span style="color: #006400">&quot;Absolute number&quot;</span>;</pre>
+<a name="QCalc.Quantities.Permeability"></a><pre><span style="color: blue">type</span> Permeability = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L.M/N2&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Permittivity"></a><pre><span style="color: blue">type</span> Permittivity = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N2.T2/(L3.M)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Potential"></a><pre><span style="color: blue">type</span> Potential = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N.T2)&quot;);</pre>
+<a name="QCalc.Quantities.PotentialAbsolute"></a><pre><span style="color: blue">type</span> PotentialAbsolute = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N.T2)&quot;, min=0) <span style="color: #006400">
+  &quot;Absolute potential&quot;</span>;</pre>
+<a name="QCalc.Quantities.PotentialPerWavenumber"></a><pre><span style="color: blue">type</span> PotentialPerWavenumber = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L3.M/(A.N.T2)&quot;) <span style="color: #006400">
+  &quot;Potential per wavenumber&quot;</span>;</pre>
+<a name="QCalc.Quantities.PotentialRate"></a><pre><span style="color: blue">type</span> PotentialRate = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N.T3)&quot;) <span style="color: #006400">&quot;Rate of potential&quot;</span>;</pre>
+<a name="QCalc.Quantities.Power"></a><pre><span style="color: blue">type</span> Power = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/T3&quot;);</pre>
+<a name="QCalc.Quantities.PowerArea"></a><pre><span style="color: blue">type</span> PowerArea = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L4.M/T3&quot;) <span style="color: #006400">&quot;Power times area&quot;</span>;</pre>
+<a name="QCalc.Quantities.PowerAreic"></a><pre><span style="color: blue">type</span> PowerAreic = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/T3&quot;) <span style="color: #006400">&quot;Areic power&quot;</span>;</pre>
+<a name="QCalc.Quantities.PowerAreicPerPotential4"></a><pre><span style="color: blue">type</span> PowerAreicPerPotential4 = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;N4.T5/(L8.M3)&quot;) <span style="color: #006400">
+  &quot;Areic power per 4th power of potential&quot;</span>;</pre>
+<a name="QCalc.Quantities.PowerRadiant"></a><pre><span style="color: blue">type</span> PowerRadiant = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A2.T3)&quot;) <span style="color: #006400">&quot;Radiant power&quot;</span>;</pre>
+<a name="QCalc.Quantities.Pressure"></a><pre><span style="color: blue">type</span> Pressure = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T2)&quot;);</pre>
+<a name="QCalc.Quantities.PressureAbsolute"></a><pre><span style="color: blue">type</span> PressureAbsolute = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T2)&quot;, min=0) <span style="color: #006400">
+  &quot;Absolute pressure&quot;</span>;</pre>
+<a name="QCalc.Quantities.PressureRate"></a><pre><span style="color: blue">type</span> PressureRate = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T3)&quot;) <span style="color: #006400">&quot;Rate of pressure&quot;</span>;</pre>
+<a name="QCalc.Quantities.Compressibility"></a><pre><span style="color: blue">type</span> Compressibility = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L.T2/M&quot;, min=0) <span style="color: #006400">
+  &quot;Reciprocal of pressure&quot;</span>;</pre>
+<a name="QCalc.Quantities.ResistanceElectrical"></a><pre><span style="color: blue">type</span> ResistanceElectrical = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N2.T)&quot;, min=0) <span style="color: #006400">
+  &quot;Electrical resistance&quot;</span>;</pre>
+<a name="QCalc.Quantities.ResistanceFluid"></a><pre><span style="color: blue">type</span> ResistanceFluid = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/(L.N.T)&quot;, min=0) <span style="color: #006400">
+  &quot;Fluid resistance&quot;</span>;</pre>
+<a name="QCalc.Quantities.Resistivity"></a><pre><span style="color: blue">type</span> Resistivity = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L.T/N&quot;, min=0);</pre>
+<a name="QCalc.Quantities.SurfaceTension"></a><pre><span style="color: blue">type</span> SurfaceTension = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/T2&quot;) <span style="color: #006400">&quot;Surface tension&quot;</span>;</pre>
+<a name="QCalc.Quantities.Time"></a><pre><span style="color: blue">type</span> Time = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;T&quot;);</pre>
+<a name="QCalc.Quantities.TimeAbsolute"></a><pre><span style="color: blue">type</span> TimeAbsolute = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;T&quot;, min=0) <span style="color: #006400">&quot;Absolute time&quot;</span>;</pre>
+<a name="QCalc.Quantities.Velocity"></a><pre><span style="color: blue">type</span> Velocity = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L/T&quot;);</pre>
+<a name="QCalc.Quantities.Velocity2"></a><pre><span style="color: blue">type</span> Velocity2 = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L2/T2&quot;) <span style="color: #006400">&quot;Squared velocity&quot;</span>;</pre>
+<a name="QCalc.Quantities.VelocityAmount"></a><pre><span style="color: blue">type</span> VelocityAmount = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L.N/T&quot;);</pre>
+<a name="QCalc.Quantities.Viscosity"></a><pre><span style="color: blue">type</span> Viscosity = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Volume"></a><pre><span style="color: blue">type</span> Volume = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L3&quot;, min=0);</pre>
+<a name="QCalc.Quantities.VolumeRate"></a><pre><span style="color: blue">type</span> VolumeRate = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L3/T&quot;) <span style="color: #006400">&quot;Rate of volume&quot;</span>;</pre>
+<a name="QCalc.Quantities.VolumeSpecific"></a><pre><span style="color: blue">type</span> VolumeSpecific = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L3/N&quot;) <span style="color: #006400">&quot;Specific volume&quot;</span>;</pre>
+<a name="QCalc.Quantities.VolumeSpecificAbsolute"></a><pre><span style="color: blue">type</span> VolumeSpecificAbsolute = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L3/N&quot;, min=0) <span style="color: #006400">
+  &quot;Absolute specific volume&quot;</span>;</pre>
+<a name="QCalc.Quantities.VolumeSpecificRate"></a><pre><span style="color: blue">type</span> VolumeSpecificRate = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;L3/(N.T)&quot;) <span style="color: #006400">
+  &quot;Rate of specific volume&quot;</span>;</pre>
+<a name="QCalc.Quantities.Wavenumber"></a><pre><span style="color: blue">type</span> Wavenumber = <a href="QCalc_Icons.html#QCalc.Icons.TypeReal"
+>TypeReal</a> (<span style="color: blue">final </span>unit=&quot;A/L&quot;);</pre>
+<a name="QCalc.Quantities.CapacityThermal"></a><pre><span style="color: blue">type</span> CapacityThermal = <a href="QCalc_Quantities.html#QCalc.Quantities.Amount"
+>Amount</a> (displayUnit=&quot;J/K&quot;) <span style="color: #006400">&quot;Thermal capacity&quot;</span>;</pre>
+<a name="QCalc.Quantities.CapacityThermalSpecific"></a><pre><span style="color: blue">type</span> CapacityThermalSpecific = <a href="QCalc_Quantities.html#QCalc.Quantities.NumberAbsolute"
+>NumberAbsolute</a> (displayUnit=&quot;J/(mol.K)&quot;) <span style="color: #006400">
+  &quot;Specific thermal capacity&quot;</span>;</pre>
+<a name="QCalc.Quantities.CapacityThermalVolumic"></a><pre><span style="color: blue">type</span> CapacityThermalVolumic = <a href="QCalc_Quantities.html#QCalc.Quantities.Density"
+>Density</a> (displayUnit=&quot;J/(m3.K)&quot;) <span style="color: #006400">
+  &quot;Volumic thermal capacity&quot;</span>;</pre>
+<a name="QCalc.Quantities.PotentialChemical"></a><pre><span style="color: blue">type</span> PotentialChemical = <a href="QCalc_Quantities.html#QCalc.Quantities.Potential"
+>Potential</a> (displayUnit=&quot;J/mol&quot;) <span style="color: #006400">&quot;Chemical potential&quot;</span>;</pre>
+<a name="QCalc.Quantities.Temperature"></a><pre><span style="color: blue">type</span> Temperature = <a href="QCalc_Quantities.html#QCalc.Quantities.Potential"
+>Potential</a> (displayUnit=&quot;K&quot;);</pre>
+<a name="QCalc.Quantities.TemperatureAbsolute"></a><pre><span style="color: blue">type</span> TemperatureAbsolute = <a href="QCalc_Quantities.html#QCalc.Quantities.PotentialAbsolute"
+>PotentialAbsolute</a> (displayUnit=&quot;degC&quot;) <span style="color: #006400">
+  &quot;Absolute temperature&quot;</span>;</pre>
+<a name="QCalc.Quantities.TemperatureRate"></a><pre><span style="color: blue">type</span> TemperatureRate = <a href="QCalc_Quantities.html#QCalc.Quantities.PotentialRate"
+>PotentialRate</a> (displayUnit=&quot;K/s&quot;) <span style="color: #006400">&quot;Rate of temperature&quot;</span>;</pre>
+<a name="QCalc.Quantities.ResistivityThermal"></a><pre><span style="color: blue">type</span> ResistivityThermal = <a href="QCalc_Quantities.html#QCalc.Quantities.Resistivity"
+>Resistivity</a> (displayUnit=&quot;m.K/W&quot;) <span style="color: #006400">
+  &quot;Thermal resistivity&quot;</span>;</pre>
+<a name="QCalc.Quantities.Conductance"></a><pre><span style="color: blue">type</span> Conductance = <a href="QCalc_Quantities.html#QCalc.Quantities.Current"
+>Current</a> (displayUnit=&quot;W/K&quot;) <span style="color: #006400">&quot;Conductance&quot;</span>;</pre>
+<hr>
+<address>
+<a href="http://www.3ds.com/">Automatically generated</a> Tue Aug 12 11:54:05 2014.
+</address>
+</body>
+</html>
