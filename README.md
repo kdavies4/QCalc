@@ -44,7 +44,9 @@ the [pascal] from `QCalc.Units`.
 
 More information is available in the documentation, which can be
 accessed [online](http://kdavies4.github.com/QCalc) or
-[from the top level of the package](QCalc/package.mo).
+[from the top level of the package](QCalc/package.mo).  If you wish to use the
+same approach with [Modelica] results in [Python], consider [ModelicaRes] and
+[natu].
 
 ### License terms and development
 
@@ -64,4 +66,7 @@ the [GitHub repository].
 [Celsius]: http://en.wikipedia.org/wiki/Celsius
 [decibel]: http://en.wikipedia.org/wiki/Decibel
 [pascal]: http://en.wikipedia.org//wiki/Pascal_(unit)
+[Python]: https://www.python.org
+[ModelicaRes]: http://kdavies4.github.io/ModelicaRes/
+[natu]: http://kdavies4.github.io/natu/
 [GitHub repository]: https://github.com/kdavies4/QCalc

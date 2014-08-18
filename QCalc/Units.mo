@@ -58,7 +58,8 @@ package Units "Constants and units of physical measure"
     defineDefaultDisplayUnit("L2.M/(A.T)", "J.s/rad") "Rotational momentum";
     defineDefaultDisplayUnit("L.M/(A2.N2)", "H/(m.cyc2)") "Permeability";
     defineDefaultDisplayUnit("N2.T2/(L3.M)", "F/m") "Permittivity";
-    defineDefaultDisplayUnit("L3.M/(N2.T2)", "m/F") "Reciprocal of permittivity";
+    defineDefaultDisplayUnit("L3.M/(N2.T2)", "m/F")
+      "Reciprocal of permittivity";
     defineDefaultDisplayUnit("L2.M/(N.T2)", "V") "Potential";
     defineDefaultDisplayUnit("L3.M/(A.N.T2)", "V.m/rad")
       "Potential per wavenumber";
@@ -774,7 +775,8 @@ recognized by Dymola.</p>
       final constant Q.Length a_0=U.a_0 "Bohr radius";
       final constant Q.Wavelength lambda_e=U.lambda_e
         "electron Compton wavelength";
-      final constant Q.WavelengthVelocity kappa=U.kappa "quantum of circulation";
+      final constant Q.WavelengthVelocity kappa=U.kappa
+        "quantum of circulation";
       final constant Q.MassSpecific m_e=U.m_e "specific electron rest mass";
       final constant Q.LengthSpecific r_e=U.r_e
         "specific classical electron radius";
@@ -827,7 +829,8 @@ recognized by Dymola.</p>
       // Generated from QCalc/Resources/quantities.xls, 2014-8-14
       parameter Q.Acceleration Acceleration=1*U.m/U.s^2 "Acceleration";
       parameter Q.Amount Amount=1*U.C "Amount";
-      parameter Q.AmountReciprocal AmountReciprocal=1/U.C "Reciprocal of amount";
+      parameter Q.AmountReciprocal AmountReciprocal=1/U.C
+        "Reciprocal of amount";
       parameter Q.Angle Angle=1*U.rad "Angle";
       parameter Q.Angle2 Angle2=1*U.sr "Solid angle";
       parameter Q.Area Area=1*U.m^2 "Area";
@@ -884,7 +887,8 @@ recognized by Dymola.</p>
       parameter Q.PermittivityReciprocal PermittivityReciprocal=1*U.m/U.F
         "Reciprocal of permittivity";
       parameter Q.Potential Potential=1*U.V "Potential";
-      parameter Q.PotentialAbsolute PotentialAbsolute=1*U.K "Absolute potential";
+      parameter Q.PotentialAbsolute PotentialAbsolute=1*U.K
+        "Absolute potential";
       parameter Q.PotentialPerWavenumber PotentialPerWavenumber=1*U.V*U.m/U.rad
         "Potential per wavenumber";
       parameter Q.Power Power=1*U.W "Power";

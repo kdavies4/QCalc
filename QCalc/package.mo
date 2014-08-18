@@ -76,7 +76,11 @@ where <code>p</code> is pressure as a quantity (in QCalc), <code>p_SI</code> is 
 the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a href=\"modelica://QCalc.Units\">QCalc.Units</a>.</p>
 
     <p>Please see the 
-    <a href=\"modelica://QCalc.UsersGuide.GettingStarted\">getting started page</a> for more information.</p>
+    <a href=\"modelica://QCalc.UsersGuide.GettingStarted\">getting started page</a> for more information.
+    If you wish to use the same approach with <a href=\"https://www.modelica.org/\">Modelica</a> results in 
+    <a href=\"https://www.python.org/\">Python</a>, 
+    consider <a href=\"http://kdavies4.github.io/ModelicaRes/\">ModelicaRes</a> 
+    and <a href=\"http://kdavies4.github.io/natu/\">natu</a>.</p>
 
     <p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica License 2</b>
 <br>Copyright &copy; 2009&ndash;2014, <a href=\"http://www.hnei.hawaii.edu/\">Hawaii Natural Energy Institute</a> and <a href=\"http://www.gtrc.gatech.edu/\">Georgia Tech Research Corporation</a>.</p>
