@@ -628,10 +628,10 @@ recognized by Dymola.</p>
       final rational=U.base.rational);
 
     annotation (Documentation(info="<html><p>Drop this record into your top-level model
-  to record the values of the base constants.  It is necessary to know the values of the 
+  to record the values of the base constants.  It is necessary to know the values of the
   base constants in order to interpret the results.</p></html>"), Icon(
           coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-              100}}), graphics));
+              100}})));
   end UnitSystem;
 
   package Examples "Examples"
@@ -787,7 +787,7 @@ recognized by Dymola.</p>
       final constant Q.MassSpecific m_e=U.m_e "specific electron rest mass";
       final constant Q.LengthSpecific r_e=U.r_e
         "specific classical electron radius";
-      final constant Q.MagneticDipoleMoment mu_B=U.mu_B "Bohr magnetron";
+      final constant Q.MagneticDipoleMoment mu_B=U.mu_B "Bohr magneton";
       final constant Q.Mass M_e=U.M_e "mass of an electron";
       final constant Q.Time t_H=U.t_H "Hartree time";
       final constant Q.Length l_n=U.l_n "natural unit of length";
@@ -826,7 +826,7 @@ recognized by Dymola.</p>
             rotation=0,
             origin={0,0})));
       annotation (Commands(executeCall=QCalc.Units.setup()
-            "Re-initialize the units."), Diagram(graphics));
+            "Re-initialize the units."));
     end Display;
 
     model ExampleModel "Model that uses all of the quantities"
@@ -940,11 +940,11 @@ recognized by Dymola.</p>
   package Bases "Sets of base constants and units"
     extends Icons.Package;
 
-    /* TODO: Fix this:
-  record Gaussian 
+    /* TODO:  Fix this:
+  record Gaussian
     "<html>Base constants and units for Gaussian units (<i>k</i><sub>A</sub> = <i>k</i><sub>C</sub> = 1)</html>"
     extends Base(final c=1,final R_K=25812.8074434/299792458e-7);
-    annotation ( Commands(executeCall=QCalc.Units.setup() 
+    annotation ( Commands(executeCall=QCalc.Units.setup()
           "Re-initialize the units."),
           Documentation(info="<html><p>Gaussian systems of units (not CGS-Gaussian units) impose that:</p>
   <ol>
@@ -972,23 +972,23 @@ encompass other systems of units.</p>
         k_Aprime=2*pi*R_K/c);
       annotation (Documentation(info="<html>
 <p>Hartree units impose that:
-  <ol> 
+  <ol>
   <li>the elementary charge is one (<i>e</i> = 1),</li>
   <li>the reduced Planck constant is one (<i>h</i>&nbsp;rad = 1),</li>
   <li>the electric force constant is one (<i>k</i><sub>C</sub> = 1), and</li>
   <li>the mass of an electron is one (<i>M</i><sub>e</sub> = 1).
   </ol></p>
-  
+
 <p>Please see the documentation for the
   <a href=\"modelica://QCalc.Units\">Units</a> package.</p></html>"), Commands(
             executeCall=QCalc.Units.setup() "Re-initialize the units."));
     end Hartree;
 
-    /* TODO: Fix these:
-  record LH 
+    /* TODO:  Fix these:
+  record LH
     "<html>Base constants and units for Lorentz-Heaviside units (&mu;<sub>0</sub> = &epsilon;<sub>0</sub> = 1)</html>"
     extends Base(final c=1,final R_K=25812.8074434/(4*pi*299792458e-7));
-    annotation ( Commands(executeCall=QCalc.Units.setup() 
+    annotation ( Commands(executeCall=QCalc.Units.setup()
           "Re-initialize the units."),                                                Documentation(info="<html><p>Lorentz-Heaviside systems of units impose that:</p>
   <ol>
   <li>the magnetic constant is one (&mu;<sub>0</sub> = 1) (&rArr; <i>R</i><sub>K</sub>/<i>c</i> = 1/(2&alpha;)) and</li>
@@ -1007,10 +1007,10 @@ encompass other systems of units.</p>
 
   record Stoney "Base constants and units for Stoney units"
     extends Gaussian(final k_J=4*pi*299792458e-7/25812.8074434);
-    annotation (Documentation(info="<html><p>Stoney units are 
-  <a href=\"modelica://QCalc.Units.Bases.Gaussian\">Gaussian</a> units 
+    annotation (Documentation(info="<html><p>Stoney units are
+  <a href=\"modelica://QCalc.Units.Bases.Gaussian\">Gaussian</a> units
   (<i>k</i><sub>A</sub> = <i>k</i><sub>C</sub> = 1) which also impose that:
-  <ol> 
+  <ol>
   <li>the elementary charge is one (<i>q</i> = 1) and</li>
   <li>the gravitational constant is one (although not included in the <a href=\"modelica://QCalc.Units\">Units</a> package).
   </ol></p>
@@ -1068,14 +1068,14 @@ encompass other systems of units.</p>
             executeCall=QCalc.Units.setup() "Re-initialize the units."));
     end Base;
     annotation (Documentation(info="<html><p>The records in this package define the basis of
-  various unit systems by setting the base constants.  The dimensions of the 
-  quantities and units (in the <code>unit</code> attribute, see 
+  various unit systems by setting the base constants.  The dimensions of the
+  quantities and units (in the <code>unit</code> attribute, see
   <a href=\"modelica://QCalc.Quantities\">Quantities</a>) are not re-adjusted, but they
   should be.  For example, if the speed of light is nondimensionalized, then
   length and time are the same dimension.  However, it is tedious to update the dimensions
   of all of the quantities, so instead
   we just set a normalized constant to one and leave the dimensions as they are.</p>
-  
+
   <p>For more information, please see the documentation for the
   <a href=\"modelica://QCalc.Units\">Units</a> package.</p></html>"), Commands(
           executeCall=QCalc.Units.setup() "Re-initialize the units."));
@@ -1115,7 +1115,7 @@ encompass other systems of units.</p>
 
   final constant Q.Number pi=2*acos(0) "<html>pi (<i>&pi;</i>)</html>";
 
-  // TODO: Check all dimensions against natu.
+  // TODO:  Check all dimensions against natu.
 
   // -------------------------------------------------------------------------
   // Base physical constants
@@ -1249,7 +1249,7 @@ encompass other systems of units.</p>
   constant Q.Potential K=8.3144621*(Wb*cyc)^2*S/(s*mol*R)
     "<html><a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a></html>";
   // This is the "molar gas constant" relation [NIST2010].  The factor of
-  // (Wb*cyc)^2*S/s is the joule, which is defined below.  The gas consant can
+  // (Wb*cyc)^2*S/s is the joule, which is defined below.  The gas constant can
   // be determined by measuring acoustic resonation (see
   // http://nvlpubs.nist.gov/nistpubs/sp958-lide/339-343.pdf).  The gas
   // constant is directly related to the Boltzmann constant through other
@@ -1299,7 +1299,7 @@ encompass other systems of units.</p>
   // Note:  rad, sr, Hz, Wb, S, V, C, J, lm, and Gy have already been defined.
   final constant Q.Angle2 sr=rad^2
     "<html><a href=\"http://en.wikipedia.org/wiki/Steradian\">steradian</a></html>";
-  // Note: [BIPM2006] defines sr = 1, which is consistent with the common
+  // Note:  [BIPM2006] defines sr = 1, which is consistent with the common
   // definition of the steradian as the square of the radian (rad)
   // [https://en.wikipedia.org/wiki/Steradian] only because [BIPM2006] defines
   // rad = 1.  Here, the common definition is applied directly.
@@ -1321,7 +1321,7 @@ encompass other systems of units.</p>
     "<html><html><a href=\"http://en.wikipedia.org/wiki/Ohm\">ohm</a> (&Omega;)</html>";
   final constant Q.Inductance H=s/S
     "<html><a href=\"http://en.wikipedia.org/wiki/Henry_(unit)\">henry</a></html>";
-  // Note:  The definition in [BIPM2006], H = Wb/A, is not valid here because
+  // Note:  The definition in [BIPM2006], H = Wb/A, isn't valid here because
   // angle is included explicitly in magnetic flux (i.e., Wb = V/Hz = V*s/cyc,
   // not Wb = V*s).
   final constant Q.Current kat=mol/s
@@ -1475,7 +1475,7 @@ encompass other systems of units.</p>
     "<html><a href=\"http://en.wikipedia.org/wiki/Classical_electron_radius\">specific classical electron radius</a> (<i>r</i><sub>e</sub>)</html>";
   // aka specific Lorentz radius or specific Thomson scattering length
   final constant Q.MagneticDipoleMoment mu_B=kappa*e*sp/2
-    "<html><a href=\"https://en.wikipedia.org/wiki/Bohr_magneton\">Bohr magnetron</a></html>";
+    "<html><a href=\"https://en.wikipedia.org/wiki/Bohr_magneton\">Bohr magneton</a></html>";
   final constant Q.Mass M_e=m_e*e
     "<html>mass of an electron (<i>M</i><sub>e</sub>)</html>";
   // aka Hartree mass or natural unit of mass
@@ -1697,18 +1697,18 @@ encompass other systems of units.</p>
   end Interfaces;
 
   annotation (
-    Documentation(info="<html>  
-    <p>The text below introduces, justifies, and explains the implementation of physical units in 
-    <a href=\"modelica://QCalc\">QCalc</a>.  
-    For an overview of how to use 
-    <a href=\"modelica://QCalc\">QCalc</a>, please 
+    Documentation(info="<html>
+    <p>The text below introduces, justifies, and explains the implementation of physical units in
+    <a href=\"modelica://QCalc\">QCalc</a>.
+    For an overview of how to use
+    <a href=\"modelica://QCalc\">QCalc</a>, please
 see the <a href=\"modelica://QCalc\">top-level documentation</a>
 and the <a href=\"modelica://QCalc.UsersGuide.GettingStarted\">getting started page</a>.
-This text has been updated and adapted from 
-[<a href=\"modelica://QCalc.UsersGuide.Publications.Davies2012\">Davies2012</a>].  
-That paper also suggests how the approach might be 
-better integrated in the <a href=\"http://www.modelica.org\">Modelica 
-language</a>.  Please also see the documentation 
+This text has been updated and adapted from
+[<a href=\"modelica://QCalc.UsersGuide.Publications.Davies2012\">Davies2012</a>].
+That paper also suggests how the approach might be
+better integrated in the <a href=\"http://www.modelica.org\">Modelica
+language</a>.  Please also see the documentation
 of the <a href=\"modelica://QCalc.Quantities\">Quantities</a> package.</p>
 
 
@@ -1716,282 +1716,282 @@ of the <a href=\"modelica://QCalc.Quantities\">Quantities</a> package.</p>
 
 <p><b>Introduction:</b></p>
 
-<p>In mathematical models, one uses variables to represent 
-physical quantities. As stated by the Bureau International des Poids et 
-Mesures (BIPM) [<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>, 
-p.&nbsp;103]:</p> <blockquote> \"The value of a quantity 
-is generally expressed as the product of a number and a unit.  The unit 
-is simply a particular example of the quantity concerned which is used as 
-a reference, and the number is the ratio of the value of the quantity to 
-the unit.\" </blockquote> <p>In general, a unit may be the product of 
+<p>In mathematical models, one uses variables to represent
+physical quantities. As stated by the Bureau International des Poids et
+Mesures (BIPM) [<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>,
+p.&nbsp;103]:</p> <blockquote> \"The value of a quantity
+is generally expressed as the product of a number and a unit.  The unit
+is simply a particular example of the quantity concerned which is used as
+a reference, and the number is the ratio of the value of the quantity to
+the unit.\" </blockquote> <p>In general, a unit may be the product of
 other units raised to various powers.</p>
 
-<p>In <a href=\"http://www.modelica.org\">Modelica</a>, a physical 
-quantity is represented by a <code>Real</code> variable.  
-Its <code>value</code> attribute is a number 
-associated with the value of the quantity (not the value of the quantity 
-itself, as will be shown).  Usually the <code>value</code> attribute is 
-not explicitly referenced because it is automatically returned when the 
-variable itself is referenced. The <code>unit</code> attribute is a string that 
-describes the unit by which the value of the quantity has been divided to 
-arrive at the number.  The <code>displayUnit</code> attribute (also a 
-string) describes the unit by which the value of the quantity should be 
-divided to arrive at the number as it is entered by or presented to the 
-user.  The <code>Real</code> type contains other attributes as well, 
+<p>In <a href=\"http://www.modelica.org\">Modelica</a>, a physical
+quantity is represented by a <code>Real</code> variable.
+Its <code>value</code> attribute is a number
+associated with the value of the quantity (not the value of the quantity
+itself, as will be shown).  Usually the <code>value</code> attribute is
+not explicitly referenced because it is automatically returned when the
+variable itself is referenced. The <code>unit</code> attribute is a string that
+describes the unit by which the value of the quantity has been divided to
+arrive at the number.  The <code>displayUnit</code> attribute (also a
+string) describes the unit by which the value of the quantity should be
+divided to arrive at the number as it is entered by or presented to the
+user.  The <code>Real</code> type contains other attributes as well,
 including the <code>quantity</code> string.</p>
 
-<p>The <a href=\"modelica://Modelica.SIunits\">SIunits</a> package of the 
-<a href=\"modelica://Modelica\">Modelica Standard Library</a> contains 
-types that extend the <code>Real</code> type.  The type definitions 
-modify the <code>unit</code>, <code>displayUnit</code>, and 
-<code>quantity</code> attributes (among others) to represent various 
-physical quantities.  The <code>unit</code> and <code>displayUnit</code> 
-attributes are based on the 
-<a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">International System of Units</a> (Syst&egrave;me 
-international d'unit&eacute;s, SI). The <code>quantity</code> string is 
-the name of the physical quantity.  For example, the 
-<a href=\"modelica://Modelica.SIunits.Velocity\">Velocity</a>  type has a 
-<code>unit</code> of \"m/s\" and a <code>quantity</code> of \"Velocity\".  
-If an instance of <a href=\"modelica://Modelica.SIunits.Velocity\">Velocity</a> 
-has a <code>value</code> of one (<i>v</i> = 1), then it is 
-meant that \"the value of velocity is one metre per second.\"  Again, the 
-<code>value</code> attribute represents the number, or the value of the 
+<p>The <a href=\"modelica://Modelica.SIunits\">SIunits</a> package of the
+<a href=\"modelica://Modelica\">Modelica Standard Library</a> contains
+types that extend the <code>Real</code> type.  The type definitions
+modify the <code>unit</code>, <code>displayUnit</code>, and
+<code>quantity</code> attributes (among others) to represent various
+physical quantities.  The <code>unit</code> and <code>displayUnit</code>
+attributes are based on the
+<a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">International System of Units</a> (Syst&egrave;me
+international d'unit&eacute;s, SI). The <code>quantity</code> string is
+the name of the physical quantity.  For example, the
+<a href=\"modelica://Modelica.SIunits.Velocity\">Velocity</a>  type has a
+<code>unit</code> of \"m/s\" and a <code>quantity</code> of \"Velocity\".
+If an instance of <a href=\"modelica://Modelica.SIunits.Velocity\">Velocity</a>
+has a <code>value</code> of one (<i>v</i> = 1), then it is
+meant that \"the value of velocity is one metre per second.\"  Again, the
+<code>value</code> attribute represents the number, or the value of the
 quantity divided by the unit, not the value of the quantity itself.</p>
 
-<p>This conflict is solved in <a href=\"modelica://QCalc\">QCalc</a> 
-by establishing units as mathematical entities and writing 
-<i>v</i> = 1&nbsp;m/s (in code, <code>v = 1*U.m/U.s</code> or simply 
-<code>v = U.m/U.s</code>, where <code>U</code> is an abbreviation for this 
-package). Here, the variable <i>v</i> directly represents the quantity. 
-Its <code>value</code> attribute is truly the value of the quantity in the 
-context of the statement by <a href=\"http://www.bipm.org/\">BIPM</a> (above). One advantage is that unit 
-conversion is built in.  The essence of unit conversion is that the 
-phrase \"value of quantity in unit\" typically means \"value of 
-quantity divided by unit.\"  Continuing with the previous example, 
-<i>v</i> is divided by m/s in order to display <i>v</i> in metres per 
-second (as a number).  If another unit of length like the foot is 
-established by the appropriate relation (ft &asymp; 0.3048&nbsp;m) and 
-<i>v</i> is divided by ft/s, the result is velocity in feet per second 
-(&sim;3.2894).  Some units such as &deg;C, Pag, and dB involve offsets or 
-nonlinear transformations between the value of the quantity and the 
+<p>This conflict is solved in <a href=\"modelica://QCalc\">QCalc</a>
+by establishing units as mathematical entities and writing
+<i>v</i> = 1&nbsp;m/s (in code, <code>v = 1*U.m/U.s</code> or simply
+<code>v = U.m/U.s</code>, where <code>U</code> is an abbreviation for this
+package). Here, the variable <i>v</i> directly represents the quantity.
+Its <code>value</code> attribute is truly the value of the quantity in the
+context of the statement by <a href=\"http://www.bipm.org/\">BIPM</a> (above). One advantage is that unit
+conversion is built in.  The essence of unit conversion is that the
+phrase \"value of quantity in unit\" typically means \"value of
+quantity divided by unit.\"  Continuing with the previous example,
+<i>v</i> is divided by m/s in order to display <i>v</i> in metres per
+second (as a number).  If another unit of length like the foot is
+established by the appropriate relation (ft &asymp; 0.3048&nbsp;m) and
+<i>v</i> is divided by ft/s, the result is velocity in feet per second
+(&sim;3.2894).  Some units such as &deg;C, Pag, and dB involve offsets or
+nonlinear transformations between the value of the quantity and the
 number; these are described by functions besides simple division.</p>
 
 <p><b>Method:</b></p>
 
-<p>In <a href=\"modelica://QCalc\">QCalc</a>, each scalar unit is a constant 
-quantity. The value of a unit, like other quantities, is the product 
-of a number and a unit. Therefore, units may be derived from other units 
-(e.g., Pa = N/m<sup>2</sup>). This recursive definition leaves several 
-units (in <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>, 7) 
-that are locally independent and must be established 
-universally.  These base units are established by the \"particular example 
-of the quantity concerned which is used as a reference\" quoted previously 
-[<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>].  
-The choice of the base units is somewhat arbitrary [<a 
-href=\"modelica://QCalc.UsersGuide.References.Fritzson2004\">Fritzson2004</a>, 
-p.&nbsp;375], but regardless, there are a number of 
-units that must be defined by example.</p> 
+<p>In <a href=\"modelica://QCalc\">QCalc</a>, each scalar unit is a constant
+quantity. The value of a unit, like other quantities, is the product
+of a number and a unit. Therefore, units may be derived from other units
+(e.g., Pa = N/m<sup>2</sup>). This recursive definition leaves several
+units (in <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>, 7)
+that are locally independent and must be established
+universally.  These base units are established by the \"particular example
+of the quantity concerned which is used as a reference\" quoted previously
+[<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>].
+The choice of the base units is somewhat arbitrary [<a
+href=\"modelica://QCalc.UsersGuide.References.Fritzson2004\">Fritzson2004</a>,
+p.&nbsp;375], but regardless, there are a number of
+units that must be defined by example.</p>
 
-<p>If only <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a> 
-will be used, then it is easiest to set each of the base 
-units of <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a> 
-equal to one&mdash;the 
-<a href=\"http://en.wikipedia.org/wiki/Metre\">metre</a> (m), 
-<a href=\"http://en.wikipedia.org/wiki/Kilogram\">kilogram</a> (kg), 
-<a href=\"http://en.wikipedia.org/wiki/Second\">second</a> (s), 
-<a href=\"http://en.wikipedia.org/wiki/Ampere\">ampere</a> (A), 
-<a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a> (K), 
-<a href=\"http://en.wikipedia.org/wiki/Mole_(unit)\">mole</a> (mol), and 
-<a href=\"http://en.wikipedia.org/wiki/Candela\">candela</a> (cd).  This is implicitly 
-the case in the <a href=\"modelica://Modelica.SIunits\">SIunits</a> 
-package, but again, it hardly captures the idea that the value of a 
+<p>If only <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>
+will be used, then it is easiest to set each of the base
+units of <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>
+equal to one&mdash;the
+<a href=\"http://en.wikipedia.org/wiki/Metre\">metre</a> (m),
+<a href=\"http://en.wikipedia.org/wiki/Kilogram\">kilogram</a> (kg),
+<a href=\"http://en.wikipedia.org/wiki/Second\">second</a> (s),
+<a href=\"http://en.wikipedia.org/wiki/Ampere\">ampere</a> (A),
+<a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a> (K),
+<a href=\"http://en.wikipedia.org/wiki/Mole_(unit)\">mole</a> (mol), and
+<a href=\"http://en.wikipedia.org/wiki/Candela\">candela</a> (cd).  This is implicitly
+the case in the <a href=\"modelica://Modelica.SIunits\">SIunits</a>
+package, but again, it hardly captures the idea that the value of a
 quantity is the product of a number and a unit.</p>
 
-<p>Instead, in <a href=\"modelica://QCalc\">QCalc</a>, the values of the base units are 
-established from physical constants. This approach reflects the 
-way that standards organizations (e.g., <a href=\"http://www.nist.gov/\">NIST</a>) 
-define modern units. 
-The \"particular example of the quantity\" 
-[<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>] is 
-an experiment that yields precise and universally repeatable results 
-rather than a prototype (e.g., the <a href=\"https://en.wikipedia.org/wiki/International_Prototype_Kilogram#International_prototype_kilogram\">international 
-prototype kilogram</a>) which is carefully controlled and distributed 
+<p>Instead, in <a href=\"modelica://QCalc\">QCalc</a>, the values of the base units are
+established from physical constants. This approach reflects the
+way that standards organizations (e.g., <a href=\"http://www.nist.gov/\">NIST</a>)
+define modern units.
+The \"particular example of the quantity\"
+[<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>] is
+an experiment that yields precise and universally repeatable results
+rather than a prototype (e.g., the <a href=\"https://en.wikipedia.org/wiki/International_Prototype_Kilogram#International_prototype_kilogram\">international
+prototype kilogram</a>) which is carefully controlled and distributed
 via replicas.  This approach also makes it easy to normalize certain constants
 as in <a href=\"https://en.wikipedia.org/wiki/Natural_units\">natural unit systems</a>.</p>
 
-<p>In addition, the values of the constants can be chosen to 
-scale the values of variables.  There are physical systems where typical quantities are many orders of 
-magnitude larger or smaller than the related product of powers of base SI 
-units (e.g., the domains of astrophysics and atomic physics).  In modeling 
-those systems, it may help to choose 
-appropriately small or large values (respectively) for the corresponding 
-base units so that the product of the number (large or small in magnitude) 
-and the unit (small or large, respectively) is well-scaled.  This 
-scaling is usually unnecessary due to the wide range and appropriate 
-distribution of the real numbers that are representable in floating 
+<p>In addition, the values of the constants can be chosen to
+scale the values of variables.  There are physical systems where typical quantities are many orders of
+magnitude larger or smaller than the related product of powers of base SI
+units (e.g., the domains of astrophysics and atomic physics).  In modeling
+those systems, it may help to choose
+appropriately small or large values (respectively) for the corresponding
+base units so that the product of the number (large or small in magnitude)
+and the unit (small or large, respectively) is well-scaled.  This
+scaling is usually unnecessary due to the wide range and appropriate
+distribution of the real numbers that are representable in floating
 point.<sup><a href=\"#fn1\" id=\"ref1\">1</a></sup>  However, in some cases it may improve
-computational performance to scale the units and use lower precision.  
-There are fields of research where, even today, simulations are sometimes 
-performed in single precision [<a href=\"modelica://QCalc.UsersGuide.References.Brown2011\">Brown2011</a>, 
-<a href=\"modelica://QCalc.UsersGuide.References.Hess2008\">Hess2008</a>] and 
-where scaling is a concern [<a href=\"modelica://QCalc.UsersGuide.References.Rapaport2004\">Rapaport2004</a>, 
-p.&nbsp;29]. The number and the 
+computational performance to scale the units and use lower precision.
+There are fields of research where, even today, simulations are sometimes
+performed in single precision [<a href=\"modelica://QCalc.UsersGuide.References.Brown2011\">Brown2011</a>,
+<a href=\"modelica://QCalc.UsersGuide.References.Hess2008\">Hess2008</a>] and
+where scaling is a concern [<a href=\"modelica://QCalc.UsersGuide.References.Rapaport2004\">Rapaport2004</a>,
+p.&nbsp;29]. The number and the
 unit are usually multiplied before the dynamic simulation or even during translation
-because the product is often involved in initial conditions or parameter 
-expressions.  
+because the product is often involved in initial conditions or parameter
+expressions.
 During the simulation, only the value is important, so there is no computational
-overhead.  The 
-value is divided by the display unit after the simulation.  </p> 
+overhead.  The
+value is divided by the display unit after the simulation.</p>
 
-<p>The method is neutral with regards to not only the values of the base 
-units, but also the choice of the base units and even the number of base 
-units.  This is an advantage because many systems of units besides 
-<a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a> are 
-used in science and engineering. As mentioned previously, the choice of 
-base units is somewhat arbitrary, and different systems of units are based 
-on different choices.  Some systems of units have fewer base units (lower 
-rank) than <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>, since additional constraints are added that exchange base 
-units for derived units.  For example, the 
-<a href=\"https://en.wikipedia.org/wiki/Planck_units\">Planck</a>, 
-<a href=\"https://en.wikipedia.org/wiki/Stoney_units\">Stoney</a>, 
-<a href=\"https://en.wikipedia.org/wiki/Atomic_units\">Hartree</a>, and 
-<a href=\"https://en.wikipedia.org/wiki/Atomic_units\">Rydberg</a> systems of units set the 
-<a href=\"http://en.wikipedia.org/wiki/Boltzmann_constant\">Boltzmann constant</a> equal to one 
-(<i>k</i><sub>B</sub> = 1) 
-[<a href=\"http://en.wikipedia.org/wiki/Natural_units\">http://en.wikipedia.org/wiki/Natural_units</a>]. 
-The <a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a> is eliminated 
-[<a href=\"modelica://QCalc.UsersGuide.References.Greiner1995\">Greiner1995</a>, 
-p.&nbsp;386] or, more precisely, considered a derived 
-unit instead of a base unit.  In <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>, 
-the <a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a> would be derived from the 
-<a href=\"http://en.wikipedia.org/wiki/Kilogram\">kilogram</a>, 
-<a href=\"http://en.wikipedia.org/wiki/Metre\">metre</a>, and 
-<a href=\"http://en.wikipedia.org/wiki/Second\">second</a>, (K &asymp; 
+<p>The method is neutral with regards to not only the values of the base
+units, but also the choice of the base units and even the number of base
+units.  This is an advantage because many systems of units besides
+<a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a> are
+used in science and engineering. As mentioned previously, the choice of
+base units is somewhat arbitrary, and different systems of units are based
+on different choices.  Some systems of units have fewer base units (lower
+rank) than <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>, since additional constraints are added that exchange base
+units for derived units.  For example, the
+<a href=\"https://en.wikipedia.org/wiki/Planck_units\">Planck</a>,
+<a href=\"https://en.wikipedia.org/wiki/Stoney_units\">Stoney</a>,
+<a href=\"https://en.wikipedia.org/wiki/Atomic_units\">Hartree</a>, and
+<a href=\"https://en.wikipedia.org/wiki/Atomic_units\">Rydberg</a> systems of units set the
+<a href=\"http://en.wikipedia.org/wiki/Boltzmann_constant\">Boltzmann constant</a> equal to one
+(<i>k</i><sub>B</sub> = 1)
+[<a href=\"http://en.wikipedia.org/wiki/Natural_units\">http://en.wikipedia.org/wiki/Natural_units</a>].
+The <a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a> is eliminated
+[<a href=\"modelica://QCalc.UsersGuide.References.Greiner1995\">Greiner1995</a>,
+p.&nbsp;386] or, more precisely, considered a derived
+unit instead of a base unit.  In <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>,
+the <a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a> would be derived from the
+<a href=\"http://en.wikipedia.org/wiki/Kilogram\">kilogram</a>,
+<a href=\"http://en.wikipedia.org/wiki/Metre\">metre</a>, and
+<a href=\"http://en.wikipedia.org/wiki/Second\">second</a>, (K &asymp;
 1.381&times;10<sup>-23</sup>&nbsp;kg&nbsp;m<sup>2</sup>/s<sup>2</sup>).
-In this case, temperature is not an independent dimension.</p> 
+In this case, temperature is not an independent dimension.</p>
 
-<p>There are seven base constants in the 
-<a href=\"modelica://QCalc.Units\">Units</a> package (<i>R</i><sub>&infin;</sub>, 
-<i>c</i>, <i>k</i><sub>J</sub>, R<sub>K</sub>,  
-<i>k</i><sub>F</sub>, <i>R</i>, and <i>k</i><sub>A</sub>'; see 
-<a href=\"modelica://QCalc.Units.Bases\">Units.Bases</a>) 
-and seven SI base units (m, s, kg, A, K, mol, and cd). 
-The  
+<p>There are seven base constants in the
+<a href=\"modelica://QCalc.Units\">Units</a> package (<i>R</i><sub>&infin;</sub>,
+<i>c</i>, <i>k</i><sub>J</sub>, R<sub>K</sub>,
+<i>k</i><sub>F</sub>, <i>R</i>, and <i>k</i><sub>A</sub>'; see
+<a href=\"modelica://QCalc.Units.Bases\">Units.Bases</a>)
+and seven SI base units (m, s, kg, A, K, mol, and cd).
+The
 <a href=\"http://en.wikipedia.org/wiki/Candela\">candela</a> (cd) is decoupled from these constants
-by the <a href=\"http://en.wikipedia.org/wiki/Luminosity_function\">luminosity function</a>, 
-but the <a href=\"http://en.wikipedia.org/wiki/Radian\">radian</a> (rad) is derived from them.</p>  
-  
+by the <a href=\"http://en.wikipedia.org/wiki/Luminosity_function\">luminosity function</a>,
+but the <a href=\"http://en.wikipedia.org/wiki/Radian\">radian</a> (rad) is derived from them.</p>
+
 <p><b>Implementation:</b></p>
 
-<p>The units and constants are defined as variables in this 
-<a href=\"modelica://QCalc.Units\">Units</a> package.  Each is a 
-<code>constant</code> of the appropriate type from the 
-<a href=\"modelica://QCalc.Quantities\">Quantities</a> package. The first 
-section of this package establishes mathematical constants.  The next section 
-establishes the independent base constants, which are grouped in a 
-<code>replaceable</code> record.  The third section derives 
+<p>The units and constants are defined as variables in this
+<a href=\"modelica://QCalc.Units\">Units</a> package.  Each is a
+<code>constant</code> of the appropriate type from the
+<a href=\"modelica://QCalc.Quantities\">Quantities</a> package. The first
+section of this package establishes mathematical constants.  The next section
+establishes the independent base constants, which are grouped in a
+<code>replaceable</code> record.  The third section derives
 other physical constants from the base constants.
-The fourth section establishes units from the base constants 
-using  transcendental and empirical relations.  The rest of the 
-code derives additional units and constants from those units.  
+The fourth section establishes units from the base constants
+using  transcendental and empirical relations.  The rest of the
+code derives additional units and constants from those units.
 All of the units from [<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>] are
-defined, which includes the  
+defined, which includes the
 <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a> units and
-some non-SI units.  Other units are included for convenience.  
-Some prefixed units are defined as well, but most 
-must be expressed using separate factors (e.g., 
+some non-SI units.  Other units are included for convenience.
+Some prefixed units are defined as well, but most
+must be expressed using separate factors (e.g.,
 <code>U.Prefixes.k*U.m</code>).</p>
- 
+
  <p>Nonscalar units such as <a href=\"http://en.wikipedia.org/wiki/Celsius\">Celsius</a> and
  the <a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> are defined via
  operator records.  The <code>*</code> and <code>/</code> operators are overloaded
  to call the unit's transformation and its inverse, respectively.</p>
 
-<p>This package (<a href=\"modelica://QCalc.Units\">QCalc.Units</a>) is 
-abbreviated as <code>U</code> for convenience throughout the rest of 
+<p>This package (<a href=\"modelica://QCalc.Units\">QCalc.Units</a>) is
+abbreviated as <code>U</code> for convenience throughout the rest of
 <a href=\"modelica://QCalc\">QCalc</a>, and
-<a href=\"modelica://QCalc.Quantities\">QCalc.Quantities</a> is 
+<a href=\"modelica://QCalc.Quantities\">QCalc.Quantities</a> is
 abbreviated as <code>Q</code>.</p>
 
-<p>The <a href=\"modelica://QCalc.Units.setup\">Units.setup</a> function 
-establishes unit conversions using the values of the units, constants, and 
-prefixes.  These conversions may include offsets. The function also 
-sets the default display units.  It is automatically called when 
-<a href=\"modelica://QCalc\">QCalc</a> is loaded from the 
-<a href=\"modelica://QCalc/../load.mos\">load.mos</a> script.  It can also be called 
-manually from the \"Re-initialize the units\" command available in the 
-Modelica development environment from the <a href=\"modelica://QCalc.Units\">Units</a> 
-package and its subpackages.  A spreadsheet 
-(<a href=\"modelica://QCalc/Resources/quantities.xls\">Resources/quantities.xls</a>) 
-is available to help maintain the quantities, default units, and the setup 
+<p>The <a href=\"modelica://QCalc.Units.setup\">Units.setup</a> function
+establishes unit conversions using the values of the units, constants, and
+prefixes.  These conversions may include offsets. The function also
+sets the default display units.  It is automatically called when
+<a href=\"modelica://QCalc\">QCalc</a> is loaded from the
+<a href=\"modelica://QCalc/../load.mos\">load.mos</a> script.  It can also be called
+manually from the \"Re-initialize the units\" command available in the
+Modelica development environment from the <a href=\"modelica://QCalc.Units\">Units</a>
+package and its subpackages.  A spreadsheet
+(<a href=\"modelica://QCalc/Resources/quantities.xls\">Resources/quantities.xls</a>)
+is available to help maintain the quantities, default units, and the setup
 function.</p>
 
-<p>The values of the units, constants, and prefixes can be evaluated by 
-translating the <a href=\"modelica://QCalc.Units.Examples.Evaluate\">Units.Examples.Evaluate</a> 
-model.  This defines the values in the workspace of the development 
-environment. For convenience, the <a href=\"modelica://QCalc/../load.mos\">load.mos</a> 
-script automatically translates that model and saves the result as \"units.mos\" in the working 
+<p>The values of the units, constants, and prefixes can be evaluated by
+translating the <a href=\"modelica://QCalc.Units.Examples.Evaluate\">Units.Examples.Evaluate</a>
+model.  This defines the values in the workspace of the development
+environment. For convenience, the <a href=\"modelica://QCalc/../load.mos\">load.mos</a>
+script automatically translates that model and saves the result as \"units.mos\" in the working
 directory.</p>
 
 <p>In order to interpret the simulation results stored in a file, it is necessary to know
-the values of the base constants.  Since these may be changed, it is a good idea to 
+the values of the base constants.  Since these may be changed, it is a good idea to
 drop <a href=\"modelica://QCalc.Units.UnitSystem\">QCalc.Units.UnitSystem</a>
 into your model to record the values of the base constants in the results.</p>
 
-<p>Although it is not necessary since 
-<a href=\"http://www.modelica.org\">Modelica</a> is acausal, the declarations in this 
-package are sorted so that they can be easily ported to imperative/causal 
-languages (e.g., <a href=\"http://www.python.org\">Python</a> 
+<p>Although it is not necessary since
+<a href=\"http://www.modelica.org\">Modelica</a> is acausal, the declarations in this
+package are sorted so that they can be easily ported to imperative/causal
+languages (e.g., <a href=\"http://www.python.org\">Python</a>
 and C).</p>
 
 <p><b>Some notes on angle:</b></p>
 
 <p>As mentioned on the <a href=\"modelica://QCalc.UsersGuide.GettingStarted\">getting started</a> page and
-in the <a href=\"modelica://QCalc.Quantities\">Quantities</a> 
-package, angle is a dimension.  This is different from 
-<a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>, 
-where angle is considered dimensionless (rad = 1) 
+in the <a href=\"modelica://QCalc.Quantities\">Quantities</a>
+package, angle is a dimension.  This is different from
+<a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>,
+where angle is considered dimensionless (rad = 1)
 [<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>].<sup><a href=\"#fn2\" id=\"ref2\">2</a></sup>
-Units of angle such as the cycle (cyc), 
-<a href=\"https://en.wikipedia.org/wiki/Radian\">radian</a> (rad), and 
-<a href=\"https://en.wikipedia.org/wiki/Degree_(angle)\">degree</a> (deg) must be explicitly included in the expression of 
+Units of angle such as the cycle (cyc),
+<a href=\"https://en.wikipedia.org/wiki/Radian\">radian</a> (rad), and
+<a href=\"https://en.wikipedia.org/wiki/Degree_(angle)\">degree</a> (deg) must be explicitly included in the expression of
 quantities, but they often cancel in equations relating quantities.  The following
-differences are noted from the traditional 
+differences are noted from the traditional
 <a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI</a>
 representation:
 <ol>
 
-<li>The <a href=\"https://en.wikipedia.org/wiki/Radian\">radian</a> is defined as the cycle divided by two pi (rad = 
+<li>The <a href=\"https://en.wikipedia.org/wiki/Radian\">radian</a> is defined as the cycle divided by two pi (rad =
 cyc/2&pi;), which is not necessarily one because angle is derived from the
 independent base constants (as mentioned above).</li>
-  
-<li>Solid angle has the dimensionality of 
-squared angle. The <a href=\"https://en.wikipedia.org/wiki/Steradian\">streradian</a> (sr) is defined as the 
+
+<li>Solid angle has the dimensionality of
+squared angle. The <a href=\"https://en.wikipedia.org/wiki/Steradian\">streradian</a> (sr) is defined as the
 squared radian (rad<sup>2</sup>), not one.</li>
 
-<li>Frequency and rotational velocity have the dimensionality of angle per time. 
+<li>Frequency and rotational velocity have the dimensionality of angle per time.
 The <a href=\"https://en.wikipedia.org/wiki/Hertz\">hertz</a> (Hz) is defined as cyc/s (not s<sup>-1</sup>).</li>
 
-<li>The cross product (&times;) introduces a 
+<li>The cross product (&times;) introduces a
 factor of rad<sup>-1</sup>.  This means that:
-<ul><li>Torque, defined as <b><i>r</i></b>&times;<b><i>F</i></b>, has the dimensionality of energy per angle. 
+<ul><li>Torque, defined as <b><i>r</i></b>&times;<b><i>F</i></b>, has the dimensionality of energy per angle.
 Where J or N&nbsp;m is traditionally used to express torque, J/rad (or N&nbsp;m/rad) should be used.</li>
-<li>A factor of 2&pi; appears in the the Maxwell–Faraday equation and Amp&egrave;re's circuital law of 
-<a href=\"https://en.wikipedia.org/wiki/Maxwell's_equations\">Maxwell's equations</a>: 
+<li>A factor of 2&pi; appears in the the Maxwell–Faraday equation and Amp&egrave;re's circuital law of
+<a href=\"https://en.wikipedia.org/wiki/Maxwell's_equations\">Maxwell's equations</a>:
 <ul><li>&nabla;&times;<b><i>E</i></b> = -2&pi;&nbsp;&part;<b><i>B</i></b>/&part;<i>t</i></li>
-<li>&nabla;&times;<b><i>B</i></b> = 2&pi;&nbsp;&mu;<sub>0</sub>(<i>J</i> + &epsilon;<sub>0</sub>&nbsp;&part;<b><i>E</i></b>/&part;<i>t</i>) 
+<li>&nabla;&times;<b><i>B</i></b> = 2&pi;&nbsp;&mu;<sub>0</sub>(<i>J</i> + &epsilon;<sub>0</sub>&nbsp;&part;<b><i>E</i></b>/&part;<i>t</i>)
 (This formation is also based on other points below.)</li>
 </li>
 </li>
 
 <li>Rotational momentum has a factor of angle in the denominator.
 <ul>
-<li>The <a href=\"http://en.wikipedia.org/wiki/Planck_constant\">Planck constant</a> (<i>h</i>) 
-can be expressed in J/Hz or 
+<li>The <a href=\"http://en.wikipedia.org/wiki/Planck_constant\">Planck constant</a> (<i>h</i>)
+can be expressed in J/Hz or
 J&nbsp;s/rad (but not J&nbsp;s): <ul>
 <li><i>h</i>&nbsp;cyc &asymp; 6.626&times;10<sup>-34</sup>&nbsp;J&nbsp;s (the
 traditional expression of the <a href=\"http://en.wikipedia.org/wiki/Planck_constant\">Planck constant</a>
-[<a href=\"modelica://QCalc.UsersGuide.References.NIST2010\">NIST2010</a>])</li> 
+[<a href=\"modelica://QCalc.UsersGuide.References.NIST2010\">NIST2010</a>])</li>
 <li><i>h</i>&nbsp;rad &asymp; 1.055&times;10<sup>-34</sup>&nbsp;J&nbsp;s (the
 traditional expression of the reduced Planck constant
 [<a href=\"modelica://QCalc.UsersGuide.References.NIST2010\">NIST2010</a>])</li></ul></li>
@@ -2006,22 +2006,22 @@ traditional expression of the reduced Planck constant
 <li>Rotational inertia has a factor of squared angle in the denominator.  It can be expressed in
 kg&nbsp;m<sup>2</sup>/rad<sup>2</sup>.</li>
 
-<li>Wavenumber has the dimensionality of angle per 
-length.  Where m<sup>-1</sup> (or cm<sup>-1</sup>, etc.) is traditionally used to express wavenumber, 
+<li>Wavenumber has the dimensionality of angle per
+length.  Where m<sup>-1</sup> (or cm<sup>-1</sup>, etc.) is traditionally used to express wavenumber,
 cyc/m (or cyc/cm, etc.) should be used instead.  Reciprocally, wavelength has the dimensionality of length per angle
 and is expressed using m/cyc (or cm/cyc, etc.). This implies that:
 <ul><li><i>R</i><sub>&infin;</sub> &asymp; 10973732&nbsp;cyc/m</li>
 <li><i>c</i><sub>2</sub> = 1.439&times;10<sup>-2</sup>&nbsp;m&nbsp;K/cyc</li>
 <li><i>c</i><sub>3&nbsp;&lambda;</sub> &asymp; 2.898&times;10<sup>-3</sup>&nbsp;m&nbsp;K/cyc</li>
-<li>&lambda;<sub>e</sub>&nbsp;cyc &asymp; 2.426&times;10<sup>-12</sup>&nbsp;m (The right side is the traditional expression 
-of the electron's Compton wavelength 
+<li>&lambda;<sub>e</sub>&nbsp;cyc &asymp; 2.426&times;10<sup>-12</sup>&nbsp;m (The right side is the traditional expression
+of the electron's Compton wavelength
 [<a href=\"modelica://QCalc.UsersGuide.References.NIST2010\">NIST2010</a>].)</li>
-<li>&lambda;<sub>e</sub>&nbsp;rad  &asymp; 386.2&times;10<sup>-15</sup>&nbsp;m (The right side is the traditional expression of the 
-electron's Compton wavelength over 2&nbsp;&pi; 
+<li>&lambda;<sub>e</sub>&nbsp;rad  &asymp; 386.2&times;10<sup>-15</sup>&nbsp;m (The right side is the traditional expression of the
+electron's Compton wavelength over 2&nbsp;&pi;
 [<a href=\"modelica://QCalc.UsersGuide.References.NIST2010\">NIST2010</a>].)</li>
 </ul></li>
 
-<li>Magnetic flux and related quantities have a factor of angle in the denominator. 
+<li>Magnetic flux and related quantities have a factor of angle in the denominator.
 <ul>
 <li>The <a href=\"https://en.wikipedia.org/wiki/Weber_(unit)\">weber</a> (Wb) is defined as V/Hz or V&nbsp;s/cyc (not V&nbsp;s).</li>
 <li>The <a href=\"http://en.wikipedia.org/wiki/Von_Klitzing_constant\">von Klitzing constant</a>
@@ -2030,7 +2030,7 @@ are expressed as: <ul>
 <li><i>R</i><sub>K</sub> &asymp; 25813&nbsp;&Omega;/cyc</li>
 <li><i>Z</i><sub>0</sub> &asymp; 376.7&nbsp;&Omega;/cyc</li></ul>
 since they are quantities of magnetic flux per charge.
-Reciprocally, the <a href=\"https://en.wikipedia.org/wiki/Conductance_quantum\">conductance quantum</a> has a 
+Reciprocally, the <a href=\"https://en.wikipedia.org/wiki/Conductance_quantum\">conductance quantum</a> has a
 factor of angle in the numerator:<ul>
 <li><i>G</i><sub>0</sub> &asymp; 7.748&times;10<sup>-5</sup>&nbsp;S&nbsp;cyc</li></ul>
 </li>
@@ -2040,17 +2040,17 @@ factor of angle in the numerator:<ul>
 [<a href=\"modelica://QCalc.UsersGuide.References.NIST2010\">NIST2010</a>].)
 </li>
 </ul>
-<li> 
+<li>
 <li>A factor of cyc must be added to the denominator of the
-<a href=\"http://physics.nist.gov/cgi-bin/cuu/Value?aumfd\">traditional 
+<a href=\"http://physics.nist.gov/cgi-bin/cuu/Value?aumfd\">traditional
 symbolic expression of the atomic unit of magnetic flux density</a>.</li>
-</ul> 
+</ul>
 
-<li>The 
-<a href=\"http://en.wikipedia.org/wiki/Vacuum_permeability\">magnetic constant</a> 
+<li>The
+<a href=\"http://en.wikipedia.org/wiki/Vacuum_permeability\">magnetic constant</a>
 has a factor of squared angle in the denominator:<ul>
-<li>&mu;<sub>0</sub> = 4&pi;&times;10<sup>-7</sup>&nbsp;H/(m&nbsp;cyc<sup>2</sup>) = 2<i>k</i><sub>A</sub>/(cyc&nbsp;rad), 
-where 2<i>k</i><sub>A</sub> is the factor in 
+<li>&mu;<sub>0</sub> = 4&pi;&times;10<sup>-7</sup>&nbsp;H/(m&nbsp;cyc<sup>2</sup>) = 2<i>k</i><sub>A</sub>/(cyc&nbsp;rad),
+where 2<i>k</i><sub>A</sub> is the factor in
 <a href=\"http://en.wikipedia.org/wiki/Amp%C3%A8re's_force_law\">Amp&egrave;re's force law</a>.</li>
 </ul>
 In the basic equation for the inductance of a solenoid in vacuum, <i>N</i> (the number of turns)
@@ -2064,88 +2064,86 @@ is replaced by the angle of the wound coil (&theta; = <i>N</i>&nbsp;cyc):
 numerator.  <ul>
 <li>The <a href=\"http://en.wikipedia.org/wiki/Oersted\">oersted</a> is expressed as:
 <ul>
-<li>Oe = (10<sup>3</sup>/4&pi;) AT/m, where AT is the 
+<li>Oe = (10<sup>3</sup>/4&pi;) AT/m, where AT is the
 <a href=\"http://en.wikipedia.org/wiki/Ampere-turn\">ampere-turn</a> (AT = A&nbsp;cyc)</li>
 </ul>
 but the cycle or turn is traditionally neglected [<a href=\"http://www.bipm.org/\">BIPM</a>].</li>
 <li>
-A factor of cyc must be added to the 
-<a href=\"http://physics.nist.gov/cgi-bin/cuu/Value?aumdm\">traditional 
+A factor of cyc must be added to the
+<a href=\"http://physics.nist.gov/cgi-bin/cuu/Value?aumdm\">traditional
 symbolic expression of the atomic unit of magnetic dipole moment</a>.</li></ul></li>
 
 <li>It follows that magnetizability, the ratio between magnetic moment and magnetic flux density,
-has squared angle in the numerator.  A factor of cyc<sup>2</sup> must be added to the 
-<a href=\"http://physics.nist.gov/cgi-bin/cuu/Value?aumag\">traditional 
+has squared angle in the numerator.  A factor of cyc<sup>2</sup> must be added to the
+<a href=\"http://physics.nist.gov/cgi-bin/cuu/Value?aumag\">traditional
 symbolic expression of the atomic unit of magnetizability</a>.</li>
-  
+
 <li>The <a href=\"https://en.wikipedia.org/wiki/Henry_(unit)\">henry</a> (H) is defined as V&nbsp;s/A (not Wb/A).
-Although it related to magnetics, the <a href=\"https://en.wikipedia.org/wiki/Henry_(unit)\">henry</a> is applied to 
+Although it related to magnetics, the <a href=\"https://en.wikipedia.org/wiki/Henry_(unit)\">henry</a> is applied to
 electrical circuits, so it does not include any factors of angle.
 </li>
 
 <li>Traditional trigonometric functions accept angles in radians.  Angles should be divided by
-the <a href=\"https://en.wikipedia.org/wiki/Radian\">radian</a> (<code>U.rad</code>) before passing to these functions 
+the <a href=\"https://en.wikipedia.org/wiki/Radian\">radian</a> (<code>U.rad</code>) before passing to these functions
 (e.g., <code>sin(theta/U.rad)</code>) and the result of their inverses should be multiplied by
 the <a href=\"https://en.wikipedia.org/wiki/Radian\">radian</a> (e.g., <code>asin(x)*U.rad</code>).</li>
 
 <li>The first radiation constant has a factor of angle to the fourth power in the denominator:
   <ul><li>
-  <i>c</i><sub>1</sub>&nbsp;cyc<sup>4</sup> &asymp; 3.742&times;10<sup>-16</sup>&nbsp;W&nbsp;m<sup>2</sup> (The right 
+  <i>c</i><sub>1</sub>&nbsp;cyc<sup>4</sup> &asymp; 3.742&times;10<sup>-16</sup>&nbsp;W&nbsp;m<sup>2</sup> (The right
   side is the traditional expression
   [<a href=\"modelica://QCalc.UsersGuide.References.NIST2010\">NIST2010</a>].)
   </ul></li>
   </li>
-  </ol>
-</p>  
-  
-<p>The explicit inclusion of angle has several advantanges.  First, it 
-avoids a conflict in the definition of 
-<a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI units</a>.  
-<a href=\"http://www.bipm.org/\">BIPM</a> defines the 
-<a href=\"https://en.wikipedia.org/wiki/Hertz\">hertz</a> 
-as the reciprocal second (Hz = s<sup>-1</sup>), but states that \"The SI 
-unit of frequency is given as the hertz, implying the unit cycles per 
-second\" [<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>]. 
-Due to trigonometry (cyc = 2&pi;&nbsp;rad), <a href=\"http://www.bipm.org/\">BIPM</a>'s 
-definition of the <a href=\"https://en.wikipedia.org/wiki/Radian\">radian</a> as one (rad = 1) 
-implies that the cycle is two pi 
-(cyc = 2&pi;) and the <a href=\"http://en.wikipedia.org/wiki/Hertz_(unit)\">hertz</a> 
-is not cycles per second but rather cycles per 
+  </ol></p>
+
+<p>The explicit inclusion of angle has several advantages.  First, it
+avoids a conflict in the definition of
+<a href=\"http://en.wikipedia.org/wiki/International_System_of_Units\">SI units</a>.
+<a href=\"http://www.bipm.org/\">BIPM</a> defines the
+<a href=\"https://en.wikipedia.org/wiki/Hertz\">hertz</a>
+as the reciprocal second (Hz = s<sup>-1</sup>), but states that \"The SI
+unit of frequency is given as the hertz, implying the unit cycles per
+second\" [<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>].
+Due to trigonometry (cyc = 2&pi;&nbsp;rad), <a href=\"http://www.bipm.org/\">BIPM</a>'s
+definition of the <a href=\"https://en.wikipedia.org/wiki/Radian\">radian</a> as one (rad = 1)
+implies that the cycle is two pi
+(cyc = 2&pi;) and the <a href=\"http://en.wikipedia.org/wiki/Hertz_(unit)\">hertz</a>
+is not cycles per second but rather cycles per
 second divided by two pi (Hz = cyc/(2&pi;&nbsp;s)).</p>
 
 <p>The second advantage is that the use of explicit angles avoids
-the potential confusion between energy and torque in SI 
-[<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>].  
-Torque is expressed as the cross product 
+the potential confusion between energy and torque in SI
+[<a href=\"modelica://QCalc.UsersGuide.References.BIPM2006\">BIPM2006</a>].
+Torque is expressed as the cross product
 of force and radius. The cross product introduces a factor of rad<sup>-1</sup>,
 so the result is energy per angle, which is clearly
 distinct from energy.  The angle cancels in the expression of rotational
 power&mdash;the product of torque and rotational velocity (angle per time).</p>
 
-<p>Also, the inclusion of angle avoids the 
-need to use different variables depending on the chosen unit of angle.   
-For example, frequency is sometimes represented by a variable in hertz 
-(e.g., &nu;) and other times by a variable in radians per second (e.g., 
-&omega;).  If angle is explcit, then one variable will suffice (<i>f</i> = 
-&nu;&nbsp;cyc/s = &omega;&nbsp;rad/s).  As alluded to earlier, there is no need for the 
-reduced Planck constant (i.e., <i>h</i> &asymp; 
+<p>Also, the inclusion of angle avoids the
+need to use different variables depending on the chosen unit of angle.
+For example, frequency is sometimes represented by a variable in hertz
+(e.g., &nu;) and other times by a variable in radians per second (e.g.,
+&omega;).  If angle is explicit, then one variable will suffice (<i>f</i> =
+&nu;&nbsp;cyc/s = &omega;&nbsp;rad/s).  As alluded to earlier, there is no need for the
+reduced Planck constant (i.e., <i>h</i> &asymp;
 6.6261&times;10<sup>-34</sup>&nbsp;J/Hz &asymp; 1.0546&times;10<sup>-34</sup>&nbsp;J&nbsp;s/rad).</p>
 
-<p>Fourth, if angle is counted as a dimension, the 
-<a href=\"https://en.wikipedia.org/wiki/Fine-structure_constant\">fine-structure constant</a> is not 
+<p>Fourth, if angle is counted as a dimension, the
+<a href=\"https://en.wikipedia.org/wiki/Fine-structure_constant\">fine-structure constant</a> is not
 dimensionless.  This addresses the conundrum of a dimensionless constant that cannot be
-mathematically derived.
-</p>
+mathematically derived.</p>
 
-<p>A final possible advantage appears if we define the size of a circle 
-(<i>S</i>) as length per angle&mdash;radius per radian (<i>r</i>/rad) 
-or, equivalently, circumference per cycle.  This simplifies the 
-representation of some common equations because explict factors of 2&pi; are eliminated.  
-The circumference of one circle is <i>S</i>&nbsp;cyc.  The surface area of 
-one sphere is <i>S</i><sup>2</sup>&nbsp;sp, where sp = 4&pi;&nbsp;sr is the 
+<p>A final possible advantage appears if we define the size of a circle
+(<i>S</i>) as length per angle&mdash;radius per radian (<i>r</i>/rad)
+or, equivalently, circumference per cycle.  This simplifies the
+representation of some common equations because explicit factors of 2&pi; are eliminated.
+The circumference of one circle is <i>S</i>&nbsp;cyc.  The surface area of
+one sphere is <i>S</i><sup>2</sup>&nbsp;sp, where sp = 4&pi;&nbsp;sr is the
 spat, a unit of solid angle.<sup><a href=\"#fn3\" id=\"ref3\">3</a></sup>
-Coulomb's force law can be expressed using the electric constant (&epsilon;<sub>0</sub>) without 
-a explicit factor of 1/4&pi;:  
+Coulomb's force law can be expressed using the electric constant (&epsilon;<sub>0</sub>) without
+a explicit factor of 1/4&pi;:
 <blockquote>
  <i>F</i> = (1/&epsilon;<sub>0</sub>)&nbsp;<i>q</i><sub>1</sub><i>q</i><sub>2</sub>/(<i>S</i><sup>2</sup>&nbsp;sp)
 </blockquote>
@@ -2156,51 +2154,51 @@ this is
 <blockquote>
  <i>F</i> = <i>k</i><sub>C</sub>&nbsp;<i>q</i><sub>1</sub><i>q</i><sub>2</sub>/<i>r</i><sup>2</sup>
  </blockquote>
-where <i>k</i><sub>C</sub> is the electric constant, which is 
+where <i>k</i><sub>C</sub> is the electric constant, which is
 1/(4&pi;&nbsp;&epsilon;<sub>0</sub>) as expected.
-Thus, there may not be a 
-need to maintain the electric force constant as a separate variable from 
+Thus, there may not be a
+need to maintain the electric force constant as a separate variable from
 the electric constant.</p>
 
 <hr>
 
-<p id=\"fn1\"><small>1. The Modelica specification recommends that floating point 
-numbers be represented in at least IEEE double precision, which covers 
-magnitudes from &sim;2.225&times;10<sup>-308</sup> to 
+<p id=\"fn1\"><small>1. The Modelica specification recommends that floating point
+numbers be represented in at least IEEE double precision, which covers
+magnitudes from &sim;2.225&times;10<sup>-308</sup> to
 &sim;1.798&times;10<sup>308</sup> [<a href=\"modelica://QCalc.UsersGuide.References.Modelica2010\">Modelica2010</a>,
-p.&nbsp;13].<a href=\"#ref1\" title=\"Jump 
+p.&nbsp;13].<a href=\"#ref1\" title=\"Jump
 back to footnote 1 in the text.\">&#8629;</a></small></p>
 
-<p id=\"fn2\"><small>2. The common argument that angle is 
-dimensionless (\"angle is a ratio of lengths\") is flawed.  
-Angle is the not the ratio of arclength to radius.    
-Rather, angle in radians is the ratio of arclength to radius   
-(&theta;/rad = <i>L</i>/<i>r</i>).  It is not necessary that angle 
-(&theta;)   is dimensionless, only that angle and radian (rad) have the 
-same dimension.   In <a href=\"modelica://QCalc\">QCalc</a>, that 
-dimension is called angle.   The common (and correct) understanding is 
-that the radian (rad) is a unit of angle,   just as the metre (m) is a 
-unit of length.  The dimensionality of the radian  is angle, just as 
-the dimensionality of the metre is length.<a href=\"#ref2\" title=\"Jump 
+<p id=\"fn2\"><small>2. The common argument that angle is
+dimensionless (\"angle is a ratio of lengths\") is flawed.
+Angle is the not the ratio of arclength to radius.
+Rather, angle in radians is the ratio of arclength to radius
+(&theta;/rad = <i>L</i>/<i>r</i>).  It is not necessary that angle
+(&theta;)   is dimensionless, only that angle and radian (rad) have the
+same dimension.   In <a href=\"modelica://QCalc\">QCalc</a>, that
+dimension is called angle.   The common (and correct) understanding is
+that the radian (rad) is a unit of angle,   just as the metre (m) is a
+unit of length.  The dimensionality of the radian  is angle, just as
+the dimensionality of the metre is length.<a href=\"#ref2\" title=\"Jump
 back to footnote 2 in the text.\">&#8629;</a></small></p>
 
-<p id=\"fn3\"><small>3. The spat (sp) is the solid angle of one sphere, just 
-as the cycle (cyc) is the angle of one circle.  For mnemonic purposes, sp can be 
-considered as the abbreviation for sphere as well as spat.<a href=\"#ref3\" title=\"Jump 
+<p id=\"fn3\"><small>3. The spat (sp) is the solid angle of one sphere, just
+as the cycle (cyc) is the angle of one circle.  For mnemonic purposes, sp can be
+considered as the abbreviation for sphere as well as spat.<a href=\"#ref3\" title=\"Jump
 back to footnote 3 in the text.\">&#8629;</a></small></p>
 
-<p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica 
+<p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica
 License 2</b><br> Copyright &copy; 2007&ndash;2014, <a href=\"
-http://www.hnei.hawaii.edu/\">Hawaii Natural Energy Institute</a> and <a 
-href=\"http://www.gtrc.gatech.edu/\">Georgia Tech Research 
+http://www.hnei.hawaii.edu/\">Hawaii Natural Energy Institute</a> and <a
+href=\"http://www.gtrc.gatech.edu/\">Georgia Tech Research
 Corporation</a>.</p>
- 
-<p><i>This Modelica package is <u>free</u> software and the use is 
-completely at <u>your own risk</u>; it can be redistributed and/or 
-modified under the terms of the Modelica License 2. For license conditions 
+
+<p><i>This Modelica package is <u>free</u> software and the use is
+completely at <u>your own risk</u>; it can be redistributed and/or
+modified under the terms of the Modelica License 2. For license conditions
 (including the disclaimer of warranty) see <a href=\"
-modelica://QCalc.UsersGuide.License\"> QCalc.UsersGuide.License</a> or 
-visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\"> 
+modelica://QCalc.UsersGuide.License\"> QCalc.UsersGuide.License</a> or
+visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">
 http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
 </html>"),
     Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),

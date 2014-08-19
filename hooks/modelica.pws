@@ -109,6 +109,12 @@ SystemModeler
 dateModified
 Bezier
 checkBox
+within
+cellpadding
+mdash
+ndash
+pre
+colspan
 choicesInPackage
 coordinateSystem
 descriptionLabel
@@ -126,7 +132,7 @@ lineColor
 lineThickness
 ModelicaExternalC
 noBorder
-preferedView
+preferredView
 preserveAspectRatio
 revisionID
 startAngle
@@ -135,4 +141,3 @@ textString
 translatePoly
 versionBuild
 VerticalCylinder
-preferredView

@@ -14,12 +14,10 @@ package Icons "Package of icons"
               extent={{-150,150},{150,110}},
               textString="%name",
               lineColor={0,0,255})}), Documentation(info="<html>
-<p>
-Block that has only the basic icon for an input/output
+<p>Block that has only the basic icon for an input/output
 block (no declarations, no equations). Most blocks
 of package Modelica.Blocks inherit directly or indirectly
-from this block.
-</p>
+from this block.</p>
 </html>"));
 
   end Block;
@@ -160,7 +158,7 @@ from this block.
 
   partial package InterfacesPackage
     "Icon for packages containing interfaces (from MSL 3.2.1)"
-    //extends Modelica.Icons.Package;
+    // extends Modelica.Icons.Package;
     annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
               -100},{100,100}}), graphics={
           Rectangle(
@@ -232,9 +230,7 @@ from this block.
             origin={0.0,-25.0},
             points={{0.0,75.0},{0.0,-75.0}},
             color={64,64,64})}), Documentation(info="<html>
-<p>
-This icon is indicates a record.
-</p>
+<p>This icon is indicates a record.</p>
 </html>"));
   end Record;
 

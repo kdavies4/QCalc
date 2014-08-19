@@ -123,31 +123,29 @@ package Quantities "Types to represent physical values"
               lineColor={255,255,255},
               extent={{-90,-50},{90,50}},
               textString="Q")}), Documentation(info="<html>
-<p>
-This icon is designed for a <b>Real</b> type that is used as a physical quantity.
-</p>
+<p>This icon is designed for a <b>Real</b> type that is used as a physical quantity.</p>
 </html>"));
     end Quantity;
   end Interfaces;
-  annotation (Documentation(info="<html>  
+  annotation (Documentation(info="<html>
   <p>This package contains quantities (<code>Real</code> types)
   that are instantiated
   to represent physical values (<code>Real</code> variables).  The
 <code>unit</code> attribute of each quantity is used to denote the
   physical dimensionality in terms of fundamental dimensions:
-  angle (A), length (L), mass (M), chemical amount (N), and time (T).<sup><a href=\"#fn1\" id=\"ref1\">1</a></sup>  
+  angle (A), length (L), mass (M), chemical amount (N), and time (T).<sup><a href=\"#fn1\" id=\"ref1\">1</a></sup>
   The fundamental dimensions
   are combined according to the rules established for unit strings
-  [<a href=\"modelica://QCalc.UsersGuide.References.Modelica2010\">Modelica2010</a>, p.&nbsp;210].  
-  The abbreviations (A, L, M, N, T) are applied in alphabetical order in each numerator and denominator.  
-  Temperature and charge are considered derived dimensions as if the 
-  <a href=\"http://en.wikipedia.org/wiki/Faraday_constant\">Faraday constant</a> 
-  (<i>k</i><sub>F</sub> or 96485.3399&nbsp;C/mol) and the 
-  <a href=\"http://en.wikipedia.org/wiki/Gas_constant\">gas constant</a> 
+  [<a href=\"modelica://QCalc.UsersGuide.References.Modelica2010\">Modelica2010</a>, p.&nbsp;210].
+  The abbreviations (A, L, M, N, T) are applied in alphabetical order in each numerator and denominator.
+  Temperature and charge are considered derived dimensions as if the
+  <a href=\"http://en.wikipedia.org/wiki/Faraday_constant\">Faraday constant</a>
+  (<i>k</i><sub>F</sub> or 96485.3399&nbsp;C/mol) and the
+  <a href=\"http://en.wikipedia.org/wiki/Gas_constant\">gas constant</a>
   (<i>R</i> or 8.314472&nbsp;J/(mol&nbsp;K)) are nondimensionalized.
   The <code>quantity</code> attribute of each quantity is not used since it is redundant in this context.
   The <code>displayUnit</code> attribute is
-  only used for quantities that imply a certain display unit.  For example, 
+  only used for quantities that imply a certain display unit.  For example,
   <a href=\"modelica://QCalc.Quantities.Temperature\">Temperature</a> is an alias for
 <a href=\"modelica://QCalc.Quantities.Potential\">Potential</a> with a default
 display unit of K.  Some quantities have minimum values
@@ -170,7 +168,7 @@ Most quantities are named with adjectives following the noun so that related
 
     <hr>
 
-    <p id=\"fn1\"><small>1. This misnomer (unit instead of dimension) is necessary because <code>Real</code> 
+    <p id=\"fn1\"><small>1. This misnomer (unit instead of dimension) is necessary because <code>Real</code>
     variables do not have a <code>dimension</code>
     attribute in Modelica.<a href=\"#ref1\" title=\"Jump back to footnote 1 in the text.\">&#8629;</a></small></p>
 

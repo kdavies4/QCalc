@@ -2,7 +2,7 @@ within QCalc;
 package Blocks "Imperative models to convert units"
   extends QCalc.Icons.Package;
   block Num2Qty "Convert a number to a quantity using a nonscalar unit"
-    //extends Modelica.Blocks.Interfaces.SISO;
+    // extends Modelica.Blocks.Interfaces.SISO;
 
     replaceable QCalc.Units.Interfaces.NonscalarUnit u "Nonscalar unit"
       annotation (__Dymola_choicesAllMatching=true);
@@ -20,8 +20,8 @@ package Blocks "Imperative models to convert units"
     annotation (
       structurallyIncomplete=true,
       Documentation(info="<html>
-    <p>To convert a number to a quantity using a scalar unit (i.e., a unit that involves just multiplication), 
-    instead use 
+    <p>To convert a number to a quantity using a scalar unit (i.e., a unit that involves just multiplication),
+    instead use
     <a href=\"modelica://Modelica.Blocks.Math.Gain\">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the unit.</p></html>"),
       Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
@@ -48,7 +48,7 @@ package Blocks "Imperative models to convert units"
   end Num2Qty;
 
   block Qty2Num "Convert a quantity to a number using a nonscalar unit"
-    //extends Modelica.Blocks.Interfaces.SISO;
+    // extends Modelica.Blocks.Interfaces.SISO;
 
     replaceable QCalc.Units.Interfaces.NonscalarUnit u "Nonscalar unit"
       annotation (__Dymola_choicesAllMatching=true);
@@ -66,8 +66,8 @@ package Blocks "Imperative models to convert units"
     annotation (
       structurallyIncomplete=true,
       Documentation(info="<html>
-    <p>To convert a quantity to a number using a scalar unit, 
-    instead use 
+    <p>To convert a quantity to a number using a scalar unit,
+    instead use
     <a href=\"modelica://Modelica.Blocks.Math.Gain\">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the reciprocal of the unit.</p></html>"),
       Icon(graphics={

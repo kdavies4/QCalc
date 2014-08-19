@@ -20,17 +20,20 @@ rpls = [# Remove tabs.
         # Remove empty annotation tags.
         (r'\n? *Diagram\(graphics\), *', ' '),
         (r',\n? *Diagram\(graphics\)', ''),
+        (r', *graphics\)', ')'),
         (r'annotation\(Diagram\(graphics\)\);', ''),
         (r'\n? *Icon\(graphics\), *', ' '),
         (r',\n? *Icon\(graphics\)', ''),
         (r'annotation\(Icon\(graphics\)\);', ''),
         (r'\n? *(__Dymola_)?experimentSetupOutput, *', ' '),
         (r',\n? *(__Dymola_)?experimentSetupOutput\)', ')'),
-        # Remove spaces on the outside of bold and underline tags.
+        # Remove spaces on the outside of bold, italic, and underline tags.
         ('<b> ', ' <b>'),
         (' </b>', '</b> '),
         ('<u> ', ' <u>'),
         (' </u>', '</u> '),
+        ('<i> ', ' <i>'),
+        (' </i>', '</i> '),
         # Insert two newlines between paragraphs.
         (r' *(</p>) *\n? *( *<p>)', r'\1\n\n\2'),
         # No newline after start of paragraph or before end
@@ -112,7 +115,7 @@ rpls = [# Remove tabs.
 if (len(sys.argv) > 1):
     directory = sys.argv[1]
 else:
-    directory = ''
+    directory = '*/'
 
 ## Procedure
 # Method to remove non-ASCII characters.
