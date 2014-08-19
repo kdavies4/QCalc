@@ -7,13 +7,13 @@ package Icons "Package of icons"
 
     annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
               {100,100}}), graphics={Rectangle(
-              extent={{-100,-100},{100,100}},
-              lineColor={0,0,127},
-              fillColor={255,255,255},
-              fillPattern=FillPattern.Solid),Text(
-              extent={{-150,150},{150,110}},
-              textString="%name",
-              lineColor={0,0,255})}), Documentation(info="<html>
+            extent={{-100,-100},{100,100}},
+            lineColor={0,0,127},
+            fillColor={255,255,255},
+            fillPattern=FillPattern.Solid), Text(
+            extent={{-150,150},{150,110}},
+            textString="%name",
+            lineColor={0,0,255})}), Documentation(info="<html>
 <p>Block that has only the basic icon for an input/output
 block (no declarations, no equations). Most blocks
 of package Modelica.Blocks inherit directly or indirectly
@@ -25,26 +25,30 @@ from this block.</p>
   partial class Contact "Icon for contact information (from MSL 3.2.1)"
 
     annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={Rectangle(
-              extent={{-100,70},{100,-72}},
-              lineColor={0,0,0},
-              fillColor={235,235,235},
-              fillPattern=FillPattern.Solid),Polygon(
-              points={{-100,-72},{100,-72},{0,20},{-100,-72}},
-              lineColor={0,0,0},
-              smooth=Smooth.None,
-              fillColor={215,215,215},
-              fillPattern=FillPattern.Solid),Polygon(
-              points={{22,0},{100,70},{100,-72},{22,0}},
-              lineColor={0,0,0},
-              smooth=Smooth.None,
-              fillColor={235,235,235},
-              fillPattern=FillPattern.Solid),Polygon(
-              points={{-100,70},{100,70},{0,-20},{-100,70}},
-              lineColor={0,0,0},
-              smooth=Smooth.None,
-              fillColor={241,241,241},
-              fillPattern=FillPattern.Solid)}), Documentation(info="<html>
+              -100},{100,100}}), graphics={
+          Rectangle(
+            extent={{-100,70},{100,-72}},
+            lineColor={0,0,0},
+            fillColor={235,235,235},
+            fillPattern=FillPattern.Solid),
+          Polygon(
+            points={{-100,-72},{100,-72},{0,20},{-100,-72}},
+            lineColor={0,0,0},
+            smooth=Smooth.None,
+            fillColor={215,215,215},
+            fillPattern=FillPattern.Solid),
+          Polygon(
+            points={{22,0},{100,70},{100,-72},{22,0}},
+            lineColor={0,0,0},
+            smooth=Smooth.None,
+            fillColor={235,235,235},
+            fillPattern=FillPattern.Solid),
+          Polygon(
+            points={{-100,70},{100,70},{0,-20},{-100,70}},
+            lineColor={0,0,0},
+            smooth=Smooth.None,
+            fillColor={241,241,241},
+            fillPattern=FillPattern.Solid)}), Documentation(info="<html>
 <p>This icon shall be used for the contact information of the library developers.</p>
 </html>"));
   end Contact;
@@ -53,16 +57,15 @@ from this block.</p>
 
     annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
               -100},{100,100}}), graphics={Ellipse(
-              lineColor={75,138,73},
-              fillColor={255,255,255},
-              fillPattern=FillPattern.Solid,
-              extent={{-100,-100},{100,100}}),Polygon(
-              lineColor={0,0,255},
-              fillColor={75,138,73},
-              pattern=LinePattern.None,
-              fillPattern=FillPattern.Solid,
-              points={{-36,60},{64,0},{-36,-60},{-36,60}})}), Documentation(
-          info="<html>
+            lineColor={75,138,73},
+            fillColor={255,255,255},
+            fillPattern=FillPattern.Solid,
+            extent={{-100,-100},{100,100}}), Polygon(
+            lineColor={0,0,255},
+            fillColor={75,138,73},
+            pattern=LinePattern.None,
+            fillPattern=FillPattern.Solid,
+            points={{-36,60},{64,0},{-36,-60},{-36,60}})}), Documentation(info="<html>
 <p>This icon indicates an example. The play button suggests that the example can be executed.</p>
 </html>"));
   end Example;
@@ -237,22 +240,26 @@ from this block.</p>
   partial class References "Icon for external references (from MSL 3.2.1)"
 
     annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={Polygon(
-              points={{-100,-80},{-100,60},{-80,54},{-80,80},{-40,58},{-40,100},
-              {-10,60},{90,60},{100,40},{100,-100},{-20,-100},{-100,-80}},
-              lineColor={0,0,255},
-              pattern=LinePattern.None,
-              fillColor={245,245,245},
-              fillPattern=FillPattern.Solid),Polygon(points={{-20,-100},{-10,-80},
-            {90,-80},{100,-100},{-20,-100}}, lineColor={0,0,0}),Line(points={{
-            90,-80},{90,60},{100,40},{100,-100}}, color={0,0,0}),Line(points={{
-            90,60},{-10,60},{-10,-80}}, color={0,0,0}),Line(points={{-10,60},{-40,
-            100},{-40,-40},{-10,-80},{-10,60}}, color={0,0,0}),Line(points={{-20,
-            -88},{-80,-60},{-80,80},{-40,58}}, color={0,0,0}),Line(points={{-20,
-            -100},{-100,-80},{-100,60},{-80,54}}, color={0,0,0}),Line(points={{
-            10,30},{72,30}}, color={0,0,0}),Line(points={{10,-10},{70,-10}},
-            color={0,0,0}),Line(points={{10,-50},{70,-50}}, color={0,0,0})}),
-        Documentation(info="<html>
+              -100},{100,100}}), graphics={
+          Polygon(
+            points={{-100,-80},{-100,60},{-80,54},{-80,80},{-40,58},{-40,100},{
+                -10,60},{90,60},{100,40},{100,-100},{-20,-100},{-100,-80}},
+            lineColor={0,0,255},
+            pattern=LinePattern.None,
+            fillColor={245,245,245},
+            fillPattern=FillPattern.Solid),
+          Polygon(points={{-20,-100},{-10,-80},{90,-80},{100,-100},{-20,-100}},
+              lineColor={0,0,0}),
+          Line(points={{90,-80},{90,60},{100,40},{100,-100}}, color={0,0,0}),
+          Line(points={{90,60},{-10,60},{-10,-80}}, color={0,0,0}),
+          Line(points={{-10,60},{-40,100},{-40,-40},{-10,-80},{-10,60}}, color=
+                {0,0,0}),
+          Line(points={{-20,-88},{-80,-60},{-80,80},{-40,58}}, color={0,0,0}),
+          Line(points={{-20,-100},{-100,-80},{-100,60},{-80,54}}, color={0,0,0}),
+          Line(points={{10,30},{72,30}}, color={0,0,0}),
+          Line(points={{10,-10},{70,-10}}, color={0,0,0}),
+          Line(points={{10,-50},{70,-50}}, color={0,0,0})}), Documentation(info=
+           "<html>
 <p>This icon indicates a documentation class containing references external documentation and literature.</p>
 </html>"));
 
@@ -262,26 +269,30 @@ from this block.</p>
     "Icon for release notes in documentation (from MSL 3.2.1)"
 
     annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-              -100},{100,100}}), graphics={Polygon(
-              points={{-80,-100},{-80,100},{0,100},{0,20},{80,20},{80,-100},{-80,
-              -100}},
-              lineColor={0,0,0},
-              fillColor={245,245,245},
-              fillPattern=FillPattern.Solid),Polygon(
-              points={{0,100},{80,20},{0,20},{0,100}},
-              lineColor={0,0,0},
-              fillColor={215,215,215},
-              fillPattern=FillPattern.Solid),Line(points={{2,-12},{50,-12}},
-            color={0,0,0}),Ellipse(
-              extent={{-56,2},{-28,-26}},
-              lineColor={0,0,0},
-              fillColor={215,215,215},
-              fillPattern=FillPattern.Solid),Line(points={{2,-60},{50,-60}},
-            color={0,0,0}),Ellipse(
-              extent={{-56,-46},{-28,-74}},
-              lineColor={0,0,0},
-              fillColor={215,215,215},
-              fillPattern=FillPattern.Solid)}), Documentation(info="<html>
+              -100},{100,100}}), graphics={
+          Polygon(
+            points={{-80,-100},{-80,100},{0,100},{0,20},{80,20},{80,-100},{-80,
+                -100}},
+            lineColor={0,0,0},
+            fillColor={245,245,245},
+            fillPattern=FillPattern.Solid),
+          Polygon(
+            points={{0,100},{80,20},{0,20},{0,100}},
+            lineColor={0,0,0},
+            fillColor={215,215,215},
+            fillPattern=FillPattern.Solid),
+          Line(points={{2,-12},{50,-12}}, color={0,0,0}),
+          Ellipse(
+            extent={{-56,2},{-28,-26}},
+            lineColor={0,0,0},
+            fillColor={215,215,215},
+            fillPattern=FillPattern.Solid),
+          Line(points={{2,-60},{50,-60}}, color={0,0,0}),
+          Ellipse(
+            extent={{-56,-46},{-28,-74}},
+            lineColor={0,0,0},
+            fillColor={215,215,215},
+            fillPattern=FillPattern.Solid)}), Documentation(info="<html>
 <p>This icon indicates release notes and the revision history of a library.</p>
 </html>"));
 

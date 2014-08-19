@@ -2,8 +2,6 @@
 # Make custom replacements in files.
 #
 # The first argument is the directory.
-#
-# Kevin Davies, 5/30/2012
 
 import re
 import glob

@@ -13,14 +13,13 @@ Advanced.ImprovedPackageConstants = true "Improved code generation for package c
 // Startup
 // ------------
 // Load the QCalc package.
-Advanced.CheckUnits = false "Check unit consistency of equations";
 openModel("QCalc/package.mo");
 cd("..");
 
 // Establish the unit system.
 QCalc.Units.setup();
 
-// Work in the directory above the QCalc package.
+// Work in the directory above this package.
 cd("..")
 
 // Save a static, translated copy of the values of all the constants and units.

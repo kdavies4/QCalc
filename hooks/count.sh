@@ -3,7 +3,7 @@
 #
 # Kevin Davies, 7/26/2013
 
-f=`find . -type f \( -iname "*.mo" \)`
+f=`find . -type f \( -name "*.mo" \)`
 
 echo There are `cat $f | wc -l` lines of code.
 wc -l $f

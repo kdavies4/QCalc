@@ -7,4 +7,5 @@ Advanced.StoreProtectedVariables = true "Store protected variables when simulati
 Advanced.OutputModelicaCodeWithAliasVariables = true "List eliminated alias variables when outputting dsmodel in Modelica style";
 Advanced.AutoFormatting = true "Automatic indentation of code. Can be changed without new translation of model";
 Advanced.TranslationInCommandLog = true "Also include translation log in command log";
+
 // Note:  Dymola's list() function lists all possible settings.

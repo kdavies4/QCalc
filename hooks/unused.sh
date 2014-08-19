@@ -1,8 +1,5 @@
 #!/bin/bash
 # Check for references that aren't used.
-#
-# Any unused references should be removed from package.mo
-# (QCalc.UsersGuide.References).
 
 for s in Aronsson2009 BIPM2006 Broman2008 Brown2011 Fritzson2004 Hess2008 Mattsson2008 Modelica2010 NIST2010 Rapaport2004
 do
@@ -11,3 +8,5 @@ do
         echo Reference \"$s\" was not found.
     fi
 done
+echo
+echo "Remove the unused references from package.mo (QCalc.UsersGuide.References)."

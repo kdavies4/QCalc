@@ -22,16 +22,6 @@ annotation (
 
 <h4><a name=\"usage\">Usage:</a></h4>
 
-<p>In Dymola, it is necessary to turn off unit checking.  In the command
-window, enter:
-
- <pre>
-    Advanced.CheckUnits = false
- </pre>
-
-    This setting is applied in <a href=\"modelica://QCalc/../load.mos\">load.mos</a>,
-    which can be used to open the package.</p>
-
 <p>QCalc can be used like this:</p>
 
  <pre>
@@ -43,20 +33,17 @@ window, enter:
 and <a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> are also supported.
 The <code>*</code> and <code>/</code> operators are overloaded
 to call the unit's transformation and its inverse, respectively.  For example, this will give a value of
-x = 100:
+x = 100:</p>
 
  <pre>
-    Real x = (0*U.degC + 100*U.K)/U.degC;
- </pre>
+    Real x = (0*U.degC + 100*U.K)/U.degC;</pre>
 
-and this will too:
+<p>and this will too:</p>
 
  <pre>
+    Real x = (10/U.dB + 10/U.dB)*U.dB;</pre>
 
-    Real x = (10/U.dB + 10/U.dB)*U.dB;
- </pre>
-
-since we have multiplied the numbers by adding their logarithms.</p>
+<p>since we have multiplied the numbers by adding their logarithms.</p>
 
  <p>The quantities are not directly compatible with the
  <a href=\"https://github.com/modelica/Modelica\">Modelica Standard Library</a>
@@ -65,10 +52,9 @@ since we have multiplied the numbers by adding their logarithms.</p>
  To convert between QCalc and MSL, create an adapter with equations like this:</p>
 
  <pre>
-    p = p_SI*U.Pa;
- </pre>
+    p = p_SI*U.Pa;</pre>
 
-where <code>p</code> is pressure as a quantity (in QCalc), <code>p_SI</code> is pressure in
+<p>where <code>p</code> is pressure as a quantity (in QCalc), <code>p_SI</code> is pressure in
 <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> (in MSL), and <code>U.Pa</code> is
 the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a href=\"modelica://QCalc.Units\">QCalc.Units</a>.</p>
 
@@ -89,7 +75,7 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
     <a href=\"modelica://QCalc.UsersGuide.License\">
     QCalc.UsersGuide.License</a>
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">
-    http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"), 
+    http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
   version="",
   versionDate="",
   uses(Modelica(version="3.2")));

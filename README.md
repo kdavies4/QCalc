@@ -7,13 +7,6 @@ various units, including but not limited to [SI].  The approach is based on
 
 ### Usage
 
-In Dymola, it is necessary to turn off unit checking:
-
-    Advanced.CheckUnits = false
-
-This setting is applied in [load.mos](load.mos), which can be used to open the
-package.
-
 [QCalc] can be used like this:
 
     import Q = QCalc.Quantities;

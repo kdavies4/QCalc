@@ -1,13 +1,17 @@
-﻿within QCalc;
+within QCalc;
 package Units "Constants and units of physical measure"
   extends Icons.Package;
 
-  replaceable function setup
-    "Establish conversions to display quantities in units"
+  replaceable function setup "Set up the units in Dymola"
     // import Modelica.Utilities.Streams.print;
     extends Icons.Function;
 
   algorithm
+    // Don't check the unit consistency of equations.  The "unit" attribute is
+    // used to denote the dimension (see QCalc.Quantities), and Dymola doesn't
+    // recognize its symbols.
+    Advanced.CheckUnits := false;
+
     // print("Establishing display units...");
 
     // -------------------------------------------------------------------------
@@ -1976,7 +1980,7 @@ The <a href=\"https://en.wikipedia.org/wiki/Hertz\">hertz</a> (Hz) is defined as
 factor of rad<sup>-1</sup>.  This means that:
 <ul><li>Torque, defined as <b><i>r</i></b>&times;<b><i>F</i></b>, has the dimensionality of energy per angle.
 Where J or N&nbsp;m is traditionally used to express torque, J/rad (or N&nbsp;m/rad) should be used.</li>
-<li>A factor of 2&pi; appears in the the Maxwell–Faraday equation and Amp&egrave;re's circuital law of
+<li>A factor of 2&pi; appears in the the Maxwell-Faraday equation and Amp&egrave;re's circuital law of
 <a href=\"https://en.wikipedia.org/wiki/Maxwell's_equations\">Maxwell's equations</a>:
 <ul><li>&nabla;&times;<b><i>E</i></b> = -2&pi;&nbsp;&part;<b><i>B</i></b>/&part;<i>t</i></li>
 <li>&nabla;&times;<b><i>B</i></b> = 2&pi;&nbsp;&mu;<sub>0</sub>(<i>J</i> + &epsilon;<sub>0</sub>&nbsp;&part;<b><i>E</i></b>/&part;<i>t</i>)
@@ -2040,7 +2044,6 @@ factor of angle in the numerator:<ul>
 [<a href=\"modelica://QCalc.UsersGuide.References.NIST2010\">NIST2010</a>].)
 </li>
 </ul>
-<li>
 <li>A factor of cyc must be added to the denominator of the
 <a href=\"http://physics.nist.gov/cgi-bin/cuu/Value?aumfd\">traditional
 symbolic expression of the atomic unit of magnetic flux density</a>.</li>
@@ -2135,7 +2138,7 @@ reduced Planck constant (i.e., <i>h</i> &asymp;
 dimensionless.  This addresses the conundrum of a dimensionless constant that cannot be
 mathematically derived.</p>
 
-<p>A final possible advantage appears if we define the size of a circle
+<p>Another possible advantage appears if we define the size of a circle
 (<i>S</i>) as length per angle&mdash;radius per radian (<i>r</i>/rad)
 or, equivalently, circumference per cycle.  This simplifies the
 representation of some common equations because explicit factors of 2&pi; are eliminated.

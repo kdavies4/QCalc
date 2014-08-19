@@ -92,16 +92,16 @@ package UsersGuide "User's Guide"
 
     end 'volumic';
 
-    annotation (preferredView="info", Documentation(info="<html><p>The terms below may be
-      unfamiliar.  All of the terms except for <a href=\"modelica://QCalc.UsersGuide.Glossary.'specific'\">specific</a>
-      have the usual definitions.</p></html>"));
+    annotation (preferredView="info", Documentation(info="<html><p>Below are some terms used in 
+  <a href=\"modelica://QCalc\">QCalc</a>. All of the terms have the usual definitions 
+  except for <a href=\"modelica://QCalc.UsersGuide.Glossary.'specific'\">specific</a>.</p></html>"));
   end Glossary;
 
   package Publications "Publications"
     extends Icons.References;
 
     class Davies2012
-      "<html>K. L. Davies and C. J. Paredis, \"<a href=\"http://www.ep.liu.se/ecp_article/index.en.aspx?issue=076;article=082\">Natural Unit Representation in Modelica</a>,\" in <i>Proc. 9th Modelica Conf.</i> (Munich, Germany), Modelica Assoc., Sep. 2012 (<a href=\"modelica://QCalc/Resources/Documentation/UsersGuide/Publications/Natural%20Unit%20Representation%20in%20Modelica%20(poster).pdf\">poster</a>).</html>"
+      "<html>K. L. Davies and C. J. Paredis, \"<a href=\"http://www.ep.liu.se/ecp_article/index.en.aspx?issue=076;article=082\">Natural Unit Representation in Modelica</a>,\" in <i>Proc. 9th Modelica Conf.</i> (Munich, Germany), Modelica Assoc.,  Sep. 2012 (<a href=\"modelica://QCalc/Resources/Documentation/UsersGuide/Publications/Natural-Unit-Representation-in-Modelica-(poster).pdf\">poster</a>).</html>"
 
       annotation (preferredView="info", DocumentationClass=false);
     end Davies2012;

@@ -1,7 +1,7 @@
 /* Style sheet for Modelica documentation
  *
  * Based on the following (with modifications):
- * 1. Sphinx sphinxdoc theme.  Originally created by Armin Ronacher 
+ * 1. Sphinx sphinxdoc theme.  Originally created by Armin Ronacher
  *    for Werkzeug.  BSD license, 2007-2011.
  * 2. Sphinx basic theme,  Sphinx team, BSD license, 2007-2011.
  * 3. Modelica Buildings library, http://simulationresearch.lbl.gov/modelica,
@@ -27,9 +27,8 @@ div.document {
 }
 
 div.bodywrapper {
-    margin: 0 215px 0 0;
-    border-right: 1px solid #ccc;
-
+    margin: 0 0 0 200px;
+    border-left: 1px solid #ccc;
 }
 
 div.body {
@@ -40,18 +39,18 @@ div.body {
 /* -- sidebar --------------------------------------------------------------- */
 
 div.sidebarwrapper {
-    position: fixed; 
-    padding: 6px 5px 0 10px;
+    position: fixed;
+    padding: 6px 0 0 15px;
 }
 
 div.sidebar {
     margin: 0;
     padding: 0 15px 15px 0;
-    width: 190px;
-    float: right;
+    width: 180px;
+    float: left;
     font-size: 0.9em;
     text-align: left;
-    margin-left: -100%;
+    margin-right: -100%;
 }
 
 div.sidebar h2{
@@ -63,7 +62,7 @@ div.sidebar h2{
 
 div.sidebar h3 {
     margin: 1em 0 0.5em 0;
-    padding: 0.1em 0 0.1em 0.2em;
+    padding: 0.1em 0.4em 0.1em 0.4em;
     color: white;
     border: 1px solid #86989B;
     background-color: #AFC1C4;
@@ -80,7 +79,7 @@ div.sidebar ul {
 /* -- body styles ----------------------------------------------------------- */
 
 div.body {
-    min-height:580px; /* Be sure there's room for the sidebar. */
+    min-height:300px; /* Be sure there's room for the sidebar. */
 }
 
 div.body p.caption {
@@ -233,7 +232,7 @@ tt {
     color: #333;
 }
 
-pre {
+pre, div.modelica {
     font-family: Consolas, "Deja Vu Sans Mono",
                  "Bitstream Vera Sans Mono", monospace;
     font-size: 0.95em;
@@ -250,12 +249,12 @@ pre {
     /* end css 3 or browser specific rules */
 }
 
-pre a {
+pre a, div.modelica a {
     color: red;
     text-decoration: none;
 }
 
-pre.comment {
+pre.comment, div.modelica.comment {
     background-color: #CCCCCC;
     color: red;
     padding: 0;
