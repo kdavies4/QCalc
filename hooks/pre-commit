@@ -1,7 +1,8 @@
 #!/bin/bash
 
-## Check for file names with non-ascii characters
-## From pre-commit.sample
+#-------------------------------------------------------------------------------
+# Check for file names with non-ascii characters.
+# From pre-commit.sample
 if git rev-parse --verify HEAD >/dev/null 2>&1
 then
 	against=HEAD
@@ -38,9 +39,20 @@ then
 	exit 1
 fi
 
+#-------------------------------------------------------------------------------
+# Check for non-ascii characters in the Modelica files.
+# Based on https://gist.github.com/danbeaulieu/2587927
 
-## Check for errors in the Modelica code.
-## Based on http://www.sitepoint.com/git-hooks-fun-profit/
+mofiles=$(find . \( -name '*.mo' \))
+if $(grep -Pq "[^\x00-\x7F]" $mofiles); then
+    echo "Aborting commit due to non-ascii characters in Modelica files:"
+    grep --color='auto' -P -n '[^\x00-\x7F]' $mofiles
+    exit 1
+fi
+
+#-------------------------------------------------------------------------------
+# Check for errors in the Modelica code.
+# Based on http://www.sitepoint.com/git-hooks-fun-profit/
 git diff --cached --name-status --diff-filter=ACMR | while read STATUS FILE; do
 if [[ ${FILE: -3} == ".mo" ]]; then
     if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
@@ -55,9 +67,9 @@ if [[ ${FILE: -3} == ".mo" ]]; then
 fi
 done
 
-
-## Check for errors in the Python code.
-## Based on http://www.sitepoint.com/git-hooks-fun-profit/
+#-------------------------------------------------------------------------------
+# Check for errors in the Python code.
+# Based on http://www.sitepoint.com/git-hooks-fun-profit/
 git diff --cached --name-status --diff-filter=ACMR | while read STATUS FILE; do
 if [[ ${FILE: -3} == ".py" ]]; then
     python -m py_compile "$FILE" 1> /dev/null
