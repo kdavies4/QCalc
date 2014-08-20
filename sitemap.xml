@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://kdavies4.github.io/QCalc/</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/index.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_UsersGuide.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Units.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Quantities.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Blocks.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Icons_Package.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Icons.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_UsersGuide_Glossary.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_UsersGuide_Publications.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_UsersGuide_References.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_UsersGuide_ReleaseNotes.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Units_Bases.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Units_Examples.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Units_Prefixes.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Units_Interfaces.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Icons_TypesPackage.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Quantities_Interfaces.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Icons_IconsPackage.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Icons_ExamplesPackage.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://kdavies4.github.io/QCalc/QCalc_Icons_InterfacesPackage.html</loc>
+  <lastmod>2014-08-20T22:25:44+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+</urlset>

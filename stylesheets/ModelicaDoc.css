@@ -286,11 +286,6 @@ pre, div.modelica {
     /* end css 3 or browser specific rules */
 }
 
-pre a, div.modelica a {
-    color: red;
-    text-decoration: none;
-}
-
 pre.comment, div.modelica.comment {
     background-color: #CCCCCC;
     color: red;
