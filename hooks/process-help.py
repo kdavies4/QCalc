@@ -59,7 +59,10 @@ RPLS = [
     (r'<pre>&quot;', r'&quot;'),
     (r'&quot;</pre>', r'&quot;'),
     # Remove the per-file license summary
-    ("""<p><b>Licensed by the Hawaii Natural Energy Institute.*
+    (""" *<p><b>Licensed by the Hawaii Natural Energy Institute.*
+.*
+.*
+.*
 .*
 .*
 .*
@@ -93,6 +96,7 @@ RPLS = [
     ('<a href="QCalc.*\.html(#\w*\d+)">', r'<a href="\1">'),
     # Use relative links again.
     ('/home/kld/Documents/Modelica/QCalc/QCalc[^/]*/', '../'), # Linux
+    ('/media/kld/Storage/Documents/Modelica/QCalc/QCalc[^/]*/', '../'), # Linux
     ('/home/kld/Desktop/QCalc/QCalc[^/]*/', '../'), # Linux
     ('/home/kld/\.modelica-libraries/QCalc[^/]*/', '../'), # Linux
     ('file:///D:/Documents/Modelica/QCalc/QCalc[^/]*/', '../'), # Windows

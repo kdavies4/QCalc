@@ -2187,7 +2187,7 @@ considered as the abbreviation for sphere as well as spat.<a href=\"#ref3\" titl
 back to footnote 3 in the text.\">&#8629;</a></small></p>
 
 <p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica
-License 2</b><br> Copyright &copy; 2007&ndash;2014, <a href=\"
+License 2</b><br> Copyright &copy; 2009&ndash;2014, <a href=\"
 http://www.hnei.hawaii.edu/\">Hawaii Natural Energy Institute</a> and <a
 href=\"http://www.gtrc.gatech.edu/\">Georgia Tech Research
 Corporation</a>.</p>

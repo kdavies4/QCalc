@@ -8,15 +8,15 @@ package UsersGuide "User's Guide"
   <p>There are some points to note besides those in the \"Usage\"
   section of the <a href=\"modelica://QCalc\">top-level documentation</a>:</p>
     <ol>
-        <li>Call <a href=\"modelica://QCalc.Units.setup\">QCalc.Units.setup</a>() to
-        establish the display units in Dymola.  This is automatic if
-        <a href=\"modelica://QCalc\">QCalc</a> is loaded via
-        <a href=\"modelica://QCalc/../load.mos\">load.mos</a>.</li>
-        
         <li>Turn off unit checking in Dymola:  
         <pre>
     Advanced.CheckUnits = false;</pre>
         This is automatic if
+        <a href=\"modelica://QCalc\">QCalc</a> is loaded via
+        <a href=\"modelica://QCalc/../load.mos\">load.mos</a>.</li>
+        
+        <li>Call <a href=\"modelica://QCalc.Units.setup\">QCalc.Units.setup</a>() to
+        establish the display units in Dymola.  This is automatic if
         <a href=\"modelica://QCalc\">QCalc</a> is loaded via
         <a href=\"modelica://QCalc/../load.mos\">load.mos</a>.</li>
         
@@ -311,7 +311,20 @@ describes how the library is developed and maintained using the
     <dd>1680 East-West Road, POST 109</dd>
     <dd>Honolulu, HI  96822</dd>
     <dd>USA</dd>
-    <dd>email: <a href=\"mailto:kdavies@hawaii.edu?Subject=QCalc\">kdavies@hawaii.edu</a></dd></dl>
+    <dd>email: <a href=\"mailto:kdavies@hawaii.edu?Subject=QCalc\">kdavies@hawaii.edu</a></dd>
+    </dl>
+
+<br>
+<dl><dt><b>Credits:</b><br>
+    
+    <dd>The logo was copied and modified from 
+    <a href=\"http://en.wikipedia.org/wiki/File:Hydrogen_transitions.svg\">an image of the electron shell transitions
+of hydrogen</a> by
+<a href=\"http://commons.wikimedia.org/w/index.php?title=User:Szdori\">Szdori</a> (Mar. 19
+2009).</dd>
+</dl>
+
+<br>
 
  <!--
 <p><b>Acknowledgments:</b></p><ul>
