@@ -32,7 +32,7 @@ RPLS = [
     # Add meta title and keywords.
     ('<meta name="HTML-Generator" content="Dymola">',
      r"""<meta name="title" content="Modelica units based on quantity calculus">
-<meta name="keywords" content="quantities unit conversion natural SI CGS Planck Hartree">
+<meta name="keywords" content="quantities unit natural units conversion SI CGS Real dimensionality Planck Hartree">
 <meta name="date" content="%d-%d-%d">""" % (now.year, now.month, now.day)),
     # Change the meta description of the main page.
     ('<meta name="description" content="Modelica units based on quantity calculus">',
@@ -90,11 +90,11 @@ RPLS = [
     <gcse:search></gcse:search>
 \2"""),
     # Link some files to GitHub instead.
-    ('href="\.\./\.\./load.mos"',
+    ('href="\.\./\.\./load\.mos"',
      'href="https://github.com/kdavies4/QCalc/blob/master/load.mos"'),
-    ('href="../Resources/quantities.xls"',
+    ('href="\.\./Resources/quantities\.xls"',
      'href="https://github.com/kdavies4/QCalc/blob/master/QCalc/Resources/quantities.xls?raw=true"'),
-    ('href="../Resources/Documentation/QCalc/Bases/unit-systems.cdf"',
+    ('href="\.\./Resources/Documentation/QCalc/Bases/unit-systems\.cdf"',
      'href="https://github.com/kdavies4/QCalc/blob/master/QCalc/Resources/Documentation/Units/Bases/unit-systems.cdf?raw=true" download'),
     ]
 

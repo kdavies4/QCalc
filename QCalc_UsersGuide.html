@@ -3,7 +3,7 @@
 <head>
 <title>QCalc.UsersGuide</title>
 <meta name="title" content="Modelica units based on quantity calculus">
-<meta name="keywords" content="quantities unit conversion natural SI CGS Planck Hartree">
+<meta name="keywords" content="quantities unit natural units conversion SI CGS Real dimensionality Planck Hartree">
 <meta name="date" content="2014-8-20">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="User&#39;s Guide">
@@ -19,7 +19,8 @@
     <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
-  <h3>Table of Contents</h3>
+<h3>Table of Contents</h3>
+
     <ul>
     <li><a href="QCalc_UsersGuide.html">User's Guide</a></li>
     <li><a href="QCalc_Units.html">Units</a></li>
@@ -44,7 +45,7 @@
 
 <h3>Download</h3>
     <ul>
-      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.1.0.zip">Latest version<br>(v0.1.0, 2014-08-17)</a></span></li>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.2.0.zip">Latest version<br>(v0.2.0, 2014-08-20)</a></span></li>
     </ul>
   </div>
 </div>
@@ -108,15 +109,15 @@
   <p>There are some points to note besides those in the "Usage"
   section of the <a href="index.html#QCalc">top-level documentation</a>:</p>
     <ol>
-        <li>Call <a href="QCalc_Units.html#QCalc.Units.setup">QCalc.Units.setup</a>() to
-        establish the display units in Dymola.  This is automatic if
-        <a href="index.html#QCalc">QCalc</a> is loaded via
-        <a href="https://github.com/kdavies4/QCalc/blob/master/load.mos">load.mos</a>.</li>
-
         <li>Turn off unit checking in Dymola:
         <pre>
     Advanced.CheckUnits = false;</pre>
         This is automatic if
+        <a href="index.html#QCalc">QCalc</a> is loaded via
+        <a href="https://github.com/kdavies4/QCalc/blob/master/load.mos">load.mos</a>.</li>
+
+        <li>Call <a href="QCalc_Units.html#QCalc.Units.setup">QCalc.Units.setup</a>() to
+        establish the display units in Dymola.  This is automatic if
         <a href="index.html#QCalc">QCalc</a> is loaded via
         <a href="https://github.com/kdavies4/QCalc/blob/master/load.mos">load.mos</a>.</li>
 
@@ -175,7 +176,20 @@
     <dd>1680 East-West Road, POST 109</dd>
     <dd>Honolulu, HI  96822</dd>
     <dd>USA</dd>
-    <dd>email: <a href="mailto:kdavies@hawaii.edu?Subject=QCalc">kdavies@hawaii.edu</a></dd></dl>
+    <dd>email: <a href="mailto:kdavies@hawaii.edu?Subject=QCalc">kdavies@hawaii.edu</a></dd>
+    </dl>
+
+<br>
+<dl><dt><b>Credits:</b><br>
+
+    <dd>The logo was copied and modified from
+    <a href="http://en.wikipedia.org/wiki/File:Hydrogen_transitions.svg">an image of the electron shell transitions
+of hydrogen</a> by
+<a href="http://commons.wikimedia.org/w/index.php?title=User:Szdori">Szdori</a> (Mar. 19
+2009).</dd>
+</dl>
+
+<br>
 
  <!--
 <p><b>Acknowledgments:</b></p><ul>
@@ -476,7 +490,7 @@ action. This section shall survive the termination of this License.</p>
   </div>
 </div>
 <div class="footer">
-  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Wed Aug 20 11:35:22 2014.
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Wed Aug 20 12:18:08 2014.
 </div>
 
 </span></body></html>
