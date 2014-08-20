@@ -4,7 +4,7 @@
 <title>QCalc.Blocks</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="quantities unit conversion natural SI CGS Planck Hartree">
-<meta name="date" content="2014-8-19">
+<meta name="date" content="2014-8-20">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Imperative models to convert units">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -15,13 +15,8 @@
 <span itemscope itemtype="http://schema.org/SoftwareApplication">
 <div class="sidebar">
   <div class="sidebarwrapper">
-  <a href="index.html">
-
-<h2>QCalc</h2>
-
-</a>
   <p align=center><a href="index.html">
-    <img src="images/icon.gif" alt="Logo" width=150>
+    <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
 <h3>Table of Contents</h3>
@@ -31,6 +26,26 @@
     <li><a href="QCalc_Units.html">Units</a></li>
     <li><a href="QCalc_Quantities.html">Quantities</a></li>
     <li><a href="QCalc_Blocks.html">Blocks</a></li>
+    </ul>
+
+<h3>Search</h3>
+    <script>
+      (function() {
+        var cx = '001356158537703621276:zgkymhxjrkw';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>
+
+<h3>Download</h3>
+    <ul>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.1.0.zip">Latest version<br>(v0.1.0, 2014-08-17)</a></span></li>
     </ul>
   </div>
 </div>
@@ -48,6 +63,14 @@
 
 <h3>Information</h3>
 
+<p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica License 2</b><br>
+Copyright &copy; 2007&ndash;2014, <a href="http://www.hnei.hawaii.edu/">Hawaii Natural Energy Institute</a> and <a href="http://www.gtrc.gatech.edu/">Georgia Tech Research Corporation</a>.</p>
+
+<p><i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>;
+it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the
+disclaimer of warranty) see <a href="file:////media/kld/Storage/Documents/Modelica/FCSys/FCSys/help/FCSys_UsersGuide.html#FCSys.UsersGuide.License">FCSys.UsersGuide.License</a>
+or visit <a href="http://www.modelica.org/licenses/ModelicaLicense2">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
+
 <p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package">QCalc.Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
 
 <h3>Package Content</h3>
@@ -60,12 +83,12 @@
 <tr>
 <td><img src="images/QCalc.Blocks.Num2QtyS.png" alt="QCalc.Blocks.Num2Qty" width="20" height="20" align="top">&nbsp;<a href="QCalc_Blocks.html#QCalc.Blocks.Num2Qty">Num2Qty</a>
 </td>
-<td>Convert a number to a quantity using a nonscalar unit</td>
+<td>Convert a number to a quantity using a lambda unit</td>
 </tr>
 <tr>
 <td><img src="images/QCalc.Blocks.Qty2NumS.png" alt="QCalc.Blocks.Qty2Num" width="20" height="20" align="top">&nbsp;<a href="QCalc_Blocks.html#QCalc.Blocks.Qty2Num">Qty2Num</a>
 </td>
-<td>Convert a quantity to a number using a nonscalar unit</td>
+<td>Convert a quantity to a number using a lambda unit</td>
 </tr>
 </table>
 <hr>
@@ -73,14 +96,14 @@
 <h2><img src="images/QCalc.Blocks.Num2QtyI.png" alt="QCalc.Blocks.Num2Qty" align="right" style="border: 1px solid" width="80" height="80">
 <a name="QCalc.Blocks.Num2Qty"></a><a href="QCalc_Blocks.html#QCalc.Blocks">QCalc.Blocks</a>.Num2Qty</h2>
 <p>
-<b>Convert a number to a quantity using a nonscalar unit</b>
+<b>Convert a number to a quantity using a lambda unit</b>
 <br>
 <br><img src="images/QCalc.Blocks.Num2QtyD.png" alt="QCalc.Blocks.Num2Qty">
 </p>
 
 <h3>Information</h3>
 
-<p>To convert a number to a quantity using a scalar unit (i.e., a unit that involves just multiplication),
+<p>To convert a number to a quantity using a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'linear unit'">linear unit</a>,
     instead use
     <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Math.html#Modelica.Blocks.Math.Gain">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the unit.</p>
@@ -89,7 +112,7 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a></td><td>u</td><td>redeclare QCalc.Units.Interf&hellip;</td><td>Nonscalar unit</td></tr>
+<tr><td><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a></td><td>u</td><td>redeclare QCalc.Units.Interf&hellip;</td><td>Lambda unit</td></tr>
 </table>
 
 <h3>Connectors</h3>
@@ -102,9 +125,9 @@
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">block</span> Num2Qty <span style="color: #006400">&quot;Convert a number to a quantity using a nonscalar unit&quot;</span>
+<div class="modelica"><span style="color: blue">block</span> Num2Qty <span style="color: #006400">&quot;Convert a number to a quantity using a lambda unit&quot;</span>
 
-  <span style="color: blue">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">QCalc.Units.Interfaces.NonscalarUnit</a> u <span style="color: #006400">&quot;Nonscalar unit&quot;</span>;
+  <span style="color: blue">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">QCalc.Units.Interfaces.LambdaUnit</a> u <span style="color: #006400">&quot;Lambda unit&quot;</span>;
 
   <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">Modelica.Blocks.Interfaces.RealInput</a> n <span style="color: #006400">&quot;Connector for the number&quot;</span>;
   <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">Modelica.Blocks.Interfaces.RealOutput</a> q <span style="color: #006400">&quot;Connector for the quantity&quot;</span>;
@@ -119,14 +142,14 @@
 <h2><img src="images/QCalc.Blocks.Qty2NumI.png" alt="QCalc.Blocks.Qty2Num" align="right" style="border: 1px solid" width="80" height="80">
 <a name="QCalc.Blocks.Qty2Num"></a><a href="QCalc_Blocks.html#QCalc.Blocks">QCalc.Blocks</a>.Qty2Num</h2>
 <p>
-<b>Convert a quantity to a number using a nonscalar unit</b>
+<b>Convert a quantity to a number using a lambda unit</b>
 <br>
 <br><img src="images/QCalc.Blocks.Qty2NumD.png" alt="QCalc.Blocks.Qty2Num">
 </p>
 
 <h3>Information</h3>
 
-<p>To convert a quantity to a number using a scalar unit,
+<p>To convert a quantity to a number using a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'linear unit'">linear unit</a>,
     instead use
     <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Math.html#Modelica.Blocks.Math.Gain">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the reciprocal of the unit.</p>
@@ -135,7 +158,7 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">NonscalarUnit</a></td><td>u</td><td>redeclare QCalc.Units.Interf&hellip;</td><td>Nonscalar unit</td></tr>
+<tr><td><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a></td><td>u</td><td>redeclare QCalc.Units.Interf&hellip;</td><td>Lambda unit</td></tr>
 </table>
 
 <h3>Connectors</h3>
@@ -148,9 +171,9 @@
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">block</span> Qty2Num <span style="color: #006400">&quot;Convert a quantity to a number using a nonscalar unit&quot;</span>
+<div class="modelica"><span style="color: blue">block</span> Qty2Num <span style="color: #006400">&quot;Convert a quantity to a number using a lambda unit&quot;</span>
 
-  <span style="color: blue">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.NonscalarUnit">QCalc.Units.Interfaces.NonscalarUnit</a> u <span style="color: #006400">&quot;Nonscalar unit&quot;</span>;
+  <span style="color: blue">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">QCalc.Units.Interfaces.LambdaUnit</a> u <span style="color: #006400">&quot;Lambda unit&quot;</span>;
 
   <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">Modelica.Blocks.Interfaces.RealInput</a> q <span style="color: #006400">&quot;Connector for the quantity&quot;</span>;
   <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">Modelica.Blocks.Interfaces.RealOutput</a> n <span style="color: #006400">&quot;Connector for the number&quot;</span>;
@@ -165,7 +188,7 @@
   </div>
 </div>
 <div class="footer">
-  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Tue Aug 19 21:25:32 2014.
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Wed Aug 20 10:47:10 2014.
 </div>
 
 </span></body></html>

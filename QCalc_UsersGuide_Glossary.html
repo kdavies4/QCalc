@@ -4,7 +4,7 @@
 <title>QCalc.UsersGuide.Glossary</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="quantities unit conversion natural SI CGS Planck Hartree">
-<meta name="date" content="2014-8-19">
+<meta name="date" content="2014-8-20">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Glossary">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -15,13 +15,8 @@
 <span itemscope itemtype="http://schema.org/SoftwareApplication">
 <div class="sidebar">
   <div class="sidebarwrapper">
-  <a href="index.html">
-
-<h2>QCalc</h2>
-
-</a>
   <p align=center><a href="index.html">
-    <img src="images/favicon.svg" alt="Logo" width=150>
+    <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
 <h3>Table of Contents</h3>
@@ -31,6 +26,26 @@
     <li><a href="QCalc_Units.html">Units</a></li>
     <li><a href="QCalc_Quantities.html">Quantities</a></li>
     <li><a href="QCalc_Blocks.html">Blocks</a></li>
+    </ul>
+
+<h3>Search</h3>
+    <script>
+      (function() {
+        var cx = '001356158537703621276:zgkymhxjrkw';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>
+
+<h3>Download</h3>
+    <ul>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.1.0.zip">Latest version<br>(v0.1.0, 2014-08-17)</a></span></li>
     </ul>
   </div>
 </div>
@@ -59,6 +74,17 @@
 <td>(<i>noun</i>) reciprocal of dynamic viscosity [L&nbsp;T&nbsp;M<sup>-1</sup>]</td>
 </tr>
 <tr>
+<td><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'lambda unit'">'lambda unit'</a>
+</td>
+<td>An invertible function that maps a number to a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">quantity</a> and vice versa</td>
+</tr>
+<tr>
+<td><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'linear unit'">'linear unit'</a>
+</td>
+<td>A reference <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">quantity</a> that is used via multiplication to map
+  a number to another quantity</td>
+</tr>
+<tr>
 <td><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'lineic'">'lineic'</a>
 </td>
 <td>adjective that indicates the quotient of the following quantity and its associated length [&times;&nbsp;L<sup>-1</sup>]</td>
@@ -69,9 +95,21 @@
 <td>adjective that indicates the quotient of the following quantity and its associated mass [&times;&nbsp;M<sup>-1</sup>]</td>
 </tr>
 <tr>
+<td><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">'quantity'</a>
+</td>
+<td>"property of a phenomenon, body, or substance,
+where the property has a magnitude that can be
+expressed as a number and a reference" [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.JCGM2012">JCGM2012</a>]</td>
+</tr>
+<tr>
 <td><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'specific'">'specific'</a>
 </td>
-<td>adjective that indicates the quotient of the following quantity and its associated <a href="modelica://QCalc.UsersGuide.Glossary.'chemical amount'">chemical amount</a> [&times;&nbsp;N<sup>-1</sup>]</td>
+<td>adjective that indicates the quotient of the following quantity and its associated <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'chemical amount'">chemical amount</a> [&times;&nbsp;N<sup>-1</sup>]</td>
+</tr>
+<tr>
+<td><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'unit'">'unit'</a>
+</td>
+<td>A reference entity that is used to map a number to a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">quantity</a> and vice versa</td>
 </tr>
 <tr>
 <td><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'volumic'">'volumic'</a>
@@ -93,6 +131,41 @@
   &quot;(<i>noun</i>) reciprocal of dynamic viscosity [L&nbsp;T&nbsp;M<sup>-1</sup>]&quot;</span>
 
 <span style="color: blue">end </span>&#39;fluidity&#39;;
+</div>
+<hr>
+
+<h2><a name="QCalc.UsersGuide.Glossary.'lambda unit'"></a><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary">QCalc.UsersGuide.Glossary</a>.'lambda unit'</h2>
+
+<p>
+<b>An invertible function that maps a number to a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">quantity</a> and vice versa</b>
+</p>
+
+<h3>Information</h3>
+
+<p>The function is not limited to multiplication.</p>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">class</span> &#39;lambda unit&#39; <span style="color: #006400">
+  &quot;An invertible function that maps a number to a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">quantity</a> and vice versa&quot;</span>
+
+<span style="color: blue">end </span>&#39;lambda unit&#39;;
+</div>
+<hr>
+
+<h2><a name="QCalc.UsersGuide.Glossary.'linear unit'"></a><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary">QCalc.UsersGuide.Glossary</a>.'linear unit'</h2>
+
+<p>
+<b>A reference <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">quantity</a> that is used via multiplication to map
+  a number to another quantity</b>
+</p>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">class</span> &#39;linear unit&#39; <span style="color: #006400">&quot;A reference <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">quantity</a> that is used via multiplication to map
+  a number to another quantity&quot;</span>
+
+<span style="color: blue">end </span>&#39;linear unit&#39;;
 </div>
 <hr>
 
@@ -126,10 +199,28 @@
 </div>
 <hr>
 
+<h2><a name="QCalc.UsersGuide.Glossary.'quantity'"></a><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary">QCalc.UsersGuide.Glossary</a>.'quantity'</h2>
+
+<p>
+<b>"property of a phenomenon, body, or substance,
+where the property has a magnitude that can be
+expressed as a number and a reference" [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.JCGM2012">JCGM2012</a>]</b>
+</p>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">class</span> &#39;quantity&#39; <span style="color: #006400">&quot;"property of a phenomenon, body, or substance,
+where the property has a magnitude that can be
+expressed as a number and a reference" [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.JCGM2012">JCGM2012</a>]&quot;</span>
+
+<span style="color: blue">end </span>&#39;quantity&#39;;
+</div>
+<hr>
+
 <h2><a name="QCalc.UsersGuide.Glossary.'specific'"></a><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary">QCalc.UsersGuide.Glossary</a>.'specific'</h2>
 
 <p>
-<b>adjective that indicates the quotient of the following quantity and its associated <a href="modelica://QCalc.UsersGuide.Glossary.'chemical amount'">chemical amount</a> [&times;&nbsp;N<sup>-1</sup>]</b>
+<b>adjective that indicates the quotient of the following quantity and its associated <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'chemical amount'">chemical amount</a> [&times;&nbsp;N<sup>-1</sup>]</b>
 </p>
 
 <h3>Information</h3>
@@ -140,9 +231,29 @@
 <h3>Modelica definition</h3>
 
 <div class="modelica"><span style="color: blue">class</span> &#39;specific&#39; <span style="color: #006400">
-  &quot;adjective that indicates the quotient of the following quantity and its associated <a href="modelica://QCalc.UsersGuide.Glossary.'chemical amount'">chemical amount</a> [&times;&nbsp;N<sup>-1</sup>]&quot;</span>
+  &quot;adjective that indicates the quotient of the following quantity and its associated <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'chemical amount'">chemical amount</a> [&times;&nbsp;N<sup>-1</sup>]&quot;</span>
 
 <span style="color: blue">end </span>&#39;specific&#39;;
+</div>
+<hr>
+
+<h2><a name="QCalc.UsersGuide.Glossary.'unit'"></a><a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary">QCalc.UsersGuide.Glossary</a>.'unit'</h2>
+
+<p>
+<b>A reference entity that is used to map a number to a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">quantity</a> and vice versa</b>
+</p>
+
+<h3>Information</h3>
+
+<p>
+  Other quantities can be expressed as the product of a number and the linear unit.</p>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue">class</span> &#39;unit&#39; <span style="color: #006400">
+  &quot;A reference entity that is used to map a number to a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'quantity'">quantity</a> and vice versa&quot;</span>
+
+<span style="color: blue">end </span>&#39;unit&#39;;
 </div>
 <hr>
 
@@ -168,7 +279,7 @@
   </div>
 </div>
 <div class="footer">
-  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Tue Aug 19 21:53:57 2014.
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Wed Aug 20 10:47:09 2014.
 </div>
 
 </span></body></html>

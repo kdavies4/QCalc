@@ -4,7 +4,7 @@
 <title>QCalc.Units</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="quantities unit conversion natural SI CGS Planck Hartree">
-<meta name="date" content="2014-8-19">
+<meta name="date" content="2014-8-20">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Constants and units of physical measure">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -15,13 +15,8 @@
 <span itemscope itemtype="http://schema.org/SoftwareApplication">
 <div class="sidebar">
   <div class="sidebarwrapper">
-  <a href="index.html">
-
-<h2>QCalc</h2>
-
-</a>
   <p align=center><a href="index.html">
-    <img src="images/favicon.svg" alt="Logo" width=150>
+    <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
 <h3>Table of Contents</h3>
@@ -31,6 +26,26 @@
     <li><a href="QCalc_Units.html">Units</a></li>
     <li><a href="QCalc_Quantities.html">Quantities</a></li>
     <li><a href="QCalc_Blocks.html">Blocks</a></li>
+    </ul>
+
+<h3>Search</h3>
+    <script>
+      (function() {
+        var cx = '001356158537703621276:zgkymhxjrkw';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>
+
+<h3>Download</h3>
+    <ul>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.1.0.zip">Latest version<br>(v0.1.0, 2014-08-17)</a></span></li>
     </ul>
   </div>
 </div>
@@ -120,12 +135,12 @@ second (as a number).  If another unit of length like the foot is
 established by the appropriate relation (ft &asymp; 0.3048&nbsp;m) and
 <i>v</i> is divided by ft/s, the result is velocity in feet per second
 (&sim;3.2894).  Some units such as &deg;C, Pag, and dB involve offsets or
-nonlinear transformations between the value of the quantity and the
+nonaffine transformations between the value of the quantity and the
 number; these are described by functions besides simple division.</p>
 
 <p><b>Method:</b></p>
 
-<p>In <a href="index.html#QCalc">QCalc</a>, each scalar unit is a constant
+<p>In <a href="index.html#QCalc">QCalc</a>, each <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'linear unit'">linear unit</a> is a constant
 quantity. The value of a unit, like other quantities, is the product
 of a number and a unit. Therefore, units may be derived from other units
 (e.g., Pa = N/m<sup>2</sup>). This recursive definition leaves several
@@ -206,7 +221,7 @@ units for derived units.  For example, the
 (<i>k</i><sub>B</sub> = 1)
 [<a href="http://en.wikipedia.org/wiki/Natural_units">http://en.wikipedia.org/wiki/Natural_units</a>].
 The <a href="http://en.wikipedia.org/wiki/Kelvin">kelvin</a> is eliminated
-[<a href="modelica://QCalc.UsersGuide.References.Greiner1995">Greiner1995</a>,
+[<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Greiner1995">Greiner1995</a>,
 p.&nbsp;386] or, more precisely, considered a derived
 unit instead of a base unit.  In <a href="http://en.wikipedia.org/wiki/International_System_of_Units">SI</a>,
 the <a href="http://en.wikipedia.org/wiki/Kelvin">kelvin</a> would be derived from the
@@ -248,8 +263,9 @@ Some prefixed units are defined as well, but most
 must be expressed using separate factors (e.g.,
 <code>U.Prefixes.k*U.m</code>).</p>
 
- <p>Nonscalar units such as <a href="http://en.wikipedia.org/wiki/Celsius">Celsius</a> and
- the <a href="http://en.wikipedia.org/wiki/Decibel">decibel</a> are defined via
+<p>Some units such as <a href="http://en.wikipedia.org/wiki/Celsius">Celsius</a> and
+<a href="http://en.wikipedia.org/wiki/Decibel">decibel</a> involve functions other than multiplication.
+These units are called <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'lambda unit'">lambda units</a> and are defined via
  operator records.  The <code>*</code> and <code>/</code> operators are overloaded
  to call the unit's transformation and its inverse, respectively.</p>
 
@@ -264,18 +280,18 @@ establishes unit conversions using the values of the units, constants, and
 prefixes.  These conversions may include offsets. The function also
 sets the default display units.  It is automatically called when
 <a href="index.html#QCalc">QCalc</a> is loaded from the
-<a href="../../load.mos">load.mos</a> script.  It can also be called
+<a href="https://github.com/kdavies4/QCalc/blob/master/load.mos">load.mos</a> script.  It can also be called
 manually from the "Re-initialize the units" command available in the
 Modelica development environment from the <a href="QCalc_Units.html#QCalc.Units">Units</a>
 package and its subpackages.  A spreadsheet
-(<a href="../Resources/quantities.xls">Resources/quantities.xls</a>)
+(<a href="https://github.com/kdavies4/QCalc/blob/master/QCalc/Resources/quantities.xls?raw=true">Resources/quantities.xls</a>)
 is available to help maintain the quantities, default units, and the setup
 function.</p>
 
 <p>The values of the units, constants, and prefixes can be evaluated by
 translating the <a href="QCalc_Units_Examples.html#QCalc.Units.Examples.Evaluate">Units.Examples.Evaluate</a>
 model.  This defines the values in the workspace of the development
-environment. For convenience, the <a href="../../load.mos">load.mos</a>
+environment. For convenience, the <a href="https://github.com/kdavies4/QCalc/blob/master/load.mos">load.mos</a>
 script automatically translates that model and saves the result as "units.mos" in the working
 directory.</p>
 
@@ -382,7 +398,7 @@ factor of angle in the numerator:<ul>
 </li>
 <li>The fine-structure constant (<i>k</i><sub>A</sub>&nbsp;<i>c</i>/<i>R</i><sub>K</sub>) is therefore an angle:
 <ul>
-<li>alpha/rad &asymp; 7.297&times;10<sup>-3</sup> (The right side is the traditional expression
+<li>&alpha;/rad &asymp; 7.297&times;10<sup>-3</sup> (The right side is the traditional expression
 [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.NIST2010">NIST2010</a>].)
 </li>
 </ul>
@@ -538,10 +554,8 @@ Corporation</a>.</p>
 <p><i>This Modelica package is <u>free</u> software and the use is
 completely at <u>your own risk</u>; it can be redistributed and/or
 modified under the terms of the Modelica License 2. For license conditions
-(including the disclaimer of warranty) see <a href="
-modelica://QCalc.UsersGuide.License"> QCalc.UsersGuide.License</a> or
-visit <a href="http://www.modelica.org/licenses/ModelicaLicense2">
-http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
+(including the disclaimer of warranty) see <a href="QCalc_UsersGuide.html#QCalc.UsersGuide.License">QCalc.UsersGuide.License</a> or
+visit <a href="http://www.modelica.org/licenses/ModelicaLicense2">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
 
 <p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package">Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
 
@@ -1376,11 +1390,6 @@ recognized by Dymola.</p>
   <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Function">Icons.Function</a>;
 
 <span style="color: blue">algorithm </span>
-  <span style="color: #006400">// Don&#39;t check the unit consistency of equations.  The &quot;unit&quot; attribute is</span>
-  <span style="color: #006400">// used to denote the dimension (see QCalc.Quantities), and Dymola doesn&#39;t</span>
-  <span style="color: #006400">// recognize its symbols.</span>
-  Advanced.CheckUnits := false;
-
   <span style="color: #006400">// print(&quot;Establishing display units&hellip;&quot;);</span>
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
@@ -2015,7 +2024,7 @@ recognized by Dymola.</p>
   </div>
 </div>
 <div class="footer">
-  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Tue Aug 19 21:53:58 2014.
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Wed Aug 20 10:47:10 2014.
 </div>
 
 </span></body></html>

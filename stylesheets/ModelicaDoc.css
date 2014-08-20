@@ -76,10 +76,47 @@ div.sidebar ul {
     list-style: none;
 }
 
+/* -- Google custom search (in sidebar) --------------------------------------- */
+
+div.sidebar table {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+div.sidebar th, div.sidebar td {
+    padding: 0;
+    border: none;
+}
+
+.cse .gsc-control-cse,
+.gsc-control-cse {
+  padding: 0 !important;
+  width: 170px !important;
+}
+
+.gsc-input-box {
+    height: 24px !important;
+}
+
+.cse .gsc-search-button input.gsc-search-button-v2,
+input.gsc-search-button-v2 {
+    padding: 4px !important;
+}
+
+table.gsc-search-box td.gsc-input {
+  padding-right: 4px !important;
+}
+
+input.gsc-input {
+  font-size: 0.9em !important;
+  padding: 4px 4px !important;
+}
+
 /* -- body styles ----------------------------------------------------------- */
 
 div.body {
-    min-height:300px; /* Be sure there's room for the sidebar. */
+    min-height:400px; /* Be sure there's room for the sidebar. */
 }
 
 div.body p.caption {
