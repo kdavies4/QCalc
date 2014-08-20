@@ -12,7 +12,14 @@ package UsersGuide "User's Guide"
         establish the display units in Dymola.  This is automatic if
         <a href=\"modelica://QCalc\">QCalc</a> is loaded via
         <a href=\"modelica://QCalc/../load.mos\">load.mos</a>.</li>
-
+        
+        <li>Turn off unit checking in Dymola:  
+        <pre>
+    Advanced.CheckUnits = false;</pre>
+        This is automatic if
+        <a href=\"modelica://QCalc\">QCalc</a> is loaded via
+        <a href=\"modelica://QCalc/../load.mos\">load.mos</a>.</li>
+        
         <li>Angle is explicit in the definitions of quantities,
         units, and constants. This helps to identify dimensional inconsistencies
         and provide insight into the physical equations.
@@ -59,6 +66,18 @@ package UsersGuide "User's Guide"
       annotation (preferredView="info", DocumentationClass=false);
     end 'fluidity';
 
+    class 'lambda unit'
+      "<html>An invertible function that maps a number to a <a href=\"modelica://QCalc.UsersGuide.Glossary.'quantity'\">quantity</a> and vice versa</html>"
+
+      annotation (preferredView="info", DocumentationClass=false,Documentation(info="<html><p>The function is not limited to multiplication.</p></html>"));
+    end 'lambda unit';
+
+    class 'linear unit' "<html>A reference <a href=\"modelica://QCalc.UsersGuide.Glossary.'quantity'\">quantity</a> that is used via multiplication to map 
+  a number to another quantity</html>"
+
+      annotation (preferredView="info", DocumentationClass=false);
+    end 'linear unit';
+
     class 'lineic'
       "<html>adjective that indicates the quotient of the following quantity and its associated length [&times;&nbsp;L<sup>-1</sup>]</html>"
 
@@ -71,6 +90,13 @@ package UsersGuide "User's Guide"
       annotation (preferredView="info", DocumentationClass=false);
     end 'massic';
 
+    class 'quantity' "<html>\"property of a phenomenon, body, or substance,
+where the property has a magnitude that can be
+expressed as a number and a reference\" [<a href=\"modelica://QCalc.UsersGuide.References.JCGM2012\">JCGM2012</a>]</html>"
+
+      annotation (preferredView="info", DocumentationClass=false);
+    end 'quantity';
+
     class 'specific'
       "<html>adjective that indicates the quotient of the following quantity and its associated <a href=\"modelica://QCalc.UsersGuide.Glossary.'chemical amount'\">chemical amount</a> [&times;&nbsp;N<sup>-1</sup>]</html>"
 
@@ -80,6 +106,13 @@ package UsersGuide "User's Guide"
         Documentation(info="<html><p>Note that this is not synonymous with <a href=\"modelica://QCalc.UsersGuide.Glossary.'massic'\">massic</a>;
     it does not indicate the quotient of a quantity and its associated mass.</p></html>"));
     end 'specific';
+
+    class 'unit'
+      "<html>A reference entity that is used to map a number to a <a href=\"modelica://QCalc.UsersGuide.Glossary.'quantity'\">quantity</a> and vice versa</html>"
+
+      annotation (preferredView="info", DocumentationClass=false,Documentation(info="<html><p>
+  Other quantities can be expressed as the product of a number and the linear unit.</p></html>"));
+    end 'unit';
 
     class 'volumic'
       "<html>adjective that indicates the quotient of the following quantity and its associated volume [&times;&nbsp;L<sup>-3</sup>]</html>"
@@ -146,11 +179,23 @@ package UsersGuide "User's Guide"
       annotation (preferredView="info", DocumentationClass=false);
     end Fritzson2004;
 
+    class Greiner1995
+      "<html>W. Greiner, L. Neisem and H. St&ouml;cker, \"<a href=\"http://books.google.com/books?id=12DKsFtFTgYC\">A Mathematical Model of the Solid-Polymer-Electrolyte Fuel Cell</a>,\" <i>J. Electrochem. Soc.</i>, vol.&nbsp;139, no.&nbsp;9, pp.&nbsp;2477&ndash;2491, 1992.</html>"
+
+      annotation (preferredView="info", DocumentationClass=false);
+    end Greiner1995;
+
     class Hess2008
       "<html>B. Hess, C. Kutzner, D. van der Spoel, and E. Lindahl, \"GROMACS 4: Algorithms for Highly Efficient, Load-Balanced, and Scalable Molecular Simulation,\" <i>J. Chem. Theory Comput.</i>, vol.&nbsp;4, no.&nbsp;3, pp.&nbsp;435&ndash;447, 2008.</html>"
 
       annotation (preferredView="info", DocumentationClass=false);
     end Hess2008;
+
+    class JCGM2012
+      "<html>Joint Committee for Guides in Metrology (JCGM), \"<a href=\"http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf\">International Vocabulary of Metrology &mdash; Basic and General Concepts and Associated Terms (VIM)</a>,\" 3rd ed., 2012.</html>"
+
+      annotation (preferredView="info", DocumentationClass=false);
+    end JCGM2012;
 
     class Mattsson2008
       "<html>S. E. Mattsson and H. Elmqvist, \"Unit Checking and Quantity Conservation,\" in <i>Proc. 6th Modelica Conf.</i> (Bielefeld, Germany), Modelica Assoc., Mar. 2008.</html>"
@@ -209,7 +254,7 @@ the form of \"QCalc Major.Minor.Patch\" (e.g., \"QCalc 1.0.0\").</p>
 
 TODO Update:
 
-<h4><a href=\"https://github.com/kdavies4/QCalc/tree/develop\">develop</a></h4>
+<h4>develop</h4>
 
 <p>All development work is done on this branch or its sub-branches.  This branch and its
 sub-branches are typically only accessed by library developers, not by library users.
@@ -250,7 +295,7 @@ describes how the library is developed and maintained using the
   class Contact "Contact"
     extends Icons.Contact;
     annotation (preferredView="info", Documentation(info="<html>
-    <p>Updates to QCalc may be available online at the
+    <p>Updates to <a href=\"modelica://QCalc\">QCalc</a> may be available online at the
     <a href=\"http://kdavies4.github.io/QCalc/\">main project site</a> or the
     <a href=\"https://modelica.org/libraries\">Modelica libraries page</a>.
     If you find a bug, have a suggestion, or just want to leave a comment, please

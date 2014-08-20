@@ -22,6 +22,11 @@ QCalc.Units.setup();
 // Work in the directory above this package.
 cd("..")
 
+// Don't check the unit consistency of equations.  The "unit" attribute is
+// used to denote the dimension (see QCalc.Quantities), and Dymola doesn't
+// recognize its symbols.
+Advanced.CheckUnits = false;
+
 // Save a static, translated copy of the values of all the constants and units.
 // The constants and units will also be available in the workspace, but only
 // until the next model is simulated.  To load the and retain the variables

@@ -9,6 +9,10 @@ import U = QCalc.Units;
 import Q = QCalc.Quantities;
 
 
+
+
+
+
 annotation (
   preferredView="info",
   Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
@@ -72,11 +76,11 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
     at <u>your own risk</u>; it can be redistributed and/or modified under the
     terms of the Modelica License 2. For license conditions (including the
     disclaimer of warranty) see
-    <a href=\"modelica://QCalc.UsersGuide.License\">
-    QCalc.UsersGuide.License</a>
-    or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">
-    http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
+    <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
+    or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
   version="",
   versionDate="",
-  uses(Modelica(version="3.2")));
+  uses(Modelica(version="3.2")),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+        graphics));
 end QCalc;

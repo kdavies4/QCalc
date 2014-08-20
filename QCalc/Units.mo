@@ -7,11 +7,6 @@ package Units "Constants and units of physical measure"
     extends Icons.Function;
 
   algorithm
-    // Don't check the unit consistency of equations.  The "unit" attribute is
-    // used to denote the dimension (see QCalc.Quantities), and Dymola doesn't
-    // recognize its symbols.
-    Advanced.CheckUnits := false;
-
     // print("Establishing display units...");
 
     // -------------------------------------------------------------------------
@@ -1037,7 +1032,7 @@ encompass other systems of units.</p>
         final R=1,
         final k_Aprime=2*pi*R_K/c);
       annotation (Documentation(info="<html><p>The values of the un-normalized SI base units are (see
-  <a href=\"modelica://QCalc/Resources/Documentation/QCalc/Bases/unit-systems.cdf\">Resources/unit-systems.cdf</a>):</p>
+  <a href=\"modelica://QCalc/Resources/Documentation/Units/Bases/unit-systems.cdf\" dowload>Resources/unit-systems.cdf</a>):</p>
   <ul>
   <li>K &asymp; 8.61733e-5</li>
   <li>mol &asymp; 96485.3</li>
@@ -1153,9 +1148,9 @@ encompass other systems of units.</p>
   final constant Q.ConductanceElectrical G_0=2/R_K
     "<html><a href=\"http://en.wikipedia.org/wiki/Conductance_quantum\">conductance quantum</a> (<i>G</i><sub>0</sub>)</html>";
   final constant Q.Amount e=G_0*Phi_0
-    "<html><a href=\"http://en.wikipedia.org/wiki/Elementary_charge\">elementary charge</html>";
+    "<html><a href=\"http://en.wikipedia.org/wiki/Elementary_charge\">elementary charge</a></html>";
   final constant Q.MomentumRotational h=2*e*Phi_0
-    "<html><a href=\"http://en.wikipedia.org/wiki/Planck_constant\">Planck constant</html>";
+    "<html><a href=\"http://en.wikipedia.org/wiki/Planck_constant\">Planck constant</a></html>";
   final constant Q.AmountReciprocal N_A=k_F/e
     "<html><a href=\"http://en.wikipedia.org/wiki/Avogadro_number\">Avogadro constant</a> (<i>N</i><sub>A</sub>)</html>";
   final constant Q.Amount k_B=R/N_A
@@ -1530,14 +1525,14 @@ encompass other systems of units.</p>
   package Interfaces "Partial classes"
     extends Icons.InterfacesPackage;
 
-    partial record NonscalarUnit "Partial operator record for a nonscalar unit"
+    partial record LambdaUnit "Partial operator record for a lambda unit"
       replaceable type Quantity = Q.Interfaces.Quantity;
 
       operator '*' "Multiplication is overloaded to map a number to a quantity"
 
         partial function num2qty "Convert a number to a quantity"
           input Real n "Number";
-          replaceable input NonscalarUnit selfDummy
+          replaceable input LambdaUnit selfDummy
             "2nd argument is the unit itself; contains no data";
           output Quantity q "Quantity";
           annotation (Inline=true, inverse(n='/'.qty2num(q, selfDummy)));
@@ -1549,17 +1544,17 @@ encompass other systems of units.</p>
 
         partial function qty2num "Convert a quantity to a number"
           input Quantity q "Quantity";
-          replaceable input NonscalarUnit selfDummy
+          replaceable input LambdaUnit selfDummy
             "2nd argument is the unit itself; contains no data";
           output Real n "Number";
           annotation (Inline=true, inverse(q='*'.num2qty(n, selfDummy)));
         end qty2num;
 
       end '/';
-    end NonscalarUnit;
+    end LambdaUnit;
 
     record degC "degree Celsius (degC)"
-      extends NonscalarUnit;
+      extends LambdaUnit;
 
       redeclare type Quantity = Q.Temperature;
 
@@ -1592,7 +1587,7 @@ encompass other systems of units.</p>
     end degC;
 
     record Np "neper (Np) (in terms of amplitude ratio, not power ratio)"
-      extends NonscalarUnit;
+      extends LambdaUnit;
 
       operator extends '*'
         function extends num2qty
@@ -1618,7 +1613,7 @@ encompass other systems of units.</p>
     end Np;
 
     record B "bel (B) (in terms of power ratio, not amplitude ratio)"
-      extends NonscalarUnit;
+      extends LambdaUnit;
 
       operator extends '*'
         function extends num2qty
@@ -1644,7 +1639,7 @@ encompass other systems of units.</p>
     end B;
 
     record dB "decibel (dB) (in terms of power ratio, not amplitude ratio)"
-      extends NonscalarUnit;
+      extends LambdaUnit;
 
       operator extends '*'
         function extends num2qty
@@ -1670,7 +1665,7 @@ encompass other systems of units.</p>
     end dB;
 
     record kPag "kilopascal, gauge (kPag)"
-      extends NonscalarUnit;
+      extends LambdaUnit;
       redeclare type Quantity = Q.Pressure;
 
       operator extends '*'
@@ -1777,12 +1772,12 @@ second (as a number).  If another unit of length like the foot is
 established by the appropriate relation (ft &asymp; 0.3048&nbsp;m) and
 <i>v</i> is divided by ft/s, the result is velocity in feet per second
 (&sim;3.2894).  Some units such as &deg;C, Pag, and dB involve offsets or
-nonlinear transformations between the value of the quantity and the
+nonaffine transformations between the value of the quantity and the
 number; these are described by functions besides simple division.</p>
 
 <p><b>Method:</b></p>
 
-<p>In <a href=\"modelica://QCalc\">QCalc</a>, each scalar unit is a constant
+<p>In <a href=\"modelica://QCalc\">QCalc</a>, each <a href=\"modelica://QCalc.UsersGuide.Glossary.'linear unit'\">linear unit</a> is a constant
 quantity. The value of a unit, like other quantities, is the product
 of a number and a unit. Therefore, units may be derived from other units
 (e.g., Pa = N/m<sup>2</sup>). This recursive definition leaves several
@@ -1906,8 +1901,9 @@ Some prefixed units are defined as well, but most
 must be expressed using separate factors (e.g.,
 <code>U.Prefixes.k*U.m</code>).</p>
 
- <p>Nonscalar units such as <a href=\"http://en.wikipedia.org/wiki/Celsius\">Celsius</a> and
- the <a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> are defined via
+<p>Some units such as <a href=\"http://en.wikipedia.org/wiki/Celsius\">Celsius</a> and
+<a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> involve functions other than multiplication. 
+These units are called <a href=\"modelica://QCalc.UsersGuide.Glossary.'lambda unit'\">lambda units</a> and are defined via
  operator records.  The <code>*</code> and <code>/</code> operators are overloaded
  to call the unit's transformation and its inverse, respectively.</p>
 
@@ -2040,7 +2036,7 @@ factor of angle in the numerator:<ul>
 </li>
 <li>The fine-structure constant (<i>k</i><sub>A</sub>&nbsp;<i>c</i>/<i>R</i><sub>K</sub>) is therefore an angle:
 <ul>
-<li>alpha/rad &asymp; 7.297&times;10<sup>-3</sup> (The right side is the traditional expression
+<li>&alpha;/rad &asymp; 7.297&times;10<sup>-3</sup> (The right side is the traditional expression
 [<a href=\"modelica://QCalc.UsersGuide.References.NIST2010\">NIST2010</a>].)
 </li>
 </ul>
@@ -2199,10 +2195,8 @@ Corporation</a>.</p>
 <p><i>This Modelica package is <u>free</u> software and the use is
 completely at <u>your own risk</u>; it can be redistributed and/or
 modified under the terms of the Modelica License 2. For license conditions
-(including the disclaimer of warranty) see <a href=\"
-modelica://QCalc.UsersGuide.License\"> QCalc.UsersGuide.License</a> or
-visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">
-http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
+(including the disclaimer of warranty) see <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a> or
+visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
 </html>"),
     Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
     Icon(graphics={
