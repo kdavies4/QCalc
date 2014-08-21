@@ -4,7 +4,7 @@
 <title>QCalc.Units.Interfaces</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="quantities unit natural units conversion SI CGS Real dimensionality Planck Hartree">
-<meta name="date" content="2014-8-20">
+<meta name="date" content="2014-8-21">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Partial classes">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -45,7 +45,7 @@
 
 <h3>Download</h3>
     <ul>
-      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.2.0.zip">Latest version<br>(v0.2.0, 2014-08-20)</a></span></li>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.2.1.zip">Latest version<br>(v0.2.1, 2014-08-21)</a></span></li>
     </ul>
   </div>
 </div>
@@ -119,31 +119,10 @@
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">partial </span><span style="color: blue">record</span> LambdaUnit <span style="color: #006400">&quot;Partial operator record for a lambda unit&quot;</span>
+<div class="modelica"><span style="color: blue">partial </span><span style="color: blue">operator record</span> LambdaUnit <span style="color: #006400">
+  &quot;Partial operator record for a lambda unit&quot;</span>
   <span style="color: blue">replaceable </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Q.Interfaces.Quantity</a>;
 
-  <span style="color: blue">operator</span> &#39;*&#39; <span style="color: #006400">
-    &quot;Multiplication is overloaded to map a number to a quantity&quot;</span>
-
-    <span style="color: blue">partial </span><span style="color: blue">function</span> num2qty <span style="color: #006400">&quot;Convert a number to a quantity&quot;</span>
-      <span style="color: blue">input </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
-      <span style="color: blue">replaceable </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a> selfDummy <span style="color: #006400">
-        &quot;2nd argument is the unit itself; contains no data&quot;</span>;
-      <span style="color: blue">output </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
-    <span style="color: blue">end </span>num2qty;
-
-  <span style="color: blue">end </span>&#39;*&#39;;
-
-  <span style="color: blue">operator</span> &#39;/&#39; <span style="color: #006400">&quot;Division is overloaded to map a quantity to a number&quot;</span>
-
-    <span style="color: blue">partial </span><span style="color: blue">function</span> qty2num <span style="color: #006400">&quot;Convert a quantity to a number&quot;</span>
-      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
-      <span style="color: blue">replaceable </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a> selfDummy <span style="color: #006400">
-        &quot;2nd argument is the unit itself; contains no data&quot;</span>;
-      <span style="color: blue">output </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
-    <span style="color: blue">end </span>qty2num;
-
-  <span style="color: blue">end </span>&#39;/&#39;;
 <span style="color: blue">end </span>LambdaUnit;
 </div>
 <hr>
@@ -162,21 +141,22 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Temperature</td><td>&nbsp;</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">record</span> degC <span style="color: #006400">&quot;degree Celsius (degC)&quot;</span>
-  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>;
+<div class="modelica"><span style="color: blue">operator record</span> degC <span style="color: #006400">&quot;degree Celsius (degC)&quot;</span>
+  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>(<span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a>);
 
-  <span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a>;
+  <span style="color: blue">operator</span> &#39;*&#39; <span style="color: #006400">
+    &quot;Multiplication is overloaded to map a number to a quantity&quot;</span>
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
+    <span style="color: blue">function</span> num2qty <span style="color: #006400">&quot;Convert a number to a quantity&quot;</span>
 
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
-
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">degC</a> selfDummy;
+      <span style="color: blue">input </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">degC</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       q := (n + 273.15)*K;
@@ -184,11 +164,13 @@
 
   <span style="color: blue">end </span>&#39;*&#39;;
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
+  <span style="color: blue">operator</span> &#39;/&#39; <span style="color: #006400">&quot;Division is overloaded to map a quantity to a number&quot;</span>
 
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+    <span style="color: blue">function</span> qty2num <span style="color: #006400">&quot;Convert a quantity to a number&quot;</span>
 
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">degC</a> selfDummy;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">degC</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       n := q/K - 273.15;
@@ -214,28 +196,35 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Number</td><td>&nbsp;</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">record</span> Np <span style="color: #006400">&quot;neper (Np) (in terms of amplitude ratio, not power ratio)&quot;</span>
-  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>;
+<div class="modelica"><span style="color: blue">operator record</span> Np <span style="color: #006400">
+  &quot;neper (Np) (in terms of amplitude ratio, not power ratio)&quot;</span>
+    <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>(<span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a>);
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
+  <span style="color: blue">operator</span> &#39;*&#39; <span style="color: #006400">
+    &quot;Multiplication is overloaded to map a number to a quantity&quot;</span>
+    <span style="color: blue">function</span> num2qty <span style="color: #006400">&quot;Convert a number to a quantity&quot;</span>
 
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.Np">Np</a> selfDummy;
+      <span style="color: blue">input </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.Np">Np</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       q := <span style="color: red">exp</span>(n);
     <span style="color: blue">end </span>num2qty;
   <span style="color: blue">end </span>&#39;*&#39;;
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+  <span style="color: blue">operator</span> &#39;/&#39; <span style="color: #006400">&quot;Division is overloaded to map a quantity to a number&quot;</span>
 
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.Np">Np</a> selfDummy;
+    <span style="color: blue">function</span> qty2num <span style="color: #006400">&quot;Convert a quantity to a number&quot;</span>
+
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.Np">Np</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       n := <span style="color: red">log</span>(q);
@@ -259,28 +248,35 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Number</td><td>&nbsp;</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">record</span> B <span style="color: #006400">&quot;bel (B) (in terms of power ratio, not amplitude ratio)&quot;</span>
-  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>;
+<div class="modelica"><span style="color: blue">operator record</span> B <span style="color: #006400">
+  &quot;bel (B) (in terms of power ratio, not amplitude ratio)&quot;</span>
+    <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>(<span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a>);
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
+  <span style="color: blue">operator</span> &#39;*&#39; <span style="color: #006400">
+    &quot;Multiplication is overloaded to map a number to a quantity&quot;</span>
+    <span style="color: blue">function</span> num2qty <span style="color: #006400">&quot;Convert a number to a quantity&quot;</span>
 
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.B">B</a> selfDummy;
+      <span style="color: blue">input </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.B">B</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       q := 10^n;
     <span style="color: blue">end </span>num2qty;
   <span style="color: blue">end </span>&#39;*&#39;;
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+  <span style="color: blue">operator</span> &#39;/&#39; <span style="color: #006400">&quot;Division is overloaded to map a quantity to a number&quot;</span>
 
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.B">B</a> selfDummy;
+    <span style="color: blue">function</span> qty2num <span style="color: #006400">&quot;Convert a quantity to a number&quot;</span>
+
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.B">B</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       n := <span style="color: red">log10</span>(q);
@@ -304,29 +300,35 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Number</td><td>&nbsp;</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">record</span> dB <span style="color: #006400">
+<div class="modelica"><span style="color: blue">operator record</span> dB <span style="color: #006400">
   &quot;decibel (dB) (in terms of power ratio, not amplitude ratio)&quot;</span>
-  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>;
+    <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>(<span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a>);
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
+  <span style="color: blue">operator</span> &#39;*&#39; <span style="color: #006400">
+    &quot;Multiplication is overloaded to map a number to a quantity&quot;</span>
+    <span style="color: blue">function</span> num2qty <span style="color: #006400">&quot;Convert a number to a quantity&quot;</span>
 
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.dB">dB</a> selfDummy;
+      <span style="color: blue">input </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.dB">dB</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       q := 10^(Prefixes.d*n);
     <span style="color: blue">end </span>num2qty;
   <span style="color: blue">end </span>&#39;*&#39;;
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+  <span style="color: blue">operator</span> &#39;/&#39; <span style="color: #006400">&quot;Division is overloaded to map a quantity to a number&quot;</span>
 
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.dB">dB</a> selfDummy;
+    <span style="color: blue">function</span> qty2num <span style="color: #006400">&quot;Convert a quantity to a number&quot;</span>
+
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.dB">dB</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       n := <span style="color: red">log10</span>(q)/Prefixes.d;
@@ -350,29 +352,34 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Q.Pressure</td><td>&nbsp;</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">record</span> kPag <span style="color: #006400">&quot;kilopascal, gauge (kPag)&quot;</span>
-  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>;
-  <span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a>;
+<div class="modelica"><span style="color: blue">operator record</span> kPag <span style="color: #006400">&quot;kilopascal, gauge (kPag)&quot;</span>
+    <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>(<span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a>);
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;*&#39;
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>num2qty
+  <span style="color: blue">operator</span> &#39;*&#39; <span style="color: #006400">
+    &quot;Multiplication is overloaded to map a number to a quantity&quot;</span>
+    <span style="color: blue">function</span> num2qty <span style="color: #006400">&quot;Convert a number to a quantity&quot;</span>
 
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">kPag</a> selfDummy;
+      <span style="color: blue">input </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">kPag</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       q := n*kPa + atm;
     <span style="color: blue">end </span>num2qty;
   <span style="color: blue">end </span>&#39;*&#39;;
 
-  <span style="color: blue">operator</span> <span style="color: blue">extends </span>&#39;/&#39;
-    <span style="color: blue">function</span> <span style="color: blue">extends </span>qty2num
+  <span style="color: blue">operator</span> &#39;/&#39; <span style="color: #006400">&quot;Division is overloaded to map a quantity to a number&quot;</span>
 
-      <span style="color: blue">redeclare </span><span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">kPag</a> selfDummy;
+    <span style="color: blue">function</span> qty2num <span style="color: #006400">&quot;Convert a quantity to a number&quot;</span>
+
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit.Quantity">Quantity</a> q <span style="color: #006400">&quot;Quantity&quot;</span>;
+      <span style="color: blue">input </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">kPag</a> selfDummy <span style="color: #006400">&quot;2nd argument is the unit itself; contains no data&quot;</span>;
+      <span style="color: blue">output </span>Real n <span style="color: #006400">&quot;Number&quot;</span>;
 
     <span style="color: blue">algorithm </span>
       n := (q - atm)/kPa;
@@ -386,7 +393,7 @@
   </div>
 </div>
 <div class="footer">
-  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Wed Aug 20 12:18:09 2014.
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Thu Aug 21 05:51:14 2014.
 </div>
 
 </span></body></html>
