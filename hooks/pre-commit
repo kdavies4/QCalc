@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#-------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Check for file names with non-ascii characters.
 # From pre-commit.sample
 if git rev-parse --verify HEAD >/dev/null 2>&1
@@ -39,7 +39,7 @@ then
 	exit 1
 fi
 
-#-------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Check for non-ascii characters in the Modelica files.
 # Based on https://gist.github.com/danbeaulieu/2587927
 
@@ -50,32 +50,39 @@ if $(grep -Pq "[^\x00-\x7F]" $mofiles); then
     exit 1
 fi
 
-#-------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Check for errors in the Modelica code.
 # Based on http://www.sitepoint.com/git-hooks-fun-profit/
 git diff --cached --name-status --diff-filter=ACMR | while read STATUS FILE; do
-if [[ ${FILE: -3} == ".mo" ]]; then
-    if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-        .git/hooks/moparser -l "$FILE" 1> /dev/null
-    else
-        .git/hooks/moparser.exe -l "$FILE" 1> /dev/null
+    if [[ ${FILE: -3} == ".mo" ]]; then
+        if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+            .git/hooks/moparser -l "$FILE" 1> /dev/null
+        else
+            .git/hooks/moparser.exe -l "$FILE" 1> /dev/null
+        fi
+        if [ $? -ne 0 ]; then
+            echo "Aborting commit due to files with syntax errors" >&2
+            exit 1
+        fi
     fi
-    if [ $? -ne 0 ]; then
-        echo "Aborting commit due to files with syntax errors" >&2
-        exit 1
-    fi
-fi
 done
 
-#-------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Check for errors in the Python code.
 # Based on http://www.sitepoint.com/git-hooks-fun-profit/
 git diff --cached --name-status --diff-filter=ACMR | while read STATUS FILE; do
-if [[ ${FILE: -3} == ".py" ]]; then
-    python -m py_compile "$FILE" 1> /dev/null
-    if [ $? -ne 0 ]; then
-        echo "Aborting commit due to errors in Python code" >&2
-        exit 1
+    if [[ ${FILE: -3} == ".py" ]]; then
+        python -m py_compile "$FILE" 1> /dev/null
+        if [ $? -ne 0 ]; then
+            echo "Aborting commit due to errors in Python code" >&2
+            exit 1
+        fi
     fi
-fi
 done
+
+# ------------------------------------------------------------------------------
+# Trim trailing whitespace.
+# Uses https://github.com/dietmarw/trimtrailingwhitespaces
+# ttws QCalc >/dev/null
+# Slow (no option to scan files individually).
+# Use tidy.py manually instead.

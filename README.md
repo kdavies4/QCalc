@@ -35,8 +35,8 @@ where `p` is pressure as a quantity (in [QCalc]), `p_SI` is pressure in
 [pascal][] (in MSL), and `U.Pa` is
 the [pascal] from `QCalc.Units`.
 
-More information is available in the documentation, which can be
-accessed [online](http://kdavies4.github.com/QCalc) or
+More information is available in the documentation, which can be accessed
+[online](http://kdavies4.github.com/QCalc) or
 [from the top level of the package](QCalc/package.mo).  If you wish to use the
 same approach with [Modelica] results in [Python], consider [ModelicaRes] and
 [natu].
@@ -47,8 +47,8 @@ same approach with [Modelica] results in [Python], consider [ModelicaRes] and
 [User's Guide](http://kdavies4.github.com/QCalc/QCalc_UsersGuide.html#Units.UsersGuide.License)).
 If you find a bug, have a suggestion, or just want to leave a comment, please
 [open an issue](https://github.com/kdavies4/QCalc/issues/new).  If possible,
-please share any fixes and improvements as pull requests to the `master` branch of
-the [GitHub repository].
+please share any fixes and improvements as pull requests to the `master` branch
+of the [GitHub repository].
 
 
 [QCalc]: http://kdavies4.github.io/QCalc/

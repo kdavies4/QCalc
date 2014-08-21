@@ -133,7 +133,7 @@ package Quantities "Types to represent physical values"
   to represent physical values (<code>Real</code> variables).  The
 <code>unit</code> attribute of each quantity is used to denote the
   physical dimensionality in terms of fundamental dimensions:
-  angle (A), length (L), mass (M), chemical amount (N), and time (T).<sup><a href=\"#fn1\" id=\"ref1\">1</a></sup>
+  angle (A), length (L), mass (M), amount of subtance (N), and time (T).<sup><a href=\"#fn1\" id=\"ref1\">1</a></sup>
   The fundamental dimensions
   are combined according to the rules established for unit strings
   [<a href=\"modelica://QCalc.UsersGuide.References.Modelica2010\">Modelica2010</a>, p.&nbsp;210].
@@ -168,9 +168,15 @@ Most quantities are named with adjectives following the noun so that related
 
     <hr>
 
-    <p id=\"fn1\"><small>1. This misnomer (unit instead of dimension) is necessary because <code>Real</code>
+<p id=\"fn1\"><small>1. This misnomer (<code>unit</code> attribute for dimension) is necessary because <code>Real</code>
     variables do not have a <code>dimension</code>
-    attribute in Modelica.<a href=\"#ref1\" title=\"Jump back to footnote 1 in the text.\">&#8629;</a></small></p>
+    attribute in Modelica.  Beware that:<ul>
+    <li><code>unit=\"L\"</code> indicates a length quantity, not a volume in litres.</li>
+    <li><code>unit=\"T\"</code> indicates a time quantity, not a magnetic flux in teslas.</li>
+    <li><code>unit=\"A\"</code> indicates an angle, not a current in amperes.</li>
+    <li><code>unit=\"N\"</code> indicates an amount of substance, not a force in newtons.</li>
+    </ul>
+    <a href=\"#ref1\" title=\"Jump back to footnote 1 in the text.\">&#8629;</a></small></p>
 
 <p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica
 License 2</b><br> Copyright &copy; 2009&ndash;2014, <a href=\"

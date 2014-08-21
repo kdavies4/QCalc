@@ -13,7 +13,7 @@ import os
 # Replacement pairs
 rpls = [# Remove tabs.
         ('\t', ' '),
-        # No space before newline
+        # Remove trailing whitespace.
         (' +[\n\r]', '\n'),
         # Remove empty annotation tags.
         (r'\n? *Diagram\(graphics\), *', ' '),

@@ -8,11 +8,9 @@ package Blocks "Imperative models to convert units"
       annotation (__Dymola_choicesAllMatching=true);
 
     Modelica.Blocks.Interfaces.RealInput n "Connector for the number"
-      annotation (Placement(transformation(extent={{-140,-20},{-100,20}},
-            rotation=0), iconTransformation(extent={{-140,-20},{-100,20}})));
+      annotation (Placement(transformation(extent={{-140,-20},{-100,20}}), iconTransformation(extent={{-140,-20},{-100,20}})));
     Modelica.Blocks.Interfaces.RealOutput q "Connector for the quantity"
-      annotation (Placement(transformation(extent={{100,-10},{120,10}},
-            rotation=0), iconTransformation(extent={{100,-10},{120,10}})));
+      annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 
   equation
     q = n*u;
@@ -20,7 +18,7 @@ package Blocks "Imperative models to convert units"
     annotation (
       structurallyIncomplete=true,
       Documentation(info="<html>
-    <p>To convert a number to a quantity using a <a href=\"modelica://QCalc.UsersGuide.Glossary.'linear unit'\">linear unit</a>,
+    <p>To convert a number to a quantity using a <a href=\"modelica://QCalc.UsersGuide.Glossary.'scalar unit'\">scalar unit</a>,
     instead use
     <a href=\"modelica://Modelica.Blocks.Math.Gain\">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the unit.</p></html>"),
@@ -54,11 +52,9 @@ package Blocks "Imperative models to convert units"
       annotation (__Dymola_choicesAllMatching=true);
 
     Modelica.Blocks.Interfaces.RealInput q "Connector for the quantity"
-      annotation (Placement(transformation(extent={{-140,-20},{-100,20}},
-            rotation=0), iconTransformation(extent={{-140,-20},{-100,20}})));
+      annotation (Placement(transformation(extent={{-140,-20},{-100,20}}), iconTransformation(extent={{-140,-20},{-100,20}})));
     Modelica.Blocks.Interfaces.RealOutput n "Connector for the number"
-      annotation (Placement(transformation(extent={{100,-10},{120,10}},
-            rotation=0), iconTransformation(extent={{100,-10},{120,10}})));
+      annotation (Placement(transformation(extent={{100,-10},{120,10}}), iconTransformation(extent={{100,-10},{120,10}})));
 
   equation
     q = n*u;
@@ -66,7 +62,7 @@ package Blocks "Imperative models to convert units"
     annotation (
       structurallyIncomplete=true,
       Documentation(info="<html>
-    <p>To convert a quantity to a number using a <a href=\"modelica://QCalc.UsersGuide.Glossary.'linear unit'\">linear unit</a>,
+    <p>To convert a quantity to a number using a <a href=\"modelica://QCalc.UsersGuide.Glossary.'scalar unit'\">scalar unit</a>,
     instead use
     <a href=\"modelica://Modelica.Blocks.Math.Gain\">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the reciprocal of the unit.</p></html>"),

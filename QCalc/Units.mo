@@ -628,9 +628,7 @@ recognized by Dymola.</p>
 
     annotation (Documentation(info="<html><p>Drop this record into your top-level model
   to record the values of the base constants.  It is necessary to know the values of the
-  base constants in order to interpret the results.</p></html>"), Icon(
-          coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},{100,
-              100}})));
+  base constants in order to interpret the results.</p></html>"));
   end UnitSystem;
 
   package Examples "Examples"
@@ -821,9 +819,7 @@ recognized by Dymola.</p>
     model Display "Demonstrate the display units for the quantities"
       extends Icons.Example;
       ExampleModel doubleClickMe annotation (Placement(transformation(
-            extent={{-20,-10},{20,10}},
-            rotation=0,
-            origin={0,0})));
+            extent={{-20,-10},{20,10}})));
       annotation (Commands(executeCall=QCalc.Units.setup()
             "Re-initialize the units."));
     end Display;
@@ -926,11 +922,7 @@ recognized by Dymola.</p>
       parameter Q.Wavenumber Wavenumber=1*U.rad/U.m "Wavenumber";
       // -------- end from QCalc/Resources/quantities.xls
       annotation (
-        Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
-        Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-                {100,100}})),
-        Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-                100,100}})));
+        Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."));
     end ExampleModel;
     annotation (Commands(executeCall=QCalc.Units.setup()
           "Re-initialize the units."));
@@ -1244,7 +1236,7 @@ encompass other systems of units.</p>
   // This is the "Faraday constant" relation [NIST2010].  The factor of
   // Wb*cyc*S is the coulomb, which is defined below.  The Faraday constant
   // can be determined by electrochemical experiments relating the charge and
-  // the chemical amount involved in a reaction.
+  // the amount of subtance involved in a reaction.
   constant Q.Potential K=8.3144621*(Wb*cyc)^2*S/(s*mol*R)
     "<html><a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a></html>";
   // This is the "molar gas constant" relation [NIST2010].  The factor of
@@ -1786,7 +1778,7 @@ number; these are described by functions besides simple division.</p>
 
 <p><b>Method:</b></p>
 
-<p>In <a href=\"modelica://QCalc\">QCalc</a>, each <a href=\"modelica://QCalc.UsersGuide.Glossary.'linear unit'\">linear unit</a> is a constant
+<p>In <a href=\"modelica://QCalc\">QCalc</a>, each <a href=\"modelica://QCalc.UsersGuide.Glossary.'scalar unit'\">scalar unit</a> is a constant
 quantity. The value of a unit, like other quantities, is the product
 of a number and a unit. Therefore, units may be derived from other units
 (e.g., Pa = N/m<sup>2</sup>). This recursive definition leaves several
@@ -1911,7 +1903,7 @@ must be expressed using separate factors (e.g.,
 <code>U.Prefixes.k*U.m</code>).</p>
 
 <p>Some units such as <a href=\"http://en.wikipedia.org/wiki/Celsius\">Celsius</a> and
-<a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> involve functions other than multiplication. 
+<a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> involve functions other than multiplication.
 These units are called <a href=\"modelica://QCalc.UsersGuide.Glossary.'lambda unit'\">lambda units</a> and are defined via
  operator records.  The <code>*</code> and <code>/</code> operators are overloaded
  to call the unit's transformation and its inverse, respectively.</p>

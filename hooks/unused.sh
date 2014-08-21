@@ -1,7 +1,7 @@
 #!/bin/bash
 # Check for references that aren't used.
 
-for s in Aronsson2009 BIPM2006 Broman2008 Brown2011 Fritzson2004 Hess2008 Mattsson2008 Modelica2010 NIST2010 Rapaport2004
+for s in Aronsson2009 BIPM2006 Broman2008 Brown2011 Fritzson2004 Greiner1995 Hess2008 JCGM2012 Mattsson2008 Modelica2010 NIST2010 Rapaport2004 
 do
     hits=`find \( -name "*.mo" \) | xargs grep --files-with-matches --max-count=1 --exclude package.mo $s`
     if [ -z "$hits" ]; then
