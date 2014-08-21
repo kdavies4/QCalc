@@ -1525,44 +1525,23 @@ encompass other systems of units.</p>
   package Interfaces "Partial classes"
     extends Icons.InterfacesPackage;
 
-    partial record LambdaUnit "Partial operator record for a lambda unit"
+    partial operator record LambdaUnit
+      "Partial operator record for a lambda unit"
       replaceable type Quantity = Q.Interfaces.Quantity;
+
+    end LambdaUnit;
+
+    operator record degC "degree Celsius (degC)"
+      extends LambdaUnit(redeclare type Quantity = Q.Temperature);
 
       operator '*' "Multiplication is overloaded to map a number to a quantity"
 
-        partial function num2qty "Convert a number to a quantity"
+        function num2qty "Convert a number to a quantity"
+
           input Real n "Number";
-          replaceable input LambdaUnit selfDummy
+          input degC selfDummy
             "2nd argument is the unit itself; contains no data";
           output Quantity q "Quantity";
-          annotation (Inline=true, inverse(n='/'.qty2num(q, selfDummy)));
-        end num2qty;
-
-      end '*';
-
-      operator '/' "Division is overloaded to map a quantity to a number"
-
-        partial function qty2num "Convert a quantity to a number"
-          input Quantity q "Quantity";
-          replaceable input LambdaUnit selfDummy
-            "2nd argument is the unit itself; contains no data";
-          output Real n "Number";
-          annotation (Inline=true, inverse(q='*'.num2qty(n, selfDummy)));
-        end qty2num;
-
-      end '/';
-    end LambdaUnit;
-
-    record degC "degree Celsius (degC)"
-      extends LambdaUnit;
-
-      redeclare type Quantity = Q.Temperature;
-
-      operator extends '*'
-
-        function extends num2qty
-
-          redeclare input degC selfDummy;
 
         algorithm
           q := (n + 273.15)*K;
@@ -1571,11 +1550,14 @@ encompass other systems of units.</p>
 
       end '*';
 
-      operator extends '/'
+      operator '/' "Division is overloaded to map a quantity to a number"
 
-        function extends qty2num
+        function qty2num "Convert a quantity to a number"
 
-          redeclare input degC selfDummy;
+          input Quantity q "Quantity";
+          input degC selfDummy
+            "2nd argument is the unit itself; contains no data";
+          output Real n "Number";
 
         algorithm
           n := q/K - 273.15;
@@ -1586,13 +1568,17 @@ encompass other systems of units.</p>
 
     end degC;
 
-    record Np "neper (Np) (in terms of amplitude ratio, not power ratio)"
-      extends LambdaUnit;
+    operator record Np
+      "neper (Np) (in terms of amplitude ratio, not power ratio)"
+        extends LambdaUnit(redeclare type Quantity = Q.Number);
 
-      operator extends '*'
-        function extends num2qty
+      operator '*' "Multiplication is overloaded to map a number to a quantity"
+        function num2qty "Convert a number to a quantity"
 
-          redeclare input Np selfDummy;
+          input Real n "Number";
+          input Np selfDummy
+            "2nd argument is the unit itself; contains no data";
+          output Quantity q "Quantity";
 
         algorithm
           q := exp(n);
@@ -1600,10 +1586,14 @@ encompass other systems of units.</p>
         end num2qty;
       end '*';
 
-      operator extends '/'
-        function extends qty2num
+      operator '/' "Division is overloaded to map a quantity to a number"
 
-          redeclare input Np selfDummy;
+        function qty2num "Convert a quantity to a number"
+
+          input Quantity q "Quantity";
+          input Np selfDummy
+            "2nd argument is the unit itself; contains no data";
+          output Real n "Number";
 
         algorithm
           n := log(q);
@@ -1612,13 +1602,15 @@ encompass other systems of units.</p>
       end '/';
     end Np;
 
-    record B "bel (B) (in terms of power ratio, not amplitude ratio)"
-      extends LambdaUnit;
+    operator record B "bel (B) (in terms of power ratio, not amplitude ratio)"
+        extends LambdaUnit(redeclare type Quantity = Q.Number);
 
-      operator extends '*'
-        function extends num2qty
+      operator '*' "Multiplication is overloaded to map a number to a quantity"
+        function num2qty "Convert a number to a quantity"
 
-          redeclare input B selfDummy;
+          input Real n "Number";
+          input B selfDummy "2nd argument is the unit itself; contains no data";
+          output Quantity q "Quantity";
 
         algorithm
           q := 10^n;
@@ -1626,10 +1618,13 @@ encompass other systems of units.</p>
         end num2qty;
       end '*';
 
-      operator extends '/'
-        function extends qty2num
+      operator '/' "Division is overloaded to map a quantity to a number"
 
-          redeclare input B selfDummy;
+        function qty2num "Convert a quantity to a number"
+
+          input Quantity q "Quantity";
+          input B selfDummy "2nd argument is the unit itself; contains no data";
+          output Real n "Number";
 
         algorithm
           n := log10(q);
@@ -1638,13 +1633,17 @@ encompass other systems of units.</p>
       end '/';
     end B;
 
-    record dB "decibel (dB) (in terms of power ratio, not amplitude ratio)"
-      extends LambdaUnit;
+    operator record dB
+      "decibel (dB) (in terms of power ratio, not amplitude ratio)"
+        extends LambdaUnit(redeclare type Quantity = Q.Number);
 
-      operator extends '*'
-        function extends num2qty
+      operator '*' "Multiplication is overloaded to map a number to a quantity"
+        function num2qty "Convert a number to a quantity"
 
-          redeclare input dB selfDummy;
+          input Real n "Number";
+          input dB selfDummy
+            "2nd argument is the unit itself; contains no data";
+          output Quantity q "Quantity";
 
         algorithm
           q := 10^(Prefixes.d*n);
@@ -1652,10 +1651,14 @@ encompass other systems of units.</p>
         end num2qty;
       end '*';
 
-      operator extends '/'
-        function extends qty2num
+      operator '/' "Division is overloaded to map a quantity to a number"
 
-          redeclare input dB selfDummy;
+        function qty2num "Convert a quantity to a number"
+
+          input Quantity q "Quantity";
+          input dB selfDummy
+            "2nd argument is the unit itself; contains no data";
+          output Real n "Number";
 
         algorithm
           n := log10(q)/Prefixes.d;
@@ -1664,14 +1667,16 @@ encompass other systems of units.</p>
       end '/';
     end dB;
 
-    record kPag "kilopascal, gauge (kPag)"
-      extends LambdaUnit;
-      redeclare type Quantity = Q.Pressure;
+    operator record kPag "kilopascal, gauge (kPag)"
+        extends LambdaUnit(redeclare type Quantity = Q.Pressure);
 
-      operator extends '*'
-        function extends num2qty
+      operator '*' "Multiplication is overloaded to map a number to a quantity"
+        function num2qty "Convert a number to a quantity"
 
-          redeclare input kPag selfDummy;
+          input Real n "Number";
+          input kPag selfDummy
+            "2nd argument is the unit itself; contains no data";
+          output Quantity q "Quantity";
 
         algorithm
           q := n*kPa + atm;
@@ -1679,10 +1684,14 @@ encompass other systems of units.</p>
         end num2qty;
       end '*';
 
-      operator extends '/'
-        function extends qty2num
+      operator '/' "Division is overloaded to map a quantity to a number"
 
-          redeclare input kPag selfDummy;
+        function qty2num "Convert a quantity to a number"
+
+          input Quantity q "Quantity";
+          input kPag selfDummy
+            "2nd argument is the unit itself; contains no data";
+          output Real n "Number";
 
         algorithm
           n := (q - atm)/kPa;

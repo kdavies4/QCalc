@@ -3,7 +3,8 @@ package Blocks "Imperative models to convert units"
   extends QCalc.Icons.Package;
   block Num2Qty "Convert a number to a quantity using a lambda unit"
 
-    replaceable QCalc.Units.Interfaces.LambdaUnit u "Lambda unit"
+    replaceable QCalc.Units.Interfaces.degC u constrainedby
+      QCalc.Units.Interfaces.LambdaUnit "Lambda unit"
       annotation (__Dymola_choicesAllMatching=true);
 
     Modelica.Blocks.Interfaces.RealInput n "Connector for the number"
@@ -48,7 +49,8 @@ package Blocks "Imperative models to convert units"
 
   block Qty2Num "Convert a quantity to a number using a lambda unit"
 
-    replaceable QCalc.Units.Interfaces.LambdaUnit u "Lambda unit"
+    replaceable QCalc.Units.Interfaces.degC u constrainedby
+      QCalc.Units.Interfaces.LambdaUnit "Lambda unit"
       annotation (__Dymola_choicesAllMatching=true);
 
     Modelica.Blocks.Interfaces.RealInput q "Connector for the quantity"
