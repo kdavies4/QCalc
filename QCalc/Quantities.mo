@@ -13,10 +13,9 @@ package Quantities "Types to represent physical values"
   type Angle2 = Quantity (final unit="A2") "Solid angle";
   type Area = Quantity (final unit="L2", min=0);
   type Capacitance = Quantity (final unit="N2.T2/(L2.M)", min=0);
-  type ConductanceElectrical = Quantity (final unit="N2.T/(L2.M)", min=0)
-    "Electrical conductance";
+  type Concentration = Quantity (final unit="N/L3", min=0);
+  type Conductance = Quantity (final unit="N2.T/(L2.M)", min=0);
   type Current = Quantity (final unit="N/T");
-  type Density = Quantity (final unit="N/L3", min=0);
   type Diffusivity = Quantity (final unit="L2/T", min=0);
   type Energy = Quantity (final unit="L2.M/T2");
   type Force = Quantity (final unit="L.M/T2");
@@ -61,8 +60,7 @@ package Quantities "Types to represent physical values"
     "Areic power per 4th power of potential";
   type Pressure = Quantity (final unit="M/(L.T2)");
   type PressureLineic = Quantity (final unit="M/(L2.T2)") "Lineic pressure";
-  type ResistanceElectrical = Quantity (final unit="L2.M/(N2.T)", min=0)
-    "Electrical resistance";
+  type Resistance = Quantity (final unit="L2.M/(N2.T)", min=0);
   type Time = Quantity (final unit="T");
   type TimeReciprocal = Quantity (final unit="1/T") "Reciprocal of time";
   type Velocity = Quantity (final unit="L/T");
@@ -73,7 +71,7 @@ package Quantities "Types to represent physical values"
   type WavelengthVelocity = Quantity (final unit="L2/(A.T)")
     "Wavelength times velocity";
   type Wavenumber = Quantity (final unit="A/L");
-  // -------- end from QCalc/Resources/quantities.xls
+  // -------- end from from QCalc/Resources/quantities.xls
 
   // Aliases that imply special display units
   type Temperature = Potential (displayUnit="K");

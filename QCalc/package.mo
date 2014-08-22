@@ -1,5 +1,5 @@
 within ;
-package QCalc "Units based on quantity calculus"
+package QCalc "Modelica units based on quantity calculus"
 
 
 extends Icons.Package;
@@ -7,6 +7,10 @@ extends Icons.Package;
 // Units and quantities
 import U = QCalc.Units;
 import Q = QCalc.Quantities;
+
+
+
+
 
 
 annotation (
@@ -74,7 +78,9 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
     disclaimer of warranty) see
     <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
+
   version="",
   versionDate="",
   uses(Modelica(version="3.2")));
+
 end QCalc;

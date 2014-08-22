@@ -19,29 +19,32 @@ package Units "Constants and units of physical measure"
 
     // Generated from QCalc/Resources/quantities.xls, 2014-8-14
     defineDefaultDisplayUnit("L/T2", "m/s2") "Acceleration";
+    defineDefaultDisplayUnit("L/T2", "Gal") "Acceleration";
     defineDefaultDisplayUnit("N", "C") "Amount";
+    defineDefaultDisplayUnit("N", "abC") "Amount";
     defineDefaultDisplayUnit("1/N", "1/mol") "Reciprocal of amount";
-    defineDefaultDisplayUnit("A", "degree") "Angle";
+    defineDefaultDisplayUnit("1/N", "1/abC") "Reciprocal of amount";
+    defineDefaultDisplayUnit("1/N", "N_A/") "Reciprocal of amount";
+    defineDefaultDisplayUnit("A", "deg") "Angle";
     defineDefaultDisplayUnit("A2", "sr") "Solid angle";
     defineDefaultDisplayUnit("L2", "cm2") "Area";
     defineDefaultDisplayUnit("N2.T2/(L2.M)", "uF") "Capacitance";
-    defineDefaultDisplayUnit("N2.T/(L2.M)", "S") "Electrical conductance";
-    defineDefaultDisplayUnit("N2.T/(L3.M)", "S/m") "Electrical conductivity";
+    defineDefaultDisplayUnit("N/L3", "M") "Concentration";
+    defineDefaultDisplayUnit("N2.T/(L2.M)", "S") "Conductance";
     defineDefaultDisplayUnit("N/T", "A") "Current";
-    defineDefaultDisplayUnit("N/(L2.T)", "A/cm2") "Areic current";
-    defineDefaultDisplayUnit("N/L3", "C/cc") "Density";
-    defineDefaultDisplayUnit("L2/T", "cm2/s") "Diffusivity";
+    defineDefaultDisplayUnit("L2/T", "St") "Diffusivity";
     defineDefaultDisplayUnit("L2.M/T2", "J") "Energy";
-    defineDefaultDisplayUnit("L.T/M", "1/(Pa.s)") "Fluidity";
     defineDefaultDisplayUnit("L.M/T2", "N") "Force";
-    defineDefaultDisplayUnit("L.M/(N.T2)", "V/m") "Specific force";
     defineDefaultDisplayUnit("A/T", "Hz") "Frequency";
-    defineDefaultDisplayUnit("J.A2", "cd.sr") "Illuminance";
+    defineDefaultDisplayUnit("J.A2", "lm") "Illuminance";
     defineDefaultDisplayUnit("L2.M/N2", "uH") "Inductance";
+    defineDefaultDisplayUnit("L2.M/N2", "abH") "Inductance";
     defineDefaultDisplayUnit("L", "cm") "Length";
     defineDefaultDisplayUnit("L/N", "m/mol") "Specific length";
-    defineDefaultDisplayUnit("J/L2", "cd/m2") "Luminance";
-    defineDefaultDisplayUnit("J.A2/L2", "cd.sr/m2") "Luminous emittance";
+    defineDefaultDisplayUnit("L.M/N2", "H/m")
+      "Specific length times specific mass";
+    defineDefaultDisplayUnit("J/L2", "sb") "Luminance";
+    defineDefaultDisplayUnit("J.A2/L2", "lx") "Luminous emittance";
     defineDefaultDisplayUnit("J", "cd") "Luminous intensity";
     defineDefaultDisplayUnit("A.L2.N/T", "J/T") "Magnetic dipole moment";
     defineDefaultDisplayUnit("A.N/(L.T)", "AT/m") "Auxiliary magnetic field";
@@ -53,10 +56,8 @@ package Units "Constants and units of physical measure"
     defineDefaultDisplayUnit("A.N/T", "AT") "Magnetomotive force";
     defineDefaultDisplayUnit("M", "g") "Mass";
     defineDefaultDisplayUnit("M/N", "g/mol") "Specific mass";
-    defineDefaultDisplayUnit("M/L3", "g/cc") "Volumic mass";
-    defineDefaultDisplayUnit("N.T/M", "cm2/(V.s)") "Mobility";
-    defineDefaultDisplayUnit("L2.M/(A.T)", "J.s/rad") "Rotational momentum";
-    defineDefaultDisplayUnit("L.M/(A2.N2)", "H/(m.cyc2)") "Permeability";
+    defineDefaultDisplayUnit("L2.M/(A.T)", "J/Hz") "Rotational momentum";
+    defineDefaultDisplayUnit("L.M/(A2.N2)", "Wb/(AT.m)") "Permeability";
     defineDefaultDisplayUnit("N2.T2/(L3.M)", "F/m") "Permittivity";
     defineDefaultDisplayUnit("L3.M/(N2.T2)", "m/F")
       "Reciprocal of permittivity";
@@ -69,21 +70,17 @@ package Units "Constants and units of physical measure"
     defineDefaultDisplayUnit("N4.T5/(L8.M3)", "W/(m2.K4)")
       "Areic power per 4th power of potential";
     defineDefaultDisplayUnit("M/(L.T2)", "kPa") "Pressure";
-    defineDefaultDisplayUnit("L2.M/(N2.T)", "ohm") "Electrical resistance";
-    defineDefaultDisplayUnit("M/(L.N.T)", "Pa/A") "Fluid resistance";
-    defineDefaultDisplayUnit("L.T/N", "cm/A") "Resistivity";
-    defineDefaultDisplayUnit("M/T2", "N/m") "Surface tension";
+    defineDefaultDisplayUnit("L2.M/(N2.T)", "ohm") "Resistance";
     defineDefaultDisplayUnit("T", "s") "Time";
-    defineDefaultDisplayUnit("1/T", "1/s") "Reciprocal of time";
+    defineDefaultDisplayUnit("1/T", "Bq") "Reciprocal of time";
     defineDefaultDisplayUnit("L/T", "cm/s") "Velocity";
     defineDefaultDisplayUnit("L2/T2", "J/g") "Squared velocity";
     defineDefaultDisplayUnit("M/(L.T)", "Pa.s") "Viscosity";
     defineDefaultDisplayUnit("L3", "cc") "Volume";
-    defineDefaultDisplayUnit("L3/N", "cc/C") "Specific volume";
-    defineDefaultDisplayUnit("L/A", "m/rad") "Wavelength";
+    defineDefaultDisplayUnit("L/A", "m/cyc") "Wavelength";
     defineDefaultDisplayUnit("L2/(A.T)", "m2/(cyc.s)")
       "Wavelength times velocity";
-    defineDefaultDisplayUnit("A/L", "rad/m") "Wavenumber";
+    defineDefaultDisplayUnit("A/L", "cyc/m") "Wavenumber";
 
     // -------------------------------------------------------------------------
     // Conversions to display quantities in units
@@ -96,6 +93,10 @@ package Units "Constants and units of physical measure"
         "L/T2",
         "m/s2",
         s^2/m) "Acceleration";
+    defineUnitConversion(
+        "L/T2",
+        "Gal",
+        1/Gal) "Acceleration";
     defineUnitConversion(
         "N",
         "C",
@@ -113,6 +114,10 @@ package Units "Constants and units of physical measure"
         "e",
         1/e) "Amount";
     defineUnitConversion(
+        "N",
+        "abC",
+        1/C) "Amount";
+    defineUnitConversion(
         "1/N",
         "1/C",
         C) "Reciprocal of amount";
@@ -120,6 +125,14 @@ package Units "Constants and units of physical measure"
         "1/N",
         "1/mol",
         mol) "Reciprocal of amount";
+    defineUnitConversion(
+        "1/N",
+        "1/abC",
+        mol) "Reciprocal of amount";
+    defineUnitConversion(
+        "1/N",
+        "N_A",
+        1/N_A) "Reciprocal of amount";
     defineUnitConversion(
         "A",
         "deg",
@@ -129,9 +142,25 @@ package Units "Constants and units of physical measure"
         "rad",
         1/rad) "Angle";
     defineUnitConversion(
+        "A",
+        "cyc",
+        1/cyc) "Angle";
+    defineUnitConversion(
+        "A",
+        "arcmin",
+        1/arcmin) "Angle";
+    defineUnitConversion(
+        "A",
+        "arcsec",
+        1/arcsec) "Angle";
+    defineUnitConversion(
         "A2",
         "sr",
         1/sr) "Solid angle";
+    defineUnitConversion(
+        "A2",
+        "sp",
+        1/sp) "Solid angle";
     defineUnitConversion(
         "L2",
         "cm2",
@@ -141,6 +170,10 @@ package Units "Constants and units of physical measure"
         "m2",
         1/m^2) "Area";
     defineUnitConversion(
+        "L2",
+        "b",
+        1/b) "Area";
+    defineUnitConversion(
         "N2.T2/(L2.M)",
         "F",
         1/F) "Capacitance";
@@ -149,13 +182,29 @@ package Units "Constants and units of physical measure"
         "uF",
         1/(Prefixes.u*F)) "Capacitance";
     defineUnitConversion(
+        "N2.T2/(L2.M)",
+        "abF",
+        1/abF) "Capacitance";
+    defineUnitConversion(
+        "N/L3",
+        "C/cc",
+        cc/C) "Concentration";
+    defineUnitConversion(
+        "N/L3",
+        "C/m3",
+        m^3/C) "Concentration";
+    defineUnitConversion(
+        "N/L3",
+        "J/(m3.K)",
+        m^3*K/J) "Concentration";
+    defineUnitConversion(
+        "N/L3",
+        "M",
+        1/M) "Concentration";
+    defineUnitConversion(
         "N2.T/(L2.M)",
         "S",
-        1/S) "Electrical conductance";
-    defineUnitConversion(
-        "N2.T/(L3.M)",
-        "S/m",
-        m/S) "Electrical conductivity";
+        1/S) "Conductance";
     defineUnitConversion(
         "N/T",
         "A",
@@ -166,44 +215,16 @@ package Units "Constants and units of physical measure"
         1/kat) "Current";
     defineUnitConversion(
         "N/T",
+        "abA",
+        1/abA) "Current";
+    defineUnitConversion(
+        "N/T",
         "W/K",
         K/W) "Current";
     defineUnitConversion(
-        "N/(L2.T)",
-        "A/cm2",
-        cm^2/A) "Areic current";
-    defineUnitConversion(
-        "N/(L2.T)",
-        "A/m2",
-        m^2/A) "Areic current";
-    defineUnitConversion(
-        "N/(L2.T)",
-        "kat/cm2",
-        cm^2/kat) "Areic current";
-    defineUnitConversion(
-        "N/(L2.T)",
-        "kat/m2",
-        m^2/kat) "Areic current";
-    defineUnitConversion(
-        "N/L3",
-        "C/cc",
-        cc/C) "Density";
-    defineUnitConversion(
-        "N/L3",
-        "C/m3",
-        m^3/C) "Density";
-    defineUnitConversion(
-        "N/L3",
-        "J/(m3.K)",
-        m^3*K/J) "Density";
-    defineUnitConversion(
-        "N/L3",
-        "M",
-        1/M) "Density";
-    defineUnitConversion(
         "L2/T",
-        "cm2/s",
-        s/cm^2) "Diffusivity";
+        "St",
+        1/St) "Diffusivity";
     defineUnitConversion(
         "L2/T",
         "m2/s",
@@ -211,27 +232,39 @@ package Units "Constants and units of physical measure"
     defineUnitConversion(
         "L2/T",
         "mm^2/s",
-        s/((Prefixes.m*m)^2)) "Diffusivity";
+        s/mm^2) "Diffusivity";
     defineUnitConversion(
         "L2.M/T2",
         "J",
         1/J) "Energy";
     defineUnitConversion(
-        "L.T/M",
-        "1/(Pa.s)",
-        Pa*s) "Fluidity";
+        "L2.M/T2",
+        "Ry",
+        1/Ry) "Energy";
     defineUnitConversion(
-        "L.T/M",
-        "cm.s/g",
-        g/(cm*s)) "Fluidity";
+        "L2.M/T2",
+        "Ha",
+        1/Ha) "Energy";
+    defineUnitConversion(
+        "L2.M/T2",
+        "erg",
+        1/erg) "Energy";
+    defineUnitConversion(
+        "L2.M/T2",
+        "Wh",
+        1/Wh) "Energy";
+    defineUnitConversion(
+        "L2.M/T2",
+        "eV",
+        1/eV) "Energy";
     defineUnitConversion(
         "L.M/T2",
         "N",
         1/N) "Force";
     defineUnitConversion(
-        "L.M/(N.T2)",
-        "V/m",
-        m/V) "Specific force";
+        "L.M/T2",
+        "dyn",
+        1/dyn) "Force";
     defineUnitConversion(
         "A/T",
         "Hz",
@@ -241,13 +274,17 @@ package Units "Constants and units of physical measure"
         "rad/s",
         s/rad) "Frequency";
     defineUnitConversion(
-        "J.A2",
-        "cd.sr",
-        1/(cd*sr)) "Illuminance";
+        "A/T",
+        "rpm",
+        1/rpm) "Frequency";
     defineUnitConversion(
         "J.A2",
-        "cd.sp",
-        1/(cd*sp)) "Illuminance";
+        "lm",
+        1/lm) "Illuminance";
+    defineUnitConversion(
+        "J.A2",
+        "ph",
+        1/ph) "Illuminance";
     defineUnitConversion(
         "L2.M/N2",
         "H",
@@ -256,6 +293,10 @@ package Units "Constants and units of physical measure"
         "L2.M/N2",
         "uH",
         1/(Prefixes.u*H)) "Inductance";
+    defineUnitConversion(
+        "L2.M/N2",
+        "abH",
+        1/abH) "Inductance";
     defineUnitConversion(
         "L",
         "cm",
@@ -267,7 +308,35 @@ package Units "Constants and units of physical measure"
     defineUnitConversion(
         "L",
         "mm",
-        1/(Prefixes.m*m)) "Length";
+        1/mm) "Length";
+    defineUnitConversion(
+        "L",
+        "angstrom",
+        1/angstrom) "Length";
+    defineUnitConversion(
+        "L",
+        "nmi",
+        1/nmi) "Length";
+    defineUnitConversion(
+        "L",
+        "a_0",
+        1/a_0) "Length";
+    defineUnitConversion(
+        "L",
+        "l_n",
+        1/l_n) "Length";
+    defineUnitConversion(
+        "L",
+        "ly",
+        1/ly) "Length";
+    defineUnitConversion(
+        "L",
+        "au",
+        1/au) "Length";
+    defineUnitConversion(
+        "L",
+        "pc",
+        1/pc) "Length";
     defineUnitConversion(
         "L/N",
         "m/C",
@@ -278,6 +347,10 @@ package Units "Constants and units of physical measure"
         mol/m) "Specific length";
     defineUnitConversion(
         "L.M/N2",
+        "H/m",
+        m/H) "Specific length times specific mass";
+    defineUnitConversion(
+        "L.M/N2",
         "N/A2",
         A^2/N) "Specific length times specific mass";
     defineUnitConversion(
@@ -286,16 +359,12 @@ package Units "Constants and units of physical measure"
         m^2/cd) "Luminance";
     defineUnitConversion(
         "J/L2",
-        "cd/cm2",
-        cm^2/cd) "Luminance";
+        "sb",
+        1/sb) "Luminance";
     defineUnitConversion(
         "J.A2/L2",
-        "cd.sr/m2",
-        m^2/(cd*sr)) "Luminous emittance";
-    defineUnitConversion(
-        "J.A2/L2",
-        "cd.sp/m2",
-        m^2/(cd*sp)) "Luminous emittance";
+        "lx",
+        1/lx) "Luminous emittance";
     defineUnitConversion(
         "J",
         "cd",
@@ -304,6 +373,10 @@ package Units "Constants and units of physical measure"
         "A.L2.N/T",
         "J/T",
         T/J) "Magnetic dipole moment";
+    defineUnitConversion(
+        "A.L2.N/T",
+        "mu_B",
+        1/mu_B) "Magnetic dipole moment";
     defineUnitConversion(
         "A.N/(L.T)",
         "AT/m",
@@ -317,9 +390,21 @@ package Units "Constants and units of physical measure"
         "Wb",
         1/Wb) "Magnetic flux";
     defineUnitConversion(
+        "L2.M/(A.N.T)",
+        "Mx",
+        1/Mx) "Magnetic flux";
+    defineUnitConversion(
+        "L2.M/(A.N.T)",
+        "pole",
+        1/pole) "Magnetic flux";
+    defineUnitConversion(
         "M/(A.N.T)",
         "T",
         1/T) "Areic magnetic flux";
+    defineUnitConversion(
+        "M/(A.N.T)",
+        "Gs",
+        1/Gs) "Areic magnetic flux";
     defineUnitConversion(
         "A.N.T/(L2.M)",
         "1/Wb",
@@ -328,6 +413,10 @@ package Units "Constants and units of physical measure"
         "L2.M/(A.N2.T)",
         "Wb/C",
         C/Wb) "Specific magnetic flux";
+    defineUnitConversion(
+        "L2.M/(A.N2.T)",
+        "Mx/abC",
+        abC/Mx) "Specific magnetic flux";
     defineUnitConversion(
         "A.N/T",
         "AT",
@@ -341,57 +430,73 @@ package Units "Constants and units of physical measure"
         "kg",
         1/kg) "Mass";
     defineUnitConversion(
+        "M",
+        "u",
+        1/u) "Mass";
+    defineUnitConversion(
+        "M",
+        "t",
+        1/t) "Mass";
+    defineUnitConversion(
+        "M",
+        "M_e",
+        1/M_e) "Mass";
+    defineUnitConversion(
         "M/N",
         "g/mol",
         mol/g) "Specific mass";
-    defineUnitConversion(
-        "M/N",
-        "kg/mol",
-        mol/kg) "Specific mass";
-    defineUnitConversion(
-        "M/N",
-        "ug/C",
-        C/(Prefixes.u*g)) "Specific mass";
-    defineUnitConversion(
-        "M/L3",
-        "g/cc",
-        cc/g) "Volumic mass";
-    defineUnitConversion(
-        "M/L3",
-        "kg/m3",
-        m^3/kg) "Volumic mass";
-    defineUnitConversion(
-        "N.T/M",
-        "C.s/g",
-        g/(C*s)) "Mobility";
-    defineUnitConversion(
-        "N.T/M",
-        "cm2/(V.s)",
-        V*s/cm^2) "Mobility";
     defineUnitConversion(
         "L2.M/(A.T)",
         "J.s/rad",
         rad/(J*s)) "Rotational momentum";
     defineUnitConversion(
+        "L2.M/(A.T)",
+        "J/Hz",
+        Hz/J) "Rotational momentum";
+    defineUnitConversion(
+        "L2.M/(A.T)",
+        "h",
+        1/h) "Rotational momentum";
+    defineUnitConversion(
         "1",
         "'%'",
         1/'%') "Number";
-    defineUnitConversion(
-        "1",
-        "J/(mol.K)",
-        mol*K/J) "Absolute number";
     defineUnitConversion(
         "L.M/(A2.N2)",
         "H/(m.cyc2)",
         m*cyc^2/H) "Permeability";
     defineUnitConversion(
+        "L.M/(A2.N2)",
+        "Wb/(AT.m)",
+        AT*m/Wb) "Permeability";
+    defineUnitConversion(
+        "L.M/(A2.N2)",
+        "mu_0",
+        1/mu_0) "Permeability";
+    defineUnitConversion(
         "N2.T2/(L3.M)",
         "F/m",
         m/F) "Permittivity";
     defineUnitConversion(
+        "N2.T2/(L3.M)",
+        "epsilon_0",
+        1/epsilon_0) "Permittivity";
+    defineUnitConversion(
+        "N2.T2/(L3.M)",
+        "k_C",
+        1/k_C) "Permittivity";
+    defineUnitConversion(
         "L3.M/(N2.T2)",
         "m/F",
         F/m) "Reciprocal of permittivity";
+    defineUnitConversion(
+        "L3.M/(N2.T2)",
+        "1/epsilon_0",
+        epsilon_0) "Reciprocal of permittivity";
+    defineUnitConversion(
+        "L3.M/(N2.T2)",
+        "1/k_C",
+        k_C) "Reciprocal of permittivity";
     defineUnitConversion(
         "L2.M/(N.T2)",
         "J/mol",
@@ -402,8 +507,12 @@ package Units "Constants and units of physical measure"
         1/V) "Potential";
     defineUnitConversion(
         "L2.M/(N.T2)",
+        "abV",
+        1/abV) "Potential";
+    defineUnitConversion(
+        "L2.M/(N.T2)",
         "K",
-        1/K) "Absolute potential";
+        1/K) "Potential";
     defineUnitConversion(
         "L3.M/(A.N.T2)",
         "K.m/rad",
@@ -414,10 +523,6 @@ package Units "Constants and units of physical measure"
         rad/(V*m)) "Potential per wavenumber";
     defineUnitConversion(
         "L2.M/T3",
-        "lm",
-        1/lm) "Power";
-    defineUnitConversion(
-        "L2.M/T3",
         "W",
         1/W) "Power";
     defineUnitConversion(
@@ -426,16 +531,16 @@ package Units "Constants and units of physical measure"
         1/(W*m^2)) "Power times area";
     defineUnitConversion(
         "M/T3",
-        "lm/m2",
-        m^2/lm) "Areic power";
-    defineUnitConversion(
-        "M/T3",
         "W/m2",
         m^2/W) "Areic power";
     defineUnitConversion(
         "N4.T5/(L8.M3)",
         "W/(m2.K4)",
         m^2*K^4/W) "Areic power per 4th power of potential";
+    defineUnitConversion(
+        "N4.T5/(L8.M3)",
+        "sigma",
+        1/sigma) "Areic power per 4th power of potential";
     defineUnitConversion(
         "M/(L.T2)",
         "atm",
@@ -447,11 +552,31 @@ package Units "Constants and units of physical measure"
     defineUnitConversion(
         "M/(L.T2)",
         "kPa",
-        1/(Prefixes.k*Pa)) "Pressure";
+        1/kPa) "Pressure";
     defineUnitConversion(
         "M/(L.T2)",
         "Pa",
         1/Pa) "Pressure";
+    defineUnitConversion(
+        "M/(L.T2)",
+        "mmHg",
+        1/mmHg) "Pressure";
+    defineUnitConversion(
+        "M/(L.T2)",
+        "bar",
+        1/bar) "Pressure";
+    defineUnitConversion(
+        "M/(L.T2)",
+        "Ba",
+        1/Ba) "Pressure";
+    defineUnitConversion(
+        "M/(L.T2)",
+        "atm",
+        1/atm) "Pressure";
+    defineUnitConversion(
+        "M/(L.T2)",
+        "Torr",
+        1/Torr) "Pressure";
     defineUnitConversion(
         "M/(L2.T2)",
         "Pa/m",
@@ -459,27 +584,11 @@ package Units "Constants and units of physical measure"
     defineUnitConversion(
         "L2.M/(N2.T)",
         "ohm",
-        1/ohm) "Electrical resistance";
+        1/ohm) "Resistance";
     defineUnitConversion(
-        "M/(L.N.T)",
-        "Pa/A",
-        A/Pa) "Fluid resistance";
-    defineUnitConversion(
-        "L.T/N",
-        "cm/A",
-        A/cm) "Resistivity";
-    defineUnitConversion(
-        "L.T/N",
-        "m/A",
-        A/m) "Resistivity";
-    defineUnitConversion(
-        "L.T/N",
-        "m.K/W",
-        W/(m*K)) "Resistivity";
-    defineUnitConversion(
-        "M/T2",
-        "N/m",
-        m/N) "Surface tension";
+        "L2.M/(N2.T)",
+        "abohm",
+        1/abohm) "Resistance";
     defineUnitConversion(
         "T",
         "d",
@@ -505,9 +614,25 @@ package Units "Constants and units of physical measure"
         "s",
         1/s) "Time";
     defineUnitConversion(
+        "T",
+        "y",
+        1/y) "Time";
+    defineUnitConversion(
+        "T",
+        "t_n",
+        1/t_n) "Time";
+    defineUnitConversion(
+        "T",
+        "t_H",
+        1/t_H) "Time";
+    defineUnitConversion(
         "1/T",
         "1/s",
         s) "Reciprocal of time";
+    defineUnitConversion(
+        "1/T",
+        "Bq",
+        1/Bq) "Reciprocal of time";
     defineUnitConversion(
         "L/T",
         "cm/s",
@@ -519,11 +644,19 @@ package Units "Constants and units of physical measure"
     defineUnitConversion(
         "L/T",
         "mm/s",
-        s/(Prefixes.m*m)) "Velocity";
+        s/mm) "Velocity";
     defineUnitConversion(
         "L/T",
         "um/s",
         s/(Prefixes.u*m)) "Velocity";
+    defineUnitConversion(
+        "L/T",
+        "c",
+        1/c) "Velocity";
+    defineUnitConversion(
+        "L/T",
+        "kn",
+        1/kn) "Velocity";
     defineUnitConversion(
         "L2/T2",
         "J/g",
@@ -532,6 +665,10 @@ package Units "Constants and units of physical measure"
         "L2/T2",
         "Sv",
         1/Sv) "Squared velocity";
+    defineUnitConversion(
+        "L2/T2",
+        "Gy",
+        1/Gy) "Squared velocity";
     defineUnitConversion(
         "M/(L.T)",
         "Pa.s",
@@ -553,17 +690,9 @@ package Units "Constants and units of physical measure"
         "m3",
         1/m^3) "Volume";
     defineUnitConversion(
-        "L3/N",
-        "cc/C",
-        C/cc) "Specific volume";
-    defineUnitConversion(
-        "L3/N",
-        "m3/C",
-        C/m^3) "Specific volume";
-    defineUnitConversion(
-        "L3/N",
-        "m3/mol",
-        mol/m^3) "Specific volume";
+        "L/A",
+        "cm/cyc",
+        cyc/cm) "Wavelength";
     defineUnitConversion(
         "L/A",
         "m/cyc",
@@ -573,9 +702,21 @@ package Units "Constants and units of physical measure"
         "m/rad",
         rad/m) "Wavelength";
     defineUnitConversion(
+        "L/A",
+        "lambda_e",
+        1/lambda_e) "Wavelength";
+    defineUnitConversion(
         "L2/(A.T)",
         "m2/(cyc.s)",
         cyc*s/m^2) "Wavelength times velocity";
+    defineUnitConversion(
+        "L2/(A.T)",
+        "cm2/(cyc.s)",
+        cyc*s/cm^2) "Wavelength times velocity";
+    defineUnitConversion(
+        "L2/(A.T)",
+        "kappa",
+        1/kappa) "Wavelength times velocity";
     defineUnitConversion(
         "A/L",
         "cyc/m",
@@ -584,6 +725,10 @@ package Units "Constants and units of physical measure"
         "A/L",
         "rad/m",
         m/rad) "Wavenumber";
+    defineUnitConversion(
+        "A/L",
+        "cyc/(cm.s)",
+        cm*s/cyc) "Wavenumber";
     // -------- end from QCalc/Resources/quantities.xls
 
     // -------------------------------------------------------------------------
@@ -658,7 +803,7 @@ recognized by Dymola.</p>
 
       final constant Q.MagneticFlux Phi_0=U.Phi_0
         "magnetic flux quantum (&Phi;<sub>0</sub>)";
-      final constant Q.ConductanceElectrical G_0=U.G_0 "conductance quantum";
+      final constant Q.Conductance G_0=U.G_0 "conductance quantum";
       final constant Q.Amount e=U.e "elementary charge";
       final constant Q.MomentumRotational h=U.h "Planck constant";
       final constant Q.AmountReciprocal N_A=U.N_A "Avogadro constant";
@@ -686,7 +831,7 @@ recognized by Dymola.</p>
       final constant Q.Length m=U.m "metre";
       final constant Q.Time s=U.s "second";
       final constant Q.MagneticFlux Wb=U.Wb "weber";
-      final constant Q.ConductanceElectrical S=U.S "siemens";
+      final constant Q.Conductance S=U.S "siemens";
       final constant Q.Amount mol=U.mol "mole";
       final constant Q.Potential K=U.K "kelvin";
 
@@ -715,7 +860,7 @@ recognized by Dymola.</p>
       final constant Q.MagneticFluxAreic T=U.T "tesla";
       final constant Q.PowerAreic lx=U.lx "lux";
       final constant Q.Capacitance F=U.F "farad";
-      final constant Q.ResistanceElectrical ohm=U.ohm "ohm";
+      final constant Q.Resistance ohm=U.ohm "ohm";
       final constant Q.Inductance H=U.H "henry";
       final constant Q.Current kat=U.kat "katal";
       final constant Q.Velocity2 Sv=U.Sv "sievert";
@@ -764,7 +909,7 @@ recognized by Dymola.</p>
       final constant Q.MagneticFlux pole=U.pole "unit pole";
       final constant Q.MagneticFieldAux Oe=U.Oe "oersted";
       final constant Q.Capacitance abF=U.abF "abfarad";
-      final constant Q.ResistanceElectrical abohm=U.abohm "abohm";
+      final constant Q.Resistance abohm=U.abohm "abohm";
       final constant Q.Inductance abH=U.abH "abhenry";
 
       // -------------------------------------------------------------------------
@@ -773,7 +918,7 @@ recognized by Dymola.</p>
       constant Q.PermittivityReciprocal k_C=U.k_C "Coulomb constant";
       final constant Q.Permittivity epsilon_0=U.epsilon_0 "electric constant";
       final constant Q.Permeability mu_0=U.mu_0 "magnetic constant ";
-      final constant Q.ResistanceElectrical Z_0=U.Z_0
+      final constant Q.Resistance Z_0=U.Z_0
         "characteristic impedance of vacuum";
       final constant Q.Angle alpha=U.alpha "fine-structure constant";
       final constant Q.Length a_0=U.a_0 "Bohr radius";
@@ -806,7 +951,7 @@ recognized by Dymola.</p>
       final constant Q.MagnetomotiveForce AT=U.AT "ampere-turn";
       final constant Q.Area D=U.D "darcy";
       final constant Q.Mass u=U.u "unified atomic mass unit";
-      final constant Q.Density M=U.M "molar";
+      final constant Q.Concentration M=U.M "molar";
 
       annotation (Documentation(info="<html><p>This model may be used to calculate the values of the
   constants and units.</p>
@@ -829,30 +974,29 @@ recognized by Dymola.</p>
       extends Icons.Block;
 
       // Generated from QCalc/Resources/quantities.xls, 2014-8-22
-      parameter Q.Acceleration Acceleration=1*U.m/U.s^2 "Acceleration";
-      parameter Q.Amount Amount=1*U.C "Amount";
+      parameter Q.Acceleration Acceleration=1*U.Gal "Acceleration";
+      parameter Q.Amount Amount=1*U.mol "Amount";
       parameter Q.AmountReciprocal AmountReciprocal=1/U.C
         "Reciprocal of amount";
       parameter Q.Angle Angle=1*U.rad "Angle";
       parameter Q.Angle2 Angle2=1*U.sr "Solid angle";
-      parameter Q.Area Area=1*U.m^2 "Area";
+      parameter Q.Area Area=1*U.b "Area";
       parameter Q.Capacitance Capacitance=1*U.F "Capacitance";
-      parameter Q.ConductanceElectrical ConductanceElectrical=1*U.S
-        "Electrical conductance";
+      parameter Q.Concentration Concentration=1*U.M "Concentration";
+      parameter Q.Conductance Conductance=1*U.S "Conductance";
       parameter Q.Current Current=1*U.A "Current";
-      parameter Q.Density Density=1*U.C/U.m^3 "Density";
-      parameter Q.Diffusivity Diffusivity=1*U.m^2/U.s "Diffusivity";
+      parameter Q.Diffusivity Diffusivity=1*U.St "Diffusivity";
       parameter Q.Energy Energy=1*U.J "Energy";
       parameter Q.Force Force=1*U.N "Force";
-      parameter Q.Frequency Frequency=1*U.rad/U.s "Frequency";
-      parameter Q.Illuminance Illuminance=1*U.cd*U.sr "Illuminance";
+      parameter Q.Frequency Frequency=1*U.Hz "Frequency";
+      parameter Q.Illuminance Illuminance=1*U.lm "Illuminance";
       parameter Q.Inductance Inductance=1*U.H "Inductance";
       parameter Q.Length Length=1*U.m "Length";
       parameter Q.LengthSpecific LengthSpecific=1*U.m/U.C "Specific length";
-      parameter Q.LengthSpecificMassSpecific LengthSpecificMassSpecific=1*U.N/U.A
-          ^2 "Specific length times specific mass";
-      parameter Q.Luminance Luminance=1*U.cd/U.m^2 "Luminance";
-      parameter Q.LuminousEmittance LuminousEmittance=1*U.cd*U.sr/U.m^2
+      parameter Q.LengthSpecificMassSpecific LengthSpecificMassSpecific=1*U.H/U.m
+        "Specific length times specific mass";
+      parameter Q.Luminance Luminance=1*U.sb "Luminance";
+      parameter Q.LuminousEmittance LuminousEmittance=1*U.lx
         "Luminous emittance";
       parameter Q.LuminousIntensity LuminousIntensity=1*U.cd
         "Luminous intensity";
@@ -870,12 +1014,11 @@ recognized by Dymola.</p>
       parameter Q.MagnetomotiveForce MagnetomotiveForce=1*U.AT
         "Magnetomotive force";
       parameter Q.Mass Mass=1*U.kg "Mass";
-      parameter Q.MassSpecific MassSpecific=1*U.Prefixes.u*U.g/U.C
-        "Specific mass";
-      parameter Q.MomentumRotational MomentumRotational=1*U.J*U.s/U.rad
+      parameter Q.MassSpecific MassSpecific=1*U.g/U.mol "Specific mass";
+      parameter Q.MomentumRotational MomentumRotational=1*U.J/U.Hz
         "Rotational momentum";
       parameter Q.Number Number=1 "Number";
-      parameter Q.Permeability Permeability=1*U.H/(U.m*U.cyc^2) "Permeability";
+      parameter Q.Permeability Permeability=1*U.Wb/(U.AT*U.m) "Permeability";
       parameter Q.Permittivity Permittivity=1*U.F/U.m "Permittivity";
       parameter Q.PermittivityReciprocal PermittivityReciprocal=1*U.m/U.F
         "Reciprocal of permittivity";
@@ -889,18 +1032,17 @@ recognized by Dymola.</p>
           U.K^4) "Areic power per 4th power of potential";
       parameter Q.Pressure Pressure=1*U.Pa "Pressure";
       parameter Q.PressureLineic PressureLineic=1*U.Pa/U.m "Lineic pressure";
-      parameter Q.ResistanceElectrical ResistanceElectrical=1*U.ohm
-        "Electrical resistance";
+      parameter Q.Resistance Resistance=1*U.ohm "Resistance";
       parameter Q.Time Time=1*U.s "Time";
-      parameter Q.TimeReciprocal TimeReciprocal=1/U.s "Reciprocal of time";
+      parameter Q.TimeReciprocal TimeReciprocal=1*U.Bq "Reciprocal of time";
       parameter Q.Velocity Velocity=1*U.m/U.s "Velocity";
       parameter Q.Velocity2 Velocity2=1*U.Sv "Squared velocity";
       parameter Q.Viscosity Viscosity=1*U.Pa*U.s/1 "Viscosity";
       parameter Q.Volume Volume=1*U.m^3 "Volume";
-      parameter Q.Wavelength Wavelength=1*U.m/U.rad "Wavelength";
+      parameter Q.Wavelength Wavelength=1*U.m/U.cyc "Wavelength";
       parameter Q.WavelengthVelocity WavelengthVelocity=1*U.m^2/(U.cyc*U.s)
         "Wavelength times velocity";
-      parameter Q.Wavenumber Wavenumber=1*U.rad/U.m "Wavenumber";
+      parameter Q.Wavenumber Wavenumber=1*U.cyc/U.m "Wavenumber";
       // -------- end from QCalc/Resources/quantities.xls
       annotation (Commands(executeCall=QCalc.Units.setup()
             "Re-initialize the units."));
@@ -1118,7 +1260,7 @@ encompass other systems of units.</p>
 
   final constant Q.MagneticFlux Phi_0=1/k_J
     "<html><a href=\"http://en.wikipedia.org/wiki/Magnetic_flux_quantum\">magnetic flux quantum</a> (&Phi;<sub>0</sub>)</html>";
-  final constant Q.ConductanceElectrical G_0=2/R_K
+  final constant Q.Conductance G_0=2/R_K
     "<html><a href=\"http://en.wikipedia.org/wiki/Conductance_quantum\">conductance quantum</a> (<i>G</i><sub>0</sub>)</html>";
   final constant Q.Amount e=G_0*Phi_0
     "<html><a href=\"http://en.wikipedia.org/wiki/Elementary_charge\">elementary charge</a></html>";
@@ -1205,7 +1347,7 @@ encompass other systems of units.</p>
   // This is the based on the "Josephson constant" relation [NIST2010].  The
   // Josephson constant can be determined by measuring supercurrent across a
   // Josephson junction [http://en.wikipedia.org/wiki/Josephson_effect].
-  constant Q.ConductanceElectrical S=25812.8074434/(R_K*cyc)
+  constant Q.Conductance S=25812.8074434/(R_K*cyc)
     "<html><a href=\"http://en.wikipedia.org/wiki/Siemens_(unit)\">siemens</a></html>";
   // SI unit of electrical conductance
   // This is based on the "von Klitzing constant" relation [NIST2010], given
@@ -1289,7 +1431,7 @@ encompass other systems of units.</p>
     "<html><a href=\"http://en.wikipedia.org/wiki/Lux\">lux</a></html>";
   final constant Q.Capacitance F=s*S
     "<html><a href=\"http://en.wikipedia.org/wiki/Farad\">farad</a></html>";
-  final constant Q.ResistanceElectrical ohm=1/S
+  final constant Q.Resistance ohm=1/S
     "<html><html><a href=\"http://en.wikipedia.org/wiki/Ohm\">ohm</a> (&Omega;)</html>";
   final constant Q.Inductance H=s/S
     "<html><a href=\"http://en.wikipedia.org/wiki/Henry_(unit)\">henry</a></html>";
@@ -1411,7 +1553,7 @@ encompass other systems of units.</p>
   // Others not in [BIPM2006]:
   final constant Q.Capacitance abF=abC/abV
     "<html><a href=\"https://en.wikipedia.org/wiki/Abfarad#CGS_units\">abfarad</a></html>";
-  final constant Q.ResistanceElectrical abohm=s/abF
+  final constant Q.Resistance abohm=s/abF
     "<html><a href=\"https://en.wikipedia.org/wiki/Abohm\">abohm</a></html>";
   final constant Q.Inductance abH=abohm*s
     "<html><a href=\"http://en.wikipedia.org/wiki/Abhenry\">abhenry</a></html>";
@@ -1430,7 +1572,7 @@ encompass other systems of units.</p>
   final constant Q.Permeability mu_0=1/(epsilon_0*cyc^2*c^2)
     "<html><a href=\"http://en.wikipedia.org/wiki/Vacuum_permeability\">magnetic constant</a> (&mu;<sub>0</sub>)</html>";
   // aka vacuum permeability or permeability of free space
-  final constant Q.ResistanceElectrical Z_0=2*k_A*c/rad
+  final constant Q.Resistance Z_0=2*k_A*c/rad
     "<html><a href=\"http://en.wikipedia.org/wiki/Impedance_of_free_space\">characteristic impedance of vacuum</a> (<i>Z</i><sub>0</sub>)</html>";
   final constant Q.Angle alpha=k_A*c/R_K
     "<html><a href=\"http://en.wikipedia.org/wiki/Fine_structure_constant\">fine-structure constant</a> (&alpha;)</html>";
@@ -1491,7 +1633,7 @@ encompass other systems of units.</p>
   final constant Q.Mass u=g/(N_A*mol)
     "<html><a href=\"https://en.wikipedia.org/wiki/Atomic_mass_unit\">unified atomic mass unit</a></html>";
   // aka dalton (Da)
-  final constant Q.Density M=mol/L
+  final constant Q.Concentration M=mol/L
     "<html><a href=\"http://en.wikipedia.org/wiki/Molar_concentration#Units\">molar</a></html>";
   final constant Interfaces.kPag kPag "kilopascal, gauge";
 
