@@ -51,6 +51,8 @@ package Quantities "Types to represent physical values"
   type PermittivityReciprocal = Quantity (final unit="L3.M/(N2.T2)", min=0)
     "Reciprocal of permittivity";
   type Potential = Quantity (final unit="L2.M/(N.T2)");
+  type PotentialAbsolute = Quantity (final unit="L2.M/(N.T2)", min=0)
+    "Absolute potential";
   type PotentialPerWavenumber = Quantity (final unit="L3.M/(A.N.T2)")
     "Potential per wavenumber";
   type Power = Quantity (final unit="L2.M/T3");
