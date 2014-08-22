@@ -4,7 +4,7 @@
 <title>QCalc.Quantities</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="quantities unit natural units conversion SI CGS Real dimensionality Planck Hartree">
-<meta name="date" content="2014-8-21">
+<meta name="date" content="2014-8-22">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Types to represent physical values">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -19,8 +19,7 @@
     <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
-<h3>Table of Contents</h3>
-
+  <h3>Table of Contents</h3>
     <ul>
     <li><a href="QCalc_UsersGuide.html">User's Guide</a></li>
     <li><a href="QCalc_Units.html">Units</a></li>
@@ -45,7 +44,7 @@
 
 <h3>Download</h3>
     <ul>
-      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.2.1.zip">Latest version<br>(v0.2.1, 2014-08-21)</a></span></li>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.3.2.zip">Latest version<br>(v0.3.2, 2014-08-22)</a></span></li>
     </ul>
   </div>
 </div>
@@ -53,8 +52,7 @@
 <div class="document">
   <div class="documentwrapper">
     <div class="bodywrapper">
-      <div class="body">
-<h2><a name="QCalc.Quantities"></a><a href="index.html#QCalc">QCalc</a>.Quantities</h2>
+      <div class="body"><h2><a name="QCalc.Quantities"></a><a href="index.html#QCalc">QCalc</a>.Quantities</h2>
 
 <p>
 <b>Types to represent physical values</b><br>
@@ -67,7 +65,7 @@
   to represent physical values (<code>Real</code> variables).  The
 <code>unit</code> attribute of each quantity is used to denote the
   physical dimensionality in terms of fundamental dimensions:
-  angle (A), length (L), mass (M), chemical amount (N), and time (T).<sup><a href="#fn1">1</a></sup>
+  angle (A), length (L), mass (M), amount of subtance (N), and time (T).<sup><a href="#fn1">1</a></sup>
   The fundamental dimensions
   are combined according to the rules established for unit strings
   [<a href="QCalc_UsersGuide_References.html#QCalc.UsersGuide.References.Modelica2010">Modelica2010</a>, p.&nbsp;210].
@@ -102,9 +100,15 @@ Most quantities are named with adjectives following the noun so that related
 
     <hr>
 
-    <p id="fn1"><small>1. This misnomer (unit instead of dimension) is necessary because <code>Real</code>
+<p id="fn1"><small>1. This misnomer (<code>unit</code> attribute for dimension) is necessary because <code>Real</code>
     variables do not have a <code>dimension</code>
-    attribute in Modelica.</small></p>
+    attribute in Modelica.  Beware that:<ul>
+    <li><code>unit="L"</code> indicates a length quantity, not a volume in litres.</li>
+    <li><code>unit="T"</code> indicates a time quantity, not a magnetic flux in teslas.</li>
+    <li><code>unit="A"</code> indicates an angle, not a current in amperes.</li>
+    <li><code>unit="N"</code> indicates an amount of substance, not a force in newtons.</li>
+    </ul>
+    </small></p>
 
 <p>Extends from <a href="QCalc_Icons_TypesPackage.html#QCalc.Icons.TypesPackage">Icons.TypesPackage</a> (Icon for packages containing type definitions (from MSL 3.2.1)).</p>
 
@@ -151,27 +155,17 @@ Most quantities are named with adjectives following the noun so that related
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ConductanceElectrical" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ConductanceElectrical">ConductanceElectrical</a>
-</td>
-<td>Electrical conductance</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ConductivityElectrical" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ConductivityElectrical">ConductivityElectrical</a>
-</td>
-<td>Electrical conductivity</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Current" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Current">Current</a>
+<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Concentration" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Concentration</a>
 </td>
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CurrentAreic" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CurrentAreic">CurrentAreic</a>
+<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Conductance" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Conductance</a>
 </td>
-<td>Areic current</td>
+<td>&nbsp;</td>
 </tr>
 <tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Density" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Density">Density</a>
+<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Current" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Current">Current</a>
 </td>
 <td>&nbsp;</td>
 </tr>
@@ -186,19 +180,9 @@ Most quantities are named with adjectives following the noun so that related
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Fluidity" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Fluidity">Fluidity</a>
-</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Force" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Force">Force</a>
 </td>
 <td>&nbsp;</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ForceSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ForceSpecific">ForceSpecific</a>
-</td>
-<td>Specific force</td>
 </tr>
 <tr>
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Frequency" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Frequency</a>
@@ -291,16 +275,6 @@ Most quantities are named with adjectives following the noun so that related
 <td>Specific mass</td>
 </tr>
 <tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.MassVolumic" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.MassVolumic">MassVolumic</a>
-</td>
-<td>Volumic mass</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Mobility" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Mobility">Mobility</a>
-</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.MomentumRotational" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational">MomentumRotational</a>
 </td>
 <td>Rotational momentum</td>
@@ -309,11 +283,6 @@ Most quantities are named with adjectives following the noun so that related
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Number" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Number">Number</a>
 </td>
 <td>&nbsp;</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.NumberAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.NumberAbsolute">NumberAbsolute</a>
-</td>
-<td>Absolute number</td>
 </tr>
 <tr>
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Permeability" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Permeability</a>
@@ -371,44 +340,19 @@ Most quantities are named with adjectives following the noun so that related
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PressureAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PressureAbsolute">PressureAbsolute</a>
-</td>
-<td>Absolute pressure</td>
-</tr>
-<tr>
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PressureLineic" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PressureLineic">PressureLineic</a>
 </td>
 <td>Lineic pressure</td>
 </tr>
 <tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ResistanceElectrical" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceElectrical">ResistanceElectrical</a>
-</td>
-<td>Electrical resistance</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ResistanceFluid" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceFluid">ResistanceFluid</a>
-</td>
-<td>Fluid resistance</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Resistivity" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Resistivity">Resistivity</a>
+<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Resistance" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Resistance</a>
 </td>
 <td>&nbsp;</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.SurfaceTension" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.SurfaceTension">SurfaceTension</a>
-</td>
-<td>Surface tension</td>
 </tr>
 <tr>
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Time" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Time">Time</a>
 </td>
 <td>&nbsp;</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.TimeAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.TimeAbsolute">TimeAbsolute</a>
-</td>
-<td>Absolute time</td>
 </tr>
 <tr>
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.TimeReciprocal" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.TimeReciprocal">TimeReciprocal</a>
@@ -436,16 +380,6 @@ Most quantities are named with adjectives following the noun so that related
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.VolumeSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.VolumeSpecific">VolumeSpecific</a>
-</td>
-<td>Specific volume</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.VolumeSpecificAbsolute" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.VolumeSpecificAbsolute">VolumeSpecificAbsolute</a>
-</td>
-<td>Absolute specific volume</td>
-</tr>
-<tr>
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Wavelength" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Wavelength">Wavelength</a>
 </td>
 <td>&nbsp;</td>
@@ -459,36 +393,6 @@ Most quantities are named with adjectives following the noun so that related
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Wavenumber" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Wavenumber</a>
 </td>
 <td>&nbsp;</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CapacityThermal" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CapacityThermal">CapacityThermal</a>
-</td>
-<td>Thermal capacity</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CapacityThermalSpecific" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CapacityThermalSpecific">CapacityThermalSpecific</a>
-</td>
-<td>Specific thermal capacity</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.CapacityThermalVolumic" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.CapacityThermalVolumic">CapacityThermalVolumic</a>
-</td>
-<td>Volumic thermal capacity</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ConductanceThermal" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ConductanceThermal">ConductanceThermal</a>
-</td>
-<td>Thermal conductance</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.PotentialChemical" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.PotentialChemical">PotentialChemical</a>
-</td>
-<td>Chemical potential</td>
-</tr>
-<tr>
-<td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.ResistivityThermal" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.ResistivityThermal">ResistivityThermal</a>
-</td>
-<td>Thermal resistivity</td>
 </tr>
 <tr>
 <td><img src="images/QCalc.Quantities.AccelerationS.png" alt="QCalc.Quantities.Temperature" width="20" height="20" align="top">&nbsp;<a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Temperature</a>
@@ -517,18 +421,12 @@ Most quantities are named with adjectives following the noun so that related
 <a name="QCalc.Quantities.Angle2"></a><pre>  <span style="color: blue">type</span> Angle2 = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A2&quot;) <span style="color: #006400">&quot;Solid angle&quot;</span>;</pre>
 <a name="QCalc.Quantities.Area"></a><pre>  <span style="color: blue">type</span> Area = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2&quot;, min=0);</pre>
 <a name="QCalc.Quantities.Capacitance"></a><pre>  <span style="color: blue">type</span> Capacitance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T2/(L2.M)&quot;, min=0);</pre>
-<a name="QCalc.Quantities.ConductanceElectrical"></a><pre>  <span style="color: blue">type</span> ConductanceElectrical = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T/(L2.M)&quot;, min=0) <span style="color: #006400">
-  &quot;Electrical conductance&quot;</span>;</pre>
-<a name="QCalc.Quantities.ConductivityElectrical"></a><pre>  <span style="color: blue">type</span> ConductivityElectrical = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T/(L3.M)&quot;, min=0) <span style="color: #006400">
-  &quot;Electrical conductivity&quot;</span>;</pre>
+<a name="QCalc.Quantities.Concentration"></a><pre>  <span style="color: blue">type</span> Concentration = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N/L3&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Conductance"></a><pre>  <span style="color: blue">type</span> Conductance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T/(L2.M)&quot;, min=0);</pre>
 <a name="QCalc.Quantities.Current"></a><pre>  <span style="color: blue">type</span> Current = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N/T&quot;);</pre>
-<a name="QCalc.Quantities.CurrentAreic"></a><pre>  <span style="color: blue">type</span> CurrentAreic = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N/(L2.T)&quot;) <span style="color: #006400">&quot;Areic current&quot;</span>;</pre>
-<a name="QCalc.Quantities.Density"></a><pre>  <span style="color: blue">type</span> Density = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N/L3&quot;, min=0);</pre>
 <a name="QCalc.Quantities.Diffusivity"></a><pre>  <span style="color: blue">type</span> Diffusivity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2/T&quot;, min=0);</pre>
 <a name="QCalc.Quantities.Energy"></a><pre>  <span style="color: blue">type</span> Energy = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/T2&quot;);</pre>
-<a name="QCalc.Quantities.Fluidity"></a><pre>  <span style="color: blue">type</span> Fluidity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.T/M&quot;, min=0);</pre>
 <a name="QCalc.Quantities.Force"></a><pre>  <span style="color: blue">type</span> Force = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.M/T2&quot;);</pre>
-<a name="QCalc.Quantities.ForceSpecific"></a><pre>  <span style="color: blue">type</span> ForceSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.M/(N.T2)&quot;) <span style="color: #006400">&quot;Specific force&quot;</span>;</pre>
 <a name="QCalc.Quantities.Frequency"></a><pre>  <span style="color: blue">type</span> Frequency = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A/T&quot;);</pre>
 <a name="QCalc.Quantities.Illuminance"></a><pre>  <span style="color: blue">type</span> Illuminance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;J.A2&quot;);</pre>
 <a name="QCalc.Quantities.Inductance"></a><pre>  <span style="color: blue">type</span> Inductance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/N2&quot;, min=0);</pre>
@@ -553,12 +451,9 @@ Most quantities are named with adjectives following the noun so that related
 <a name="QCalc.Quantities.MagnetomotiveForce"></a><pre>  <span style="color: blue">type</span> MagnetomotiveForce = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A.N/T&quot;) <span style="color: #006400">&quot;Magnetomotive force&quot;</span>;</pre>
 <a name="QCalc.Quantities.Mass"></a><pre>  <span style="color: blue">type</span> Mass = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M&quot;, min=0);</pre>
 <a name="QCalc.Quantities.MassSpecific"></a><pre>  <span style="color: blue">type</span> MassSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/N&quot;, min=0) <span style="color: #006400">&quot;Specific mass&quot;</span>;</pre>
-<a name="QCalc.Quantities.MassVolumic"></a><pre>  <span style="color: blue">type</span> MassVolumic = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/L3&quot;, min=0) <span style="color: #006400">&quot;Volumic mass&quot;</span>;</pre>
-<a name="QCalc.Quantities.Mobility"></a><pre>  <span style="color: blue">type</span> Mobility = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N.T/M&quot;, min=0);</pre>
 <a name="QCalc.Quantities.MomentumRotational"></a><pre>  <span style="color: blue">type</span> MomentumRotational = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.T)&quot;) <span style="color: #006400">
   &quot;Rotational momentum&quot;</span>;</pre>
 <a name="QCalc.Quantities.Number"></a><pre>  <span style="color: blue">type</span> Number = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;1&quot;);</pre>
-<a name="QCalc.Quantities.NumberAbsolute"></a><pre>  <span style="color: blue">type</span> NumberAbsolute = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;1&quot;, min=0) <span style="color: #006400">&quot;Absolute number&quot;</span>;</pre>
 <a name="QCalc.Quantities.Permeability"></a><pre>  <span style="color: blue">type</span> Permeability = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.M/(A2.N2)&quot;, min=0);</pre>
 <a name="QCalc.Quantities.Permittivity"></a><pre>  <span style="color: blue">type</span> Permittivity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T2/(L3.M)&quot;, min=0);</pre>
 <a name="QCalc.Quantities.PermittivityReciprocal"></a><pre>  <span style="color: blue">type</span> PermittivityReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3.M/(N2.T2)&quot;, min=0) <span style="color: #006400">
@@ -574,38 +469,18 @@ Most quantities are named with adjectives following the noun so that related
 <a name="QCalc.Quantities.PowerAreicPerPotential4"></a><pre>  <span style="color: blue">type</span> PowerAreicPerPotential4 = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N4.T5/(L8.M3)&quot;) <span style="color: #006400">
   &quot;Areic power per 4th power of potential&quot;</span>;</pre>
 <a name="QCalc.Quantities.Pressure"></a><pre>  <span style="color: blue">type</span> Pressure = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T2)&quot;);</pre>
-<a name="QCalc.Quantities.PressureAbsolute"></a><pre>  <span style="color: blue">type</span> PressureAbsolute = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T2)&quot;, min=0) <span style="color: #006400">
-  &quot;Absolute pressure&quot;</span>;</pre>
 <a name="QCalc.Quantities.PressureLineic"></a><pre>  <span style="color: blue">type</span> PressureLineic = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L2.T2)&quot;) <span style="color: #006400">&quot;Lineic pressure&quot;</span>;</pre>
-<a name="QCalc.Quantities.ResistanceElectrical"></a><pre>  <span style="color: blue">type</span> ResistanceElectrical = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N2.T)&quot;, min=0) <span style="color: #006400">
-  &quot;Electrical resistance&quot;</span>;</pre>
-<a name="QCalc.Quantities.ResistanceFluid"></a><pre>  <span style="color: blue">type</span> ResistanceFluid = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L.N.T)&quot;, min=0) <span style="color: #006400">
-  &quot;Fluid resistance&quot;</span>;</pre>
-<a name="QCalc.Quantities.Resistivity"></a><pre>  <span style="color: blue">type</span> Resistivity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.T/N&quot;, min=0);</pre>
-<a name="QCalc.Quantities.SurfaceTension"></a><pre>  <span style="color: blue">type</span> SurfaceTension = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/T2&quot;) <span style="color: #006400">&quot;Surface tension&quot;</span>;</pre>
+<a name="QCalc.Quantities.Resistance"></a><pre>  <span style="color: blue">type</span> Resistance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N2.T)&quot;, min=0);</pre>
 <a name="QCalc.Quantities.Time"></a><pre>  <span style="color: blue">type</span> Time = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;T&quot;);</pre>
-<a name="QCalc.Quantities.TimeAbsolute"></a><pre>  <span style="color: blue">type</span> TimeAbsolute = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;T&quot;, min=0) <span style="color: #006400">&quot;Absolute time&quot;</span>;</pre>
 <a name="QCalc.Quantities.TimeReciprocal"></a><pre>  <span style="color: blue">type</span> TimeReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;1/T&quot;) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;</pre>
 <a name="QCalc.Quantities.Velocity"></a><pre>  <span style="color: blue">type</span> Velocity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/T&quot;);</pre>
 <a name="QCalc.Quantities.Velocity2"></a><pre>  <span style="color: blue">type</span> Velocity2 = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2/T2&quot;) <span style="color: #006400">&quot;Squared velocity&quot;</span>;</pre>
 <a name="QCalc.Quantities.Viscosity"></a><pre>  <span style="color: blue">type</span> Viscosity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T)&quot;, min=0);</pre>
 <a name="QCalc.Quantities.Volume"></a><pre>  <span style="color: blue">type</span> Volume = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3&quot;, min=0);</pre>
-<a name="QCalc.Quantities.VolumeSpecific"></a><pre>  <span style="color: blue">type</span> VolumeSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3/N&quot;) <span style="color: #006400">&quot;Specific volume&quot;</span>;</pre>
-<a name="QCalc.Quantities.VolumeSpecificAbsolute"></a><pre>  <span style="color: blue">type</span> VolumeSpecificAbsolute = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3/N&quot;, min=0) <span style="color: #006400">
-  &quot;Absolute specific volume&quot;</span>;</pre>
 <a name="QCalc.Quantities.Wavelength"></a><pre>  <span style="color: blue">type</span> Wavelength = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/A&quot;);</pre>
 <a name="QCalc.Quantities.WavelengthVelocity"></a><pre>  <span style="color: blue">type</span> WavelengthVelocity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2/(A.T)&quot;) <span style="color: #006400">
   &quot;Wavelength times velocity&quot;</span>;</pre>
 <a name="QCalc.Quantities.Wavenumber"></a><pre>  <span style="color: blue">type</span> Wavenumber = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A/L&quot;);</pre>
-<a name="QCalc.Quantities.CapacityThermal"></a><pre>  <span style="color: blue">type</span> CapacityThermal = <a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Amount</a> (displayUnit=&quot;J/K&quot;) <span style="color: #006400">&quot;Thermal capacity&quot;</span>;</pre>
-<a name="QCalc.Quantities.CapacityThermalSpecific"></a><pre>  <span style="color: blue">type</span> CapacityThermalSpecific = <a href="QCalc_Quantities.html#QCalc.Quantities.NumberAbsolute">NumberAbsolute</a> (displayUnit=&quot;J/(mol.K)&quot;) <span style="color: #006400">
-  &quot;Specific thermal capacity&quot;</span>;</pre>
-<a name="QCalc.Quantities.CapacityThermalVolumic"></a><pre>  <span style="color: blue">type</span> CapacityThermalVolumic = <a href="QCalc_Quantities.html#QCalc.Quantities.Density">Density</a> (displayUnit=&quot;J/(m3.K)&quot;) <span style="color: #006400">
-  &quot;Volumic thermal capacity&quot;</span>;</pre>
-<a name="QCalc.Quantities.ConductanceThermal"></a><pre>  <span style="color: blue">type</span> ConductanceThermal = <a href="QCalc_Quantities.html#QCalc.Quantities.Current">Current</a> (displayUnit=&quot;W/K&quot;) <span style="color: #006400">&quot;Thermal conductance&quot;</span>;</pre>
-<a name="QCalc.Quantities.PotentialChemical"></a><pre>  <span style="color: blue">type</span> PotentialChemical = <a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Potential</a> (displayUnit=&quot;J/mol&quot;) <span style="color: #006400">&quot;Chemical potential&quot;</span>;</pre>
-<a name="QCalc.Quantities.ResistivityThermal"></a><pre>  <span style="color: blue">type</span> ResistivityThermal = <a href="QCalc_Quantities.html#QCalc.Quantities.Resistivity">Resistivity</a> (displayUnit=&quot;m.K/W&quot;) <span style="color: #006400">
-  &quot;Thermal resistivity&quot;</span>;</pre>
 <a name="QCalc.Quantities.Temperature"></a><pre>  <span style="color: blue">type</span> Temperature = <a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Potential</a> (displayUnit=&quot;K&quot;);</pre>
 <a name="QCalc.Quantities.TemperatureAbsolute"></a><pre>  <span style="color: blue">type</span> TemperatureAbsolute = <a href="QCalc_Quantities.html#QCalc.Quantities.PotentialAbsolute">PotentialAbsolute</a> (displayUnit=&quot;degC&quot;) <span style="color: #006400">
   &quot;Absolute temperature&quot;</span>;</pre>
@@ -614,7 +489,7 @@ Most quantities are named with adjectives following the noun so that related
   </div>
 </div>
 <div class="footer">
-  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Thu Aug 21 05:51:14 2014.
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Fri Aug 22 11:25:48 2014.
 </div>
 
 </span></body></html>

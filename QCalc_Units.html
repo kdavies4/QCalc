@@ -4,7 +4,7 @@
 <title>QCalc.Units</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="quantities unit natural units conversion SI CGS Real dimensionality Planck Hartree">
-<meta name="date" content="2014-8-21">
+<meta name="date" content="2014-8-22">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Constants and units of physical measure">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -19,8 +19,7 @@
     <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
-<h3>Table of Contents</h3>
-
+  <h3>Table of Contents</h3>
     <ul>
     <li><a href="QCalc_UsersGuide.html">User's Guide</a></li>
     <li><a href="QCalc_Units.html">Units</a></li>
@@ -45,7 +44,7 @@
 
 <h3>Download</h3>
     <ul>
-      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.2.1.zip">Latest version<br>(v0.2.1, 2014-08-21)</a></span></li>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.3.2.zip">Latest version<br>(v0.3.2, 2014-08-22)</a></span></li>
     </ul>
   </div>
 </div>
@@ -53,8 +52,7 @@
 <div class="document">
   <div class="documentwrapper">
     <div class="bodywrapper">
-      <div class="body">
-<h2><a name="QCalc.Units"></a><a href="index.html#QCalc">QCalc</a>.Units</h2>
+      <div class="body"><h2><a name="QCalc.Units"></a><a href="index.html#QCalc">QCalc</a>.Units</h2>
 
 <p>
 <b>Constants and units of physical measure</b><br>
@@ -139,7 +137,7 @@ number; these are described by functions besides simple division.</p>
 
 <p><b>Method:</b></p>
 
-<p>In <a href="index.html#QCalc">QCalc</a>, each <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'linear unit'">linear unit</a> is a constant
+<p>In <a href="index.html#QCalc">QCalc</a>, each <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'scalar unit'">scalar unit</a> is a constant
 quantity. The value of a unit, like other quantities, is the product
 of a number and a unit. Therefore, units may be derived from other units
 (e.g., Pa = N/m<sup>2</sup>). This recursive definition leaves several
@@ -1118,7 +1116,7 @@ considered as the abbreviation for sphere as well as spat.</small></p>
   &quot;modified Ampere constant (<i>k</i><sub>A</sub> cyc/&alpha;)&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Phi_0=1/k_J <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Magnetic_flux_quantum">magnetic flux quantum</a> (&Phi;<sub>0</sub>)&quot;</span>;</pre>
-<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ConductanceElectrical">Q.ConductanceElectrical</a> G_0=2/R_K <span style="color: #006400">
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> G_0=2/R_K <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Conductance_quantum">conductance quantum</a> (<i>G</i><sub>0</sub>)&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> e=G_0*Phi_0 <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Elementary_charge">elementary charge</a>&quot;</span>;</pre>
@@ -1153,11 +1151,11 @@ considered as the abbreviation for sphere as well as spat.</small></p>
   &quot;<a href="http://en.wikipedia.org/wiki/Second">second</a>&quot;</span>;</pre>
 <pre>  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Wb=483597.870e9/k_J <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Weber_(unit)">weber</a>&quot;</span>;</pre>
-<pre>  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ConductanceElectrical">Q.ConductanceElectrical</a> S=25812.8074434/(R_K*cyc) <span style="color: #006400">
+<pre>  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> S=25812.8074434/(R_K*cyc) <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Siemens_(unit)">siemens</a>&quot;</span>;</pre>
 <pre>  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> mol=96485.3365*Wb*cyc*S/k_F <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Mole_(unit)">mole</a>&quot;</span>;</pre>
-<pre>  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> K=8.3144621*(Wb*cyc)^2*S/(s*mol*R) <span style="color: #006400">
+<pre>  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a> K=8.3144621*(Wb*cyc)^2*S/(s*mol*R) <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Kelvin">kelvin</a>&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousIntensity">Q.LuminousIntensity</a> cd=1 <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Candela">candela</a>&quot;</span>;</pre>
@@ -1193,7 +1191,7 @@ considered as the abbreviation for sphere as well as spat.</small></p>
   &quot;<a href="http://en.wikipedia.org/wiki/Lux">lux</a>&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> F=s*S <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Farad">farad</a>&quot;</span>;</pre>
-<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceElectrical">Q.ResistanceElectrical</a> ohm=1/S <span style="color: #006400">
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> ohm=1/S <span style="color: #006400">
   &quot;<html><a href="http://en.wikipedia.org/wiki/Ohm">ohm</a> (&Omega;)&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> H=s/S <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Henry_(unit)">henry</a>&quot;</span>;</pre>
@@ -1283,7 +1281,7 @@ considered as the abbreviation for sphere as well as spat.</small></p>
   &quot;<a href="http://en.wikipedia.org/wiki/Oersted">oersted</a>&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> abF=abC/abV <span style="color: #006400">
   &quot;<a href="https://en.wikipedia.org/wiki/Abfarad#CGS_units">abfarad</a>&quot;</span>;</pre>
-<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceElectrical">Q.ResistanceElectrical</a> abohm=s/abF <span style="color: #006400">
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> abohm=s/abF <span style="color: #006400">
   &quot;<a href="https://en.wikipedia.org/wiki/Abohm">abohm</a>&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> abH=abohm*s <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Abhenry">abhenry</a>&quot;</span>;</pre>
@@ -1296,7 +1294,7 @@ considered as the abbreviation for sphere as well as spat.</small></p>
   &quot;<a href="http://en.wikipedia.org/wiki/Vacuum_permittivity">electric constant</a> (&epsilon;<sub>0</sub>)&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Q.Permeability</a> mu_0=1/(epsilon_0*cyc^2*c^2) <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Vacuum_permeability">magnetic constant</a> (&mu;<sub>0</sub>)&quot;</span>;</pre>
-<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.ResistanceElectrical">Q.ResistanceElectrical</a> Z_0=2*k_A*c/rad <span style="color: #006400">
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> Z_0=2*k_A*c/rad <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Impedance_of_free_space">characteristic impedance of vacuum</a> (<i>Z</i><sub>0</sub>)&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> alpha=k_A*c/R_K <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Fine_structure_constant">fine-structure constant</a> (&alpha;)&quot;</span>;</pre>
@@ -1348,7 +1346,7 @@ considered as the abbreviation for sphere as well as spat.</small></p>
   &quot;<a href="http://en.wikipedia.org/wiki/Darcy_(unit)">darcy</a>&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> u=g/(N_A*mol) <span style="color: #006400">
   &quot;<a href="https://en.wikipedia.org/wiki/Atomic_mass_unit">unified atomic mass unit</a>&quot;</span>;</pre>
-<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Density">Q.Density</a> M=mol/L <span style="color: #006400">
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Q.Concentration</a> M=mol/L <span style="color: #006400">
   &quot;<a href="http://en.wikipedia.org/wiki/Molar_concentration#Units">molar</a>&quot;</span>;</pre>
 <pre>  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">Interfaces.kPag</a> kPag <span style="color: #006400">&quot;kilopascal, gauge&quot;</span>;</pre>
 <hr>
@@ -1389,29 +1387,32 @@ recognized by Dymola.</p>
 
   <span style="color: #006400">// Generated from QCalc/Resources/quantities.xls, 2014-8-14</span>
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/T2&quot;, &quot;m/s2&quot;) <span style="color: #006400">&quot;Acceleration&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/T2&quot;, &quot;Gal&quot;) <span style="color: #006400">&quot;Acceleration&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N&quot;, &quot;C&quot;) <span style="color: #006400">&quot;Amount&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N&quot;, &quot;abC&quot;) <span style="color: #006400">&quot;Amount&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;1/mol&quot;) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A&quot;, &quot;degree&quot;) <span style="color: #006400">&quot;Angle&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;1/abC&quot;) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;N_A/&quot;) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A&quot;, &quot;deg&quot;) <span style="color: #006400">&quot;Angle&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A2&quot;, &quot;sr&quot;) <span style="color: #006400">&quot;Solid angle&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2&quot;, &quot;cm2&quot;) <span style="color: #006400">&quot;Area&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T2/(L2.M)&quot;, &quot;uF&quot;) <span style="color: #006400">&quot;Capacitance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T/(L2.M)&quot;, &quot;S&quot;) <span style="color: #006400">&quot;Electrical conductance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T/(L3.M)&quot;, &quot;S/m&quot;) <span style="color: #006400">&quot;Electrical conductivity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/L3&quot;, &quot;M&quot;) <span style="color: #006400">&quot;Concentration&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T/(L2.M)&quot;, &quot;S&quot;) <span style="color: #006400">&quot;Conductance&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/T&quot;, &quot;A&quot;) <span style="color: #006400">&quot;Current&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/(L2.T)&quot;, &quot;A/cm2&quot;) <span style="color: #006400">&quot;Areic current&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/L3&quot;, &quot;C/cc&quot;) <span style="color: #006400">&quot;Density&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2/T&quot;, &quot;cm2/s&quot;) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2/T&quot;, &quot;St&quot;) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/T2&quot;, &quot;J&quot;) <span style="color: #006400">&quot;Energy&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.T/M&quot;, &quot;1/(Pa.s)&quot;) <span style="color: #006400">&quot;Fluidity&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/T2&quot;, &quot;N&quot;) <span style="color: #006400">&quot;Force&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/(N.T2)&quot;, &quot;V/m&quot;) <span style="color: #006400">&quot;Specific force&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A/T&quot;, &quot;Hz&quot;) <span style="color: #006400">&quot;Frequency&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J.A2&quot;, &quot;cd.sr&quot;) <span style="color: #006400">&quot;Illuminance&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J.A2&quot;, &quot;lm&quot;) <span style="color: #006400">&quot;Illuminance&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/N2&quot;, &quot;uH&quot;) <span style="color: #006400">&quot;Inductance&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/N2&quot;, &quot;abH&quot;) <span style="color: #006400">&quot;Inductance&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L&quot;, &quot;cm&quot;) <span style="color: #006400">&quot;Length&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/N&quot;, &quot;m/mol&quot;) <span style="color: #006400">&quot;Specific length&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J/L2&quot;, &quot;cd/m2&quot;) <span style="color: #006400">&quot;Luminance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J.A2/L2&quot;, &quot;cd.sr/m2&quot;) <span style="color: #006400">&quot;Luminous emittance&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/N2&quot;, &quot;H/m&quot;) <span style="color: #006400">
+    &quot;Specific length times specific mass&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J/L2&quot;, &quot;sb&quot;) <span style="color: #006400">&quot;Luminance&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J.A2/L2&quot;, &quot;lx&quot;) <span style="color: #006400">&quot;Luminous emittance&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J&quot;, &quot;cd&quot;) <span style="color: #006400">&quot;Luminous intensity&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A.L2.N/T&quot;, &quot;J/T&quot;) <span style="color: #006400">&quot;Magnetic dipole moment&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A.N/(L.T)&quot;, &quot;AT/m&quot;) <span style="color: #006400">&quot;Auxiliary magnetic field&quot;</span>;
@@ -1423,10 +1424,8 @@ recognized by Dymola.</p>
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A.N/T&quot;, &quot;AT&quot;) <span style="color: #006400">&quot;Magnetomotive force&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M&quot;, &quot;g&quot;) <span style="color: #006400">&quot;Mass&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/N&quot;, &quot;g/mol&quot;) <span style="color: #006400">&quot;Specific mass&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/L3&quot;, &quot;g/cc&quot;) <span style="color: #006400">&quot;Volumic mass&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N.T/M&quot;, &quot;cm2/(V.s)&quot;) <span style="color: #006400">&quot;Mobility&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.T)&quot;, &quot;J.s/rad&quot;) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/(A2.N2)&quot;, &quot;H/(m.cyc2)&quot;) <span style="color: #006400">&quot;Permeability&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.T)&quot;, &quot;J/Hz&quot;) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/(A2.N2)&quot;, &quot;Wb/(AT.m)&quot;) <span style="color: #006400">&quot;Permeability&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T2/(L3.M)&quot;, &quot;F/m&quot;) <span style="color: #006400">&quot;Permittivity&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3.M/(N2.T2)&quot;, &quot;m/F&quot;) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N.T2)&quot;, &quot;V&quot;) <span style="color: #006400">&quot;Potential&quot;</span>;
@@ -1438,21 +1437,17 @@ recognized by Dymola.</p>
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N4.T5/(L8.M3)&quot;, &quot;W/(m2.K4)&quot;) <span style="color: #006400">
     &quot;Areic power per 4th power of potential&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(L.T2)&quot;, &quot;kPa&quot;) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N2.T)&quot;, &quot;ohm&quot;) <span style="color: #006400">&quot;Electrical resistance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(L.N.T)&quot;, &quot;Pa/A&quot;) <span style="color: #006400">&quot;Fluid resistance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.T/N&quot;, &quot;cm/A&quot;) <span style="color: #006400">&quot;Resistivity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/T2&quot;, &quot;N/m&quot;) <span style="color: #006400">&quot;Surface tension&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N2.T)&quot;, &quot;ohm&quot;) <span style="color: #006400">&quot;Resistance&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;T&quot;, &quot;s&quot;) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/T&quot;, &quot;1/s&quot;) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/T&quot;, &quot;Bq&quot;) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/T&quot;, &quot;cm/s&quot;) <span style="color: #006400">&quot;Velocity&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2/T2&quot;, &quot;J/g&quot;) <span style="color: #006400">&quot;Squared velocity&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(L.T)&quot;, &quot;Pa.s&quot;) <span style="color: #006400">&quot;Viscosity&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3&quot;, &quot;cc&quot;) <span style="color: #006400">&quot;Volume&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3/N&quot;, &quot;cc/C&quot;) <span style="color: #006400">&quot;Specific volume&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/A&quot;, &quot;m/rad&quot;) <span style="color: #006400">&quot;Wavelength&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/A&quot;, &quot;m/cyc&quot;) <span style="color: #006400">&quot;Wavelength&quot;</span>;
   <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2/(A.T)&quot;, &quot;m2/(cyc.s)&quot;) <span style="color: #006400">
     &quot;Wavelength times velocity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A/L&quot;, &quot;rad/m&quot;) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
+  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A/L&quot;, &quot;cyc/m&quot;) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Conversions to display quantities in units</span>
@@ -1465,6 +1460,10 @@ recognized by Dymola.</p>
       &quot;L/T2&quot;,
       &quot;m/s2&quot;,
       s^2/m) <span style="color: #006400">&quot;Acceleration&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L/T2&quot;,
+      &quot;Gal&quot;,
+      1/Gal) <span style="color: #006400">&quot;Acceleration&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;N&quot;,
       &quot;C&quot;,
@@ -1482,6 +1481,10 @@ recognized by Dymola.</p>
       &quot;e&quot;,
       1/e) <span style="color: #006400">&quot;Amount&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;N&quot;,
+      &quot;abC&quot;,
+      1/C) <span style="color: #006400">&quot;Amount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;1/N&quot;,
       &quot;1/C&quot;,
       C) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
@@ -1489,6 +1492,14 @@ recognized by Dymola.</p>
       &quot;1/N&quot;,
       &quot;1/mol&quot;,
       mol) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;1/N&quot;,
+      &quot;1/abC&quot;,
+      mol) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;1/N&quot;,
+      &quot;N_A&quot;,
+      1/N_A) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;A&quot;,
       &quot;deg&quot;,
@@ -1498,9 +1509,25 @@ recognized by Dymola.</p>
       &quot;rad&quot;,
       1/rad) <span style="color: #006400">&quot;Angle&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;A&quot;,
+      &quot;cyc&quot;,
+      1/cyc) <span style="color: #006400">&quot;Angle&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;A&quot;,
+      &quot;arcmin&quot;,
+      1/arcmin) <span style="color: #006400">&quot;Angle&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;A&quot;,
+      &quot;arcsec&quot;,
+      1/arcsec) <span style="color: #006400">&quot;Angle&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;A2&quot;,
       &quot;sr&quot;,
       1/sr) <span style="color: #006400">&quot;Solid angle&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;A2&quot;,
+      &quot;sp&quot;,
+      1/sp) <span style="color: #006400">&quot;Solid angle&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2&quot;,
       &quot;cm2&quot;,
@@ -1510,6 +1537,10 @@ recognized by Dymola.</p>
       &quot;m2&quot;,
       1/m^2) <span style="color: #006400">&quot;Area&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;L2&quot;,
+      &quot;b&quot;,
+      1/b) <span style="color: #006400">&quot;Area&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;N2.T2/(L2.M)&quot;,
       &quot;F&quot;,
       1/F) <span style="color: #006400">&quot;Capacitance&quot;</span>;
@@ -1518,13 +1549,29 @@ recognized by Dymola.</p>
       &quot;uF&quot;,
       1/(Prefixes.u*F)) <span style="color: #006400">&quot;Capacitance&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;N2.T2/(L2.M)&quot;,
+      &quot;abF&quot;,
+      1/abF) <span style="color: #006400">&quot;Capacitance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;N/L3&quot;,
+      &quot;C/cc&quot;,
+      cc/C) <span style="color: #006400">&quot;Concentration&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;N/L3&quot;,
+      &quot;C/m3&quot;,
+      m^3/C) <span style="color: #006400">&quot;Concentration&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;N/L3&quot;,
+      &quot;J/(m3.K)&quot;,
+      m^3*K/J) <span style="color: #006400">&quot;Concentration&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;N/L3&quot;,
+      &quot;M&quot;,
+      1/M) <span style="color: #006400">&quot;Concentration&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;N2.T/(L2.M)&quot;,
       &quot;S&quot;,
-      1/S) <span style="color: #006400">&quot;Electrical conductance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N2.T/(L3.M)&quot;,
-      &quot;S/m&quot;,
-      m/S) <span style="color: #006400">&quot;Electrical conductivity&quot;</span>;
+      1/S) <span style="color: #006400">&quot;Conductance&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;N/T&quot;,
       &quot;A&quot;,
@@ -1535,44 +1582,16 @@ recognized by Dymola.</p>
       1/kat) <span style="color: #006400">&quot;Current&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;N/T&quot;,
+      &quot;abA&quot;,
+      1/abA) <span style="color: #006400">&quot;Current&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;N/T&quot;,
       &quot;W/K&quot;,
       K/W) <span style="color: #006400">&quot;Current&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
-      &quot;N/(L2.T)&quot;,
-      &quot;A/cm2&quot;,
-      cm^2/A) <span style="color: #006400">&quot;Areic current&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/(L2.T)&quot;,
-      &quot;A/m2&quot;,
-      m^2/A) <span style="color: #006400">&quot;Areic current&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/(L2.T)&quot;,
-      &quot;kat/cm2&quot;,
-      cm^2/kat) <span style="color: #006400">&quot;Areic current&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/(L2.T)&quot;,
-      &quot;kat/m2&quot;,
-      m^2/kat) <span style="color: #006400">&quot;Areic current&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/L3&quot;,
-      &quot;C/cc&quot;,
-      cc/C) <span style="color: #006400">&quot;Density&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/L3&quot;,
-      &quot;C/m3&quot;,
-      m^3/C) <span style="color: #006400">&quot;Density&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/L3&quot;,
-      &quot;J/(m3.K)&quot;,
-      m^3*K/J) <span style="color: #006400">&quot;Density&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/L3&quot;,
-      &quot;M&quot;,
-      1/M) <span style="color: #006400">&quot;Density&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
       &quot;L2/T&quot;,
-      &quot;cm2/s&quot;,
-      s/cm^2) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
+      &quot;St&quot;,
+      1/St) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2/T&quot;,
       &quot;m2/s&quot;,
@@ -1580,27 +1599,39 @@ recognized by Dymola.</p>
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2/T&quot;,
       &quot;mm^2/s&quot;,
-      s/((Prefixes.m*m)^2)) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
+      s/mm^2) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2.M/T2&quot;,
       &quot;J&quot;,
       1/J) <span style="color: #006400">&quot;Energy&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
-      &quot;L.T/M&quot;,
-      &quot;1/(Pa.s)&quot;,
-      Pa*s) <span style="color: #006400">&quot;Fluidity&quot;</span>;
+      &quot;L2.M/T2&quot;,
+      &quot;Ry&quot;,
+      1/Ry) <span style="color: #006400">&quot;Energy&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
-      &quot;L.T/M&quot;,
-      &quot;cm.s/g&quot;,
-      g/(cm*s)) <span style="color: #006400">&quot;Fluidity&quot;</span>;
+      &quot;L2.M/T2&quot;,
+      &quot;Ha&quot;,
+      1/Ha) <span style="color: #006400">&quot;Energy&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/T2&quot;,
+      &quot;erg&quot;,
+      1/erg) <span style="color: #006400">&quot;Energy&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/T2&quot;,
+      &quot;Wh&quot;,
+      1/Wh) <span style="color: #006400">&quot;Energy&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/T2&quot;,
+      &quot;eV&quot;,
+      1/eV) <span style="color: #006400">&quot;Energy&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L.M/T2&quot;,
       &quot;N&quot;,
       1/N) <span style="color: #006400">&quot;Force&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
-      &quot;L.M/(N.T2)&quot;,
-      &quot;V/m&quot;,
-      m/V) <span style="color: #006400">&quot;Specific force&quot;</span>;
+      &quot;L.M/T2&quot;,
+      &quot;dyn&quot;,
+      1/dyn) <span style="color: #006400">&quot;Force&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;A/T&quot;,
       &quot;Hz&quot;,
@@ -1610,13 +1641,17 @@ recognized by Dymola.</p>
       &quot;rad/s&quot;,
       s/rad) <span style="color: #006400">&quot;Frequency&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
-      &quot;J.A2&quot;,
-      &quot;cd.sr&quot;,
-      1/(cd*sr)) <span style="color: #006400">&quot;Illuminance&quot;</span>;
+      &quot;A/T&quot;,
+      &quot;rpm&quot;,
+      1/rpm) <span style="color: #006400">&quot;Frequency&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;J.A2&quot;,
-      &quot;cd.sp&quot;,
-      1/(cd*sp)) <span style="color: #006400">&quot;Illuminance&quot;</span>;
+      &quot;lm&quot;,
+      1/lm) <span style="color: #006400">&quot;Illuminance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;J.A2&quot;,
+      &quot;ph&quot;,
+      1/ph) <span style="color: #006400">&quot;Illuminance&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2.M/N2&quot;,
       &quot;H&quot;,
@@ -1625,6 +1660,10 @@ recognized by Dymola.</p>
       &quot;L2.M/N2&quot;,
       &quot;uH&quot;,
       1/(Prefixes.u*H)) <span style="color: #006400">&quot;Inductance&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/N2&quot;,
+      &quot;abH&quot;,
+      1/abH) <span style="color: #006400">&quot;Inductance&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L&quot;,
       &quot;cm&quot;,
@@ -1636,7 +1675,35 @@ recognized by Dymola.</p>
   <span style="color: red">defineUnitConversion</span>(
       &quot;L&quot;,
       &quot;mm&quot;,
-      1/(Prefixes.m*m)) <span style="color: #006400">&quot;Length&quot;</span>;
+      1/mm) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L&quot;,
+      &quot;angstrom&quot;,
+      1/angstrom) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L&quot;,
+      &quot;nmi&quot;,
+      1/nmi) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L&quot;,
+      &quot;a_0&quot;,
+      1/a_0) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L&quot;,
+      &quot;l_n&quot;,
+      1/l_n) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L&quot;,
+      &quot;ly&quot;,
+      1/ly) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L&quot;,
+      &quot;au&quot;,
+      1/au) <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L&quot;,
+      &quot;pc&quot;,
+      1/pc) <span style="color: #006400">&quot;Length&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L/N&quot;,
       &quot;m/C&quot;,
@@ -1647,6 +1714,10 @@ recognized by Dymola.</p>
       mol/m) <span style="color: #006400">&quot;Specific length&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L.M/N2&quot;,
+      &quot;H/m&quot;,
+      m/H) <span style="color: #006400">&quot;Specific length times specific mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L.M/N2&quot;,
       &quot;N/A2&quot;,
       A^2/N) <span style="color: #006400">&quot;Specific length times specific mass&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
@@ -1655,16 +1726,12 @@ recognized by Dymola.</p>
       m^2/cd) <span style="color: #006400">&quot;Luminance&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;J/L2&quot;,
-      &quot;cd/cm2&quot;,
-      cm^2/cd) <span style="color: #006400">&quot;Luminance&quot;</span>;
+      &quot;sb&quot;,
+      1/sb) <span style="color: #006400">&quot;Luminance&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;J.A2/L2&quot;,
-      &quot;cd.sr/m2&quot;,
-      m^2/(cd*sr)) <span style="color: #006400">&quot;Luminous emittance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;J.A2/L2&quot;,
-      &quot;cd.sp/m2&quot;,
-      m^2/(cd*sp)) <span style="color: #006400">&quot;Luminous emittance&quot;</span>;
+      &quot;lx&quot;,
+      1/lx) <span style="color: #006400">&quot;Luminous emittance&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;J&quot;,
       &quot;cd&quot;,
@@ -1673,6 +1740,10 @@ recognized by Dymola.</p>
       &quot;A.L2.N/T&quot;,
       &quot;J/T&quot;,
       T/J) <span style="color: #006400">&quot;Magnetic dipole moment&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;A.L2.N/T&quot;,
+      &quot;mu_B&quot;,
+      1/mu_B) <span style="color: #006400">&quot;Magnetic dipole moment&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;A.N/(L.T)&quot;,
       &quot;AT/m&quot;,
@@ -1686,9 +1757,21 @@ recognized by Dymola.</p>
       &quot;Wb&quot;,
       1/Wb) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/(A.N.T)&quot;,
+      &quot;Mx&quot;,
+      1/Mx) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/(A.N.T)&quot;,
+      &quot;pole&quot;,
+      1/pole) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;M/(A.N.T)&quot;,
       &quot;T&quot;,
       1/T) <span style="color: #006400">&quot;Areic magnetic flux&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;M/(A.N.T)&quot;,
+      &quot;Gs&quot;,
+      1/Gs) <span style="color: #006400">&quot;Areic magnetic flux&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;A.N.T/(L2.M)&quot;,
       &quot;1/Wb&quot;,
@@ -1697,6 +1780,10 @@ recognized by Dymola.</p>
       &quot;L2.M/(A.N2.T)&quot;,
       &quot;Wb/C&quot;,
       C/Wb) <span style="color: #006400">&quot;Specific magnetic flux&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/(A.N2.T)&quot;,
+      &quot;Mx/abC&quot;,
+      abC/Mx) <span style="color: #006400">&quot;Specific magnetic flux&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;A.N/T&quot;,
       &quot;AT&quot;,
@@ -1710,57 +1797,73 @@ recognized by Dymola.</p>
       &quot;kg&quot;,
       1/kg) <span style="color: #006400">&quot;Mass&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;M&quot;,
+      &quot;u&quot;,
+      1/u) <span style="color: #006400">&quot;Mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;M&quot;,
+      &quot;t&quot;,
+      1/t) <span style="color: #006400">&quot;Mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;M&quot;,
+      &quot;M_e&quot;,
+      1/M_e) <span style="color: #006400">&quot;Mass&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;M/N&quot;,
       &quot;g/mol&quot;,
       mol/g) <span style="color: #006400">&quot;Specific mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/N&quot;,
-      &quot;kg/mol&quot;,
-      mol/kg) <span style="color: #006400">&quot;Specific mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/N&quot;,
-      &quot;ug/C&quot;,
-      C/(Prefixes.u*g)) <span style="color: #006400">&quot;Specific mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/L3&quot;,
-      &quot;g/cc&quot;,
-      cc/g) <span style="color: #006400">&quot;Volumic mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/L3&quot;,
-      &quot;kg/m3&quot;,
-      m^3/kg) <span style="color: #006400">&quot;Volumic mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N.T/M&quot;,
-      &quot;C.s/g&quot;,
-      g/(C*s)) <span style="color: #006400">&quot;Mobility&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N.T/M&quot;,
-      &quot;cm2/(V.s)&quot;,
-      V*s/cm^2) <span style="color: #006400">&quot;Mobility&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2.M/(A.T)&quot;,
       &quot;J.s/rad&quot;,
       rad/(J*s)) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/(A.T)&quot;,
+      &quot;J/Hz&quot;,
+      Hz/J) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/(A.T)&quot;,
+      &quot;h&quot;,
+      1/h) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;1&quot;,
       &quot;&#39;%&#39;&quot;,
       1/'%') <span style="color: #006400">&quot;Number&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;1&quot;,
-      &quot;J/(mol.K)&quot;,
-      mol*K/J) <span style="color: #006400">&quot;Absolute number&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L.M/(A2.N2)&quot;,
       &quot;H/(m.cyc2)&quot;,
       m*cyc^2/H) <span style="color: #006400">&quot;Permeability&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;L.M/(A2.N2)&quot;,
+      &quot;Wb/(AT.m)&quot;,
+      AT*m/Wb) <span style="color: #006400">&quot;Permeability&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L.M/(A2.N2)&quot;,
+      &quot;mu_0&quot;,
+      1/mu_0) <span style="color: #006400">&quot;Permeability&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;N2.T2/(L3.M)&quot;,
       &quot;F/m&quot;,
       m/F) <span style="color: #006400">&quot;Permittivity&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;N2.T2/(L3.M)&quot;,
+      &quot;epsilon_0&quot;,
+      1/epsilon_0) <span style="color: #006400">&quot;Permittivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;N2.T2/(L3.M)&quot;,
+      &quot;k_C&quot;,
+      1/k_C) <span style="color: #006400">&quot;Permittivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;L3.M/(N2.T2)&quot;,
       &quot;m/F&quot;,
       F/m) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L3.M/(N2.T2)&quot;,
+      &quot;1/epsilon_0&quot;,
+      epsilon_0) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L3.M/(N2.T2)&quot;,
+      &quot;1/k_C&quot;,
+      k_C) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2.M/(N.T2)&quot;,
       &quot;J/mol&quot;,
@@ -1771,8 +1874,12 @@ recognized by Dymola.</p>
       1/V) <span style="color: #006400">&quot;Potential&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2.M/(N.T2)&quot;,
+      &quot;abV&quot;,
+      1/abV) <span style="color: #006400">&quot;Potential&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2.M/(N.T2)&quot;,
       &quot;K&quot;,
-      1/K) <span style="color: #006400">&quot;Absolute potential&quot;</span>;
+      1/K) <span style="color: #006400">&quot;Potential&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L3.M/(A.N.T2)&quot;,
       &quot;K.m/rad&quot;,
@@ -1783,10 +1890,6 @@ recognized by Dymola.</p>
       rad/(V*m)) <span style="color: #006400">&quot;Potential per wavenumber&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2.M/T3&quot;,
-      &quot;lm&quot;,
-      1/lm) <span style="color: #006400">&quot;Power&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/T3&quot;,
       &quot;W&quot;,
       1/W) <span style="color: #006400">&quot;Power&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
@@ -1795,16 +1898,16 @@ recognized by Dymola.</p>
       1/(W*m^2)) <span style="color: #006400">&quot;Power times area&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;M/T3&quot;,
-      &quot;lm/m2&quot;,
-      m^2/lm) <span style="color: #006400">&quot;Areic power&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/T3&quot;,
       &quot;W/m2&quot;,
       m^2/W) <span style="color: #006400">&quot;Areic power&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;N4.T5/(L8.M3)&quot;,
       &quot;W/(m2.K4)&quot;,
       m^2*K^4/W) <span style="color: #006400">&quot;Areic power per 4th power of potential&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;N4.T5/(L8.M3)&quot;,
+      &quot;sigma&quot;,
+      1/sigma) <span style="color: #006400">&quot;Areic power per 4th power of potential&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;M/(L.T2)&quot;,
       &quot;atm&quot;,
@@ -1816,11 +1919,31 @@ recognized by Dymola.</p>
   <span style="color: red">defineUnitConversion</span>(
       &quot;M/(L.T2)&quot;,
       &quot;kPa&quot;,
-      1/(Prefixes.k*Pa)) <span style="color: #006400">&quot;Pressure&quot;</span>;
+      1/kPa) <span style="color: #006400">&quot;Pressure&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;M/(L.T2)&quot;,
       &quot;Pa&quot;,
       1/Pa) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;M/(L.T2)&quot;,
+      &quot;mmHg&quot;,
+      1/mmHg) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;M/(L.T2)&quot;,
+      &quot;bar&quot;,
+      1/bar) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;M/(L.T2)&quot;,
+      &quot;Ba&quot;,
+      1/Ba) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;M/(L.T2)&quot;,
+      &quot;atm&quot;,
+      1/atm) <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;M/(L.T2)&quot;,
+      &quot;Torr&quot;,
+      1/Torr) <span style="color: #006400">&quot;Pressure&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;M/(L2.T2)&quot;,
       &quot;Pa/m&quot;,
@@ -1828,27 +1951,11 @@ recognized by Dymola.</p>
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2.M/(N2.T)&quot;,
       &quot;ohm&quot;,
-      1/ohm) <span style="color: #006400">&quot;Electrical resistance&quot;</span>;
+      1/ohm) <span style="color: #006400">&quot;Resistance&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.N.T)&quot;,
-      &quot;Pa/A&quot;,
-      A/Pa) <span style="color: #006400">&quot;Fluid resistance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.T/N&quot;,
-      &quot;cm/A&quot;,
-      A/cm) <span style="color: #006400">&quot;Resistivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.T/N&quot;,
-      &quot;m/A&quot;,
-      A/m) <span style="color: #006400">&quot;Resistivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.T/N&quot;,
-      &quot;m.K/W&quot;,
-      W/(m*K)) <span style="color: #006400">&quot;Resistivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/T2&quot;,
-      &quot;N/m&quot;,
-      m/N) <span style="color: #006400">&quot;Surface tension&quot;</span>;
+      &quot;L2.M/(N2.T)&quot;,
+      &quot;abohm&quot;,
+      1/abohm) <span style="color: #006400">&quot;Resistance&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;T&quot;,
       &quot;d&quot;,
@@ -1874,9 +1981,25 @@ recognized by Dymola.</p>
       &quot;s&quot;,
       1/s) <span style="color: #006400">&quot;Time&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;T&quot;,
+      &quot;y&quot;,
+      1/y) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;T&quot;,
+      &quot;t_n&quot;,
+      1/t_n) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;T&quot;,
+      &quot;t_H&quot;,
+      1/t_H) <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;1/T&quot;,
       &quot;1/s&quot;,
       s) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;1/T&quot;,
+      &quot;Bq&quot;,
+      1/Bq) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L/T&quot;,
       &quot;cm/s&quot;,
@@ -1888,11 +2011,19 @@ recognized by Dymola.</p>
   <span style="color: red">defineUnitConversion</span>(
       &quot;L/T&quot;,
       &quot;mm/s&quot;,
-      s/(Prefixes.m*m)) <span style="color: #006400">&quot;Velocity&quot;</span>;
+      s/mm) <span style="color: #006400">&quot;Velocity&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L/T&quot;,
       &quot;um/s&quot;,
       s/(Prefixes.u*m)) <span style="color: #006400">&quot;Velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L/T&quot;,
+      &quot;c&quot;,
+      1/c) <span style="color: #006400">&quot;Velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L/T&quot;,
+      &quot;kn&quot;,
+      1/kn) <span style="color: #006400">&quot;Velocity&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L2/T2&quot;,
       &quot;J/g&quot;,
@@ -1901,6 +2032,10 @@ recognized by Dymola.</p>
       &quot;L2/T2&quot;,
       &quot;Sv&quot;,
       1/Sv) <span style="color: #006400">&quot;Squared velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2/T2&quot;,
+      &quot;Gy&quot;,
+      1/Gy) <span style="color: #006400">&quot;Squared velocity&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;M/(L.T)&quot;,
       &quot;Pa.s&quot;,
@@ -1922,17 +2057,9 @@ recognized by Dymola.</p>
       &quot;m3&quot;,
       1/m^3) <span style="color: #006400">&quot;Volume&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
-      &quot;L3/N&quot;,
-      &quot;cc/C&quot;,
-      C/cc) <span style="color: #006400">&quot;Specific volume&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3/N&quot;,
-      &quot;m3/C&quot;,
-      C/m^3) <span style="color: #006400">&quot;Specific volume&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3/N&quot;,
-      &quot;m3/mol&quot;,
-      mol/m^3) <span style="color: #006400">&quot;Specific volume&quot;</span>;
+      &quot;L/A&quot;,
+      &quot;cm/cyc&quot;,
+      cyc/cm) <span style="color: #006400">&quot;Wavelength&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;L/A&quot;,
       &quot;m/cyc&quot;,
@@ -1942,9 +2069,21 @@ recognized by Dymola.</p>
       &quot;m/rad&quot;,
       rad/m) <span style="color: #006400">&quot;Wavelength&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
+      &quot;L/A&quot;,
+      &quot;lambda_e&quot;,
+      1/lambda_e) <span style="color: #006400">&quot;Wavelength&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
       &quot;L2/(A.T)&quot;,
       &quot;m2/(cyc.s)&quot;,
       cyc*s/m^2) <span style="color: #006400">&quot;Wavelength times velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2/(A.T)&quot;,
+      &quot;cm2/(cyc.s)&quot;,
+      cyc*s/cm^2) <span style="color: #006400">&quot;Wavelength times velocity&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;L2/(A.T)&quot;,
+      &quot;kappa&quot;,
+      1/kappa) <span style="color: #006400">&quot;Wavelength times velocity&quot;</span>;
   <span style="color: red">defineUnitConversion</span>(
       &quot;A/L&quot;,
       &quot;cyc/m&quot;,
@@ -1953,6 +2092,10 @@ recognized by Dymola.</p>
       &quot;A/L&quot;,
       &quot;rad/m&quot;,
       m/rad) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
+  <span style="color: red">defineUnitConversion</span>(
+      &quot;A/L&quot;,
+      &quot;cyc/(cm.s)&quot;,
+      cm*s/cyc) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
   <span style="color: #006400">// -------- end from QCalc/Resources/quantities.xls</span>
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
@@ -2011,7 +2154,7 @@ recognized by Dymola.</p>
   </div>
 </div>
 <div class="footer">
-  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Thu Aug 21 05:51:14 2014.
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Fri Aug 22 11:25:48 2014.
 </div>
 
 </span></body></html>
