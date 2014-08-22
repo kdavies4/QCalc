@@ -79,8 +79,8 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
     <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
 
-  version="",
-  versionDate="",
+  version="0.3.0",
+  versionDate="2014-08-22 21:01:20Z",
   uses(Modelica(version="3.2")));
 
 end QCalc;
