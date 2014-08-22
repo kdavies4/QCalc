@@ -1218,7 +1218,7 @@ encompass other systems of units.</p>
   // Wb*cyc*S is the coulomb, which is defined below.  The Faraday constant
   // can be determined by electrochemical experiments relating the charge and
   // the amount of subtance involved in a reaction.
-  constant Q.Potential K=8.3144621*(Wb*cyc)^2*S/(s*mol*R)
+  constant Q.Temperature K=8.3144621*(Wb*cyc)^2*S/(s*mol*R)
     "<html><a href=\"http://en.wikipedia.org/wiki/Kelvin\">kelvin</a></html>";
   // This is the "molar gas constant" relation [NIST2010].  The factor of
   // (Wb*cyc)^2*S/s is the joule, which is defined below.  The gas constant can
