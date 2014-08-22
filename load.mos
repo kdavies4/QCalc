@@ -13,7 +13,7 @@ Advanced.ImprovedPackageConstants = true "Improved code generation for package c
 // Startup
 // ------------
 // Load the QCalc package.
-openModel("QCalc/package.mo");
+openModel("QCalc 0.3.2/package.mo");
 cd("..");
 
 // Establish the unit system.
