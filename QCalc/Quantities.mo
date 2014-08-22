@@ -4,7 +4,7 @@ package Quantities "Types to represent physical values"
   import QCalc.Quantities.Interfaces.Quantity;
   extends Icons.TypesPackage;
 
-  // Generated from QCalc/Resources/quantities.xls, 2014-8-14
+  // Generated from QCalc/Resources/quantities.xls, 2014-8-22
   type Acceleration = Quantity (final unit="L/T2");
   type Amount = Quantity (final unit="N", min=0);
   type AmountReciprocal = Quantity (final unit="1/N", min=0)
@@ -15,16 +15,11 @@ package Quantities "Types to represent physical values"
   type Capacitance = Quantity (final unit="N2.T2/(L2.M)", min=0);
   type ConductanceElectrical = Quantity (final unit="N2.T/(L2.M)", min=0)
     "Electrical conductance";
-  type ConductivityElectrical = Quantity (final unit="N2.T/(L3.M)", min=0)
-    "Electrical conductivity";
   type Current = Quantity (final unit="N/T");
-  type CurrentAreic = Quantity (final unit="N/(L2.T)") "Areic current";
   type Density = Quantity (final unit="N/L3", min=0);
   type Diffusivity = Quantity (final unit="L2/T", min=0);
   type Energy = Quantity (final unit="L2.M/T2");
-  type Fluidity = Quantity (final unit="L.T/M", min=0);
   type Force = Quantity (final unit="L.M/T2");
-  type ForceSpecific = Quantity (final unit="L.M/(N.T2)") "Specific force";
   type Frequency = Quantity (final unit="A/T");
   type Illuminance = Quantity (final unit="J.A2");
   type Inductance = Quantity (final unit="L2.M/N2", min=0);
@@ -49,19 +44,14 @@ package Quantities "Types to represent physical values"
   type MagnetomotiveForce = Quantity (final unit="A.N/T") "Magnetomotive force";
   type Mass = Quantity (final unit="M", min=0);
   type MassSpecific = Quantity (final unit="M/N", min=0) "Specific mass";
-  type MassVolumic = Quantity (final unit="M/L3", min=0) "Volumic mass";
-  type Mobility = Quantity (final unit="N.T/M", min=0);
   type MomentumRotational = Quantity (final unit="L2.M/(A.T)")
     "Rotational momentum";
   type Number = Quantity (final unit="1");
-  type NumberAbsolute = Quantity (final unit="1", min=0) "Absolute number";
   type Permeability = Quantity (final unit="L.M/(A2.N2)", min=0);
   type Permittivity = Quantity (final unit="N2.T2/(L3.M)", min=0);
   type PermittivityReciprocal = Quantity (final unit="L3.M/(N2.T2)", min=0)
     "Reciprocal of permittivity";
   type Potential = Quantity (final unit="L2.M/(N.T2)");
-  type PotentialAbsolute = Quantity (final unit="L2.M/(N.T2)", min=0)
-    "Absolute potential";
   type PotentialPerWavenumber = Quantity (final unit="L3.M/(A.N.T2)")
     "Potential per wavenumber";
   type Power = Quantity (final unit="L2.M/T3");
@@ -70,25 +60,15 @@ package Quantities "Types to represent physical values"
   type PowerAreicPerPotential4 = Quantity (final unit="N4.T5/(L8.M3)")
     "Areic power per 4th power of potential";
   type Pressure = Quantity (final unit="M/(L.T2)");
-  type PressureAbsolute = Quantity (final unit="M/(L.T2)", min=0)
-    "Absolute pressure";
   type PressureLineic = Quantity (final unit="M/(L2.T2)") "Lineic pressure";
   type ResistanceElectrical = Quantity (final unit="L2.M/(N2.T)", min=0)
     "Electrical resistance";
-  type ResistanceFluid = Quantity (final unit="M/(L.N.T)", min=0)
-    "Fluid resistance";
-  type Resistivity = Quantity (final unit="L.T/N", min=0);
-  type SurfaceTension = Quantity (final unit="M/T2") "Surface tension";
   type Time = Quantity (final unit="T");
-  type TimeAbsolute = Quantity (final unit="T", min=0) "Absolute time";
   type TimeReciprocal = Quantity (final unit="1/T") "Reciprocal of time";
   type Velocity = Quantity (final unit="L/T");
   type Velocity2 = Quantity (final unit="L2/T2") "Squared velocity";
   type Viscosity = Quantity (final unit="M/(L.T)", min=0);
   type Volume = Quantity (final unit="L3", min=0);
-  type VolumeSpecific = Quantity (final unit="L3/N") "Specific volume";
-  type VolumeSpecificAbsolute = Quantity (final unit="L3/N", min=0)
-    "Absolute specific volume";
   type Wavelength = Quantity (final unit="L/A");
   type WavelengthVelocity = Quantity (final unit="L2/(A.T)")
     "Wavelength times velocity";
@@ -96,15 +76,6 @@ package Quantities "Types to represent physical values"
   // -------- end from QCalc/Resources/quantities.xls
 
   // Aliases that imply special display units
-  type CapacityThermal = Amount (displayUnit="J/K") "Thermal capacity";
-  type CapacityThermalSpecific = NumberAbsolute (displayUnit="J/(mol.K)")
-    "Specific thermal capacity";
-  type CapacityThermalVolumic = Density (displayUnit="J/(m3.K)")
-    "Volumic thermal capacity";
-  type ConductanceThermal = Current (displayUnit="W/K") "Thermal conductance";
-  type PotentialChemical = Potential (displayUnit="J/mol") "Chemical potential";
-  type ResistivityThermal = Resistivity (displayUnit="m.K/W")
-    "Thermal resistivity";
   type Temperature = Potential (displayUnit="K");
   type TemperatureAbsolute = PotentialAbsolute (displayUnit="degC")
     "Absolute temperature";

@@ -818,8 +818,8 @@ recognized by Dymola.</p>
 
     model Display "Demonstrate the display units for the quantities"
       extends Icons.Example;
-      ExampleModel doubleClickMe annotation (Placement(transformation(
-            extent={{-20,-10},{20,10}})));
+      ExampleModel doubleClickMe
+        annotation (Placement(transformation(extent={{-20,-10},{20,10}})));
       annotation (Commands(executeCall=QCalc.Units.setup()
             "Re-initialize the units."));
     end Display;
@@ -828,7 +828,7 @@ recognized by Dymola.</p>
 
       extends Icons.Block;
 
-      // Generated from QCalc/Resources/quantities.xls, 2014-8-14
+      // Generated from QCalc/Resources/quantities.xls, 2014-8-22
       parameter Q.Acceleration Acceleration=1*U.m/U.s^2 "Acceleration";
       parameter Q.Amount Amount=1*U.C "Amount";
       parameter Q.AmountReciprocal AmountReciprocal=1/U.C
@@ -839,16 +839,11 @@ recognized by Dymola.</p>
       parameter Q.Capacitance Capacitance=1*U.F "Capacitance";
       parameter Q.ConductanceElectrical ConductanceElectrical=1*U.S
         "Electrical conductance";
-      parameter Q.ConductivityElectrical ConductivityElectrical=1*U.S/U.m
-        "Electrical conductivity";
       parameter Q.Current Current=1*U.A "Current";
-      parameter Q.CurrentAreic CurrentAreic=1*U.A/U.m^2 "Areic current";
       parameter Q.Density Density=1*U.C/U.m^3 "Density";
       parameter Q.Diffusivity Diffusivity=1*U.m^2/U.s "Diffusivity";
       parameter Q.Energy Energy=1*U.J "Energy";
-      parameter Q.Fluidity Fluidity=1/(U.Pa*U.s) "Fluidity";
       parameter Q.Force Force=1*U.N "Force";
-      parameter Q.ForceSpecific ForceSpecific=1*U.V/U.m "Specific force";
       parameter Q.Frequency Frequency=1*U.rad/U.s "Frequency";
       parameter Q.Illuminance Illuminance=1*U.cd*U.sr "Illuminance";
       parameter Q.Inductance Inductance=1*U.H "Inductance";
@@ -877,20 +872,14 @@ recognized by Dymola.</p>
       parameter Q.Mass Mass=1*U.kg "Mass";
       parameter Q.MassSpecific MassSpecific=1*U.Prefixes.u*U.g/U.C
         "Specific mass";
-      parameter Q.MassVolumic MassVolumic=1*U.kg/U.m^3 "Volumic mass";
-      parameter Q.Mobility Mobility=1*U.C*U.s/U.g "Mobility";
       parameter Q.MomentumRotational MomentumRotational=1*U.J*U.s/U.rad
         "Rotational momentum";
       parameter Q.Number Number=1 "Number";
-      parameter Q.NumberAbsolute NumberAbsolute=1*U.J/(U.mol*U.K)
-        "Absolute number";
       parameter Q.Permeability Permeability=1*U.H/(U.m*U.cyc^2) "Permeability";
       parameter Q.Permittivity Permittivity=1*U.F/U.m "Permittivity";
       parameter Q.PermittivityReciprocal PermittivityReciprocal=1*U.m/U.F
         "Reciprocal of permittivity";
       parameter Q.Potential Potential=1*U.V "Potential";
-      parameter Q.PotentialAbsolute PotentialAbsolute=1*U.K
-        "Absolute potential";
       parameter Q.PotentialPerWavenumber PotentialPerWavenumber=1*U.V*U.m/U.rad
         "Potential per wavenumber";
       parameter Q.Power Power=1*U.W "Power";
@@ -899,30 +888,22 @@ recognized by Dymola.</p>
       parameter Q.PowerAreicPerPotential4 PowerAreicPerPotential4=1*U.W/(U.m^2*
           U.K^4) "Areic power per 4th power of potential";
       parameter Q.Pressure Pressure=1*U.Pa "Pressure";
-      parameter Q.PressureAbsolute PressureAbsolute=1*U.Pa "Absolute pressure";
       parameter Q.PressureLineic PressureLineic=1*U.Pa/U.m "Lineic pressure";
       parameter Q.ResistanceElectrical ResistanceElectrical=1*U.ohm
         "Electrical resistance";
-      parameter Q.ResistanceFluid ResistanceFluid=1*U.Pa/U.A "Fluid resistance";
-      parameter Q.Resistivity Resistivity=1*U.m/U.A "Resistivity";
-      parameter Q.SurfaceTension SurfaceTension=1*U.N/U.m "Surface tension";
       parameter Q.Time Time=1*U.s "Time";
-      parameter Q.TimeAbsolute TimeAbsolute=1*U.s "Absolute time";
       parameter Q.TimeReciprocal TimeReciprocal=1/U.s "Reciprocal of time";
       parameter Q.Velocity Velocity=1*U.m/U.s "Velocity";
       parameter Q.Velocity2 Velocity2=1*U.Sv "Squared velocity";
       parameter Q.Viscosity Viscosity=1*U.Pa*U.s/1 "Viscosity";
       parameter Q.Volume Volume=1*U.m^3 "Volume";
-      parameter Q.VolumeSpecific VolumeSpecific=1*U.m^3/U.C "Specific volume";
-      parameter Q.VolumeSpecificAbsolute VolumeSpecificAbsolute=1*U.m^3/U.C
-        "Absolute specific volume";
       parameter Q.Wavelength Wavelength=1*U.m/U.rad "Wavelength";
       parameter Q.WavelengthVelocity WavelengthVelocity=1*U.m^2/(U.cyc*U.s)
         "Wavelength times velocity";
       parameter Q.Wavenumber Wavenumber=1*U.rad/U.m "Wavenumber";
       // -------- end from QCalc/Resources/quantities.xls
-      annotation (
-        Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."));
+      annotation (Commands(executeCall=QCalc.Units.setup()
+            "Re-initialize the units."));
     end ExampleModel;
     annotation (Commands(executeCall=QCalc.Units.setup()
           "Re-initialize the units."));
@@ -1562,7 +1543,7 @@ encompass other systems of units.</p>
 
     operator record Np
       "neper (Np) (in terms of amplitude ratio, not power ratio)"
-        extends LambdaUnit(redeclare type Quantity = Q.Number);
+      extends LambdaUnit(redeclare type Quantity = Q.Number);
 
       operator '*' "Multiplication is overloaded to map a number to a quantity"
         function num2qty "Convert a number to a quantity"
@@ -1595,7 +1576,7 @@ encompass other systems of units.</p>
     end Np;
 
     operator record B "bel (B) (in terms of power ratio, not amplitude ratio)"
-        extends LambdaUnit(redeclare type Quantity = Q.Number);
+      extends LambdaUnit(redeclare type Quantity = Q.Number);
 
       operator '*' "Multiplication is overloaded to map a number to a quantity"
         function num2qty "Convert a number to a quantity"
@@ -1627,7 +1608,7 @@ encompass other systems of units.</p>
 
     operator record dB
       "decibel (dB) (in terms of power ratio, not amplitude ratio)"
-        extends LambdaUnit(redeclare type Quantity = Q.Number);
+      extends LambdaUnit(redeclare type Quantity = Q.Number);
 
       operator '*' "Multiplication is overloaded to map a number to a quantity"
         function num2qty "Convert a number to a quantity"
@@ -1660,7 +1641,7 @@ encompass other systems of units.</p>
     end dB;
 
     operator record kPag "kilopascal, gauge (kPag)"
-        extends LambdaUnit(redeclare type Quantity = Q.Pressure);
+      extends LambdaUnit(redeclare type Quantity = Q.Pressure);
 
       operator '*' "Multiplication is overloaded to map a number to a quantity"
         function num2qty "Convert a number to a quantity"

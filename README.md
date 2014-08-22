@@ -52,10 +52,10 @@ of the [GitHub repository].
 
 
 [QCalc]: http://kdavies4.github.io/QCalc/
-[Modelica]: https://www.modelica.org/
-[SI]: http://en.wikipedia.org/wiki/International_System_of_Units
 [quantity calculus]: http://en.wikipedia.org/wiki/Quantity_calculus
+[Modelica]: https://www.modelica.org/
 [Modelica Standard Library]: https://github.com/modelica/Modelica
+[SI]: http://en.wikipedia.org/wiki/International_System_of_Units
 [Celsius]: http://en.wikipedia.org/wiki/Celsius
 [decibel]: http://en.wikipedia.org/wiki/Decibel
 [pascal]: http://en.wikipedia.org//wiki/Pascal_(unit)
