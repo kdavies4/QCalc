@@ -70,7 +70,7 @@ RPLS = [
 .*Modelica libraries page.*""",
      ''),
     # Add Google custom search.
-    ("""(Blocks</a></li> *
+    ("""(Quantities</a></li> *
  *</ul> *
 )( *</div>)""",
      r"""\1
