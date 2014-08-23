@@ -98,12 +98,12 @@ package Units "Tests for QCalc.Units"
       test(H/(ohm*s), name="Table 3: H");
       // See the note below the definition of H in QCalc.Units re: ohm*s instead of
       // Wb/A.
-      // 
+      //
       // Celsius
       test(100*degC/(373.15*K), name="Table 3: degC: num2qty");
       test(1*degC/degC, name="Table 3: degC: qty2num")
         "via round-trip calculation";
-      // 
+      //
       test(lm/(cd*sr), name="Table 3: lm");
       test(lx/(lm/m^2), name="Table 3: lx");
       test(Bq/(1/s), name="Table 3: Bq");
@@ -171,15 +171,15 @@ package Units "Tests for QCalc.Units"
       test(nmi/(1852*m), name="Table 8: nmi");
       test(b/(1e-28*m^2), name="Table 8: b");
       test(kn/((1852/3600)*m/s), name="Table 8: kn");
-      // 
+      //
       // neper
       test(1*Np/exp(1), name="Table 8: Np: num2qty");
       test(1*Np/Np, name="Table 8: Np: qty2num") "via round-trip calculation";
-      // 
+      //
       // bel
       test(1*B/10, name="Table 8: B: num2qty");
       test(1*B/B, name="Table 8: B: qty2num") "via round-trip calculation";
-      // 
+      //
       // decibel
       test(1*dB/10^0.1, name="Table 8: dB: num2qty");
       test(1*dB/dB, name="Table 8: dB: qty2num") "via round-trip calculation";

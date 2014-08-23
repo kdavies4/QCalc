@@ -27,7 +27,7 @@ div.document {
 }
 
 div.bodywrapper {
-    margin: 0 0 0 200px;
+    margin: 0 0 0 180px;
     border-left: 1px solid #ccc;
 }
 
@@ -46,7 +46,7 @@ div.sidebarwrapper {
 div.sidebar {
     margin: 0;
     padding: 0 15px 15px 0;
-    width: 180px;
+    width: 160px;
     float: left;
     font-size: 0.9em;
     text-align: left;
@@ -92,7 +92,7 @@ div.sidebar th, div.sidebar td {
 .cse .gsc-control-cse,
 .gsc-control-cse {
   padding: 0 !important;
-  width: 170px !important;
+  width: 145px !important;
 }
 
 .gsc-input-box {

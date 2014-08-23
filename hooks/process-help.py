@@ -59,18 +59,11 @@ RPLS = [
     (r'<pre>&quot;', r'&quot;'),
     (r'&quot;</pre>', r'&quot;'),
     # Remove the per-file license summary
-    (""" *<p><b>Licensed by the Hawaii Natural Energy Institute.*
-.*
-.*
-.*
-.*
-.*
-.*
-.*
-.*
-.*
-.*ModelicaLicense2.*""",
+    (r"<p><b>Licensed by.*((?:(?:\n|\r\n?).*)+)ModelicaLicense2</a>.</i></p>",
      ""),
+    # Package contents (plural)
+    ('([>"]Package Content)([<"])',
+     r'\1s\2'),
     # Change the footer.
     ("""<hr>
  *<address>
@@ -171,12 +164,12 @@ RPLS = [
     <img src="../Resources/Documentation/logo.svg" alt="Logo" width=150>
   </a></p>
 
-  <h3>Table of Contents</h3>
+  <h3>Library Contents</h3>
     <ul>
-    <li><a href="QCalc_UsersGuide.html">User's Guide</a></li>
-    <li><a href="QCalc_Units.html">Units</a></li>
-    <li><a href="QCalc_Quantities.html">Quantities</a></li>
-    <li><a href="QCalc_Blocks.html">Blocks</a></li>
+    <li><a href="QCalc_UsersGuide.html"><img src="QCalc.UsersGuideS.png" alt="QCalc.UsersGuide" width="20" height="20" align="top">&nbsp;User's Guide</a></li>
+    <li><a href="QCalc_Blocks.html"><img src="QCalc.BlocksS.png" alt="QCalc.Blocks" width="20" height="20" align="top">&nbsp;Blocks</a></li>
+    <li><a href="QCalc_Units.html"><img src="QCalc.UnitsS.png" alt="QCalc.Units" width="20" height="20" align="top">&nbsp;Units</a></li>
+    <li><a href="QCalc_Quantities.html"><img src="QCalc.QuantitiesS.png" alt="QCalc.Quantities" width="20" height="20" align="top">&nbsp;Quantities</a></li>
     </ul>
   </div>
 </div>

@@ -60,12 +60,6 @@ package UsersGuide "User's Guide"
   package Glossary "Glossary"
     extends Icons.Information;
 
-    class 'fluidity'
-      "<html>(<i>noun</i>) reciprocal of dynamic viscosity [L&nbsp;T&nbsp;M<sup>-1</sup>]</html>"
-
-      annotation (preferredView="info", DocumentationClass=false);
-    end 'fluidity';
-
     class 'lambda unit'
       "<html>An invertible function that maps a number to a <a href=\"modelica://QCalc.UsersGuide.Glossary.'quantity'\">quantity</a> and vice versa</html>"
 

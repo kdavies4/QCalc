@@ -2310,18 +2310,17 @@ as the cycle (cyc) is the angle of one circle.  For mnemonic purposes, sp can be
 considered as the abbreviation for sphere as well as spat.<a href=\"#ref3\" title=\"Jump
 back to footnote 3 in the text.\">&#8629;</a></small></p>
 
-<p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica
-License 2</b><br> Copyright &copy; 2009&ndash;2014, <a href=\"
-http://www.hnei.hawaii.edu/\">Hawaii Natural Energy Institute</a> and <a
-href=\"http://www.gtrc.gatech.edu/\">Georgia Tech Research
-Corporation</a>.</p>
+    <p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica License 2</b>
+    <br>Copyright &copy; 2009&ndash;2014, 
+    <a href=\"http://www.hnei.hawaii.edu/\">Hawaii Natural Energy Institute</a> and 
+    <a href=\"http://www.gtrc.gatech.edu/\">Georgia Tech Research Corporation</a>.</p>
 
-<p><i>This Modelica package is <u>free</u> software and the use is
-completely at <u>your own risk</u>; it can be redistributed and/or
-modified under the terms of the Modelica License 2. For license conditions
-(including the disclaimer of warranty) see <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a> or
-visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p>
-</html>"),
+    <p><i>This Modelica package is <u>free</u> software and the use is completely
+    at <u>your own risk</u>; it can be redistributed and/or modified under the
+    terms of the Modelica License 2. For license conditions (including the
+    disclaimer of warranty) see
+    <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
+    or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
     Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
     Icon(graphics={
         Line(
