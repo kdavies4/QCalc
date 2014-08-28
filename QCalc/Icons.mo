@@ -7,13 +7,13 @@ package Icons "Package of icons"
 
     annotation (Icon(coordinateSystem(preserveAspectRatio=true, extent={{-100,-100},
               {100,100}}), graphics={Rectangle(
-            extent={{-100,-100},{100,100}},
-            lineColor={0,0,127},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid), Text(
-            extent={{-150,150},{150,110}},
-            textString="%name",
-            lineColor={0,0,255})}), Documentation(info="<html>
+              extent={{-100,-100},{100,100}},
+              lineColor={0,0,127},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-150,150},{150,110}},
+              textString="%name",
+              lineColor={0,0,255})}), Documentation(info="<html>
 <p>Block that has only the basic icon for an input/output
 block (no declarations, no equations). Most blocks
 of package Modelica.Blocks inherit directly or indirectly
@@ -256,10 +256,11 @@ from this block.</p>
                 {0,0,0}),
           Line(points={{-20,-88},{-80,-60},{-80,80},{-40,58}}, color={0,0,0}),
           Line(points={{-20,-100},{-100,-80},{-100,60},{-80,54}}, color={0,0,0}),
+
           Line(points={{10,30},{72,30}}, color={0,0,0}),
           Line(points={{10,-10},{70,-10}}, color={0,0,0}),
-          Line(points={{10,-50},{70,-50}}, color={0,0,0})}), Documentation(info=
-           "<html>
+          Line(points={{10,-50},{70,-50}}, color={0,0,0})}), Documentation(info
+          ="<html>
 <p>This icon indicates a documentation class containing references external documentation and literature.</p>
 </html>"));
 

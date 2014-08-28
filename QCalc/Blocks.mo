@@ -1,5 +1,5 @@
 within QCalc;
-package Blocks "Imperative models to convert units"
+package Blocks "Input/output blocks to convert units"
   extends QCalc.Icons.Package;
   block Num2Qty "Convert a number to a quantity using a lambda unit"
 
@@ -25,26 +25,22 @@ package Blocks "Imperative models to convert units"
     <a href=\"modelica://Modelica.Blocks.Math.Gain\">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the unit.</p></html>"),
       Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-              100}}), graphics={
-          Rectangle(
-            extent={{-100,-100},{100,100}},
-            lineColor={0,0,127},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid),
-          Line(points={{-90,0},{-30,0}}, color={191,0,0}),
-          Polygon(
-            points={{30,0},{-30,20},{-30,-20},{30,0}},
-            lineColor={191,0,0},
-            fillColor={191,0,0},
-            fillPattern=FillPattern.Solid),
-          Text(
-            extent={{-150,150},{150,110}},
-            textString="%name",
-            lineColor={0,0,255}),
-          Text(
-            extent={{30,30},{90,-30}},
-            lineColor={114,114,114},
-            textString="Q")}));
+              100}}), graphics={Rectangle(
+              extent={{-100,-100},{100,100}},
+              lineColor={0,0,127},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Line(points={{-90,0},{-30,0}},
+            color={191,0,0}),Polygon(
+              points={{30,0},{-30,20},{-30,-20},{30,0}},
+              lineColor={191,0,0},
+              fillColor={191,0,0},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-150,150},{150,110}},
+              textString="%name",
+              lineColor={0,0,255}),Text(
+              extent={{30,30},{90,-30}},
+              lineColor={114,114,114},
+              textString="Q")}));
   end Num2Qty;
 
   block Qty2Num "Convert a quantity to a number using a lambda unit"
@@ -70,26 +66,22 @@ package Blocks "Imperative models to convert units"
     instead use
     <a href=\"modelica://Modelica.Blocks.Math.Gain\">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the reciprocal of the unit.</p></html>"),
-      Icon(graphics={
-          Rectangle(
-            extent={{-100,-100},{100,100}},
-            lineColor={0,0,127},
-            fillColor={255,255,255},
-            fillPattern=FillPattern.Solid),
-          Text(
-            extent={{-150,150},{150,110}},
-            textString="%name",
-            lineColor={0,0,255}),
-          Line(points={{-90,0},{-30,0}}, color={191,0,0}),
-          Text(
-            extent={{30,30},{90,-30}},
-            lineColor={114,114,114},
-            textString="N"),
-          Polygon(
-            points={{30,0},{-30,20},{-30,-20},{30,0}},
-            lineColor={191,0,0},
-            fillColor={191,0,0},
-            fillPattern=FillPattern.Solid)}));
+      Icon(graphics={Rectangle(
+              extent={{-100,-100},{100,100}},
+              lineColor={0,0,127},
+              fillColor={255,255,255},
+              fillPattern=FillPattern.Solid),Text(
+              extent={{-150,150},{150,110}},
+              textString="%name",
+              lineColor={0,0,255}),Line(points={{-90,0},{-30,0}}, color={191,0,
+            0}),Text(
+              extent={{30,30},{90,-30}},
+              lineColor={114,114,114},
+              textString="N"),Polygon(
+              points={{30,0},{-30,20},{-30,-20},{30,0}},
+              lineColor={191,0,0},
+              fillColor={191,0,0},
+              fillPattern=FillPattern.Solid)}));
   end Qty2Num;
   annotation (Documentation(info="
 <html>
@@ -104,7 +96,7 @@ package Blocks "Imperative models to convert units"
     disclaimer of warranty) see
     <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
- Icon(graphics={
+      Icon(graphics={
         Rectangle(
           origin={0,35.1488},
           fillColor={255,255,255},

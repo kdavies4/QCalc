@@ -17,7 +17,7 @@ package Units "Constants and units of physical measure"
     // Be sure that the desired unit is included in a defineUnitConversion
     // command below.
 
-    // Generated from QCalc/Resources/quantities.xls, 2014-8-14
+    // Generated from QCalc/Resources/quantities.xlsx, 2014-8-14
     defineDefaultDisplayUnit("L/T2", "m/s2") "Acceleration";
     defineDefaultDisplayUnit("L/T2", "Gal") "Acceleration";
     defineDefaultDisplayUnit("N", "C") "Amount";
@@ -729,7 +729,7 @@ package Units "Constants and units of physical measure"
         "A/L",
         "cyc/(cm.s)",
         cm*s/cyc) "Wavenumber";
-    // -------- end from QCalc/Resources/quantities.xls
+    // -------- end from QCalc/Resources/quantities.xlsx
 
     // -------------------------------------------------------------------------
     // Conversions with offsets
@@ -772,8 +772,8 @@ recognized by Dymola.</p>
       final rational=U.base.rational);
 
     annotation (Documentation(info="<html><p>Drop this record into your top-level model
-  to record the values of the base constants.  It is necessary to know the values of the
-  base constants in order to interpret the results.</p></html>"));
+  to record the values of the base constants with the simulation results.  It is necessary to 
+  know the values of the base constants in order to interpret the results.</p></html>"));
   end UnitSystem;
 
   package Examples "Examples"
@@ -973,7 +973,7 @@ recognized by Dymola.</p>
 
       extends Icons.Block;
 
-      // Generated from QCalc/Resources/quantities.xls, 2014-8-22
+      // Generated from QCalc/Resources/quantities.xlsx, 2014-8-22
       parameter Q.Acceleration Acceleration=1*U.Gal "Acceleration";
       parameter Q.Amount Amount=1*U.mol "Amount";
       parameter Q.AmountReciprocal AmountReciprocal=1/U.C
@@ -1043,7 +1043,7 @@ recognized by Dymola.</p>
       parameter Q.WavelengthVelocity WavelengthVelocity=1*U.m^2/(U.cyc*U.s)
         "Wavelength times velocity";
       parameter Q.Wavenumber Wavenumber=1*U.cyc/U.m "Wavenumber";
-      // -------- end from QCalc/Resources/quantities.xls
+      // -------- end from QCalc/Resources/quantities.xlsx
       annotation (Commands(executeCall=QCalc.Units.setup()
             "Re-initialize the units."));
     end ExampleModel;
@@ -1460,9 +1460,11 @@ encompass other systems of units.</p>
     "<html><a href=\"http://en.wikipedia.org/wiki/Degree_(angle)\">degree</a> (&deg;)</html>";
   // aka degree of arc, arc degree, or arcdegree
   final constant Q.Angle arcmin=deg/60
-    "<html><a href=\"http://en.wikipedia.org/wiki/Arcminute\">arcminute</a></html>";
+    "<html><a href=\"http://en.wikipedia.org/wiki/Arcminute\">arcminute</a> (&prime;)</html>";
+  // aka minute of arc or minute arc
   final constant Q.Angle arcsec=arcmin/60
-    "<html><a href=\"http://en.wikipedia.org/wiki/Arcsecond\">arcsecond</a></html>";
+    "<html><a href=\"http://en.wikipedia.org/wiki/Arcsecond\">arcsecond</a> (&prime;&prime;)</html>";
+  // aka second of arc or second arc
   final constant Q.Area ha=(Prefixes.h*m)^2
     "<html><a href=\"http://en.wikipedia.org/wiki/Hectare\">hectare</a></html>";
   final constant Q.Volume L=(Prefixes.d*m)^3
@@ -1596,9 +1598,9 @@ encompass other systems of units.</p>
   final constant Q.Time t_H=a_0*sqrt(M_e/Ha)
     "<html>Hartree time (<i>t</i><sub>H</sub>)</html>";
   final constant Q.Length l_n=h*rad/(M_e*c)
-    "<html>natural unit of length(<i>l</i><sub>n</sub>)</html>";
+    "<html>natural unit of length (<i>l</i><sub>n</sub>)</html>";
   final constant Q.Time t_n=l_n/c
-    "<html>natural unit of time(<i>t</i><sub>n</sub>)</html>";
+    "<html>natural unit of time (<i>t</i><sub>n</sub>)</html>";
 
   // -------------------------------------------------------------------------
   // Other
@@ -1641,7 +1643,7 @@ encompass other systems of units.</p>
     extends Icons.InterfacesPackage;
 
     partial operator record LambdaUnit
-      "Partial operator record for a lambda unit"
+      "<html>Partial operator record for a <a href=\"modelica://QCalc.UsersGuide.Glossary.'lambda unit'\">lambda unit</a></html>"
       replaceable type Quantity = Q.Interfaces.Quantity;
 
     end LambdaUnit;
@@ -1821,7 +1823,7 @@ encompass other systems of units.</p>
 
   annotation (
     Documentation(info="<html>
-    <p>The text below introduces, justifies, and explains the implementation of physical units in
+    <p>Below are details about the premise and the implementation of physical units in
     <a href=\"modelica://QCalc\">QCalc</a>.
     For an overview of how to use
     <a href=\"modelica://QCalc\">QCalc</a>, please
@@ -2046,7 +2048,7 @@ sets the default display units.  It is automatically called when
 manually from the \"Re-initialize the units\" command available in the
 Modelica development environment from the <a href=\"modelica://QCalc.Units\">Units</a>
 package and its subpackages.  A spreadsheet
-(<a href=\"modelica://QCalc/Resources/quantities.xls\">Resources/quantities.xls</a>)
+(<a href=\"modelica://QCalc/Resources/quantities.xlsx\">Resources/quantities.xlsx</a>)
 is available to help maintain the quantities, default units, and the setup
 function.</p>
 
@@ -2321,6 +2323,7 @@ back to footnote 3 in the text.\">&#8629;</a></small></p>
     disclaimer of warranty) see
     <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
+
     Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
     Icon(graphics={
         Line(

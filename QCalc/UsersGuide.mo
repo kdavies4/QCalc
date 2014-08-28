@@ -20,7 +20,7 @@ package UsersGuide "User's Guide"
         <a href=\"modelica://QCalc\">QCalc</a> is loaded via
         <a href=\"modelica://QCalc/../load.mos\">load.mos</a>.</li>
 
-        <li>Angle is explicit in the definitions of quantities,
+<li>Note that angle is explicit in the definitions of quantities,
         units, and constants. This helps to identify dimensional inconsistencies
         and provide insight into the physical equations.
         Sometimes it is necessary to include factors
@@ -49,7 +49,7 @@ package UsersGuide "User's Guide"
         in the working directory.</li>
 
         <li>If you wish to introduce new quantities, it may help to use
-        the <a href=\"modelica://QCalc/Resources/quantities.xls\">quantities.xls</a> spreadsheet.</li>
+        the <a href=\"modelica://QCalc/Resources/quantities.xlsx\">quantities.xlsx</a> spreadsheet.</li>
 
         <li>There are more details about the implementation in
         <a href=\"modelica://QCalc.Units\">QCalc.Units</a>.</li>
@@ -179,9 +179,9 @@ expressed as a number and a reference\" [<a href=\"modelica://QCalc.UsersGuide.R
     end Brown2011;
 
     class Fritzson2004
-      "<html>P. Fritzson, <i>Principles of Object-Oriented Modeling and Simulation with Modelica 2.1</i>, IEEE Press (Piscataway, NJ), 2004.</html>"
+      "<html>P. Fritzson, <i><a href=\"http://www.wiley.com/WileyCDA/WileyTitle/productCd-0471471631.html\">Principles of Object-Oriented Modeling and Simulation with Modelica 2.1</a></i>, Wiley-IEEE Press (Piscataway, NJ), 2004.</html>"
 
-      annotation (preferredView="info", DocumentationClass=false);
+      annotation (preferredView="info",DocumentationClass=false);
     end Fritzson2004;
 
     class Greiner1995
@@ -191,7 +191,7 @@ expressed as a number and a reference\" [<a href=\"modelica://QCalc.UsersGuide.R
     end Greiner1995;
 
     class Hess2008
-      "<html>B. Hess, C. Kutzner, D. van der Spoel, and E. Lindahl, \"GROMACS 4: Algorithms for Highly Efficient, Load-Balanced, and Scalable Molecular Simulation,\" <i>J. Chem. Theory Comput.</i>, vol.&nbsp;4, no.&nbsp;3, pp.&nbsp;435&ndash;447, 2008.</html>"
+      "<html>B. Hess, C. Kutzner, D. van der Spoel, and E. Lindahl, \"<a href=\"http://pubs.acs.org/doi/abs/10.1021/ct700301q\">GROMACS 4: Algorithms for Highly Efficient, Load-Balanced, and Scalable Molecular Simulation</a>,\" <i>J. Chem. Theory Comput.</i>, vol.&nbsp;4, no.&nbsp;3, pp.&nbsp;435&ndash;447, 2008.</html>"
 
       annotation (preferredView="info", DocumentationClass=false);
     end Hess2008;
@@ -203,7 +203,7 @@ expressed as a number and a reference\" [<a href=\"modelica://QCalc.UsersGuide.R
     end JCGM2012;
 
     class Mattsson2008
-      "<html>S. E. Mattsson and H. Elmqvist, \"Unit Checking and Quantity Conservation,\" in <i>Proc. 6th Modelica Conf.</i> (Bielefeld, Germany), Modelica Assoc., Mar. 2008.</html>"
+      "<html>S. E. Mattsson and H. Elmqvist, \"<a href=\"http://www.modelica.org/events/modelica2008/Proceedings/sessions/session1a2.pdf\">Unit Checking and Quantity Conservation</a>,\" in <i>Proc. 6th Modelica Conf.</i> (Bielefeld, Germany), Modelica Assoc., Mar. 2008.</html>"
 
       annotation (preferredView="info", DocumentationClass=false);
     end Mattsson2008;
@@ -221,7 +221,7 @@ expressed as a number and a reference\" [<a href=\"modelica://QCalc.UsersGuide.R
     end NIST2010;
 
     class Rapaport2004
-      "<html>D. C. Rapaport, <i>The Art of Molecular Dynamics Simulation</i>, Cambridge University Press, 2nd ed., 2004.</html>"
+      "<html>D. C. Rapaport, <i><a href=\"http://www.ph.biu.ac.il/~rapaport/mdbook/\">The Art of Molecular Dynamics Simulation<a/></i>, Cambridge University Press, 2nd ed., 2004.</html>"
 
       annotation (preferredView="info", DocumentationClass=false);
     end Rapaport2004;
@@ -322,8 +322,8 @@ describes how the library is developed and maintained using the
 <br>
 <dl><dt><b>Credits:</b><br>
 
-    <dd>The logo was copied and modified from
-    <a href=\"http://en.wikipedia.org/wiki/File:Hydrogen_transitions.svg\">an image of the electron shell transitions
+<dd>The logo is based on
+    <a href=\"http://en.wikipedia.org/wiki/File:Hydrogen_transitions.svg\">a diagram of the electron shell transitions
 of hydrogen</a> by
 <a href=\"http://commons.wikimedia.org/w/index.php?title=User:Szdori\">Szdori</a> (Mar. 19
 2009).</dd>

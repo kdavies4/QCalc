@@ -4,7 +4,7 @@ package Quantities "Types to represent physical values"
   import QCalc.Quantities.Interfaces.Quantity;
   extends Icons.TypesPackage;
 
-  // Generated from QCalc/Resources/quantities.xls, 2014-8-22
+  // Generated from QCalc/Resources/quantities.xlsx, 2014-8-22
   type Acceleration = Quantity (final unit="L/T2");
   type Amount = Quantity (final unit="N", min=0);
   type AmountReciprocal = Quantity (final unit="1/N", min=0)
@@ -73,7 +73,7 @@ package Quantities "Types to represent physical values"
   type WavelengthVelocity = Quantity (final unit="L2/(A.T)")
     "Wavelength times velocity";
   type Wavenumber = Quantity (final unit="A/L");
-  // -------- end from from QCalc/Resources/quantities.xls
+  // -------- end from from QCalc/Resources/quantities.xlsx
 
   // Aliases that imply special display units
   type Temperature = Potential (displayUnit="K");
@@ -86,14 +86,14 @@ package Quantities "Types to represent physical values"
       extends Real;
       annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
                 -100},{100,100}}), graphics={Rectangle(
-              lineColor={160,160,164},
-              fillColor={160,160,164},
-              fillPattern=FillPattern.Solid,
-              extent={{-100,-100},{100,100}},
-              radius=25.0), Text(
-              lineColor={255,255,255},
-              extent={{-90,-50},{90,50}},
-              textString="Q")}), Documentation(info="<html>
+                  lineColor={160,160,164},
+                  fillColor={160,160,164},
+                  fillPattern=FillPattern.Solid,
+                  extent={{-100,-100},{100,100}},
+                  radius=25.0),Text(
+                  lineColor={255,255,255},
+                  extent={{-90,-50},{90,50}},
+                  textString="Q")}), Documentation(info="<html>
 <p>This icon is designed for a <b>Real</b> type that is used as a physical quantity.</p>
 </html>"));
     end Quantity;
@@ -142,10 +142,10 @@ Most quantities are named with adjectives following the noun so that related
 <p id=\"fn1\"><small>1. This misnomer (<code>unit</code> attribute for dimension) is necessary because <code>Real</code>
     variables do not have a <code>dimension</code>
     attribute in Modelica.  Beware that:<ul>
-    <li><code>unit=\"L\"</code> indicates a length quantity, not a volume in litres.</li>
-    <li><code>unit=\"T\"</code> indicates a time quantity, not a magnetic flux in teslas.</li>
-    <li><code>unit=\"A\"</code> indicates an angle, not a current in amperes.</li>
-    <li><code>unit=\"N\"</code> indicates an amount of substance, not a force in newtons.</li>
+    <li><code>unit=\"L\"</code> indicates a length quantity (not a volume in litres).</li>
+    <li><code>unit=\"T\"</code> indicates a time quantity (not a magnetic flux in teslas).</li>
+    <li><code>unit=\"A\"</code> indicates an angle (not a current in amperes).</li>
+    <li><code>unit=\"N\"</code> indicates an amount of substance (not a force in newtons).</li>
     </ul>
     <a href=\"#ref1\" title=\"Jump back to footnote 1 in the text.\">&#8629;</a></small></p>
 

@@ -37,7 +37,7 @@ annotation (
 and <a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> are also supported.
 The <code>*</code> and <code>/</code> operators are overloaded
 to call the unit's transformation and its inverse, respectively.  For example, this will give a value of
-x = 100:</p>
+<i>x</i> = 100:</p>
 
  <pre>
     Real x = (0*U.degC + 100*U.K)/U.degC;</pre>
@@ -66,7 +66,7 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
     <a href=\"modelica://QCalc.UsersGuide.GettingStarted\">getting started page</a> for more information.
     If you wish to use the same approach with <a href=\"https://www.modelica.org/\">Modelica</a> results in
     <a href=\"https://www.python.org/\">Python</a>,
-    consider <a href=\"http://kdavies4.github.io/ModelicaRes/\">ModelicaRes</a>
+    please see <a href=\"http://kdavies4.github.io/ModelicaRes/\">ModelicaRes</a>
     and <a href=\"http://kdavies4.github.io/natu/\">natu</a>.</p>
 
     <p><b>Licensed by the Hawaii Natural Energy Institute under the Modelica License 2</b>
@@ -80,7 +80,9 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
     disclaimer of warranty) see
     <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
+
   version="",
   versionDate="",
   uses(Modelica(version="3.2")));
+
 end QCalc;

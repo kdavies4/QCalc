@@ -42,7 +42,7 @@ done
 cp QCalc/help/*.png images/
 
 # Copy and process the HTML files.
-rm -q *.html
+rm *.html
 git checkout HEAD google*.html
 cp -f QCalc/help/*.html .
 mv -f QCalc.html index.html
