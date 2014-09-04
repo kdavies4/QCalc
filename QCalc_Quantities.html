@@ -4,7 +4,7 @@
 <title>QCalc.Quantities</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="quantities unit natural units conversion SI CGS Real dimensionality Planck Hartree">
-<meta name="date" content="2014-8-23">
+<meta name="date" content="2014-9-4">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Types to represent physical values">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -19,8 +19,9 @@
     <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
-  <h3>Library Contents</h3>
-    <ul>
+<h3>Library Contents</h3>
+
+<ul>
     <li><a href="QCalc_UsersGuide.html"><img src="images/QCalc.UsersGuideS.png" alt="QCalc.UsersGuide" width="20" height="20" align="top">&nbsp;User's Guide</a></li>
     <li><a href="QCalc_Blocks.html"><img src="images/QCalc.BlocksS.png" alt="QCalc.Blocks" width="20" height="20" align="top">&nbsp;Blocks</a></li>
     <li><a href="QCalc_Units.html"><img src="images/QCalc.UnitsS.png" alt="QCalc.Units" width="20" height="20" align="top">&nbsp;Units</a></li>
@@ -52,7 +53,9 @@
 <div class="document">
   <div class="documentwrapper">
     <div class="bodywrapper">
-      <div class="body"><h2><a name="QCalc.Quantities"></a><a href="index.html#QCalc">QCalc</a>.Quantities</h2>
+      <div class="body">
+
+<h2><a name="QCalc.Quantities"></a><a href="index.html#QCalc">QCalc</a>.Quantities</h2>
 
 <p>
 <b>Types to represent physical values</b><br>
@@ -103,10 +106,10 @@ Most quantities are named with adjectives following the noun so that related
 <p id="fn1"><small>1. This misnomer (<code>unit</code> attribute for dimension) is necessary because <code>Real</code>
     variables do not have a <code>dimension</code>
     attribute in Modelica.  Beware that:<ul>
-    <li><code>unit="L"</code> indicates a length quantity, not a volume in litres.</li>
-    <li><code>unit="T"</code> indicates a time quantity, not a magnetic flux in teslas.</li>
-    <li><code>unit="A"</code> indicates an angle, not a current in amperes.</li>
-    <li><code>unit="N"</code> indicates an amount of substance, not a force in newtons.</li>
+    <li><code>unit="L"</code> indicates a length quantity (not a volume in litres).</li>
+    <li><code>unit="T"</code> indicates a time quantity (not a magnetic flux in teslas).</li>
+    <li><code>unit="A"</code> indicates an angle (not a current in amperes).</li>
+    <li><code>unit="N"</code> indicates an amount of substance (not a force in newtons).</li>
     </ul>
     </small></p>
 
@@ -413,83 +416,83 @@ Most quantities are named with adjectives following the noun so that related
 
 <h3>Types and constants</h3>
 
-<a name="QCalc.Quantities.Acceleration"></a><pre>  <span style="color: blue">type</span> Acceleration = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/T2&quot;);</pre>
-<a name="QCalc.Quantities.Amount"></a><pre>  <span style="color: blue">type</span> Amount = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N&quot;, min=0);</pre>
-<a name="QCalc.Quantities.AmountReciprocal"></a><pre>  <span style="color: blue">type</span> AmountReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;1/N&quot;, min=0) <span style="color: #006400">
+<a name="QCalc.Quantities.Acceleration"></a><pre><span style="color: blue">type</span> Acceleration = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/T2&quot;);</pre>
+<a name="QCalc.Quantities.Amount"></a><pre><span style="color: blue">type</span> Amount = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N&quot;, min=0);</pre>
+<a name="QCalc.Quantities.AmountReciprocal"></a><pre><span style="color: blue">type</span> AmountReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;1/N&quot;, min=0) <span style="color: #006400">
   &quot;Reciprocal of amount&quot;</span>;</pre>
-<a name="QCalc.Quantities.Angle"></a><pre>  <span style="color: blue">type</span> Angle = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A&quot;);</pre>
-<a name="QCalc.Quantities.Angle2"></a><pre>  <span style="color: blue">type</span> Angle2 = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A2&quot;) <span style="color: #006400">&quot;Solid angle&quot;</span>;</pre>
-<a name="QCalc.Quantities.Area"></a><pre>  <span style="color: blue">type</span> Area = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Capacitance"></a><pre>  <span style="color: blue">type</span> Capacitance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T2/(L2.M)&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Concentration"></a><pre>  <span style="color: blue">type</span> Concentration = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N/L3&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Conductance"></a><pre>  <span style="color: blue">type</span> Conductance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T/(L2.M)&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Current"></a><pre>  <span style="color: blue">type</span> Current = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N/T&quot;);</pre>
-<a name="QCalc.Quantities.Diffusivity"></a><pre>  <span style="color: blue">type</span> Diffusivity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2/T&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Energy"></a><pre>  <span style="color: blue">type</span> Energy = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/T2&quot;);</pre>
-<a name="QCalc.Quantities.Force"></a><pre>  <span style="color: blue">type</span> Force = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.M/T2&quot;);</pre>
-<a name="QCalc.Quantities.Frequency"></a><pre>  <span style="color: blue">type</span> Frequency = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A/T&quot;);</pre>
-<a name="QCalc.Quantities.Illuminance"></a><pre>  <span style="color: blue">type</span> Illuminance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;J.A2&quot;);</pre>
-<a name="QCalc.Quantities.Inductance"></a><pre>  <span style="color: blue">type</span> Inductance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/N2&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Length"></a><pre>  <span style="color: blue">type</span> Length = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L&quot;, min=0);</pre>
-<a name="QCalc.Quantities.LengthSpecific"></a><pre>  <span style="color: blue">type</span> LengthSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/N&quot;, min=0) <span style="color: #006400">&quot;Specific length&quot;</span>;</pre>
-<a name="QCalc.Quantities.LengthSpecificMassSpecific"></a><pre>  <span style="color: blue">type</span> LengthSpecificMassSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.M/N2&quot;, min=0) <span style="color: #006400">
+<a name="QCalc.Quantities.Angle"></a><pre><span style="color: blue">type</span> Angle = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A&quot;);</pre>
+<a name="QCalc.Quantities.Angle2"></a><pre><span style="color: blue">type</span> Angle2 = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A2&quot;) <span style="color: #006400">&quot;Solid angle&quot;</span>;</pre>
+<a name="QCalc.Quantities.Area"></a><pre><span style="color: blue">type</span> Area = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Capacitance"></a><pre><span style="color: blue">type</span> Capacitance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T2/(L2.M)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Concentration"></a><pre><span style="color: blue">type</span> Concentration = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N/L3&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Conductance"></a><pre><span style="color: blue">type</span> Conductance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T/(L2.M)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Current"></a><pre><span style="color: blue">type</span> Current = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N/T&quot;);</pre>
+<a name="QCalc.Quantities.Diffusivity"></a><pre><span style="color: blue">type</span> Diffusivity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2/T&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Energy"></a><pre><span style="color: blue">type</span> Energy = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/T2&quot;);</pre>
+<a name="QCalc.Quantities.Force"></a><pre><span style="color: blue">type</span> Force = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.M/T2&quot;);</pre>
+<a name="QCalc.Quantities.Frequency"></a><pre><span style="color: blue">type</span> Frequency = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A/T&quot;);</pre>
+<a name="QCalc.Quantities.Illuminance"></a><pre><span style="color: blue">type</span> Illuminance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;J.A2&quot;);</pre>
+<a name="QCalc.Quantities.Inductance"></a><pre><span style="color: blue">type</span> Inductance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/N2&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Length"></a><pre><span style="color: blue">type</span> Length = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L&quot;, min=0);</pre>
+<a name="QCalc.Quantities.LengthSpecific"></a><pre><span style="color: blue">type</span> LengthSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/N&quot;, min=0) <span style="color: #006400">&quot;Specific length&quot;</span>;</pre>
+<a name="QCalc.Quantities.LengthSpecificMassSpecific"></a><pre><span style="color: blue">type</span> LengthSpecificMassSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.M/N2&quot;, min=0) <span style="color: #006400">
   &quot;Specific length times specific mass&quot;</span>;</pre>
-<a name="QCalc.Quantities.Luminance"></a><pre>  <span style="color: blue">type</span> Luminance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;J/L2&quot;);</pre>
-<a name="QCalc.Quantities.LuminousEmittance"></a><pre>  <span style="color: blue">type</span> LuminousEmittance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;J.A2/L2&quot;) <span style="color: #006400">&quot;Luminous emittance&quot;</span>;</pre>
-<a name="QCalc.Quantities.LuminousIntensity"></a><pre>  <span style="color: blue">type</span> LuminousIntensity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;J&quot;) <span style="color: #006400">&quot;Luminous intensity&quot;</span>;</pre>
-<a name="QCalc.Quantities.MagneticDipoleMoment"></a><pre>  <span style="color: blue">type</span> MagneticDipoleMoment = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A.L2.N/T&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.Luminance"></a><pre><span style="color: blue">type</span> Luminance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;J/L2&quot;);</pre>
+<a name="QCalc.Quantities.LuminousEmittance"></a><pre><span style="color: blue">type</span> LuminousEmittance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;J.A2/L2&quot;) <span style="color: #006400">&quot;Luminous emittance&quot;</span>;</pre>
+<a name="QCalc.Quantities.LuminousIntensity"></a><pre><span style="color: blue">type</span> LuminousIntensity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;J&quot;) <span style="color: #006400">&quot;Luminous intensity&quot;</span>;</pre>
+<a name="QCalc.Quantities.MagneticDipoleMoment"></a><pre><span style="color: blue">type</span> MagneticDipoleMoment = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A.L2.N/T&quot;) <span style="color: #006400">
   &quot;Magnetic dipole moment&quot;</span>;</pre>
-<a name="QCalc.Quantities.MagneticFieldAux"></a><pre>  <span style="color: blue">type</span> MagneticFieldAux = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A.N/(L.T)&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.MagneticFieldAux"></a><pre><span style="color: blue">type</span> MagneticFieldAux = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A.N/(L.T)&quot;) <span style="color: #006400">
   &quot;Auxiliary magnetic field&quot;</span>;</pre>
-<a name="QCalc.Quantities.MagneticFlux"></a><pre>  <span style="color: blue">type</span> MagneticFlux = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.N.T)&quot;) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;</pre>
-<a name="QCalc.Quantities.MagneticFluxAreic"></a><pre>  <span style="color: blue">type</span> MagneticFluxAreic = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(A.N.T)&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.MagneticFlux"></a><pre><span style="color: blue">type</span> MagneticFlux = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.N.T)&quot;) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;</pre>
+<a name="QCalc.Quantities.MagneticFluxAreic"></a><pre><span style="color: blue">type</span> MagneticFluxAreic = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(A.N.T)&quot;) <span style="color: #006400">
   &quot;Areic magnetic flux&quot;</span>;</pre>
-<a name="QCalc.Quantities.MagneticFluxReciprocal"></a><pre>  <span style="color: blue">type</span> MagneticFluxReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A.N.T/(L2.M)&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.MagneticFluxReciprocal"></a><pre><span style="color: blue">type</span> MagneticFluxReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A.N.T/(L2.M)&quot;) <span style="color: #006400">
   &quot;Reciprocal of magnetic flux&quot;</span>;</pre>
-<a name="QCalc.Quantities.MagneticFluxSpecific"></a><pre>  <span style="color: blue">type</span> MagneticFluxSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.N2.T)&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.MagneticFluxSpecific"></a><pre><span style="color: blue">type</span> MagneticFluxSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.N2.T)&quot;) <span style="color: #006400">
   &quot;Specific magnetic flux&quot;</span>;</pre>
-<a name="QCalc.Quantities.MagnetomotiveForce"></a><pre>  <span style="color: blue">type</span> MagnetomotiveForce = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A.N/T&quot;) <span style="color: #006400">&quot;Magnetomotive force&quot;</span>;</pre>
-<a name="QCalc.Quantities.Mass"></a><pre>  <span style="color: blue">type</span> Mass = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M&quot;, min=0);</pre>
-<a name="QCalc.Quantities.MassSpecific"></a><pre>  <span style="color: blue">type</span> MassSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/N&quot;, min=0) <span style="color: #006400">&quot;Specific mass&quot;</span>;</pre>
-<a name="QCalc.Quantities.MomentumRotational"></a><pre>  <span style="color: blue">type</span> MomentumRotational = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.T)&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.MagnetomotiveForce"></a><pre><span style="color: blue">type</span> MagnetomotiveForce = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A.N/T&quot;) <span style="color: #006400">&quot;Magnetomotive force&quot;</span>;</pre>
+<a name="QCalc.Quantities.Mass"></a><pre><span style="color: blue">type</span> Mass = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M&quot;, min=0);</pre>
+<a name="QCalc.Quantities.MassSpecific"></a><pre><span style="color: blue">type</span> MassSpecific = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/N&quot;, min=0) <span style="color: #006400">&quot;Specific mass&quot;</span>;</pre>
+<a name="QCalc.Quantities.MomentumRotational"></a><pre><span style="color: blue">type</span> MomentumRotational = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(A.T)&quot;) <span style="color: #006400">
   &quot;Rotational momentum&quot;</span>;</pre>
-<a name="QCalc.Quantities.Number"></a><pre>  <span style="color: blue">type</span> Number = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;1&quot;);</pre>
-<a name="QCalc.Quantities.Permeability"></a><pre>  <span style="color: blue">type</span> Permeability = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.M/(A2.N2)&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Permittivity"></a><pre>  <span style="color: blue">type</span> Permittivity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T2/(L3.M)&quot;, min=0);</pre>
-<a name="QCalc.Quantities.PermittivityReciprocal"></a><pre>  <span style="color: blue">type</span> PermittivityReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3.M/(N2.T2)&quot;, min=0) <span style="color: #006400">
+<a name="QCalc.Quantities.Number"></a><pre><span style="color: blue">type</span> Number = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;1&quot;);</pre>
+<a name="QCalc.Quantities.Permeability"></a><pre><span style="color: blue">type</span> Permeability = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L.M/(A2.N2)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Permittivity"></a><pre><span style="color: blue">type</span> Permittivity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N2.T2/(L3.M)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.PermittivityReciprocal"></a><pre><span style="color: blue">type</span> PermittivityReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3.M/(N2.T2)&quot;, min=0) <span style="color: #006400">
   &quot;Reciprocal of permittivity&quot;</span>;</pre>
-<a name="QCalc.Quantities.Potential"></a><pre>  <span style="color: blue">type</span> Potential = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N.T2)&quot;);</pre>
-<a name="QCalc.Quantities.PotentialAbsolute"></a><pre>  <span style="color: blue">type</span> PotentialAbsolute = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N.T2)&quot;, min=0) <span style="color: #006400">
+<a name="QCalc.Quantities.Potential"></a><pre><span style="color: blue">type</span> Potential = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N.T2)&quot;);</pre>
+<a name="QCalc.Quantities.PotentialAbsolute"></a><pre><span style="color: blue">type</span> PotentialAbsolute = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N.T2)&quot;, min=0) <span style="color: #006400">
   &quot;Absolute potential&quot;</span>;</pre>
-<a name="QCalc.Quantities.PotentialPerWavenumber"></a><pre>  <span style="color: blue">type</span> PotentialPerWavenumber = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3.M/(A.N.T2)&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.PotentialPerWavenumber"></a><pre><span style="color: blue">type</span> PotentialPerWavenumber = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3.M/(A.N.T2)&quot;) <span style="color: #006400">
   &quot;Potential per wavenumber&quot;</span>;</pre>
-<a name="QCalc.Quantities.Power"></a><pre>  <span style="color: blue">type</span> Power = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/T3&quot;);</pre>
-<a name="QCalc.Quantities.PowerArea"></a><pre>  <span style="color: blue">type</span> PowerArea = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L4.M/T3&quot;) <span style="color: #006400">&quot;Power times area&quot;</span>;</pre>
-<a name="QCalc.Quantities.PowerAreic"></a><pre>  <span style="color: blue">type</span> PowerAreic = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/T3&quot;) <span style="color: #006400">&quot;Areic power&quot;</span>;</pre>
-<a name="QCalc.Quantities.PowerAreicPerPotential4"></a><pre>  <span style="color: blue">type</span> PowerAreicPerPotential4 = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N4.T5/(L8.M3)&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.Power"></a><pre><span style="color: blue">type</span> Power = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/T3&quot;);</pre>
+<a name="QCalc.Quantities.PowerArea"></a><pre><span style="color: blue">type</span> PowerArea = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L4.M/T3&quot;) <span style="color: #006400">&quot;Power times area&quot;</span>;</pre>
+<a name="QCalc.Quantities.PowerAreic"></a><pre><span style="color: blue">type</span> PowerAreic = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/T3&quot;) <span style="color: #006400">&quot;Areic power&quot;</span>;</pre>
+<a name="QCalc.Quantities.PowerAreicPerPotential4"></a><pre><span style="color: blue">type</span> PowerAreicPerPotential4 = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;N4.T5/(L8.M3)&quot;) <span style="color: #006400">
   &quot;Areic power per 4th power of potential&quot;</span>;</pre>
-<a name="QCalc.Quantities.Pressure"></a><pre>  <span style="color: blue">type</span> Pressure = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T2)&quot;);</pre>
-<a name="QCalc.Quantities.PressureLineic"></a><pre>  <span style="color: blue">type</span> PressureLineic = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L2.T2)&quot;) <span style="color: #006400">&quot;Lineic pressure&quot;</span>;</pre>
-<a name="QCalc.Quantities.Resistance"></a><pre>  <span style="color: blue">type</span> Resistance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N2.T)&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Time"></a><pre>  <span style="color: blue">type</span> Time = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;T&quot;);</pre>
-<a name="QCalc.Quantities.TimeReciprocal"></a><pre>  <span style="color: blue">type</span> TimeReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;1/T&quot;) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;</pre>
-<a name="QCalc.Quantities.Velocity"></a><pre>  <span style="color: blue">type</span> Velocity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/T&quot;);</pre>
-<a name="QCalc.Quantities.Velocity2"></a><pre>  <span style="color: blue">type</span> Velocity2 = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2/T2&quot;) <span style="color: #006400">&quot;Squared velocity&quot;</span>;</pre>
-<a name="QCalc.Quantities.Viscosity"></a><pre>  <span style="color: blue">type</span> Viscosity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T)&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Volume"></a><pre>  <span style="color: blue">type</span> Volume = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3&quot;, min=0);</pre>
-<a name="QCalc.Quantities.Wavelength"></a><pre>  <span style="color: blue">type</span> Wavelength = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/A&quot;);</pre>
-<a name="QCalc.Quantities.WavelengthVelocity"></a><pre>  <span style="color: blue">type</span> WavelengthVelocity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2/(A.T)&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.Pressure"></a><pre><span style="color: blue">type</span> Pressure = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T2)&quot;);</pre>
+<a name="QCalc.Quantities.PressureLineic"></a><pre><span style="color: blue">type</span> PressureLineic = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L2.T2)&quot;) <span style="color: #006400">&quot;Lineic pressure&quot;</span>;</pre>
+<a name="QCalc.Quantities.Resistance"></a><pre><span style="color: blue">type</span> Resistance = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2.M/(N2.T)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Time"></a><pre><span style="color: blue">type</span> Time = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;T&quot;);</pre>
+<a name="QCalc.Quantities.TimeReciprocal"></a><pre><span style="color: blue">type</span> TimeReciprocal = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;1/T&quot;) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;</pre>
+<a name="QCalc.Quantities.Velocity"></a><pre><span style="color: blue">type</span> Velocity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/T&quot;);</pre>
+<a name="QCalc.Quantities.Velocity2"></a><pre><span style="color: blue">type</span> Velocity2 = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2/T2&quot;) <span style="color: #006400">&quot;Squared velocity&quot;</span>;</pre>
+<a name="QCalc.Quantities.Viscosity"></a><pre><span style="color: blue">type</span> Viscosity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;M/(L.T)&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Volume"></a><pre><span style="color: blue">type</span> Volume = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L3&quot;, min=0);</pre>
+<a name="QCalc.Quantities.Wavelength"></a><pre><span style="color: blue">type</span> Wavelength = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L/A&quot;);</pre>
+<a name="QCalc.Quantities.WavelengthVelocity"></a><pre><span style="color: blue">type</span> WavelengthVelocity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;L2/(A.T)&quot;) <span style="color: #006400">
   &quot;Wavelength times velocity&quot;</span>;</pre>
-<a name="QCalc.Quantities.Wavenumber"></a><pre>  <span style="color: blue">type</span> Wavenumber = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A/L&quot;);</pre>
-<a name="QCalc.Quantities.Temperature"></a><pre>  <span style="color: blue">type</span> Temperature = <a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Potential</a> (displayUnit=&quot;K&quot;);</pre>
-<a name="QCalc.Quantities.TemperatureAbsolute"></a><pre>  <span style="color: blue">type</span> TemperatureAbsolute = <a href="QCalc_Quantities.html#QCalc.Quantities.PotentialAbsolute">PotentialAbsolute</a> (displayUnit=&quot;degC&quot;) <span style="color: #006400">
+<a name="QCalc.Quantities.Wavenumber"></a><pre><span style="color: blue">type</span> Wavenumber = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantity</a> (<span style="color: blue">final </span>unit=&quot;A/L&quot;);</pre>
+<a name="QCalc.Quantities.Temperature"></a><pre><span style="color: blue">type</span> Temperature = <a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Potential</a> (displayUnit=&quot;K&quot;);</pre>
+<a name="QCalc.Quantities.TemperatureAbsolute"></a><pre><span style="color: blue">type</span> TemperatureAbsolute = <a href="QCalc_Quantities.html#QCalc.Quantities.PotentialAbsolute">PotentialAbsolute</a> (displayUnit=&quot;degC&quot;) <span style="color: #006400">
   &quot;Absolute temperature&quot;</span>;</pre>
       </div>
     </div>
   </div>
 </div>
 <div class="footer">
-  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Sat Aug 23 13:14:12 2014.
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Thu Sep  4 04:15:26 2014.
 </div>
 
 </span></body></html>

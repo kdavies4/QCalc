@@ -92,10 +92,10 @@ RPLS = [
     # Link some files to GitHub instead.
     ('href="\.\./\.\./load\.mos"',
      'href="https://github.com/kdavies4/QCalc/blob/master/load.mos"'),
-    ('href="\.\./Resources/quantities\.xls"',
-     'href="https://github.com/kdavies4/QCalc/blob/master/QCalc/Resources/quantities.xls?raw=true"'),
-    ('href="\.\./Resources/Documentation/QCalc/Bases/unit-systems\.cdf"',
-     'href="https://github.com/kdavies4/QCalc/blob/master/QCalc/Resources/Documentation/Units/Bases/unit-systems.cdf?raw=true" download'),
+    ('href="\.\./Resources/([^"]+)"',
+     r'href="https://github.com/kdavies4/QCalc/blob/master/QCalc/Resources/\1?raw=true"'),
+    ('(unit-systems.cdf\?raw=true")>',
+     r'\1 download>'),
     ]
 
 # Process the arguments.
