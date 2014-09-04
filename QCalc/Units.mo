@@ -1227,7 +1227,8 @@ encompass other systems of units.</p>
   // Mathematical constants
   // -------------------------------------------------------------------------
 
-  final constant Q.Number pi=2*acos(0) "<html>pi (<i>&pi;</i>)</html>";
+  final constant Q.Number pi=2*acos(0)
+    "<html><a href=\"https://en.wikipedia.org/wiki/Pi\">pi</a> (<i>&pi;</i>)</html>";
 
   // TODO:  Check all dimensions against natu.
 
@@ -1548,7 +1549,7 @@ encompass other systems of units.</p>
     "<html><a href=\"http://en.wikipedia.org/wiki/Maxwell_(unit)\">maxwell</a></html>";
   final constant Q.MagneticFluxAreic Gs=Mx/cm^2
     "<html><a href=\"http://en.wikipedia.org/wiki/Gauss_(unit)\">gauss</a></html>";
-  final constant Q.MagneticFlux pole=4*pi*Mx "unit pole";
+  final constant Q.MagneticFlux pole=4*pi*Mx "unit magnetic pole";
   // Not in [BIPM2006] but useful here
   final constant Q.MagneticFieldAux Oe=dyn/pole
     "<html><a href=\"http://en.wikipedia.org/wiki/Oersted\">oersted</a></html>";
@@ -2323,7 +2324,6 @@ back to footnote 3 in the text.\">&#8629;</a></small></p>
     disclaimer of warranty) see
     <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
-
     Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
     Icon(graphics={
         Line(
