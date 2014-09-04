@@ -3,7 +3,7 @@
 <head>
 <title>QCalc.Units.Prefixes</title>
 <meta name="title" content="Modelica units based on quantity calculus">
-<meta name="keywords" content="quantities unit natural units conversion SI CGS Real dimensionality Planck Hartree">
+<meta name="keywords" content="Modelica units quantities dimension natural unit system convert conversion SI CGS Gauss Hartree Planck">
 <meta name="date" content="2014-9-4">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="SI prefixes">
@@ -156,32 +156,34 @@
 
 <h3>Types and constants</h3>
 
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real Y=1e24 <span style="color: #006400">&quot;yotta&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real Z=1e21 <span style="color: #006400">&quot;zetta&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real E=1e18 <span style="color: #006400">&quot;exa&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real P=1e15 <span style="color: #006400">&quot;peta&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real T=1e12 <span style="color: #006400">&quot;tera&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real G=1e9 <span style="color: #006400">&quot;giga&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real M=1e6 <span style="color: #006400">&quot;mega&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real k=1e3 <span style="color: #006400">&quot;kilo&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real h=1e2 <span style="color: #006400">&quot;hecto&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real da=1e1 <span style="color: #006400">&quot;deca&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real d=1e-1 <span style="color: #006400">&quot;deci&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real c=1e-2 <span style="color: #006400">&quot;centi&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real m=1e-3 <span style="color: #006400">&quot;milli&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real u=1e-6 <span style="color: #006400">&quot;micro&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real n=1e-9 <span style="color: #006400">&quot;nano&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real p=1e-12 <span style="color: #006400">&quot;pico&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real f=1e-15 <span style="color: #006400">&quot;femto&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real a=1e-18 <span style="color: #006400">&quot;atto&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real z=1e-21 <span style="color: #006400">&quot;zepto&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span>Real y=1e-24 <span style="color: #006400">&quot;yocto&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real Y=1e24 <span style="color: #006400">&quot;yotta&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real Z=1e21 <span style="color: #006400">&quot;zetta&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real E=1e18 <span style="color: #006400">&quot;exa&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real P=1e15 <span style="color: #006400">&quot;peta&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real T=1e12 <span style="color: #006400">&quot;tera&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real G=1e9 <span style="color: #006400">&quot;giga&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real M=1e6 <span style="color: #006400">&quot;mega&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real k=1e3 <span style="color: #006400">&quot;kilo&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real h=1e2 <span style="color: #006400">&quot;hecto&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real da=1e1 <span style="color: #006400">&quot;deca&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real d=1e-1 <span style="color: #006400">&quot;deci&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real c=1e-2 <span style="color: #006400">&quot;centi&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real m=1e-3 <span style="color: #006400">&quot;milli&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real u=1e-6 <span style="color: #006400">&quot;micro&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real n=1e-9 <span style="color: #006400">&quot;nano&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real p=1e-12 <span style="color: #006400">&quot;pico&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real f=1e-15 <span style="color: #006400">&quot;femto&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real a=1e-18 <span style="color: #006400">&quot;atto&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real z=1e-21 <span style="color: #006400">&quot;zepto&quot;</span>;</pre>
+<pre>  <span style="color: blue">final </span><span style="color: blue">constant </span>Real y=1e-24 <span style="color: #006400">&quot;yocto&quot;</span>;</pre>
       </div>
     </div>
   </div>
 </div>
 <div class="footer">
-  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies">Kevin Davies</a>, <a href="http://www.hnei.hawaii.edu">Hawaii Natural Energy Institute</a>. Last updated Thu Sep  4 04:15:26 2014.
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies"><span id="_author5" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<span itemprop="name">Kevin Davies</span></span></a>, <a href="http://www.hnei.hawaii.edu"><span id="_publisher7" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Thu Sep  4 10:49:03 2014.
 </div>
 
 </span></body></html>

@@ -32,11 +32,11 @@ RPLS = [
     # Add meta title and keywords.
     ('<meta name="HTML-Generator" content="Dymola">',
      r"""<meta name="title" content="Modelica units based on quantity calculus">
-<meta name="keywords" content="quantities unit natural units conversion SI CGS Real dimensionality Planck Hartree">
+<meta name="keywords" content="Modelica units quantities dimension natural unit system convert conversion SI CGS Gauss Hartree Planck">
 <meta name="date" content="%d-%d-%d">""" % (now.year, now.month, now.day)),
     # Change the meta description of the main page.
-    ('<meta name="description" content="Modelica units based on quantity calculus">',
-     '<meta name="description" content="Free, open-source Modelica library of units based on quantity calculus">'),
+    #('<meta name="description" content="Modelica units based on quantity calculus">',
+    # '<meta name="description" content="Free, open-source Modelica library of units based on quantity calculus">'),
     # Add Microdata markup.
     ('\n<div class="sidebar">',
      """\n<span itemscope itemtype="http://schema.org/SoftwareApplication">
@@ -45,15 +45,14 @@ RPLS = [
      '\n</span></body></html>'),
     ('<p class="sidebar-title">QCalc</p>',
      '<p itemprop="name" class="sidebar-title">QCalc</p>'),
-    ('img src="images/icon.gif" class="logo"',
-     'img itemprop="image" src="images/icon.gif" class="logo"'),
-    ('<img src="images/QCalc.Assemblies.Cells.CellD.png" width="600"/>',
-     '<img id="_screenshot8" itemprop="screenshot" src="images/QCalc.Assemblies.Cells.CellD.png" width="600"/>'),
-    ("Kevin Davies, Georgia Tech Research Corporation",
-     """<span id="_author5" itemprop="author" itemscope itemtype="http://schema.org/Person">
-<span itemprop="name">Kevin Davies</span></span>,
-<span id="_publisher7" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<span itemprop="name">Georgia Tech Research Corporation</span></span>"""),
+    ('img src="images/logo.svg" alt="logo"',
+     'img itemprop="image" src="logo.svg" alt="logo"'),
+    (">(Kevin Davies)<",
+     r"""><span id="_author5" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<span itemprop="name">\1</span></span><"""),
+    (">Hawaii Natural Energy Institute<",
+     r"""><span id="_publisher7" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<span itemprop="name">Hawaii Natural Energy Institute</span></span><"""),
     # Move the style sheet.
     ('"\.\./Resources/Documentation/ModelicaDoc\.css"',
      '"stylesheets/ModelicaDoc.css"'),
