@@ -64,7 +64,7 @@
   -->
 
   <directory
-     path="../"
+     path="."
      url="http://kdavies4.github.io/QCalc/"
      default_file="index.html"
      remove_empty_directories="true"
@@ -100,24 +100,21 @@
   they are.
   ********************************************************* -->
 
-  <filter action="drop" type="wildcard" pattern="*.git/" />
-  <filter action="drop" type="wildcard" pattern="*.git/*" />
-  <filter action="drop" type="regexp" pattern="hooks/.*" />
-  <filter action="drop" type="regexp" pattern="javascripts/.*" />
-  <filter action="drop" type="wildcard" pattern="*.gitattributes" />
-  <filter action="drop" type="wildcard" pattern="*.gitignore" />
-  <filter action="drop" type="regexp" pattern="QCalc/QCalc/.*" />
-  <filter action="drop" type="regexp" pattern="google.*\.html" />
-  <filter action="drop" type="wildcard" pattern="*.xml" />
-  <filter action="drop" type="wildcard" pattern="*.css" />
-  <filter action="drop" type="wildcard" pattern="*.mat" />
-  <filter action="drop" type="wildcard" pattern="*.txt" />
-  <filter action="drop" type="wildcard" pattern="*.js" />
-  <filter action="drop" type="wildcard" pattern="*.md" />
-  <filter action="drop" type="wildcard" pattern="*.pyc" />
   <filter action="drop" type="wildcard" pattern="*.c" />
+  <filter action="drop" type="wildcard" pattern="*.css" />
   <filter action="drop" type="wildcard" pattern="*.ico" />
+  <filter action="drop" type="wildcard" pattern="*.js" />
+  <filter action="drop" type="wildcard" pattern="*.mat" />
+  <filter action="drop" type="wildcard" pattern="*.md" />
   <filter action="drop" type="wildcard" pattern="*.py" />
+  <filter action="drop" type="wildcard" pattern="*.txt" />
+  <filter action="drop" type="wildcard" pattern="*.xml" />
+  <filter action="drop" type="wildcard" pattern="*google*" />
+  <filter action="drop" type="wildcard" pattern="*hooks*" />
+  <filter action="drop" type="wildcard" pattern="*javascripts*" />
+  <filter action="drop" type="wildcard" pattern="*stylesheets*" />
   <filter action="drop" type="wildcard" pattern="*TODO*" />
+  <filter action="drop" type="regexp" pattern="QCalc/\.git.*" />
+  <filter action="drop" type="regexp" pattern="QCalc/QCalc/.*" />
 
 </site>
