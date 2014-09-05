@@ -66,7 +66,7 @@ elif [ $1 == "release" ]; then
     git checkout gh-pages
 
     # Update the sitemap.
-    python hooks/sitemap_gen.py --config=sitemap_conf.xml
+    python hooks/sitemap_gen.py --config=hooks/sitemap_conf.xml
     git commit -am "Updated sitemap"
 
     # If desired, rebase and push the changes to origin.

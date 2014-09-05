@@ -9,10 +9,6 @@ import U = QCalc.Units;
 import Q = QCalc.Quantities;
 
 
-
-
-
-
 annotation (
   preferredView="info",
   Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
@@ -33,7 +29,7 @@ annotation (
     import U = QCalc.Units;
     Q.Pressure p = U.atm + 50*U.Pa; </pre>
 
-<p>Nonscalar units such as <a href=\"http://en.wikipedia.org/wiki/Celsius\">Celsius</a>
+<p>Nonscalar units such as <a href=\"http://en.wikipedia.org/wiki/Celsius\">degree Celsius</a>
 and <a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> are also supported.
 The <code>*</code> and <code>/</code> operators are overloaded
 to call the unit's transformation and its inverse, respectively.  For example, this will give a value of
@@ -82,5 +78,5 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
   version="",
   versionDate="",
-  uses(Modelica(version="3.2")));
+  uses(Modelica(version="3.2.1")));
 end QCalc;
