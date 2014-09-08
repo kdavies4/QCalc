@@ -1,5 +1,5 @@
 within QCalc;
-package Icons 
+package Icons "Package of icons"
   extends IconsPackage;
 
 

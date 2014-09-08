@@ -9,6 +9,10 @@ import U = QCalc.Units;
 import Q = QCalc.Quantities;
 
 
+
+
+
+
 annotation (
   preferredView="info",
   Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
@@ -32,8 +36,8 @@ annotation (
 <p>Nonscalar units such as <a href=\"http://en.wikipedia.org/wiki/Celsius\">degree Celsius</a>
 and <a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> are also supported.
 The <code>*</code> and <code>/</code> operators are overloaded
-to call the unit's transformation and its inverse, respectively.  For example, this will give a value of
-<i>x</i>&nbsp;= 100:</p>
+to call the unit's transformation (<i>number</i> &rarr; <i>quantity</i>) and its inverse, respectively.  
+For example, this will give a value of <i>x</i>&nbsp;= 100:</p>
 
  <pre>
     Real x = (0*U.degC + 100*U.K)/U.degC;</pre>

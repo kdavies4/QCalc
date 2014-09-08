@@ -13,9 +13,10 @@ various units, including but not limited to [SI].  The approach is based on
     import U = QCalc.Units;
     Q.Pressure p = U.atm + 50*U.Pa;
 
-Nonscalar units such as [Celsius] and [decibel] are also supported.  The `*` and
-`/` operators are overloaded to call the unit's transformation and its inverse,
-respectively.  For example, this will give a value of x = 100:
+Nonscalar units such as [degree Celsius] and [decibel] are also supported.  The
+`*` and `/` operators are overloaded to call the unit's transformation (*number*
+&rarr; *quantity*) and its inverse, respectively.  For example, this will give a
+value of *x* = 100:
 
     Real x = (0*U.degC + 100*U.K)/U.degC;
 
@@ -56,7 +57,7 @@ of the [GitHub repository].
 [Modelica]: https://www.modelica.org/
 [Modelica Standard Library]: https://github.com/modelica/Modelica
 [SI]: http://en.wikipedia.org/wiki/International_System_of_Units
-[Celsius]: http://en.wikipedia.org/wiki/Celsius
+[degree Celsius]: http://en.wikipedia.org/wiki/Celsius
 [decibel]: http://en.wikipedia.org/wiki/Decibel
 [pascal]: http://en.wikipedia.org//wiki/Pascal_(unit)
 [Python]: https://www.python.org
