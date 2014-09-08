@@ -4,7 +4,7 @@
 <title>QCalc.Units.Bases</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="Modelica units quantities dimension natural unit system convert conversion SI CGS Gauss Hartree Planck">
-<meta name="date" content="2014-9-4">
+<meta name="date" content="2014-9-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Sets of base constants and units">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -19,9 +19,8 @@
     <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
-<h3>Library Contents</h3>
-
-<ul>
+  <h3>Library Contents</h3>
+    <ul>
     <li><a href="QCalc_UsersGuide.html"><img src="images/QCalc.UsersGuideS.png" alt="QCalc.UsersGuide" width="20" height="20" align="top">&nbsp;User's Guide</a></li>
     <li><a href="QCalc_Blocks.html"><img src="images/QCalc.BlocksS.png" alt="QCalc.Blocks" width="20" height="20" align="top">&nbsp;Blocks</a></li>
     <li><a href="QCalc_Units.html"><img src="images/QCalc.UnitsS.png" alt="QCalc.Units" width="20" height="20" align="top">&nbsp;Units</a></li>
@@ -53,9 +52,7 @@
 <div class="document">
   <div class="documentwrapper">
     <div class="bodywrapper">
-      <div class="body">
-
-<h2><a name="QCalc.Units.Bases"></a><a href="QCalc_Units.html#QCalc.Units">QCalc.Units</a>.Bases</h2>
+      <div class="body"><h2><a name="QCalc.Units.Bases"></a><a href="QCalc_Units.html#QCalc.Units">QCalc.Units</a>.Bases</h2>
 
 <p>
 <b>Sets of base constants and units</b><br>
@@ -186,19 +183,19 @@
 <div class="modelica"><span style="color: blue">record</span> Base <span style="color: #006400">&quot;Base constants&quot;</span>
   <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Record">Icons.Record</a>;
 
-  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Q.Wavenumber</a> R_inf=1 <span style="color: #006400">
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Quantities.Wavenumber</a> R_inf=1 <span style="color: #006400">
     &quot;<a href="http://en.wikipedia.org/wiki/Rydberg_constant">Rydberg constant</a> (<i>R</i><sub>&infin;</sub>)&quot;</span>;
-  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> c=1 <span style="color: #006400">
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Quantities.Velocity</a> c=1 <span style="color: #006400">
     &quot;<a href="http://en.wikipedia.org/wiki/Speed_of_light">speed of light</a>&quot;</span>;
-  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> k_J=1 <span style="color: #006400">
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Quantities.MagneticFluxReciprocal</a> k_J=1 <span style="color: #006400">
     &quot;<a href="http://en.wikipedia.org/wiki/Josephson_constant">Josephson constant</a> (<i>k</i><sub>J</sub>)&quot;</span>;
-  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">Q.MagneticFluxSpecific</a> R_K=1 <span style="color: #006400">
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">Quantities.MagneticFluxSpecific</a> R_K=1 <span style="color: #006400">
     &quot;<a href="http://en.wikipedia.org/wiki/Von_Klitzing_constant">von Klitzing constant</a> (<i>R</i><sub>K</sub>)&quot;</span>;
-  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> k_F=1 <span style="color: #006400">
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Quantities.Number</a> k_F=1 <span style="color: #006400">
     &quot;<a href="http://en.wikipedia.org/wiki/Faraday_constant">Faraday constant</a> (<i>k</i><sub>F</sub>)&quot;</span>;
-  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> R=1 <span style="color: #006400">
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Quantities.Number</a> R=1 <span style="color: #006400">
     &quot;<a href="http://en.wikipedia.org/wiki/Gas_constant">gas constant</a>&quot;</span>;
-  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_Aprime=1 <span style="color: #006400">
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Quantities.LengthSpecificMassSpecific</a> k_Aprime=1 <span style="color: #006400">
     &quot;modified Ampere constant (<i>k</i><sub>A</sub> cyc/&alpha;)&quot;</span>;
   <span style="color: blue">constant </span>Boolean rational=true <span style="color: #006400">&quot;true if the unit system is rationalized&quot;</span>;
 
@@ -211,7 +208,7 @@
 <div class="footer">
   Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies"><span id="_author5" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <span itemprop="name">Kevin Davies</span></span></a>, <a href="http://www.hnei.hawaii.edu"><span id="_publisher7" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Thu Sep  4 10:49:03 2014.
+<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Mon Sep  8 11:20:24 2014.
 </div>
 
 </span></body></html>

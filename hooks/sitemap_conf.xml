@@ -111,10 +111,11 @@
   <filter action="drop" type="wildcard" pattern="*.xml" />
   <filter action="drop" type="wildcard" pattern="*google*" />
   <filter action="drop" type="wildcard" pattern="*hooks*" />
+  <filter action="drop" type="wildcard" pattern="*images/" />
   <filter action="drop" type="wildcard" pattern="*javascripts*" />
-  <filter action="drop" type="wildcard" pattern="*stylesheets*" />
   <filter action="drop" type="wildcard" pattern="*TODO*" />
   <filter action="drop" type="regexp" pattern="QCalc/\.git.*" />
   <filter action="drop" type="regexp" pattern="QCalc/QCalc/.*" />
+  <filter action="drop" type="regexp" pattern="QCalc/stylesheets/.*" />
 
 </site>

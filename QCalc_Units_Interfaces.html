@@ -4,7 +4,7 @@
 <title>QCalc.Units.Interfaces</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="Modelica units quantities dimension natural unit system convert conversion SI CGS Gauss Hartree Planck">
-<meta name="date" content="2014-9-4">
+<meta name="date" content="2014-9-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Partial classes">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -19,9 +19,8 @@
     <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
-<h3>Library Contents</h3>
-
-<ul>
+  <h3>Library Contents</h3>
+    <ul>
     <li><a href="QCalc_UsersGuide.html"><img src="images/QCalc.UsersGuideS.png" alt="QCalc.UsersGuide" width="20" height="20" align="top">&nbsp;User's Guide</a></li>
     <li><a href="QCalc_Blocks.html"><img src="images/QCalc.BlocksS.png" alt="QCalc.Blocks" width="20" height="20" align="top">&nbsp;Blocks</a></li>
     <li><a href="QCalc_Units.html"><img src="images/QCalc.UnitsS.png" alt="QCalc.Units" width="20" height="20" align="top">&nbsp;Units</a></li>
@@ -53,9 +52,7 @@
 <div class="document">
   <div class="documentwrapper">
     <div class="bodywrapper">
-      <div class="body">
-
-<h2><a name="QCalc.Units.Interfaces"></a><a href="QCalc_Units.html#QCalc.Units">QCalc.Units</a>.Interfaces</h2>
+      <div class="body"><h2><a name="QCalc.Units.Interfaces"></a><a href="QCalc_Units.html#QCalc.Units">QCalc.Units</a>.Interfaces</h2>
 
 <p>
 <b>Partial classes</b><br>
@@ -115,14 +112,14 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td colspan="2">replaceable type Quantity</td><td>Q.Interfaces.Quantity</td><td>&nbsp;</td></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Quantities.Interfaces.Quantity</td><td>&nbsp;</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
 
 <div class="modelica"><span style="color: blue">partial </span><span style="color: blue">operator record</span> LambdaUnit <span style="color: #006400">
   &quot;Partial operator record for a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'lambda unit'">lambda unit</a>&quot;</span>
-  <span style="color: blue">replaceable </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Q.Interfaces.Quantity</a>;
+  <span style="color: blue">replaceable </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities_Interfaces.html#QCalc.Quantities.Interfaces.Quantity">Quantities.Interfaces.Quantity</a>;
 
 <span style="color: blue">end </span>LambdaUnit;
 </div>
@@ -142,13 +139,13 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td colspan="2">replaceable type Quantity</td><td>Q.Temperature</td><td>&nbsp;</td></tr>
+<tr><td colspan="2">replaceable type Quantity</td><td>Quantities.Temperature</td><td>&nbsp;</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
 
 <div class="modelica"><span style="color: blue">operator record</span> degC <span style="color: #006400">&quot;degree Celsius (degC)&quot;</span>
-  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>(<span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a>);
+  <span style="color: blue">extends </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.LambdaUnit">LambdaUnit</a>(<span style="color: blue">redeclare </span><span style="color: blue">type</span> Quantity = <a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Quantities.Temperature</a>);
 
   <span style="color: blue">operator</span> &#39;*&#39; <span style="color: #006400">
     &quot;Multiplication is overloaded to map a number to a quantity&quot;</span>
@@ -396,7 +393,7 @@
 <div class="footer">
   Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies"><span id="_author5" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <span itemprop="name">Kevin Davies</span></span></a>, <a href="http://www.hnei.hawaii.edu"><span id="_publisher7" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Thu Sep  4 10:49:03 2014.
+<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Mon Sep  8 11:20:24 2014.
 </div>
 
 </span></body></html>

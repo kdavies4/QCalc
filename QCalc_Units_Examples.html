@@ -4,7 +4,7 @@
 <title>QCalc.Units.Examples</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="Modelica units quantities dimension natural unit system convert conversion SI CGS Gauss Hartree Planck">
-<meta name="date" content="2014-9-4">
+<meta name="date" content="2014-9-8">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Examples">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -19,9 +19,8 @@
     <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
-<h3>Library Contents</h3>
-
-<ul>
+  <h3>Library Contents</h3>
+    <ul>
     <li><a href="QCalc_UsersGuide.html"><img src="images/QCalc.UsersGuideS.png" alt="QCalc.UsersGuide" width="20" height="20" align="top">&nbsp;User's Guide</a></li>
     <li><a href="QCalc_Blocks.html"><img src="images/QCalc.BlocksS.png" alt="QCalc.Blocks" width="20" height="20" align="top">&nbsp;Blocks</a></li>
     <li><a href="QCalc_Units.html"><img src="images/QCalc.UnitsS.png" alt="QCalc.Units" width="20" height="20" align="top">&nbsp;Units</a></li>
@@ -53,9 +52,7 @@
 <div class="document">
   <div class="documentwrapper">
     <div class="bodywrapper">
-      <div class="body">
-
-<h2><a name="QCalc.Units.Examples"></a><a href="QCalc_Units.html#QCalc.Units">QCalc.Units</a>.Examples</h2>
+      <div class="body"><h2><a name="QCalc.Units.Examples"></a><a href="QCalc_Units.html#QCalc.Units">QCalc.Units</a>.Examples</h2>
 
 <p>
 <b>Examples</b><br>
@@ -103,180 +100,189 @@
 
 <p>For more information, please see the documentation for the
   <a href="QCalc_Units.html#QCalc.Units">Units</a> package.</p>
-<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Example">Icons.Example</a> (Icon for runnable examples (from MSL 3.2.1)).</p>
+<p>Extends from <a href="QCalc_Icons.html#QCalc.Icons.Example">QCalc.Icons.Example</a> (Icon for runnable examples (from MSL 3.2.1)).</p>
 
 <h3>Modelica definition</h3>
 
 <div class="modelica"><span style="color: blue">model</span> Evaluate <span style="color: #006400">&quot;Evaluate the values assigned to constants and units&quot;</span>
+  <span style="color: blue">import </span><a href="index.html#QCalc">QCalc</a>;
 
-  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Example">Icons.Example</a>;
+  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Example">QCalc.Icons.Example</a>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Mathematical constants</span>
 
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> pi=U.pi <span style="color: #006400">&quot;pi&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> pi=QCalc.Units.pi <span style="color: #006400">&quot;pi&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Base physical constants</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Q.Wavenumber</a> R_inf=U.R_inf <span style="color: #006400">&quot;Rydberg constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> c=U.c <span style="color: #006400">&quot;speed of light&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> k_J=U.k_J <span style="color: #006400">&quot;Josephson constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">Q.MagneticFluxSpecific</a> R_K=U.R_K <span style="color: #006400">&quot;von Klitzing constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> k_F=U.k_F <span style="color: #006400">&quot;Faraday constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> R=U.R <span style="color: #006400">&quot;gas constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_Aprime=U.k_Aprime <span style="color: #006400">
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Q.Wavenumber</a> R_inf=QCalc.Units.R_inf <span style="color: #006400">&quot;Rydberg constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> c=QCalc.Units.c <span style="color: #006400">&quot;speed of light&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> k_J=QCalc.Units.k_J <span style="color: #006400">
+    &quot;Josephson constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">Q.MagneticFluxSpecific</a> R_K=QCalc.Units.R_K <span style="color: #006400">
+    &quot;von Klitzing constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> k_F=QCalc.Units.k_F <span style="color: #006400">&quot;Faraday constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> R=QCalc.Units.R <span style="color: #006400">&quot;gas constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_Aprime=QCalc.Units.k_Aprime <span style="color: #006400">
     &quot;modified Ampere constant&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Derived physical constants</span>
 
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Phi_0=U.Phi_0 <span style="color: #006400">
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Phi_0=QCalc.Units.Phi_0 <span style="color: #006400">
     &quot;magnetic flux quantum (&amp;Phi;&lt;sub&gt;0&lt;/sub&gt;)&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> G_0=U.G_0 <span style="color: #006400">&quot;conductance quantum&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> e=U.e <span style="color: #006400">&quot;elementary charge&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational">Q.MomentumRotational</a> h=U.h <span style="color: #006400">&quot;Planck constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal">Q.AmountReciprocal</a> N_A=U.N_A <span style="color: #006400">&quot;Avogadro constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> k_B=U.k_B <span style="color: #006400">&quot;Boltzmann constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> cyc=U.cyc <span style="color: #006400">&quot;cycle&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea">Q.PowerArea</a> c_1=U.c_1 <span style="color: #006400">&quot;first radiation constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> c_2=U.c_2 <span style="color: #006400">&quot;second radiation constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> c_3_f=U.c_3_f <span style="color: #006400">
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> G_0=QCalc.Units.G_0 <span style="color: #006400">&quot;conductance quantum&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> e=QCalc.Units.e <span style="color: #006400">&quot;elementary charge&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational">Q.MomentumRotational</a> h=QCalc.Units.h <span style="color: #006400">&quot;Planck constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal">Q.AmountReciprocal</a> N_A=QCalc.Units.N_A <span style="color: #006400">&quot;Avogadro constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> k_B=QCalc.Units.k_B <span style="color: #006400">&quot;Boltzmann constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> cyc=QCalc.Units.cyc <span style="color: #006400">&quot;cycle&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea">Q.PowerArea</a> c_1=QCalc.Units.c_1 <span style="color: #006400">&quot;first radiation constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> c_2=QCalc.Units.c_2 <span style="color: #006400">
+    &quot;second radiation constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> c_3_f=QCalc.Units.c_3_f <span style="color: #006400">
     &quot;Wien frequency displacement constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> c_3_lambda=U.c_3_lambda <span style="color: #006400">
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> c_3_lambda=QCalc.Units.c_3_lambda <span style="color: #006400">
     &quot;Wien wavelength displacement constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4">Q.PowerAreicPerPotential4</a> sigma=U.sigma <span style="color: #006400">
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4">Q.PowerAreicPerPotential4</a> sigma=QCalc.Units.sigma <span style="color: #006400">
     &quot;Stefan-Boltzmann constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Ry=U.Ry <span style="color: #006400">&quot;Rydberg energy&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Ha=U.Ha <span style="color: #006400">&quot;Hartree energy&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a> T_H=U.T_H <span style="color: #006400">&quot;Hartree temperature&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Ry=QCalc.Units.Ry <span style="color: #006400">&quot;Rydberg energy&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Ha=QCalc.Units.Ha <span style="color: #006400">&quot;Hartree energy&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a> T_H=QCalc.Units.T_H <span style="color: #006400">&quot;Hartree temperature&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Mathematical relations</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> rad=U.rad <span style="color: #006400">&quot;radian&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> rad=QCalc.Units.rad <span style="color: #006400">&quot;radian&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Empirical relations</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> m=U.m <span style="color: #006400">&quot;metre&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> s=U.s <span style="color: #006400">&quot;second&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Wb=U.Wb <span style="color: #006400">&quot;weber&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> S=U.S <span style="color: #006400">&quot;siemens&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> mol=U.mol <span style="color: #006400">&quot;mole&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> K=U.K <span style="color: #006400">&quot;kelvin&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> m=QCalc.Units.m <span style="color: #006400">&quot;metre&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> s=QCalc.Units.s <span style="color: #006400">&quot;second&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Wb=QCalc.Units.Wb <span style="color: #006400">&quot;weber&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> S=QCalc.Units.S <span style="color: #006400">&quot;siemens&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> mol=QCalc.Units.mol <span style="color: #006400">&quot;mole&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> K=QCalc.Units.K <span style="color: #006400">&quot;kelvin&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// SI units decoupled from the base constants</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousIntensity">Q.LuminousIntensity</a> cd=U.cd <span style="color: #006400">&quot;candela&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousIntensity">Q.LuminousIntensity</a> cd=QCalc.Units.cd <span style="color: #006400">&quot;candela&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// SI base units [BIPM2006, Table 1] and intermediate units</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> Hz=U.Hz <span style="color: #006400">&quot;hertz&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> V=U.V <span style="color: #006400">&quot;volt&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> A=U.A <span style="color: #006400">&quot;ampere&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> C=U.C <span style="color: #006400">&quot;coulomb&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> J=U.J <span style="color: #006400">&quot;joule&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Gy=U.Gy <span style="color: #006400">&quot;gray&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> kg=U.kg <span style="color: #006400">&quot;kilogram &quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> g=U.g <span style="color: #006400">&quot;gram &quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> Hz=QCalc.Units.Hz <span style="color: #006400">&quot;hertz&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> V=QCalc.Units.V <span style="color: #006400">&quot;volt&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> A=QCalc.Units.A <span style="color: #006400">&quot;ampere&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> C=QCalc.Units.C <span style="color: #006400">&quot;coulomb&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> J=QCalc.Units.J <span style="color: #006400">&quot;joule&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Gy=QCalc.Units.Gy <span style="color: #006400">&quot;gray&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> kg=QCalc.Units.kg <span style="color: #006400">&quot;kilogram &quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> g=QCalc.Units.g <span style="color: #006400">&quot;gram &quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// SI derived units with special names and symbols [BIPM2006, Table 3]</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> sr=U.sr <span style="color: #006400">&quot;steradian&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Q.Power</a> lm=U.lm <span style="color: #006400">&quot;lumen&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Q.Power</a> W=U.W <span style="color: #006400">&quot;watt&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> N=U.N <span style="color: #006400">&quot;newton&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Pa=U.Pa <span style="color: #006400">&quot;pascal&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> T=U.T <span style="color: #006400">&quot;tesla&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreic">Q.PowerAreic</a> lx=U.lx <span style="color: #006400">&quot;lux&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> F=U.F <span style="color: #006400">&quot;farad&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> ohm=U.ohm <span style="color: #006400">&quot;ohm&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> H=U.H <span style="color: #006400">&quot;henry&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> kat=U.kat <span style="color: #006400">&quot;katal&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Sv=U.Sv <span style="color: #006400">&quot;sievert&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.TimeReciprocal">Q.TimeReciprocal</a> Bq=U.Bq <span style="color: #006400">&quot;becquerel&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> sr=QCalc.Units.sr <span style="color: #006400">&quot;steradian&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Q.Power</a> lm=QCalc.Units.lm <span style="color: #006400">&quot;lumen&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Q.Power</a> W=QCalc.Units.W <span style="color: #006400">&quot;watt&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> N=QCalc.Units.N <span style="color: #006400">&quot;newton&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Pa=QCalc.Units.Pa <span style="color: #006400">&quot;pascal&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> T=QCalc.Units.T <span style="color: #006400">&quot;tesla&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreic">Q.PowerAreic</a> lx=QCalc.Units.lx <span style="color: #006400">&quot;lux&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> F=QCalc.Units.F <span style="color: #006400">&quot;farad&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> ohm=QCalc.Units.ohm <span style="color: #006400">&quot;ohm&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> H=QCalc.Units.H <span style="color: #006400">&quot;henry&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> kat=QCalc.Units.kat <span style="color: #006400">&quot;katal&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Sv=QCalc.Units.Sv <span style="color: #006400">&quot;sievert&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.TimeReciprocal">Q.TimeReciprocal</a> Bq=QCalc.Units.Bq <span style="color: #006400">&quot;becquerel&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Non-SI units accepted for use with SI units [BIPM2006, Table 6]</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> min=U.min <span style="color: #006400">&quot;minute&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> hr=U.hr <span style="color: #006400">&quot;hour&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> d=U.d <span style="color: #006400">&quot;day&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> deg=U.deg <span style="color: #006400">&quot;degree&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> L=U.L <span style="color: #006400">&quot;liter&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> min=QCalc.Units.min <span style="color: #006400">&quot;minute&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> hr=QCalc.Units.hr <span style="color: #006400">&quot;hour&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> d=QCalc.Units.d <span style="color: #006400">&quot;day&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> deg=QCalc.Units.deg <span style="color: #006400">&quot;degree&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> L=QCalc.Units.L <span style="color: #006400">&quot;liter&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Other non-SI units [BIPM2006, Table 8]</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> g_0=U.g_0 <span style="color: #006400">&quot;standard gravity&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> cm=U.cm <span style="color: #006400">&quot;centimetre&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> cc=U.cc <span style="color: #006400">&quot;cubic centimetre&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PressureLineic">Q.PressureLineic</a> Hg=U.Hg <span style="color: #006400">
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> g_0=QCalc.Units.g_0 <span style="color: #006400">&quot;standard gravity&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> cm=QCalc.Units.cm <span style="color: #006400">&quot;centimetre&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> cc=QCalc.Units.cc <span style="color: #006400">&quot;cubic centimetre&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PressureLineic">Q.PressureLineic</a> Hg=QCalc.Units.Hg <span style="color: #006400">
     &quot;force per volume of mercury under standard gravity&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> mm=U.mm <span style="color: #006400">&quot;millimetre&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> mm=QCalc.Units.mm <span style="color: #006400">&quot;millimetre&quot;</span>;
   <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> mmHg=mm*Hg <span style="color: #006400">&quot;millimetre of mercury&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> kPa=U.kPa <span style="color: #006400">&quot;kilopascal&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> bar=U.bar <span style="color: #006400">&quot;bar&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> b=U.b <span style="color: #006400">&quot;barn&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> angstrom=U.angstrom <span style="color: #006400">&quot;angstrom&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> nmi=U.nmi <span style="color: #006400">&quot;nautical mile&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> kn=U.kn <span style="color: #006400">&quot;knot&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> kPa=QCalc.Units.kPa <span style="color: #006400">&quot;kilopascal&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> bar=QCalc.Units.bar <span style="color: #006400">&quot;bar&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> b=QCalc.Units.b <span style="color: #006400">&quot;barn&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> angstrom=QCalc.Units.angstrom <span style="color: #006400">&quot;angstrom&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> nmi=QCalc.Units.nmi <span style="color: #006400">&quot;nautical mile&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> kn=QCalc.Units.kn <span style="color: #006400">&quot;knot&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Non-SI units associated with the CGS and the CGS-Gaussian system of units</span>
   <span style="color: #006400">// [BIPM2006, Table 9]</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> Gal=U.Gal <span style="color: #006400">&quot;gal&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> dyn=U.dyn <span style="color: #006400">&quot;dyne&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> erg=U.erg <span style="color: #006400">&quot;erg&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Ba=U.Ba <span style="color: #006400">&quot;barye&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Viscosity">Q.Viscosity</a> P=U.P <span style="color: #006400">&quot;poise&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Diffusivity">Q.Diffusivity</a> St=U.St <span style="color: #006400">&quot;stokes&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Luminance">Q.Luminance</a> sb=U.sb <span style="color: #006400">&quot;stilb&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Q.Illuminance</a> ph=U.ph <span style="color: #006400">&quot;phot&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> abA=U.abA <span style="color: #006400">&quot;abampere&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> abC=U.abC <span style="color: #006400">&quot;abcoloumb&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> abV=U.abV <span style="color: #006400">&quot;abvolt&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Mx=U.Mx <span style="color: #006400">&quot;maxwell&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> Gs=U.Gs <span style="color: #006400">&quot;gauss&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> pole=U.pole <span style="color: #006400">&quot;unit pole&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFieldAux">Q.MagneticFieldAux</a> Oe=U.Oe <span style="color: #006400">&quot;oersted&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> abF=U.abF <span style="color: #006400">&quot;abfarad&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> abohm=U.abohm <span style="color: #006400">&quot;abohm&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> abH=U.abH <span style="color: #006400">&quot;abhenry&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> Gal=QCalc.Units.Gal <span style="color: #006400">&quot;gal&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> dyn=QCalc.Units.dyn <span style="color: #006400">&quot;dyne&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> erg=QCalc.Units.erg <span style="color: #006400">&quot;erg&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Ba=QCalc.Units.Ba <span style="color: #006400">&quot;barye&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Viscosity">Q.Viscosity</a> P=QCalc.Units.P <span style="color: #006400">&quot;poise&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Diffusivity">Q.Diffusivity</a> St=QCalc.Units.St <span style="color: #006400">&quot;stokes&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Luminance">Q.Luminance</a> sb=QCalc.Units.sb <span style="color: #006400">&quot;stilb&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Q.Illuminance</a> ph=QCalc.Units.ph <span style="color: #006400">&quot;phot&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> abA=QCalc.Units.abA <span style="color: #006400">&quot;abampere&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> abC=QCalc.Units.abC <span style="color: #006400">&quot;abcoloumb&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> abV=QCalc.Units.abV <span style="color: #006400">&quot;abvolt&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Mx=QCalc.Units.Mx <span style="color: #006400">&quot;maxwell&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> Gs=QCalc.Units.Gs <span style="color: #006400">&quot;gauss&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> pole=QCalc.Units.pole <span style="color: #006400">&quot;unit pole&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFieldAux">Q.MagneticFieldAux</a> Oe=QCalc.Units.Oe <span style="color: #006400">&quot;oersted&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> abF=QCalc.Units.abF <span style="color: #006400">&quot;abfarad&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> abohm=QCalc.Units.abohm <span style="color: #006400">&quot;abohm&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> abH=QCalc.Units.abH <span style="color: #006400">&quot;abhenry&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Constants related to Ampere&#39;s force law</span>
-  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_A=U.k_A <span style="color: #006400">&quot;Ampere constant&quot;</span>;
-  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PermittivityReciprocal">Q.PermittivityReciprocal</a> k_C=U.k_C <span style="color: #006400">&quot;Coulomb constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity">Q.Permittivity</a> epsilon_0=U.epsilon_0 <span style="color: #006400">&quot;electric constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Q.Permeability</a> mu_0=U.mu_0 <span style="color: #006400">&quot;magnetic constant &quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> Z_0=U.Z_0 <span style="color: #006400">&quot;characteristic impedance of vacuum&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> alpha=U.alpha <span style="color: #006400">&quot;fine-structure constant&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> a_0=U.a_0 <span style="color: #006400">&quot;Bohr radius&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavelength">Q.Wavelength</a> lambda_e=U.lambda_e <span style="color: #006400">&quot;electron Compton wavelength&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.WavelengthVelocity">Q.WavelengthVelocity</a> kappa=U.kappa <span style="color: #006400">&quot;quantum of circulation&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MassSpecific">Q.MassSpecific</a> m_e=U.m_e <span style="color: #006400">&quot;specific electron rest mass&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecific">Q.LengthSpecific</a> r_e=U.r_e <span style="color: #006400">
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_A=QCalc.Units.k_A <span style="color: #006400">&quot;Ampere constant&quot;</span>;
+  <span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PermittivityReciprocal">Q.PermittivityReciprocal</a> k_C=QCalc.Units.k_C <span style="color: #006400">&quot;Coulomb constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity">Q.Permittivity</a> epsilon_0=QCalc.Units.epsilon_0 <span style="color: #006400">
+    &quot;electric constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Q.Permeability</a> mu_0=QCalc.Units.mu_0 <span style="color: #006400">&quot;magnetic constant &quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> Z_0=QCalc.Units.Z_0 <span style="color: #006400">
+    &quot;characteristic impedance of vacuum&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> alpha=QCalc.Units.alpha <span style="color: #006400">&quot;fine-structure constant&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> a_0=QCalc.Units.a_0 <span style="color: #006400">&quot;Bohr radius&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavelength">Q.Wavelength</a> lambda_e=QCalc.Units.lambda_e <span style="color: #006400">
+    &quot;electron Compton wavelength&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.WavelengthVelocity">Q.WavelengthVelocity</a> kappa=QCalc.Units.kappa <span style="color: #006400">
+    &quot;quantum of circulation&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MassSpecific">Q.MassSpecific</a> m_e=QCalc.Units.m_e <span style="color: #006400">
+    &quot;specific electron rest mass&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecific">Q.LengthSpecific</a> r_e=QCalc.Units.r_e <span style="color: #006400">
     &quot;specific classical electron radius&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticDipoleMoment">Q.MagneticDipoleMoment</a> mu_B=U.mu_B <span style="color: #006400">&quot;Bohr magneton&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> M_e=U.M_e <span style="color: #006400">&quot;mass of an electron&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> t_H=U.t_H <span style="color: #006400">&quot;Hartree time&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> l_n=U.l_n <span style="color: #006400">&quot;natural unit of length&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> t_n=U.t_n <span style="color: #006400">&quot;natural unit of time&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticDipoleMoment">Q.MagneticDipoleMoment</a> mu_B=QCalc.Units.mu_B <span style="color: #006400">&quot;Bohr magneton&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> M_e=QCalc.Units.M_e <span style="color: #006400">&quot;mass of an electron&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> t_H=QCalc.Units.t_H <span style="color: #006400">&quot;Hartree time&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> l_n=QCalc.Units.l_n <span style="color: #006400">&quot;natural unit of length&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> t_n=QCalc.Units.t_n <span style="color: #006400">&quot;natural unit of time&quot;</span>;
 
   <span style="color: #006400">// -------------------------------------------------------------------------</span>
   <span style="color: #006400">// Other</span>
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> y=U.y <span style="color: #006400">&quot;Julian year&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> ly=U.ly <span style="color: #006400">&quot;light year&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> au=U.au <span style="color: #006400">&quot;astronomical unit&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> pc=U.pc <span style="color: #006400">&quot;parsec&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> atm=U.atm <span style="color: #006400">&quot;atmosphere&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Torr=U.Torr <span style="color: #006400">&quot;torr&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Wh=U.Wh <span style="color: #006400">&quot;watt hour&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> eV=U.eV <span style="color: #006400">&quot;electron volt&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> sp=U.sp <span style="color: #006400">&quot;spat&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> rpm=U.rpm <span style="color: #006400">&quot;revolution per minute&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> &#39;%&#39;=U.'%' <span style="color: #006400">&quot;percent&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagnetomotiveForce">Q.MagnetomotiveForce</a> AT=U.AT <span style="color: #006400">&quot;ampere-turn&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> D=U.D <span style="color: #006400">&quot;darcy&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> u=U.u <span style="color: #006400">&quot;unified atomic mass unit&quot;</span>;
-  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Q.Concentration</a> M=U.M <span style="color: #006400">&quot;molar&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> y=QCalc.Units.y <span style="color: #006400">&quot;Julian year&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> ly=QCalc.Units.ly <span style="color: #006400">&quot;light year&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> au=QCalc.Units.au <span style="color: #006400">&quot;astronomical unit&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> pc=QCalc.Units.pc <span style="color: #006400">&quot;parsec&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> atm=QCalc.Units.atm <span style="color: #006400">&quot;atmosphere&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Torr=QCalc.Units.Torr <span style="color: #006400">&quot;torr&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Wh=QCalc.Units.Wh <span style="color: #006400">&quot;watt hour&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> eV=QCalc.Units.eV <span style="color: #006400">&quot;electron volt&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> sp=QCalc.Units.sp <span style="color: #006400">&quot;spat&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> rpm=QCalc.Units.rpm <span style="color: #006400">&quot;revolution per minute&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> &#39;%&#39;=QCalc.Units.'%' <span style="color: #006400">&quot;percent&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagnetomotiveForce">Q.MagnetomotiveForce</a> AT=QCalc.Units.AT <span style="color: #006400">&quot;ampere-turn&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> D=QCalc.Units.D <span style="color: #006400">&quot;darcy&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> u=QCalc.Units.u <span style="color: #006400">&quot;unified atomic mass unit&quot;</span>;
+  <span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Q.Concentration</a> M=QCalc.Units.M <span style="color: #006400">&quot;molar&quot;</span>;
 
 <span style="color: blue">end </span>Evaluate;
 </div>
@@ -317,60 +323,60 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Parameters">
 <tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Acceleration</a></td><td>Acceleration</td><td>1*U.Gal</td><td>Acceleration [L/T2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Amount</a></td><td>Amount</td><td>1*U.mol</td><td>Amount [N]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal">AmountReciprocal</a></td><td>AmountReciprocal</td><td>1/U.C</td><td>Reciprocal of amount [1/N]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>Angle</td><td>1*U.rad</td><td>Angle [A]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Angle2</a></td><td>Angle2</td><td>1*U.sr</td><td>Solid angle [A2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Area</a></td><td>Area</td><td>1*U.b</td><td>Area [L2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Capacitance</a></td><td>Capacitance</td><td>1*U.F</td><td>Capacitance [N2.T2/(L2.M)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Concentration</a></td><td>Concentration</td><td>1*U.M</td><td>Concentration [N/L3]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Conductance</a></td><td>Conductance</td><td>1*U.S</td><td>Conductance [N2.T/(L2.M)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Current</a></td><td>Current</td><td>1*U.A</td><td>Current [N/T]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Diffusivity">Diffusivity</a></td><td>Diffusivity</td><td>1*U.St</td><td>Diffusivity [L2/T]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Energy</a></td><td>Energy</td><td>1*U.J</td><td>Energy [L2.M/T2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Force</a></td><td>Force</td><td>1*U.N</td><td>Force [L.M/T2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Frequency</a></td><td>Frequency</td><td>1*U.Hz</td><td>Frequency [A/T]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Illuminance</a></td><td>Illuminance</td><td>1*U.lm</td><td>Illuminance [J.A2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Inductance</a></td><td>Inductance</td><td>1*U.H</td><td>Inductance [L2.M/N2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Length</a></td><td>Length</td><td>1*U.m</td><td>Length [L]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecific">LengthSpecific</a></td><td>LengthSpecific</td><td>1*U.m/U.C</td><td>Specific length [L/N]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">LengthSpecificMassSpecific</a></td><td>LengthSpecificMassSpecific</td><td>1*U.H/U.m</td><td>Specific length times specific mass [L.M/N2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Luminance">Luminance</a></td><td>Luminance</td><td>1*U.sb</td><td>Luminance [J/L2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousEmittance">LuminousEmittance</a></td><td>LuminousEmittance</td><td>1*U.lx</td><td>Luminous emittance [J.A2/L2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousIntensity">LuminousIntensity</a></td><td>LuminousIntensity</td><td>1*U.cd</td><td>Luminous intensity [J]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticDipoleMoment">MagneticDipoleMoment</a></td><td>MagneticDipoleMoment</td><td>1*U.J/U.T</td><td>Magnetic dipole moment [A.L2.N/T]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFieldAux">MagneticFieldAux</a></td><td>MagneticFieldAux</td><td>1*U.AT/U.m</td><td>Auxiliary magnetic field [A.N/(L.T)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">MagneticFlux</a></td><td>MagneticFlux</td><td>1*U.Wb</td><td>Magnetic flux [L2.M/(A.N.T)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">MagneticFluxAreic</a></td><td>MagneticFluxAreic</td><td>1*U.T</td><td>Areic magnetic flux [M/(A.N.T)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">MagneticFluxReciprocal</a></td><td>MagneticFluxReciprocal</td><td>1/U.Wb</td><td>Reciprocal of magnetic flux [A.N.T/(L2.M)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">MagneticFluxSpecific</a></td><td>MagneticFluxSpecific</td><td>1*U.Wb/U.C</td><td>Specific magnetic flux [L2.M/(A.N2.T)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagnetomotiveForce">MagnetomotiveForce</a></td><td>MagnetomotiveForce</td><td>1*U.AT</td><td>Magnetomotive force [A.N/T]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Mass</a></td><td>Mass</td><td>1*U.kg</td><td>Mass [M]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MassSpecific">MassSpecific</a></td><td>MassSpecific</td><td>1*U.g/U.mol</td><td>Specific mass [M/N]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational">MomentumRotational</a></td><td>MomentumRotational</td><td>1*U.J/U.Hz</td><td>Rotational momentum [L2.M/(A.T)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Acceleration</a></td><td>Acceleration</td><td>1*Gal</td><td>Acceleration [L/T2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Amount</a></td><td>Amount</td><td>1*mol</td><td>Amount [N]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal">AmountReciprocal</a></td><td>AmountReciprocal</td><td>1/C</td><td>Reciprocal of amount [1/N]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>Angle</td><td>1*rad</td><td>Angle [A]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Angle2</a></td><td>Angle2</td><td>1*sr</td><td>Solid angle [A2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Area</a></td><td>Area</td><td>1*b</td><td>Area [L2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Capacitance</a></td><td>Capacitance</td><td>1*F</td><td>Capacitance [N2.T2/(L2.M)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Concentration</a></td><td>Concentration</td><td>1*M</td><td>Concentration [N/L3]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Conductance</a></td><td>Conductance</td><td>1*S</td><td>Conductance [N2.T/(L2.M)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Current</a></td><td>Current</td><td>1*A</td><td>Current [N/T]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Diffusivity">Diffusivity</a></td><td>Diffusivity</td><td>1*St</td><td>Diffusivity [L2/T]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Energy</a></td><td>Energy</td><td>1*J</td><td>Energy [L2.M/T2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Force</a></td><td>Force</td><td>1*N</td><td>Force [L.M/T2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Frequency</a></td><td>Frequency</td><td>1*Hz</td><td>Frequency [A/T]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Illuminance</a></td><td>Illuminance</td><td>1*lm</td><td>Illuminance [J.A2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Inductance</a></td><td>Inductance</td><td>1*H</td><td>Inductance [L2.M/N2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Length</a></td><td>Length</td><td>1*m</td><td>Length [L]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecific">LengthSpecific</a></td><td>LengthSpecific</td><td>1*m/C</td><td>Specific length [L/N]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">LengthSpecificMassSpecific</a></td><td>LengthSpecificMassSpecific</td><td>1*H/m</td><td>Specific length times specific mass [L.M/N2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Luminance">Luminance</a></td><td>Luminance</td><td>1*sb</td><td>Luminance [J/L2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousEmittance">LuminousEmittance</a></td><td>LuminousEmittance</td><td>1*lx</td><td>Luminous emittance [J.A2/L2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousIntensity">LuminousIntensity</a></td><td>LuminousIntensity</td><td>1*cd</td><td>Luminous intensity [J]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticDipoleMoment">MagneticDipoleMoment</a></td><td>MagneticDipoleMoment</td><td>1*J/T</td><td>Magnetic dipole moment [A.L2.N/T]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFieldAux">MagneticFieldAux</a></td><td>MagneticFieldAux</td><td>1*AT/m</td><td>Auxiliary magnetic field [A.N/(L.T)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">MagneticFlux</a></td><td>MagneticFlux</td><td>1*Wb</td><td>Magnetic flux [L2.M/(A.N.T)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">MagneticFluxAreic</a></td><td>MagneticFluxAreic</td><td>1*T</td><td>Areic magnetic flux [M/(A.N.T)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">MagneticFluxReciprocal</a></td><td>MagneticFluxReciprocal</td><td>1/Wb</td><td>Reciprocal of magnetic flux [A.N.T/(L2.M)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">MagneticFluxSpecific</a></td><td>MagneticFluxSpecific</td><td>1*Wb/C</td><td>Specific magnetic flux [L2.M/(A.N2.T)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MagnetomotiveForce">MagnetomotiveForce</a></td><td>MagnetomotiveForce</td><td>1*AT</td><td>Magnetomotive force [A.N/T]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Mass</a></td><td>Mass</td><td>1*kg</td><td>Mass [M]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MassSpecific">MassSpecific</a></td><td>MassSpecific</td><td>1*g/mol</td><td>Specific mass [M/N]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational">MomentumRotational</a></td><td>MomentumRotational</td><td>1*J/Hz</td><td>Rotational momentum [L2.M/(A.T)]</td></tr>
 <tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Number</a></td><td>Number</td><td>1</td><td>Number [1]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Permeability</a></td><td>Permeability</td><td>1*U.Wb/(U.AT*U.m)</td><td>Permeability [L.M/(A2.N2)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity">Permittivity</a></td><td>Permittivity</td><td>1*U.F/U.m</td><td>Permittivity [N2.T2/(L3.M)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PermittivityReciprocal">PermittivityReciprocal</a></td><td>PermittivityReciprocal</td><td>1*U.m/U.F</td><td>Reciprocal of permittivity [L3.M/(N2.T2)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Potential</a></td><td>Potential</td><td>1*U.V</td><td>Potential [L2.M/(N.T2)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">PotentialPerWavenumber</a></td><td>PotentialPerWavenumber</td><td>1*U.V*U.m/U.rad</td><td>Potential per wavenumber [L3.M/(A.N.T2)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Power</a></td><td>Power</td><td>1*U.W</td><td>Power [L2.M/T3]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea">PowerArea</a></td><td>PowerArea</td><td>1*U.W*U.m^2</td><td>Power times area [L4.M/T3]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreic">PowerAreic</a></td><td>PowerAreic</td><td>1*U.W/U.m^2</td><td>Areic power [M/T3]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4">PowerAreicPerPotential4</a></td><td>PowerAreicPerPotential4</td><td>1*U.W/(U.m^2*U.K^4)</td><td>Areic power per 4th power of potential [N4.T5/(L8.M3)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Pressure</a></td><td>Pressure</td><td>1*U.Pa</td><td>Pressure [M/(L.T2)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PressureLineic">PressureLineic</a></td><td>PressureLineic</td><td>1*U.Pa/U.m</td><td>Lineic pressure [M/(L2.T2)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Resistance</a></td><td>Resistance</td><td>1*U.ohm</td><td>Resistance [L2.M/(N2.T)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Time</a></td><td>Time</td><td>1*U.s</td><td>Time [T]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.TimeReciprocal">TimeReciprocal</a></td><td>TimeReciprocal</td><td>1*U.Bq</td><td>Reciprocal of time [1/T]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Velocity</a></td><td>Velocity</td><td>1*U.m/U.s</td><td>Velocity [L/T]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Velocity2</a></td><td>Velocity2</td><td>1*U.Sv</td><td>Squared velocity [L2/T2]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Viscosity">Viscosity</a></td><td>Viscosity</td><td>1*U.Pa*U.s/1</td><td>Viscosity [M/(L.T)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Volume</a></td><td>Volume</td><td>1*U.m^3</td><td>Volume [L3]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Wavelength">Wavelength</a></td><td>Wavelength</td><td>1*U.m/U.cyc</td><td>Wavelength [L/A]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.WavelengthVelocity">WavelengthVelocity</a></td><td>WavelengthVelocity</td><td>1*U.m^2/(U.cyc*U.s)</td><td>Wavelength times velocity [L2/(A.T)]</td></tr>
-<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Wavenumber</a></td><td>Wavenumber</td><td>1*U.cyc/U.m</td><td>Wavenumber [A/L]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Permeability</a></td><td>Permeability</td><td>1*Wb/(AT*m)</td><td>Permeability [L.M/(A2.N2)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity">Permittivity</a></td><td>Permittivity</td><td>1*F/m</td><td>Permittivity [N2.T2/(L3.M)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PermittivityReciprocal">PermittivityReciprocal</a></td><td>PermittivityReciprocal</td><td>1*m/F</td><td>Reciprocal of permittivity [L3.M/(N2.T2)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Potential</a></td><td>Potential</td><td>1*V</td><td>Potential [L2.M/(N.T2)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">PotentialPerWavenumber</a></td><td>PotentialPerWavenumber</td><td>1*V*m/rad</td><td>Potential per wavenumber [L3.M/(A.N.T2)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Power</a></td><td>Power</td><td>1*W</td><td>Power [L2.M/T3]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea">PowerArea</a></td><td>PowerArea</td><td>1*W*m^2</td><td>Power times area [L4.M/T3]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreic">PowerAreic</a></td><td>PowerAreic</td><td>1*W/m^2</td><td>Areic power [M/T3]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4">PowerAreicPerPotential4</a></td><td>PowerAreicPerPotential4</td><td>1*W/(m^2*K^4)</td><td>Areic power per 4th power of potential [N4.T5/(L8.M3)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Pressure</a></td><td>Pressure</td><td>1*Pa</td><td>Pressure [M/(L.T2)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.PressureLineic">PressureLineic</a></td><td>PressureLineic</td><td>1*Pa/m</td><td>Lineic pressure [M/(L2.T2)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Resistance</a></td><td>Resistance</td><td>1*ohm</td><td>Resistance [L2.M/(N2.T)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Time</a></td><td>Time</td><td>1*s</td><td>Time [T]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.TimeReciprocal">TimeReciprocal</a></td><td>TimeReciprocal</td><td>1*Bq</td><td>Reciprocal of time [1/T]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Velocity</a></td><td>Velocity</td><td>1*m/s</td><td>Velocity [L/T]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Velocity2</a></td><td>Velocity2</td><td>1*Sv</td><td>Squared velocity [L2/T2]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Viscosity">Viscosity</a></td><td>Viscosity</td><td>1*Pa*s/1</td><td>Viscosity [M/(L.T)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Volume</a></td><td>Volume</td><td>1*m^3</td><td>Volume [L3]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Wavelength">Wavelength</a></td><td>Wavelength</td><td>1*m/cyc</td><td>Wavelength [L/A]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.WavelengthVelocity">WavelengthVelocity</a></td><td>WavelengthVelocity</td><td>1*m^2/(cyc*s)</td><td>Wavelength times velocity [L2/(A.T)]</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Wavenumber</a></td><td>Wavenumber</td><td>1*cyc/m</td><td>Wavenumber [A/L]</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
@@ -380,71 +386,70 @@
   <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Block">Icons.Block</a>;
 
   <span style="color: #006400">// Generated from QCalc/Resources/quantities.xlsx, 2014-8-22</span>
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> Acceleration=1*U.Gal <span style="color: #006400">&quot;Acceleration&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> Amount=1*U.mol <span style="color: #006400">&quot;Amount&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal">Q.AmountReciprocal</a> AmountReciprocal=1/U.C <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> Angle=1*U.rad <span style="color: #006400">&quot;Angle&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> Angle2=1*U.sr <span style="color: #006400">&quot;Solid angle&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> Area=1*U.b <span style="color: #006400">&quot;Area&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> Capacitance=1*U.F <span style="color: #006400">&quot;Capacitance&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Q.Concentration</a> Concentration=1*U.M <span style="color: #006400">&quot;Concentration&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> Conductance=1*U.S <span style="color: #006400">&quot;Conductance&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> Current=1*U.A <span style="color: #006400">&quot;Current&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Diffusivity">Q.Diffusivity</a> Diffusivity=1*U.St <span style="color: #006400">&quot;Diffusivity&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Energy=1*U.J <span style="color: #006400">&quot;Energy&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> Force=1*U.N <span style="color: #006400">&quot;Force&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> Frequency=1*U.Hz <span style="color: #006400">&quot;Frequency&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Q.Illuminance</a> Illuminance=1*U.lm <span style="color: #006400">&quot;Illuminance&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> Inductance=1*U.H <span style="color: #006400">&quot;Inductance&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> Length=1*U.m <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecific">Q.LengthSpecific</a> LengthSpecific=1*U.m/U.C <span style="color: #006400">&quot;Specific length&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> LengthSpecificMassSpecific=1*U.H/U.m <span style="color: #006400">
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> Acceleration=1*Gal <span style="color: #006400">&quot;Acceleration&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> Amount=1*mol <span style="color: #006400">&quot;Amount&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal">Q.AmountReciprocal</a> AmountReciprocal=1/C <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> Angle=1*rad <span style="color: #006400">&quot;Angle&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> Angle2=1*sr <span style="color: #006400">&quot;Solid angle&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> Area=1*b <span style="color: #006400">&quot;Area&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> Capacitance=1*F <span style="color: #006400">&quot;Capacitance&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Q.Concentration</a> Concentration=1*M <span style="color: #006400">&quot;Concentration&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> Conductance=1*S <span style="color: #006400">&quot;Conductance&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> Current=1*A <span style="color: #006400">&quot;Current&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Diffusivity">Q.Diffusivity</a> Diffusivity=1*St <span style="color: #006400">&quot;Diffusivity&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Energy=1*J <span style="color: #006400">&quot;Energy&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> Force=1*N <span style="color: #006400">&quot;Force&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> Frequency=1*Hz <span style="color: #006400">&quot;Frequency&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Q.Illuminance</a> Illuminance=1*lm <span style="color: #006400">&quot;Illuminance&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> Inductance=1*H <span style="color: #006400">&quot;Inductance&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> Length=1*m <span style="color: #006400">&quot;Length&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecific">Q.LengthSpecific</a> LengthSpecific=1*m/C <span style="color: #006400">&quot;Specific length&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> LengthSpecificMassSpecific=1*H/m <span style="color: #006400">
     &quot;Specific length times specific mass&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Luminance">Q.Luminance</a> Luminance=1*U.sb <span style="color: #006400">&quot;Luminance&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousEmittance">Q.LuminousEmittance</a> LuminousEmittance=1*U.lx <span style="color: #006400">&quot;Luminous emittance&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousIntensity">Q.LuminousIntensity</a> LuminousIntensity=1*U.cd <span style="color: #006400">&quot;Luminous intensity&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticDipoleMoment">Q.MagneticDipoleMoment</a> MagneticDipoleMoment=1*U.J/U.T <span style="color: #006400">
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Luminance">Q.Luminance</a> Luminance=1*sb <span style="color: #006400">&quot;Luminance&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousEmittance">Q.LuminousEmittance</a> LuminousEmittance=1*lx <span style="color: #006400">&quot;Luminous emittance&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousIntensity">Q.LuminousIntensity</a> LuminousIntensity=1*cd <span style="color: #006400">&quot;Luminous intensity&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticDipoleMoment">Q.MagneticDipoleMoment</a> MagneticDipoleMoment=1*J/T <span style="color: #006400">
     &quot;Magnetic dipole moment&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFieldAux">Q.MagneticFieldAux</a> MagneticFieldAux=1*U.AT/U.m <span style="color: #006400">
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFieldAux">Q.MagneticFieldAux</a> MagneticFieldAux=1*AT/m <span style="color: #006400">
     &quot;Auxiliary magnetic field&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> MagneticFlux=1*U.Wb <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> MagneticFluxAreic=1*U.T <span style="color: #006400">&quot;Areic magnetic flux&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> MagneticFluxReciprocal=1/U.Wb <span style="color: #006400">
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> MagneticFlux=1*Wb <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> MagneticFluxAreic=1*T <span style="color: #006400">&quot;Areic magnetic flux&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> MagneticFluxReciprocal=1/Wb <span style="color: #006400">
     &quot;Reciprocal of magnetic flux&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">Q.MagneticFluxSpecific</a> MagneticFluxSpecific=1*U.Wb/U.C <span style="color: #006400">
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">Q.MagneticFluxSpecific</a> MagneticFluxSpecific=1*Wb/C <span style="color: #006400">
     &quot;Specific magnetic flux&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagnetomotiveForce">Q.MagnetomotiveForce</a> MagnetomotiveForce=1*U.AT <span style="color: #006400">
-    &quot;Magnetomotive force&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> Mass=1*U.kg <span style="color: #006400">&quot;Mass&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MassSpecific">Q.MassSpecific</a> MassSpecific=1*U.g/U.mol <span style="color: #006400">&quot;Specific mass&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational">Q.MomentumRotational</a> MomentumRotational=1*U.J/U.Hz <span style="color: #006400">
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagnetomotiveForce">Q.MagnetomotiveForce</a> MagnetomotiveForce=1*AT <span style="color: #006400">&quot;Magnetomotive force&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> Mass=1*kg <span style="color: #006400">&quot;Mass&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MassSpecific">Q.MassSpecific</a> MassSpecific=1*g/mol <span style="color: #006400">&quot;Specific mass&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational">Q.MomentumRotational</a> MomentumRotational=1*J/Hz <span style="color: #006400">
     &quot;Rotational momentum&quot;</span>;
   <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> Number=1 <span style="color: #006400">&quot;Number&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Q.Permeability</a> Permeability=1*U.Wb/(U.AT*U.m) <span style="color: #006400">&quot;Permeability&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity">Q.Permittivity</a> Permittivity=1*U.F/U.m <span style="color: #006400">&quot;Permittivity&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PermittivityReciprocal">Q.PermittivityReciprocal</a> PermittivityReciprocal=1*U.m/U.F <span style="color: #006400">
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Q.Permeability</a> Permeability=1*Wb/(AT*m) <span style="color: #006400">&quot;Permeability&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity">Q.Permittivity</a> Permittivity=1*F/m <span style="color: #006400">&quot;Permittivity&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PermittivityReciprocal">Q.PermittivityReciprocal</a> PermittivityReciprocal=1*m/F <span style="color: #006400">
     &quot;Reciprocal of permittivity&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> Potential=1*U.V <span style="color: #006400">&quot;Potential&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> PotentialPerWavenumber=1*U.V*U.m/U.rad <span style="color: #006400">
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> Potential=1*V <span style="color: #006400">&quot;Potential&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> PotentialPerWavenumber=1*V*m/rad <span style="color: #006400">
     &quot;Potential per wavenumber&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Q.Power</a> Power=1*U.W <span style="color: #006400">&quot;Power&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea">Q.PowerArea</a> PowerArea=1*U.W*U.m^2 <span style="color: #006400">&quot;Power times area&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreic">Q.PowerAreic</a> PowerAreic=1*U.W/U.m^2 <span style="color: #006400">&quot;Areic power&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4">Q.PowerAreicPerPotential4</a> PowerAreicPerPotential4=1*U.W/(U.m^2*
-      U.K^4) <span style="color: #006400">&quot;Areic power per 4th power of potential&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Pressure=1*U.Pa <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PressureLineic">Q.PressureLineic</a> PressureLineic=1*U.Pa/U.m <span style="color: #006400">&quot;Lineic pressure&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> Resistance=1*U.ohm <span style="color: #006400">&quot;Resistance&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> Time=1*U.s <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.TimeReciprocal">Q.TimeReciprocal</a> TimeReciprocal=1*U.Bq <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> Velocity=1*U.m/U.s <span style="color: #006400">&quot;Velocity&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Velocity2=1*U.Sv <span style="color: #006400">&quot;Squared velocity&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Viscosity">Q.Viscosity</a> Viscosity=1*U.Pa*U.s/1 <span style="color: #006400">&quot;Viscosity&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> Volume=1*U.m^3 <span style="color: #006400">&quot;Volume&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavelength">Q.Wavelength</a> Wavelength=1*U.m/U.cyc <span style="color: #006400">&quot;Wavelength&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.WavelengthVelocity">Q.WavelengthVelocity</a> WavelengthVelocity=1*U.m^2/(U.cyc*U.s) <span style="color: #006400">
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Q.Power</a> Power=1*W <span style="color: #006400">&quot;Power&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea">Q.PowerArea</a> PowerArea=1*W*m^2 <span style="color: #006400">&quot;Power times area&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreic">Q.PowerAreic</a> PowerAreic=1*W/m^2 <span style="color: #006400">&quot;Areic power&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4">Q.PowerAreicPerPotential4</a> PowerAreicPerPotential4=1*W/(m^2*K^4) <span style="color: #006400">
+    &quot;Areic power per 4th power of potential&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Pressure=1*Pa <span style="color: #006400">&quot;Pressure&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.PressureLineic">Q.PressureLineic</a> PressureLineic=1*Pa/m <span style="color: #006400">&quot;Lineic pressure&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> Resistance=1*ohm <span style="color: #006400">&quot;Resistance&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> Time=1*s <span style="color: #006400">&quot;Time&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.TimeReciprocal">Q.TimeReciprocal</a> TimeReciprocal=1*Bq <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> Velocity=1*m/s <span style="color: #006400">&quot;Velocity&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Velocity2=1*Sv <span style="color: #006400">&quot;Squared velocity&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Viscosity">Q.Viscosity</a> Viscosity=1*Pa*s/1 <span style="color: #006400">&quot;Viscosity&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> Volume=1*m^3 <span style="color: #006400">&quot;Volume&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavelength">Q.Wavelength</a> Wavelength=1*m/cyc <span style="color: #006400">&quot;Wavelength&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.WavelengthVelocity">Q.WavelengthVelocity</a> WavelengthVelocity=1*m^2/(cyc*s) <span style="color: #006400">
     &quot;Wavelength times velocity&quot;</span>;
-  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Q.Wavenumber</a> Wavenumber=1*U.cyc/U.m <span style="color: #006400">&quot;Wavenumber&quot;</span>;
+  <span style="color: blue">parameter </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Q.Wavenumber</a> Wavenumber=1*cyc/m <span style="color: #006400">&quot;Wavenumber&quot;</span>;
   <span style="color: #006400">// -------- end from QCalc/Resources/quantities.xlsx</span>
 <span style="color: blue">end </span>ExampleModel;
 </div>
@@ -455,7 +460,7 @@
 <div class="footer">
   Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies"><span id="_author5" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <span itemprop="name">Kevin Davies</span></span></a>, <a href="http://www.hnei.hawaii.edu"><span id="_publisher7" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Thu Sep  4 10:49:02 2014.
+<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Mon Sep  8 11:20:24 2014.
 </div>
 
 </span></body></html>
