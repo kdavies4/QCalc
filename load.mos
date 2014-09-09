@@ -7,7 +7,7 @@
 // Options to (possibly) increase simulation performance
 // The settings below are all the non-default ones.  Comment the lines to use
 // the defaults.
-Advanced.ImprovedPackageConstants = true "Improved code generation for package constants";
+Advanced.ImprovedPackageConstants := true "Improved code generation for package constants";
 
 // ------------
 // Startup
@@ -25,13 +25,13 @@ cd("..")
 // Don't check the unit consistency of equations.  The "unit" attribute is
 // used to denote the dimension (see QCalc.Quantities), and Dymola doesn't
 // recognize its symbols.
-Advanced.CheckUnits = false;
+Advanced.CheckUnits := false;
 
 // Save a static, translated copy of the values of all the constants and units.
 // The constants and units will also be available in the workspace, but only
 // until the next model is simulated.  To load the and retain the variables
 // until Dymola is closed, translate a model besides QCalc.Units.Evaluate and
 // then run "units.mos" as a script.
-Advanced.OutputModelicaCode = true "Output dsmodel in Modelica style";
+Advanced.OutputModelicaCode := true "Output dsmodel in Modelica style";
 translateModel("QCalc.Units.Examples.Evaluate");
 Modelica.Utilities.Files.copy("dsmodel.mof", "units.mos", true);

@@ -7,7 +7,7 @@ replaceable function setup "Set up the units in Dymola"
   // import Modelica.Utilities.Streams.print;
   extends Icons.Function;
 
-algorithm
+  algorithm
   // print("Establishing display units...");
 
   // -------------------------------------------------------------------------
@@ -22,7 +22,6 @@ algorithm
   defineDefaultDisplayUnit("L/T2", "m/s2") "Acceleration";
   defineDefaultDisplayUnit("L/T2", "Gal") "Acceleration";
   defineDefaultDisplayUnit("N", "C") "Amount";
-  defineDefaultDisplayUnit("N", "abC") "Amount";
   defineDefaultDisplayUnit("1/N", "1/mol") "Reciprocal of amount";
   defineDefaultDisplayUnit("1/N", "1/abC") "Reciprocal of amount";
   defineDefaultDisplayUnit("1/N", "N_A/") "Reciprocal of amount";
@@ -759,7 +758,7 @@ recognized by Dymola.</p>
 
 <p>For more information, please see the documentation for the
 <a href=\"modelica://QCalc.Units\">Units</a> package.</p></html>"));
-end setup;
+  end setup;
 
 // -------------------------------------------------------------------------
 // Mathematical constants
@@ -1177,7 +1176,6 @@ final constant Q.Mass u=g/(N_A*mol)
 final constant Q.Concentration M=mol/L
   "<html><a href=\"http://en.wikipedia.org/wiki/Molar_concentration#Units\">molar</a></html>";
 final constant Interfaces.kPag kPag "kilopascal, gauge";
-
 
 
 annotation (
@@ -1682,6 +1680,7 @@ back to footnote 3 in the text.\">&#8629;</a></small></p>
     disclaimer of warranty) see
     <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
+
   Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
   Icon(graphics={
       Line(
@@ -1718,6 +1717,7 @@ back to footnote 3 in the text.\">&#8629;</a></small></p>
       Polygon(
         points={{68,2},{68,-46},{64,-60},{58,-68},{48,-72},{18,-72},{18,-64},{
             46,-64},{54,-60},{58,-54},{60,-46},{60,-26},{64,-20},{68,-6},{68,2}},
+
         lineColor={64,64,64},
         smooth=Smooth.Bezier,
         fillColor={175,175,175},

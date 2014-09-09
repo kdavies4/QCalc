@@ -13,6 +13,7 @@ import Q = QCalc.Quantities;
 
 
 
+
 annotation (
   preferredView="info",
   Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
@@ -36,7 +37,7 @@ annotation (
 <p>Nonscalar units such as <a href=\"http://en.wikipedia.org/wiki/Celsius\">degree Celsius</a>
 and <a href=\"http://en.wikipedia.org/wiki/Decibel\">decibel</a> are also supported.
 The <code>*</code> and <code>/</code> operators are overloaded
-to call the unit's transformation (<i>number</i> &rarr; <i>quantity</i>) and its inverse, respectively.  
+to call the unit's transformation (<i>number</i> &#8614; <i>quantity</i>) and its inverse, respectively.  
 For example, this will give a value of <i>x</i>&nbsp;= 100:</p>
 
  <pre>
@@ -80,7 +81,9 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
     disclaimer of warranty) see
     <a href=\"modelica://QCalc.UsersGuide.License\">QCalc.UsersGuide.License</a>
     or visit <a href=\"http://www.modelica.org/licenses/ModelicaLicense2\">http://www.modelica.org/licenses/ModelicaLicense2</a>.</i></p></html>"),
+
   version="",
   versionDate="",
   uses(Modelica(version="3.2.1")));
+
 end QCalc;
