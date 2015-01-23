@@ -4,7 +4,7 @@
 <title>QCalc.Blocks</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="Modelica units quantities dimension natural unit system convert conversion SI CGS Gauss Hartree Planck">
-<meta name="date" content="2014-9-8">
+<meta name="date" content="2015-1-22">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Input/output blocks to convert units">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -19,7 +19,8 @@
     <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
-  <h3>Library Contents</h3>
+<h3>Library Contents</h3>
+
     <ul>
     <li><a href="QCalc_UsersGuide.html"><img src="images/QCalc.UsersGuideS.png" alt="QCalc.UsersGuide" width="20" height="20" align="top">&nbsp;User's Guide</a></li>
     <li><a href="QCalc_Blocks.html"><img src="images/QCalc.BlocksS.png" alt="QCalc.Blocks" width="20" height="20" align="top">&nbsp;Blocks</a></li>
@@ -44,7 +45,7 @@
 
 <h3>Download</h3>
     <ul>
-      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.3.2.zip">Latest version<br>(v0.3.2, 2014-08-22)</a></span></li>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.3.3.zip">Latest version<br>(v0.3.3, 2015-01-22)</a></span></li>
     </ul>
   </div>
 </div>
@@ -52,7 +53,8 @@
 <div class="document">
   <div class="documentwrapper">
     <div class="bodywrapper">
-      <div class="body"><h2><a name="QCalc.Blocks"></a><a href="index.html#QCalc">QCalc</a>.Blocks</h2>
+      <div class="body">
+<h2><a name="QCalc.Blocks"></a><a href="index.html#QCalc">QCalc</a>.Blocks</h2>
 
 <p>
 <b>Input/output blocks to convert units</b><br>
@@ -94,7 +96,7 @@
 
 <p>To convert a number to a quantity using a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'scalar unit'">scalar unit</a>,
     instead use
-    <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Math.html#Modelica.Blocks.Math.Gain">Modelica.Blocks.Math.Gain</a> with <i>k</i>
+    <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Gain">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the unit.</p>
 
 <h3>Parameters</h3>
@@ -108,24 +110,24 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Connectors">
 <tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>input <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">RealInput</a></td><td>n</td><td>Connector for the number</td></tr>
-<tr><td>output <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">RealOutput</a></td><td>q</td><td>Connector for the quantity</td></tr>
+<tr><td>input <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput">RealInput</a></td><td>n</td><td>Connector for the number</td></tr>
+<tr><td>output <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">RealOutput</a></td><td>q</td><td>Connector for the quantity</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">block</span> Num2Qty <span style="color: #006400">&quot;Convert a number to a quantity using a lambda unit&quot;</span>
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">block</span> Num2Qty <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Convert a number to a quantity using a lambda unit&quot;</span>
 
-  <span style="color: blue">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">QCalc.Units.Interfaces.degC</a> u <span style="color: blue">constrainedby </span>
-    QCalc.Units.Interfaces.LambdaUnit <span style="color: #006400">&quot;Lambda unit&quot;</span>;
+  <span style="color: blue; font-weight: normal; font-style: normal;">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">QCalc.Units.Interfaces.degC</a> u <span style="color: blue; font-weight: normal; font-style: normal;">constrainedby </span>
+    QCalc.Units.Interfaces.LambdaUnit <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Lambda unit&quot;</span>;
 
-  <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">Modelica.Blocks.Interfaces.RealInput</a> n <span style="color: #006400">&quot;Connector for the number&quot;</span>;
-  <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">Modelica.Blocks.Interfaces.RealOutput</a> q <span style="color: #006400">&quot;Connector for the quantity&quot;</span>;
+  <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput">Modelica.Blocks.Interfaces.RealInput</a> n <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Connector for the number&quot;</span>;
+  <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">Modelica.Blocks.Interfaces.RealOutput</a> q <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Connector for the quantity&quot;</span>;
 
-<span style="color: blue">equation </span>
+<span style="color: blue; font-weight: normal; font-style: normal;">equation </span>
   q = n*u;
 
-<span style="color: blue">end </span>Num2Qty;
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>Num2Qty;
 </div>
 <hr>
 
@@ -141,7 +143,7 @@
 
 <p>To convert a quantity to a number using a <a href="QCalc_UsersGuide_Glossary.html#QCalc.UsersGuide.Glossary.'scalar unit'">scalar unit</a>,
     instead use
-    <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Math.html#Modelica.Blocks.Math.Gain">Modelica.Blocks.Math.Gain</a> with <i>k</i>
+    <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Math.html#Modelica.Blocks.Math.Gain">Modelica.Blocks.Math.Gain</a> with <i>k</i>
     set to the reciprocal of the unit.</p>
 
 <h3>Parameters</h3>
@@ -155,24 +157,24 @@
 
 <table border="1" cellspacing="0" cellpadding="2" summary="Connectors">
 <tr><th>Type</th><th>Name</th><th>Description</th></tr>
-<tr><td>input <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">RealInput</a></td><td>q</td><td>Connector for the quantity</td></tr>
-<tr><td>output <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">RealOutput</a></td><td>n</td><td>Connector for the number</td></tr>
+<tr><td>input <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput">RealInput</a></td><td>q</td><td>Connector for the quantity</td></tr>
+<tr><td>output <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">RealOutput</a></td><td>n</td><td>Connector for the number</td></tr>
 </table>
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">block</span> Qty2Num <span style="color: #006400">&quot;Convert a quantity to a number using a lambda unit&quot;</span>
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">block</span> Qty2Num <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Convert a quantity to a number using a lambda unit&quot;</span>
 
-  <span style="color: blue">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">QCalc.Units.Interfaces.degC</a> u <span style="color: blue">constrainedby </span>
-    QCalc.Units.Interfaces.LambdaUnit <span style="color: #006400">&quot;Lambda unit&quot;</span>;
+  <span style="color: blue; font-weight: normal; font-style: normal;">replaceable </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">QCalc.Units.Interfaces.degC</a> u <span style="color: blue; font-weight: normal; font-style: normal;">constrainedby </span>
+    QCalc.Units.Interfaces.LambdaUnit <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Lambda unit&quot;</span>;
 
-  <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealInput">Modelica.Blocks.Interfaces.RealInput</a> q <span style="color: #006400">&quot;Connector for the quantity&quot;</span>;
-  <a href="http://build.openmodelica.org/Documentation/Modelica.Blocks.Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">Modelica.Blocks.Interfaces.RealOutput</a> n <span style="color: #006400">&quot;Connector for the number&quot;</span>;
+  <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealInput">Modelica.Blocks.Interfaces.RealInput</a> q <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Connector for the quantity&quot;</span>;
+  <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Blocks_Interfaces.html#Modelica.Blocks.Interfaces.RealOutput">Modelica.Blocks.Interfaces.RealOutput</a> n <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Connector for the number&quot;</span>;
 
-<span style="color: blue">equation </span>
+<span style="color: blue; font-weight: normal; font-style: normal;">equation </span>
   q = n*u;
 
-<span style="color: blue">end </span>Qty2Num;
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>Qty2Num;
 </div>
       </div>
     </div>
@@ -181,7 +183,7 @@
 <div class="footer">
   Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies"><span id="_author5" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <span itemprop="name">Kevin Davies</span></span></a>, <a href="http://www.hnei.hawaii.edu"><span id="_publisher7" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Mon Sep  8 11:20:24 2014.
+<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Thu Jan 22 14:34:20 2015.
 </div>
 
 </span></body></html>

@@ -4,7 +4,7 @@
 <title>QCalc.Units</title>
 <meta name="title" content="Modelica units based on quantity calculus">
 <meta name="keywords" content="Modelica units quantities dimension natural unit system convert conversion SI CGS Gauss Hartree Planck">
-<meta name="date" content="2014-9-8">
+<meta name="date" content="2015-1-22">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="description" content="Constants and units of physical measure">
 <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
@@ -19,7 +19,8 @@
     <img src="images/logo.svg" alt="Logo" width=150>
   </a></p>
 
-  <h3>Library Contents</h3>
+<h3>Library Contents</h3>
+
     <ul>
     <li><a href="QCalc_UsersGuide.html"><img src="images/QCalc.UsersGuideS.png" alt="QCalc.UsersGuide" width="20" height="20" align="top">&nbsp;User's Guide</a></li>
     <li><a href="QCalc_Blocks.html"><img src="images/QCalc.BlocksS.png" alt="QCalc.Blocks" width="20" height="20" align="top">&nbsp;Blocks</a></li>
@@ -44,7 +45,7 @@
 
 <h3>Download</h3>
     <ul>
-      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.3.2.zip">Latest version<br>(v0.3.2, 2014-08-22)</a></span></li>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.3.3.zip">Latest version<br>(v0.3.3, 2015-01-22)</a></span></li>
     </ul>
   </div>
 </div>
@@ -52,7 +53,8 @@
 <div class="document">
   <div class="documentwrapper">
     <div class="bodywrapper">
-      <div class="body"><h2><a name="QCalc.Units"></a><a href="index.html#QCalc">QCalc</a>.Units</h2>
+      <div class="body">
+<h2><a name="QCalc.Units"></a><a href="index.html#QCalc">QCalc</a>.Units</h2>
 
 <p>
 <b>Constants and units of physical measure</b><br>
@@ -99,8 +101,8 @@ divided to arrive at the number as it is entered by or presented to the
 user.  The <code>Real</code> type contains other attributes as well,
 including the <code>quantity</code> string.</p>
 
-<p>The <a href="http://build.openmodelica.org/Documentation/Modelica.SIunits.html#Modelica.SIunits">SIunits</a> package of the
-<a href="http://build.openmodelica.org/Documentation/Modelica.html#Modelica">Modelica Standard Library</a> contains
+<p>The <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_SIunits.html#Modelica.SIunits">SIunits</a> package of the
+<a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica.html#Modelica">Modelica Standard Library</a> contains
 types that extend the <code>Real</code> type.  The type definitions
 modify the <code>unit</code>, <code>displayUnit</code>, and
 <code>quantity</code> attributes (among others) to represent various
@@ -109,9 +111,9 @@ attributes are based on the
 <a href="http://en.wikipedia.org/wiki/International_System_of_Units">International System of Units</a> (Syst&egrave;me
 international d'unit&eacute;s, SI). The <code>quantity</code> string is
 the name of the physical quantity.  For example, the
-<a href="http://build.openmodelica.org/Documentation/Modelica.SIunits.html#Modelica.SIunits.Velocity">Velocity</a>  type has a
+<a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_SIunits.html#Modelica.SIunits.Velocity">Velocity</a>  type has a
 <code>unit</code> of "m/s" and a <code>quantity</code> of "Velocity".
-If an instance of <a href="http://build.openmodelica.org/Documentation/Modelica.SIunits.html#Modelica.SIunits.Velocity">Velocity</a>
+If an instance of <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_SIunits.html#Modelica.SIunits.Velocity">Velocity</a>
 has a <code>value</code> of one (<i>v</i> = 1), then it is
 meant that "the value of velocity is one metre per second."  Again, the
 <code>value</code> attribute represents the number, or the value of the
@@ -161,7 +163,7 @@ equal to one&mdash;the
 <a href="http://en.wikipedia.org/wiki/Kelvin">kelvin</a> (K),
 <a href="http://en.wikipedia.org/wiki/Mole_(unit)">mole</a> (mol), and
 <a href="http://en.wikipedia.org/wiki/Candela">candela</a> (cd).  This is implicitly
-the case in the <a href="http://build.openmodelica.org/Documentation/Modelica.SIunits.html#Modelica.SIunits">SIunits</a>
+the case in the <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_SIunits.html#Modelica.SIunits">SIunits</a>
 package, but again, it hardly captures the idea that the value of a
 quantity is the product of a number and a unit.</p>
 
@@ -1097,259 +1099,259 @@ considered as the abbreviation for sphere as well as spat.</small></p>
 
 <h3>Types and constants</h3>
 
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> pi=2*<span style="color: red">acos</span>(0) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> pi=2*<span style="color: red; font-weight: normal; font-style: normal;">acos</span>(0) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Pi">pi</a> (<i>&pi;</i>)&quot;</span>;</pre>
-<pre><span style="color: blue">replaceable </span><span style="color: blue">constant </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.SIKmol">Bases.SIKmol</a> base <span style="color: blue">constrainedby </span>Bases.Base <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">replaceable </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.SIKmol">Bases.SIKmol</a> base <span style="color: blue; font-weight: normal; font-style: normal;">constrainedby </span>Bases.Base <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;Scalable base constants&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Q.Wavenumber</a> R_inf=base.R_inf <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavenumber">Q.Wavenumber</a> R_inf=base.R_inf <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Rydberg_constant">Rydberg constant</a> (<i>R</i><sub>&infin;</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> c=base.c <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> c=base.c <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Speed_of_light">speed of light</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> k_J=base.k_J <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> k_J=base.k_J <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Josephson_constant">Josephson constant</a> (<i>k</i><sub>J</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">Q.MagneticFluxSpecific</a> R_K=base.R_K <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxSpecific">Q.MagneticFluxSpecific</a> R_K=base.R_K <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Von_Klitzing_constant">von Klitzing constant</a> (<i>R</i><sub>K</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> k_F=base.k_F <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> k_F=base.k_F <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Faraday_constant">Faraday constant</a> (<i>k</i><sub>F</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> R=base.R <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> R=base.R <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Gas_constant">gas constant</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_Aprime=base.k_Aprime <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_Aprime=base.k_Aprime <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;modified Ampere constant (<i>k</i><sub>A</sub> cyc/&alpha;)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Phi_0=1/k_J <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Phi_0=1/k_J <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Magnetic_flux_quantum">magnetic flux quantum</a> (&Phi;<sub>0</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> G_0=2/R_K <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> G_0=2/R_K <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Conductance_quantum">conductance quantum</a> (<i>G</i><sub>0</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> e=G_0*Phi_0 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> e=G_0*Phi_0 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Elementary_charge">elementary charge</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational">Q.MomentumRotational</a> h=2*e*Phi_0 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MomentumRotational">Q.MomentumRotational</a> h=2*e*Phi_0 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Planck_constant">Planck constant</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal">Q.AmountReciprocal</a> N_A=k_F/e <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.AmountReciprocal">Q.AmountReciprocal</a> N_A=k_F/e <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Avogadro_number">Avogadro constant</a> (<i>N</i><sub>A</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> k_B=R/N_A <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> k_B=R/N_A <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Boltzmann_constant">Boltzmann constant</a> (<i>k</i><sub>B</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> cyc=k_Aprime*c/R_K <span style="color: #006400">&quot;cycle&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea">Q.PowerArea</a> c_1=2*pi*h*c^2/cyc^3 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> cyc=k_Aprime*c/R_K <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;cycle&quot;</span>;</pre>
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerArea">Q.PowerArea</a> c_1=2*pi*h*c^2/cyc^3 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://physics.nist.gov/cgi-bin/cuu/Value?c11strc">first radiation constant</a> (<i>c</i><sub>1</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> c_2=h*c/k_B <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> c_2=h*c/k_B <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://physics.nist.gov/cgi-bin/cuu/Value?c22ndrc">second radiation constant</a> (<i>c</i><sub>2</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> c_3_f=2.821439372122079*c/c_2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxReciprocal">Q.MagneticFluxReciprocal</a> c_3_f=2.821439372122079*c/c_2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Wien's_displacement_law">Wien frequency displacement constant</a> (<i>c</i><sub>3 <i>f</i></sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> c_3_lambda=c_2/4.965114231744276 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PotentialPerWavenumber">Q.PotentialPerWavenumber</a> c_3_lambda=c_2/4.965114231744276 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Wien's_displacement_law">Wien wavelength displacement constant</a> (<i>c</i><sub>3 &lambda;</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4">Q.PowerAreicPerPotential4</a> sigma=c_1/15*(pi/c_2)^4 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PowerAreicPerPotential4">Q.PowerAreicPerPotential4</a> sigma=c_1/15*(pi/c_2)^4 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_constant">Stefan-Boltzmann constant</a> (&sigma;)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Ry=h*c*R_inf <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Ry=h*c*R_inf <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Rydberg_constant#Value_of_the_Rydberg_constant_and_Rydberg_unit_of_energy">Rydberg energy</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Ha=2*Ry <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Ha=2*Ry <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Hartree">Hartree energy</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a> T_H=Ha/k_B <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a> T_H=Ha/k_B <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;Hartree temperature (<i>T</i><sub>H</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> rad=cyc/(2*pi) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> rad=cyc/(2*pi) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Rad_(unit)">radian</a>&quot;</span>;</pre>
-<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> m=10973731.568539*cyc/R_inf <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> m=10973731.568539*cyc/R_inf <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Metre">metre</a>&quot;</span>;</pre>
-<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> s=299792458*m/c <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> s=299792458*m/c <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Second">second</a>&quot;</span>;</pre>
-<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Wb=483597.870e9/k_J <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Wb=483597.870e9/k_J <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Weber_(unit)">weber</a>&quot;</span>;</pre>
-<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> S=25812.8074434/(R_K*cyc) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Conductance">Q.Conductance</a> S=25812.8074434/(R_K*cyc) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Siemens_(unit)">siemens</a>&quot;</span>;</pre>
-<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> mol=96485.3365*Wb*cyc*S/k_F <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> mol=96485.3365*Wb*cyc*S/k_F <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Mole_(unit)">mole</a>&quot;</span>;</pre>
-<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a> K=8.3144621*(Wb*cyc)^2*S/(s*mol*R) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Temperature">Q.Temperature</a> K=8.3144621*(Wb*cyc)^2*S/(s*mol*R) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Kelvin">kelvin</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousIntensity">Q.LuminousIntensity</a> cd=1 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousIntensity">Q.LuminousIntensity</a> cd=1 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Candela">candela</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> Hz=cyc/s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> Hz=cyc/s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Hertz">hertz</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> V=Wb*Hz <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> V=Wb*Hz <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Volt">volt</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> A=V*S <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> A=V*S <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Ampere">ampere</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> C=A*s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> C=A*s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Coulomb">coulomb</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> J=V*C <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> J=V*C <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Joule">joule</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Gy=(m/s)^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Gy=(m/s)^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Gray_unit">gray</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> kg=J/Gy <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> kg=J/Gy <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Kilogram">kilogram</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> g=kg/Prefixes.k <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> g=kg/Prefixes.k <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Gram">gram</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> sr=rad^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> sr=rad^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Steradian">steradian</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Q.Illuminance</a> lm=cd*sr <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Q.Illuminance</a> lm=cd*sr <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Lumen_(unit)">lumen</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Q.Power</a> W=J/s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Power">Q.Power</a> W=J/s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Watt">watt</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> N=J/m <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> N=J/m <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Newton_unit">newton</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Pa=N/m^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Pa=N/m^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Pascal_(unit)">pascal</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> T=Wb/m^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> T=Wb/m^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Tesla_(unit)">tesla</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousEmittance">Q.LuminousEmittance</a> lx=lm/m^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LuminousEmittance">Q.LuminousEmittance</a> lx=lm/m^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Lux">lux</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> F=s*S <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> F=s*S <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Farad">farad</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> ohm=1/S <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> ohm=1/S <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<html><a href="http://en.wikipedia.org/wiki/Ohm">ohm</a> (&Omega;)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> H=s/S <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> H=s/S <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Henry_(unit)">henry</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> kat=mol/s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> kat=mol/s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Katal">katal</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Sv=Gy <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity2">Q.Velocity2</a> Sv=Gy <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Sievert">sievert</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.TimeReciprocal">Q.TimeReciprocal</a> Bq=1/s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.TimeReciprocal">Q.TimeReciprocal</a> Bq=1/s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Becquerel">becquerel</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">Interfaces.degC</a> degC <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.degC">Interfaces.degC</a> degC <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Celsius">degree Celsius</a> (&deg;C)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> min=60*s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> min=60*s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Minute">minute</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> hr=60*min <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> hr=60*min <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Hour">hour</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> d=24*hr <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> d=24*hr <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Day">day</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> deg=cyc/360 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> deg=cyc/360 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Degree_(angle)">degree</a> (&deg;)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> arcmin=deg/60 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> arcmin=deg/60 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Arcminute">arcminute</a> (&prime;)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> arcsec=arcmin/60 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> arcsec=arcmin/60 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Arcsecond">arcsecond</a> (&prime;&prime;)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> ha=(Prefixes.h*m)^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> ha=(Prefixes.h*m)^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Hectare">hectare</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> L=(Prefixes.d*m)^3 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> L=(Prefixes.d*m)^3 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Litre">litre</a> (L or l)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> t=Prefixes.M*g <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> t=Prefixes.M*g <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Tonne">tonne</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> g_0=9.80665*m/s^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> g_0=9.80665*m/s^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Standard_gravity">standard gravity</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> cm=Prefixes.c*m <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> cm=Prefixes.c*m <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Centimetre">centimetre</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> cc=cm^3 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Volume">Q.Volume</a> cc=cm^3 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Cubic_centimetre">cubic centimetre</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PressureLineic">Q.PressureLineic</a> Hg=13.5951*g*g_0/cc <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PressureLineic">Q.PressureLineic</a> Hg=13.5951*g*g_0/cc <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;force per volume of <a href="http://en.wikipedia.org/wiki/Mercury_(element)">mercury</a> under <a href="http://en.wikipedia.org/wiki/Standard_gravity">standard gravity</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> mm=Prefixes.m*m <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> mm=Prefixes.m*m <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Millimetre">millimetre</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> mmHg=mm*Hg <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> mmHg=mm*Hg <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Millimeter_of_mercury">millimetre of mercury</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> kPa=Prefixes.k*Pa <span style="color: #006400">&quot;kilopascal&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> bar=100*kPa <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> kPa=Prefixes.k*Pa <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;kilopascal&quot;</span>;</pre>
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> bar=100*kPa <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Bar_(unit)">bar</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> b=100*(Prefixes.f*m)^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> b=100*(Prefixes.f*m)^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Barn_(unit)">barn</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> angstrom=1e-10*m <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> angstrom=1e-10*m <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<html><a href="http://en.wikipedia.org/wiki/Angstrom">angstrom</a> (&#8491;)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> nmi=1852*m <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> nmi=1852*m <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Nautical_mile">nautical mile</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> kn=nmi/hr <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Velocity">Q.Velocity</a> kn=nmi/hr <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Knot_(unit)">knot</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.Np">Interfaces.Np</a> Np <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.Np">Interfaces.Np</a> Np <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Neper">neper</a> (in terms of amplitude ratio, not power ratio)</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.B">Interfaces.B</a> B <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.B">Interfaces.B</a> B <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;bel (in terms of power ratio, not amplitude ratio)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.dB">Interfaces.dB</a> dB <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.dB">Interfaces.dB</a> dB <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Decibel">decibel</a> (in terms of power ratio, not amplitude ratio)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> Gal=cm/s^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Acceleration">Q.Acceleration</a> Gal=cm/s^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Gal_(unit)">gal</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> dyn=g*Gal <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Force">Q.Force</a> dyn=g*Gal <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Dyne">dyne</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> erg=dyn*cm <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> erg=dyn*cm <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Erg">erg</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Ba=dyn/cm^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Ba=dyn/cm^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Barye">barye</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Viscosity">Q.Viscosity</a> P=Ba*s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Viscosity">Q.Viscosity</a> P=Ba*s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Poise">poise</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Diffusivity">Q.Diffusivity</a> St=cm^2/s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Diffusivity">Q.Diffusivity</a> St=cm^2/s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Stokes_(unit)">stokes</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Luminance">Q.Luminance</a> sb=cd/cm^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Luminance">Q.Luminance</a> sb=cd/cm^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Stilb_(unit)">stilb</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Q.Illuminance</a> ph=sb*sr <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Illuminance">Q.Illuminance</a> ph=sb*sr <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Phot">phot</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> abA=Prefixes.da*A <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Current">Q.Current</a> abA=Prefixes.da*A <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Abampere">abampere</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> abC=abA*s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Amount">Q.Amount</a> abC=abA*s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Abcoulomb">abcoloumb</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> abV=erg/abC <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Potential">Q.Potential</a> abV=erg/abC <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Abvolt">abvolt</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Mx=erg/(abA*cyc) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> Mx=erg/(abA*cyc) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Maxwell_(unit)">maxwell</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> Gs=Mx/cm^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFluxAreic">Q.MagneticFluxAreic</a> Gs=Mx/cm^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Gauss_(unit)">gauss</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> pole=4*pi*Mx <span style="color: #006400">&quot;unit magnetic pole&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFieldAux">Q.MagneticFieldAux</a> Oe=dyn/pole <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFlux">Q.MagneticFlux</a> pole=4*pi*Mx <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;unit magnetic pole&quot;</span>;</pre>
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticFieldAux">Q.MagneticFieldAux</a> Oe=dyn/pole <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Oersted">oersted</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> abF=abC/abV <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Capacitance">Q.Capacitance</a> abF=abC/abV <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Abfarad#CGS_units">abfarad</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> abohm=s/abF <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> abohm=s/abF <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Abohm">abohm</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> abH=abohm*s <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Inductance">Q.Inductance</a> abH=abohm*s <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Abhenry">abhenry</a>&quot;</span>;</pre>
-<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_A=dyn/abA^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecificMassSpecific">Q.LengthSpecificMassSpecific</a> k_A=dyn/abA^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;Ampere constant (<i>k</i><sub>A</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PermittivityReciprocal">Q.PermittivityReciprocal</a> k_C=k_A*c^2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.PermittivityReciprocal">Q.PermittivityReciprocal</a> k_C=k_A*c^2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Coulomb_constant">Coulomb constant</a> (<i>k</i><sub>C</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity">Q.Permittivity</a> epsilon_0=1/(k_C*(<span style="color: blue">if </span>base.rational<span style="color: blue"> then </span>4*pi<span style="color: blue">
-     else </span>1)) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permittivity">Q.Permittivity</a> epsilon_0=1/(k_C*(<span style="color: blue; font-weight: normal; font-style: normal;">if </span>base.rational<span style="color: blue; font-weight: normal; font-style: normal;"> then </span>4*pi<span style="color: blue; font-weight: normal; font-style: normal;">
+     else </span>1)) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Vacuum_permittivity">electric constant</a> (&epsilon;<sub>0</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Q.Permeability</a> mu_0=1/(epsilon_0*cyc^2*c^2) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Permeability">Q.Permeability</a> mu_0=1/(epsilon_0*cyc^2*c^2) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Vacuum_permeability">magnetic constant</a> (&mu;<sub>0</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> Z_0=2*k_A*c/rad <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Resistance">Q.Resistance</a> Z_0=2*k_A*c/rad <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Impedance_of_free_space">characteristic impedance of vacuum</a> (<i>Z</i><sub>0</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> alpha=k_A*c/R_K <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> alpha=k_A*c/R_K <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Fine_structure_constant">fine-structure constant</a> (&alpha;)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> a_0=alpha/(2*R_inf) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> a_0=alpha/(2*R_inf) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href = https://en.wikipedia.org/wiki/Bohr_radius>Bohr radius</a> (<i>a</i><sub>0</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavelength">Q.Wavelength</a> lambda_e=alpha*a_0/sr <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Wavelength">Q.Wavelength</a> lambda_e=alpha*a_0/sr <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;electron <a href="https://en.wikipedia.org/wiki/Compton_wavelength">Compton wavelength</a> (&lambda;<sub>e</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.WavelengthVelocity">Q.WavelengthVelocity</a> kappa=lambda_e*c/2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.WavelengthVelocity">Q.WavelengthVelocity</a> kappa=lambda_e*c/2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;quantum of circulation (&kappa;)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MassSpecific">Q.MassSpecific</a> m_e=Phi_0/kappa <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MassSpecific">Q.MassSpecific</a> m_e=Phi_0/kappa <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Electron_mass">specific electron rest mass</a> (<i>m</i><sub>e</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecific">Q.LengthSpecific</a> r_e=k_A/m_e <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.LengthSpecific">Q.LengthSpecific</a> r_e=k_A/m_e <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Classical_electron_radius">specific classical electron radius</a> (<i>r</i><sub>e</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticDipoleMoment">Q.MagneticDipoleMoment</a> mu_B=kappa*e*sp/2 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagneticDipoleMoment">Q.MagneticDipoleMoment</a> mu_B=kappa*e*sp/2 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Bohr_magneton">Bohr magneton</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> M_e=m_e*e <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> M_e=m_e*e <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;mass of an electron (<i>M</i><sub>e</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> t_H=a_0*<span style="color: red">sqrt</span>(M_e/Ha) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> t_H=a_0*<span style="color: red; font-weight: normal; font-style: normal;">sqrt</span>(M_e/Ha) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;Hartree time (<i>t</i><sub>H</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> l_n=h*rad/(M_e*c) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> l_n=h*rad/(M_e*c) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;natural unit of length (<i>l</i><sub>n</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> t_n=l_n/c <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> t_n=l_n/c <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;natural unit of time (<i>t</i><sub>n</sub>)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> y=365.25*d <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Time">Q.Time</a> y=365.25*d <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Julian_year_(astronomy)">Julian year</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> ly=c*y <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> ly=c*y <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Light_year">light year</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> au=149597870700*m <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> au=149597870700*m <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Astronomical_unit">astronomical unit</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> pc=au*648e3/pi <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Length">Q.Length</a> pc=au*648e3/pi <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Parsec">parsec</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> atm=101325*Pa <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> atm=101325*Pa <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Atmosphere_(unit)">atmosphere</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Torr=atm/760 <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Pressure">Q.Pressure</a> Torr=atm/760 <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Torr">torr</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Wh=W*h <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> Wh=W*h <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Watt_hour">watt hour</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> eV=e*V <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Energy">Q.Energy</a> eV=e*V <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Electron_volt">electron volt</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> sp=4*pi*sr <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle2">Q.Angle2</a> sp=4*pi*sr <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Spat_(unit)">spat</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> rpm=cyc/min <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Frequency">Q.Frequency</a> rpm=cyc/min <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Revolutions_per_minute">revolution per minute</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> &#39;%&#39;=Prefixes.c <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Number">Q.Number</a> &#39;%&#39;=Prefixes.c <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Percent">percent</a> (%)&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagnetomotiveForce">Q.MagnetomotiveForce</a> AT=A*cyc <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.MagnetomotiveForce">Q.MagnetomotiveForce</a> AT=A*cyc <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Ampere-turn">ampere-turn</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> D=Prefixes.c*dyn/atm <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Area">Q.Area</a> D=Prefixes.c*dyn/atm <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Darcy_(unit)">darcy</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> u=g/(N_A*mol) <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Mass">Q.Mass</a> u=g/(N_A*mol) <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="https://en.wikipedia.org/wiki/Atomic_mass_unit">unified atomic mass unit</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Q.Concentration</a> M=mol/L <span style="color: #006400">
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Quantities.html#QCalc.Quantities.Concentration">Q.Concentration</a> M=mol/L <span style="color: #006400; font-weight: normal; font-style: normal;">
   &quot;<a href="http://en.wikipedia.org/wiki/Molar_concentration#Units">molar</a>&quot;</span>;</pre>
-<pre><span style="color: blue">final </span><span style="color: blue">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">Interfaces.kPag</a> kPag <span style="color: #006400">&quot;kilopascal, gauge&quot;</span>;</pre>
+<pre><span style="color: blue; font-weight: normal; font-style: normal;">final </span><span style="color: blue; font-weight: normal; font-style: normal;">constant </span><a href="QCalc_Units_Interfaces.html#QCalc.Units.Interfaces.kPag">Interfaces.kPag</a> kPag <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;kilopascal, gauge&quot;</span>;</pre>
 <hr>
 
 <h2><img src="images/QCalc.Units.setupI.png" alt="QCalc.Units.setup" align="right" style="border: 1px solid" width="80" height="80">
@@ -1371,755 +1373,754 @@ recognized by Dymola.</p>
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">replaceable </span><span style="color: blue">function</span> setup <span style="color: #006400">&quot;Set up the units in Dymola&quot;</span>
-  <span style="color: #006400">// import Modelica.Utilities.Streams.print;</span>
-  <span style="color: blue">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Function">Icons.Function</a>;
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">replaceable </span><span style="color: blue; font-weight: normal; font-style: normal;">function</span> setup <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Set up the units in Dymola&quot;</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// import Modelica.Utilities.Streams.print;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="QCalc_Icons.html#QCalc.Icons.Function">Icons.Function</a>;
 
-<span style="color: blue">algorithm </span>
-  <span style="color: #006400">// print(&quot;Establishing display units&hellip;&quot;);</span>
+<span style="color: blue; font-weight: normal; font-style: normal;">algorithm </span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// print(&quot;Establishing display units&hellip;&quot;);</span>
 
-  <span style="color: #006400">// -------------------------------------------------------------------------</span>
-  <span style="color: #006400">// Default display units</span>
-  <span style="color: #006400">// -------------------------------------------------------------------------</span>
-  <span style="color: #006400">// If units other than those in the displayUnit attribute of the quantities</span>
-  <span style="color: #006400">// in QCalc.Quantities should be used by default, then specify them here.</span>
-  <span style="color: #006400">// Be sure that the desired unit is included in a defineUnitConversion</span>
-  <span style="color: #006400">// command below.</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// Default display units</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// If units other than those in the displayUnit attribute of the quantities</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// in QCalc.Quantities should be used by default, then specify them here.</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// Be sure that the desired unit is included in a defineUnitConversion</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// command below.</span>
 
-  <span style="color: #006400">// Generated from QCalc/Resources/quantities.xlsx, 2014-8-14</span>
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/T2&quot;, &quot;m/s2&quot;) <span style="color: #006400">&quot;Acceleration&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/T2&quot;, &quot;Gal&quot;) <span style="color: #006400">&quot;Acceleration&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N&quot;, &quot;C&quot;) <span style="color: #006400">&quot;Amount&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N&quot;, &quot;abC&quot;) <span style="color: #006400">&quot;Amount&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;1/mol&quot;) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;1/abC&quot;) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;N_A/&quot;) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A&quot;, &quot;deg&quot;) <span style="color: #006400">&quot;Angle&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A2&quot;, &quot;sr&quot;) <span style="color: #006400">&quot;Solid angle&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2&quot;, &quot;cm2&quot;) <span style="color: #006400">&quot;Area&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T2/(L2.M)&quot;, &quot;uF&quot;) <span style="color: #006400">&quot;Capacitance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/L3&quot;, &quot;M&quot;) <span style="color: #006400">&quot;Concentration&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T/(L2.M)&quot;, &quot;S&quot;) <span style="color: #006400">&quot;Conductance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N/T&quot;, &quot;A&quot;) <span style="color: #006400">&quot;Current&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2/T&quot;, &quot;St&quot;) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/T2&quot;, &quot;J&quot;) <span style="color: #006400">&quot;Energy&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/T2&quot;, &quot;N&quot;) <span style="color: #006400">&quot;Force&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A/T&quot;, &quot;Hz&quot;) <span style="color: #006400">&quot;Frequency&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J.A2&quot;, &quot;lm&quot;) <span style="color: #006400">&quot;Illuminance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/N2&quot;, &quot;uH&quot;) <span style="color: #006400">&quot;Inductance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/N2&quot;, &quot;abH&quot;) <span style="color: #006400">&quot;Inductance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L&quot;, &quot;cm&quot;) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/N&quot;, &quot;m/mol&quot;) <span style="color: #006400">&quot;Specific length&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/N2&quot;, &quot;H/m&quot;) <span style="color: #006400">
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// Generated from QCalc/Resources/quantities.xlsx, 2014-8-14</span>
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L/T2&quot;, &quot;m/s2&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Acceleration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L/T2&quot;, &quot;Gal&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Acceleration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;N&quot;, &quot;C&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;1/mol&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;1/abC&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;1/N&quot;, &quot;N_A/&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;A&quot;, &quot;deg&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Angle&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;A2&quot;, &quot;sr&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Solid angle&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2&quot;, &quot;cm2&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Area&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;N2.T2/(L2.M)&quot;, &quot;uF&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Capacitance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;N/L3&quot;, &quot;M&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Concentration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;N2.T/(L2.M)&quot;, &quot;S&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Conductance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;N/T&quot;, &quot;A&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Current&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2/T&quot;, &quot;St&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Diffusivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2.M/T2&quot;, &quot;J&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Energy&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L.M/T2&quot;, &quot;N&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Force&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;A/T&quot;, &quot;Hz&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Frequency&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;J.A2&quot;, &quot;lm&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Illuminance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2.M/N2&quot;, &quot;uH&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Inductance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2.M/N2&quot;, &quot;abH&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Inductance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L&quot;, &quot;cm&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L/N&quot;, &quot;m/mol&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L.M/N2&quot;, &quot;H/m&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">
     &quot;Specific length times specific mass&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J/L2&quot;, &quot;sb&quot;) <span style="color: #006400">&quot;Luminance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J.A2/L2&quot;, &quot;lx&quot;) <span style="color: #006400">&quot;Luminous emittance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;J&quot;, &quot;cd&quot;) <span style="color: #006400">&quot;Luminous intensity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A.L2.N/T&quot;, &quot;J/T&quot;) <span style="color: #006400">&quot;Magnetic dipole moment&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A.N/(L.T)&quot;, &quot;AT/m&quot;) <span style="color: #006400">&quot;Auxiliary magnetic field&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.N.T)&quot;, &quot;Wb&quot;) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(A.N.T)&quot;, &quot;T&quot;) <span style="color: #006400">&quot;Areic magnetic flux&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A.N.T/(L2.M)&quot;, &quot;1/Wb&quot;) <span style="color: #006400">
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;J/L2&quot;, &quot;sb&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Luminance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;J.A2/L2&quot;, &quot;lx&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Luminous emittance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;J&quot;, &quot;cd&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Luminous intensity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;A.L2.N/T&quot;, &quot;J/T&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Magnetic dipole moment&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;A.N/(L.T)&quot;, &quot;AT/m&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Auxiliary magnetic field&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.N.T)&quot;, &quot;Wb&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;M/(A.N.T)&quot;, &quot;T&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Areic magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;A.N.T/(L2.M)&quot;, &quot;1/Wb&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">
     &quot;Reciprocal of magnetic flux&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.N2.T)&quot;, &quot;Wb/C&quot;) <span style="color: #006400">&quot;Specific magnetic flux&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A.N/T&quot;, &quot;AT&quot;) <span style="color: #006400">&quot;Magnetomotive force&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M&quot;, &quot;g&quot;) <span style="color: #006400">&quot;Mass&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/N&quot;, &quot;g/mol&quot;) <span style="color: #006400">&quot;Specific mass&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.T)&quot;, &quot;J/Hz&quot;) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L.M/(A2.N2)&quot;, &quot;Wb/(AT.m)&quot;) <span style="color: #006400">&quot;Permeability&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N2.T2/(L3.M)&quot;, &quot;F/m&quot;) <span style="color: #006400">&quot;Permittivity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3.M/(N2.T2)&quot;, &quot;m/F&quot;) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N.T2)&quot;, &quot;V&quot;) <span style="color: #006400">&quot;Potential&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3.M/(A.N.T2)&quot;, &quot;V.m/rad&quot;) <span style="color: #006400">
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.N2.T)&quot;, &quot;Wb/C&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;A.N/T&quot;, &quot;AT&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Magnetomotive force&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;M&quot;, &quot;g&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;M/N&quot;, &quot;g/mol&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2.M/(A.T)&quot;, &quot;J/Hz&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Rotational momentum&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L.M/(A2.N2)&quot;, &quot;Wb/(AT.m)&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Permeability&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;N2.T2/(L3.M)&quot;, &quot;F/m&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Permittivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L3.M/(N2.T2)&quot;, &quot;m/F&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of permittivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2.M/(N.T2)&quot;, &quot;V&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Potential&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L3.M/(A.N.T2)&quot;, &quot;V.m/rad&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">
     &quot;Potential per wavenumber&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/T3&quot;, &quot;W&quot;) <span style="color: #006400">&quot;Power&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L4.M/T3&quot;, &quot;W.m2&quot;) <span style="color: #006400">&quot;Power times area&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/T3&quot;, &quot;W/m2&quot;) <span style="color: #006400">&quot;Areic power&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;N4.T5/(L8.M3)&quot;, &quot;W/(m2.K4)&quot;) <span style="color: #006400">
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2.M/T3&quot;, &quot;W&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Power&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L4.M/T3&quot;, &quot;W.m2&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Power times area&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;M/T3&quot;, &quot;W/m2&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Areic power&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;N4.T5/(L8.M3)&quot;, &quot;W/(m2.K4)&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">
     &quot;Areic power per 4th power of potential&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(L.T2)&quot;, &quot;kPa&quot;) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2.M/(N2.T)&quot;, &quot;ohm&quot;) <span style="color: #006400">&quot;Resistance&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;T&quot;, &quot;s&quot;) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;1/T&quot;, &quot;Bq&quot;) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/T&quot;, &quot;cm/s&quot;) <span style="color: #006400">&quot;Velocity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2/T2&quot;, &quot;J/g&quot;) <span style="color: #006400">&quot;Squared velocity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;M/(L.T)&quot;, &quot;Pa.s&quot;) <span style="color: #006400">&quot;Viscosity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L3&quot;, &quot;cc&quot;) <span style="color: #006400">&quot;Volume&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L/A&quot;, &quot;m/cyc&quot;) <span style="color: #006400">&quot;Wavelength&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;L2/(A.T)&quot;, &quot;m2/(cyc.s)&quot;) <span style="color: #006400">
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;M/(L.T2)&quot;, &quot;kPa&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2.M/(N2.T)&quot;, &quot;ohm&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Resistance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;T&quot;, &quot;s&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;1/T&quot;, &quot;Bq&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L/T&quot;, &quot;cm/s&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2/T2&quot;, &quot;J/g&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Squared velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;M/(L.T)&quot;, &quot;Pa.s&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Viscosity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L3&quot;, &quot;cc&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Volume&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L/A&quot;, &quot;m/cyc&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavelength&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;L2/(A.T)&quot;, &quot;m2/(cyc.s)&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">
     &quot;Wavelength times velocity&quot;</span>;
-  <span style="color: red">defineDefaultDisplayUnit</span>(&quot;A/L&quot;, &quot;cyc/m&quot;) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineDefaultDisplayUnit</span>(&quot;A/L&quot;, &quot;cyc/m&quot;) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavenumber&quot;</span>;
 
-  <span style="color: #006400">// -------------------------------------------------------------------------</span>
-  <span style="color: #006400">// Conversions to display quantities in units</span>
-  <span style="color: #006400">// -------------------------------------------------------------------------</span>
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/T2&quot;,
-      &quot;cm/s2&quot;,
-      s^2/cm) <span style="color: #006400">&quot;Acceleration&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/T2&quot;,
-      &quot;m/s2&quot;,
-      s^2/m) <span style="color: #006400">&quot;Acceleration&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/T2&quot;,
-      &quot;Gal&quot;,
-      1/Gal) <span style="color: #006400">&quot;Acceleration&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N&quot;,
-      &quot;C&quot;,
-      1/C) <span style="color: #006400">&quot;Amount&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N&quot;,
-      &quot;J/K&quot;,
-      K/J) <span style="color: #006400">&quot;Amount&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N&quot;,
-      &quot;mol&quot;,
-      1/mol) <span style="color: #006400">&quot;Amount&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N&quot;,
-      &quot;e&quot;,
-      1/e) <span style="color: #006400">&quot;Amount&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N&quot;,
-      &quot;abC&quot;,
-      1/C) <span style="color: #006400">&quot;Amount&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;1/N&quot;,
-      &quot;1/C&quot;,
-      C) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;1/N&quot;,
-      &quot;1/mol&quot;,
-      mol) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;1/N&quot;,
-      &quot;1/abC&quot;,
-      mol) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;1/N&quot;,
-      &quot;N_A&quot;,
-      1/N_A) <span style="color: #006400">&quot;Reciprocal of amount&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A&quot;,
-      &quot;deg&quot;,
-      1/deg) <span style="color: #006400">&quot;Angle&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A&quot;,
-      &quot;rad&quot;,
-      1/rad) <span style="color: #006400">&quot;Angle&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A&quot;,
-      &quot;cyc&quot;,
-      1/cyc) <span style="color: #006400">&quot;Angle&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A&quot;,
-      &quot;arcmin&quot;,
-      1/arcmin) <span style="color: #006400">&quot;Angle&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A&quot;,
-      &quot;arcsec&quot;,
-      1/arcsec) <span style="color: #006400">&quot;Angle&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A2&quot;,
-      &quot;sr&quot;,
-      1/sr) <span style="color: #006400">&quot;Solid angle&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A2&quot;,
-      &quot;sp&quot;,
-      1/sp) <span style="color: #006400">&quot;Solid angle&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2&quot;,
-      &quot;cm2&quot;,
-      1/cm^2) <span style="color: #006400">&quot;Area&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2&quot;,
-      &quot;m2&quot;,
-      1/m^2) <span style="color: #006400">&quot;Area&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2&quot;,
-      &quot;b&quot;,
-      1/b) <span style="color: #006400">&quot;Area&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N2.T2/(L2.M)&quot;,
-      &quot;F&quot;,
-      1/F) <span style="color: #006400">&quot;Capacitance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N2.T2/(L2.M)&quot;,
-      &quot;uF&quot;,
-      1/(Prefixes.u*F)) <span style="color: #006400">&quot;Capacitance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N2.T2/(L2.M)&quot;,
-      &quot;abF&quot;,
-      1/abF) <span style="color: #006400">&quot;Capacitance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/L3&quot;,
-      &quot;C/cc&quot;,
-      cc/C) <span style="color: #006400">&quot;Concentration&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/L3&quot;,
-      &quot;C/m3&quot;,
-      m^3/C) <span style="color: #006400">&quot;Concentration&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/L3&quot;,
-      &quot;J/(m3.K)&quot;,
-      m^3*K/J) <span style="color: #006400">&quot;Concentration&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/L3&quot;,
-      &quot;M&quot;,
-      1/M) <span style="color: #006400">&quot;Concentration&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N2.T/(L2.M)&quot;,
-      &quot;S&quot;,
-      1/S) <span style="color: #006400">&quot;Conductance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/T&quot;,
-      &quot;A&quot;,
-      1/A) <span style="color: #006400">&quot;Current&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/T&quot;,
-      &quot;kat&quot;,
-      1/kat) <span style="color: #006400">&quot;Current&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/T&quot;,
-      &quot;abA&quot;,
-      1/abA) <span style="color: #006400">&quot;Current&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N/T&quot;,
-      &quot;W/K&quot;,
-      K/W) <span style="color: #006400">&quot;Current&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2/T&quot;,
-      &quot;St&quot;,
-      1/St) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2/T&quot;,
-      &quot;m2/s&quot;,
-      s/m^2) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2/T&quot;,
-      &quot;mm^2/s&quot;,
-      s/mm^2) <span style="color: #006400">&quot;Diffusivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/T2&quot;,
-      &quot;J&quot;,
-      1/J) <span style="color: #006400">&quot;Energy&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/T2&quot;,
-      &quot;Ry&quot;,
-      1/Ry) <span style="color: #006400">&quot;Energy&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/T2&quot;,
-      &quot;Ha&quot;,
-      1/Ha) <span style="color: #006400">&quot;Energy&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/T2&quot;,
-      &quot;erg&quot;,
-      1/erg) <span style="color: #006400">&quot;Energy&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/T2&quot;,
-      &quot;Wh&quot;,
-      1/Wh) <span style="color: #006400">&quot;Energy&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/T2&quot;,
-      &quot;eV&quot;,
-      1/eV) <span style="color: #006400">&quot;Energy&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.M/T2&quot;,
-      &quot;N&quot;,
-      1/N) <span style="color: #006400">&quot;Force&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.M/T2&quot;,
-      &quot;dyn&quot;,
-      1/dyn) <span style="color: #006400">&quot;Force&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A/T&quot;,
-      &quot;Hz&quot;,
-      1/Hz) <span style="color: #006400">&quot;Frequency&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A/T&quot;,
-      &quot;rad/s&quot;,
-      s/rad) <span style="color: #006400">&quot;Frequency&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A/T&quot;,
-      &quot;rpm&quot;,
-      1/rpm) <span style="color: #006400">&quot;Frequency&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;J.A2&quot;,
-      &quot;lm&quot;,
-      1/lm) <span style="color: #006400">&quot;Illuminance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;J.A2&quot;,
-      &quot;ph&quot;,
-      1/ph) <span style="color: #006400">&quot;Illuminance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/N2&quot;,
-      &quot;H&quot;,
-      1/H) <span style="color: #006400">&quot;Inductance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/N2&quot;,
-      &quot;uH&quot;,
-      1/(Prefixes.u*H)) <span style="color: #006400">&quot;Inductance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/N2&quot;,
-      &quot;abH&quot;,
-      1/abH) <span style="color: #006400">&quot;Inductance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;cm&quot;,
-      1/cm) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;m&quot;,
-      1/m) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;mm&quot;,
-      1/mm) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;angstrom&quot;,
-      1/angstrom) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;nmi&quot;,
-      1/nmi) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;a_0&quot;,
-      1/a_0) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;l_n&quot;,
-      1/l_n) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;ly&quot;,
-      1/ly) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;au&quot;,
-      1/au) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L&quot;,
-      &quot;pc&quot;,
-      1/pc) <span style="color: #006400">&quot;Length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/N&quot;,
-      &quot;m/C&quot;,
-      C/m) <span style="color: #006400">&quot;Specific length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/N&quot;,
-      &quot;m/mol&quot;,
-      mol/m) <span style="color: #006400">&quot;Specific length&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.M/N2&quot;,
-      &quot;H/m&quot;,
-      m/H) <span style="color: #006400">&quot;Specific length times specific mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.M/N2&quot;,
-      &quot;N/A2&quot;,
-      A^2/N) <span style="color: #006400">&quot;Specific length times specific mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;J/L2&quot;,
-      &quot;cd/m2&quot;,
-      m^2/cd) <span style="color: #006400">&quot;Luminance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;J/L2&quot;,
-      &quot;sb&quot;,
-      1/sb) <span style="color: #006400">&quot;Luminance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;J.A2/L2&quot;,
-      &quot;lx&quot;,
-      1/lx) <span style="color: #006400">&quot;Luminous emittance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;J&quot;,
-      &quot;cd&quot;,
-      1/cd) <span style="color: #006400">&quot;Luminous intensity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A.L2.N/T&quot;,
-      &quot;J/T&quot;,
-      T/J) <span style="color: #006400">&quot;Magnetic dipole moment&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A.L2.N/T&quot;,
-      &quot;mu_B&quot;,
-      1/mu_B) <span style="color: #006400">&quot;Magnetic dipole moment&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A.N/(L.T)&quot;,
-      &quot;AT/m&quot;,
-      m/AT) <span style="color: #006400">&quot;Auxiliary magnetic field&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A.N/(L.T)&quot;,
-      &quot;Oe&quot;,
-      1/Oe) <span style="color: #006400">&quot;Auxiliary magnetic field&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(A.N.T)&quot;,
-      &quot;Wb&quot;,
-      1/Wb) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(A.N.T)&quot;,
-      &quot;Mx&quot;,
-      1/Mx) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(A.N.T)&quot;,
-      &quot;pole&quot;,
-      1/pole) <span style="color: #006400">&quot;Magnetic flux&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(A.N.T)&quot;,
-      &quot;T&quot;,
-      1/T) <span style="color: #006400">&quot;Areic magnetic flux&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(A.N.T)&quot;,
-      &quot;Gs&quot;,
-      1/Gs) <span style="color: #006400">&quot;Areic magnetic flux&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A.N.T/(L2.M)&quot;,
-      &quot;1/Wb&quot;,
-      Wb) <span style="color: #006400">&quot;Reciprocal of magnetic flux&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(A.N2.T)&quot;,
-      &quot;Wb/C&quot;,
-      C/Wb) <span style="color: #006400">&quot;Specific magnetic flux&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(A.N2.T)&quot;,
-      &quot;Mx/abC&quot;,
-      abC/Mx) <span style="color: #006400">&quot;Specific magnetic flux&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A.N/T&quot;,
-      &quot;AT&quot;,
-      1/AT) <span style="color: #006400">&quot;Magnetomotive force&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M&quot;,
-      &quot;g&quot;,
-      1/g) <span style="color: #006400">&quot;Mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M&quot;,
-      &quot;kg&quot;,
-      1/kg) <span style="color: #006400">&quot;Mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M&quot;,
-      &quot;u&quot;,
-      1/u) <span style="color: #006400">&quot;Mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M&quot;,
-      &quot;t&quot;,
-      1/t) <span style="color: #006400">&quot;Mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M&quot;,
-      &quot;M_e&quot;,
-      1/M_e) <span style="color: #006400">&quot;Mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/N&quot;,
-      &quot;g/mol&quot;,
-      mol/g) <span style="color: #006400">&quot;Specific mass&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(A.T)&quot;,
-      &quot;J.s/rad&quot;,
-      rad/(J*s)) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(A.T)&quot;,
-      &quot;J/Hz&quot;,
-      Hz/J) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(A.T)&quot;,
-      &quot;h&quot;,
-      1/h) <span style="color: #006400">&quot;Rotational momentum&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;1&quot;,
-      &quot;&#39;%&#39;&quot;,
-      1/'%') <span style="color: #006400">&quot;Number&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.M/(A2.N2)&quot;,
-      &quot;H/(m.cyc2)&quot;,
-      m*cyc^2/H) <span style="color: #006400">&quot;Permeability&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.M/(A2.N2)&quot;,
-      &quot;Wb/(AT.m)&quot;,
-      AT*m/Wb) <span style="color: #006400">&quot;Permeability&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L.M/(A2.N2)&quot;,
-      &quot;mu_0&quot;,
-      1/mu_0) <span style="color: #006400">&quot;Permeability&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N2.T2/(L3.M)&quot;,
-      &quot;F/m&quot;,
-      m/F) <span style="color: #006400">&quot;Permittivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N2.T2/(L3.M)&quot;,
-      &quot;epsilon_0&quot;,
-      1/epsilon_0) <span style="color: #006400">&quot;Permittivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N2.T2/(L3.M)&quot;,
-      &quot;k_C&quot;,
-      1/k_C) <span style="color: #006400">&quot;Permittivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3.M/(N2.T2)&quot;,
-      &quot;m/F&quot;,
-      F/m) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3.M/(N2.T2)&quot;,
-      &quot;1/epsilon_0&quot;,
-      epsilon_0) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3.M/(N2.T2)&quot;,
-      &quot;1/k_C&quot;,
-      k_C) <span style="color: #006400">&quot;Reciprocal of permittivity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(N.T2)&quot;,
-      &quot;J/mol&quot;,
-      mol/J) <span style="color: #006400">&quot;Potential&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(N.T2)&quot;,
-      &quot;V&quot;,
-      1/V) <span style="color: #006400">&quot;Potential&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(N.T2)&quot;,
-      &quot;abV&quot;,
-      1/abV) <span style="color: #006400">&quot;Potential&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(N.T2)&quot;,
-      &quot;K&quot;,
-      1/K) <span style="color: #006400">&quot;Potential&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3.M/(A.N.T2)&quot;,
-      &quot;K.m/rad&quot;,
-      rad/(K*m)) <span style="color: #006400">&quot;Potential per wavenumber&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3.M/(A.N.T2)&quot;,
-      &quot;V.m/rad&quot;,
-      rad/(V*m)) <span style="color: #006400">&quot;Potential per wavenumber&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/T3&quot;,
-      &quot;W&quot;,
-      1/W) <span style="color: #006400">&quot;Power&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L4.M/T3&quot;,
-      &quot;W.m2&quot;,
-      1/(W*m^2)) <span style="color: #006400">&quot;Power times area&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/T3&quot;,
-      &quot;W/m2&quot;,
-      m^2/W) <span style="color: #006400">&quot;Areic power&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N4.T5/(L8.M3)&quot;,
-      &quot;W/(m2.K4)&quot;,
-      m^2*K^4/W) <span style="color: #006400">&quot;Areic power per 4th power of potential&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;N4.T5/(L8.M3)&quot;,
-      &quot;sigma&quot;,
-      1/sigma) <span style="color: #006400">&quot;Areic power per 4th power of potential&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;atm&quot;,
-      1/atm) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;bar&quot;,
-      1/bar) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;kPa&quot;,
-      1/kPa) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;Pa&quot;,
-      1/Pa) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;mmHg&quot;,
-      1/mmHg) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;bar&quot;,
-      1/bar) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;Ba&quot;,
-      1/Ba) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;atm&quot;,
-      1/atm) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;Torr&quot;,
-      1/Torr) <span style="color: #006400">&quot;Pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L2.T2)&quot;,
-      &quot;Pa/m&quot;,
-      m/Pa) <span style="color: #006400">&quot;Lineic pressure&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(N2.T)&quot;,
-      &quot;ohm&quot;,
-      1/ohm) <span style="color: #006400">&quot;Resistance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(N2.T)&quot;,
-      &quot;abohm&quot;,
-      1/abohm) <span style="color: #006400">&quot;Resistance&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;T&quot;,
-      &quot;d&quot;,
-      1/d) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;T&quot;,
-      &quot;hr&quot;,
-      1/hr) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;T&quot;,
-      &quot;us&quot;,
-      1/(Prefixes.u*s)) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;T&quot;,
-      &quot;ms&quot;,
-      1/(Prefixes.m*s)) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;T&quot;,
-      &quot;min&quot;,
-      1/min) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;T&quot;,
-      &quot;s&quot;,
-      1/s) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;T&quot;,
-      &quot;y&quot;,
-      1/y) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;T&quot;,
-      &quot;t_n&quot;,
-      1/t_n) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;T&quot;,
-      &quot;t_H&quot;,
-      1/t_H) <span style="color: #006400">&quot;Time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;1/T&quot;,
-      &quot;1/s&quot;,
-      s) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;1/T&quot;,
-      &quot;Bq&quot;,
-      1/Bq) <span style="color: #006400">&quot;Reciprocal of time&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/T&quot;,
-      &quot;cm/s&quot;,
-      s/cm) <span style="color: #006400">&quot;Velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/T&quot;,
-      &quot;m/s&quot;,
-      s/m) <span style="color: #006400">&quot;Velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/T&quot;,
-      &quot;mm/s&quot;,
-      s/mm) <span style="color: #006400">&quot;Velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/T&quot;,
-      &quot;um/s&quot;,
-      s/(Prefixes.u*m)) <span style="color: #006400">&quot;Velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/T&quot;,
-      &quot;c&quot;,
-      1/c) <span style="color: #006400">&quot;Velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/T&quot;,
-      &quot;kn&quot;,
-      1/kn) <span style="color: #006400">&quot;Velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2/T2&quot;,
-      &quot;J/g&quot;,
-      g/J) <span style="color: #006400">&quot;Squared velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2/T2&quot;,
-      &quot;Sv&quot;,
-      1/Sv) <span style="color: #006400">&quot;Squared velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2/T2&quot;,
-      &quot;Gy&quot;,
-      1/Gy) <span style="color: #006400">&quot;Squared velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T)&quot;,
-      &quot;Pa.s&quot;,
-      1/(Pa*s)) <span style="color: #006400">&quot;Viscosity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T)&quot;,
-      &quot;g/(cm.s)&quot;,
-      cm*s/g) <span style="color: #006400">&quot;Viscosity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3&quot;,
-      &quot;cc&quot;,
-      1/cc) <span style="color: #006400">&quot;Volume&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3&quot;,
-      &quot;L&quot;,
-      1/L) <span style="color: #006400">&quot;Volume&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L3&quot;,
-      &quot;m3&quot;,
-      1/m^3) <span style="color: #006400">&quot;Volume&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/A&quot;,
-      &quot;cm/cyc&quot;,
-      cyc/cm) <span style="color: #006400">&quot;Wavelength&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/A&quot;,
-      &quot;m/cyc&quot;,
-      cyc/m) <span style="color: #006400">&quot;Wavelength&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/A&quot;,
-      &quot;m/rad&quot;,
-      rad/m) <span style="color: #006400">&quot;Wavelength&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L/A&quot;,
-      &quot;lambda_e&quot;,
-      1/lambda_e) <span style="color: #006400">&quot;Wavelength&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2/(A.T)&quot;,
-      &quot;m2/(cyc.s)&quot;,
-      cyc*s/m^2) <span style="color: #006400">&quot;Wavelength times velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2/(A.T)&quot;,
-      &quot;cm2/(cyc.s)&quot;,
-      cyc*s/cm^2) <span style="color: #006400">&quot;Wavelength times velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2/(A.T)&quot;,
-      &quot;kappa&quot;,
-      1/kappa) <span style="color: #006400">&quot;Wavelength times velocity&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A/L&quot;,
-      &quot;cyc/m&quot;,
-      m/cyc) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A/L&quot;,
-      &quot;rad/m&quot;,
-      m/rad) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;A/L&quot;,
-      &quot;cyc/(cm.s)&quot;,
-      cm*s/cyc) <span style="color: #006400">&quot;Wavenumber&quot;</span>;
-  <span style="color: #006400">// -------- end from QCalc/Resources/quantities.xlsx</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// Conversions to display quantities in units</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// -------------------------------------------------------------------------</span>
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/T2&quot;,
+    &quot;cm/s2&quot;,
+    s^2/cm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Acceleration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/T2&quot;,
+    &quot;m/s2&quot;,
+    s^2/m) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Acceleration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/T2&quot;,
+    &quot;Gal&quot;,
+    1/Gal) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Acceleration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N&quot;,
+    &quot;C&quot;,
+    1/C) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N&quot;,
+    &quot;J/K&quot;,
+    K/J) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N&quot;,
+    &quot;mol&quot;,
+    1/mol) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N&quot;,
+    &quot;e&quot;,
+    1/e) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N&quot;,
+    &quot;abC&quot;,
+    1/C) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;1/N&quot;,
+    &quot;1/C&quot;,
+    C) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;1/N&quot;,
+    &quot;1/mol&quot;,
+    mol) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;1/N&quot;,
+    &quot;1/abC&quot;,
+    mol) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;1/N&quot;,
+    &quot;N_A&quot;,
+    1/N_A) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of amount&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A&quot;,
+    &quot;deg&quot;,
+    1/deg) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Angle&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A&quot;,
+    &quot;rad&quot;,
+    1/rad) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Angle&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A&quot;,
+    &quot;cyc&quot;,
+    1/cyc) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Angle&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A&quot;,
+    &quot;arcmin&quot;,
+    1/arcmin) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Angle&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A&quot;,
+    &quot;arcsec&quot;,
+    1/arcsec) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Angle&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A2&quot;,
+    &quot;sr&quot;,
+    1/sr) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Solid angle&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A2&quot;,
+    &quot;sp&quot;,
+    1/sp) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Solid angle&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2&quot;,
+    &quot;cm2&quot;,
+    1/cm^2) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Area&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2&quot;,
+    &quot;m2&quot;,
+    1/m^2) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Area&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2&quot;,
+    &quot;b&quot;,
+    1/b) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Area&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N2.T2/(L2.M)&quot;,
+    &quot;F&quot;,
+    1/F) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Capacitance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N2.T2/(L2.M)&quot;,
+    &quot;uF&quot;,
+    1/(Prefixes.u*F)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Capacitance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N2.T2/(L2.M)&quot;,
+    &quot;abF&quot;,
+    1/abF) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Capacitance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N/L3&quot;,
+    &quot;C/cc&quot;,
+    cc/C) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Concentration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N/L3&quot;,
+    &quot;C/m3&quot;,
+    m^3/C) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Concentration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N/L3&quot;,
+    &quot;J/(m3.K)&quot;,
+    m^3*K/J) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Concentration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N/L3&quot;,
+    &quot;M&quot;,
+    1/M) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Concentration&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N2.T/(L2.M)&quot;,
+    &quot;S&quot;,
+    1/S) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Conductance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N/T&quot;,
+    &quot;A&quot;,
+    1/A) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Current&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N/T&quot;,
+    &quot;kat&quot;,
+    1/kat) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Current&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N/T&quot;,
+    &quot;abA&quot;,
+    1/abA) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Current&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N/T&quot;,
+    &quot;W/K&quot;,
+    K/W) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Current&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2/T&quot;,
+    &quot;St&quot;,
+    1/St) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Diffusivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2/T&quot;,
+    &quot;m2/s&quot;,
+    s/m^2) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Diffusivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2/T&quot;,
+    &quot;mm^2/s&quot;,
+    s/mm^2) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Diffusivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/T2&quot;,
+    &quot;J&quot;,
+    1/J) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Energy&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/T2&quot;,
+    &quot;Ry&quot;,
+    1/Ry) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Energy&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/T2&quot;,
+    &quot;Ha&quot;,
+    1/Ha) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Energy&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/T2&quot;,
+    &quot;erg&quot;,
+    1/erg) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Energy&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/T2&quot;,
+    &quot;Wh&quot;,
+    1/Wh) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Energy&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/T2&quot;,
+    &quot;eV&quot;,
+    1/eV) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Energy&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L.M/T2&quot;,
+    &quot;N&quot;,
+    1/N) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Force&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L.M/T2&quot;,
+    &quot;dyn&quot;,
+    1/dyn) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Force&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A/T&quot;,
+    &quot;Hz&quot;,
+    1/Hz) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Frequency&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A/T&quot;,
+    &quot;rad/s&quot;,
+    s/rad) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Frequency&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A/T&quot;,
+    &quot;rpm&quot;,
+    1/rpm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Frequency&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;J.A2&quot;,
+    &quot;lm&quot;,
+    1/lm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Illuminance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;J.A2&quot;,
+    &quot;ph&quot;,
+    1/ph) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Illuminance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/N2&quot;,
+    &quot;H&quot;,
+    1/H) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Inductance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/N2&quot;,
+    &quot;uH&quot;,
+    1/(Prefixes.u*H)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Inductance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/N2&quot;,
+    &quot;abH&quot;,
+    1/abH) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Inductance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;cm&quot;,
+    1/cm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;m&quot;,
+    1/m) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;mm&quot;,
+    1/mm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;angstrom&quot;,
+    1/angstrom) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;nmi&quot;,
+    1/nmi) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;a_0&quot;,
+    1/a_0) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;l_n&quot;,
+    1/l_n) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;ly&quot;,
+    1/ly) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;au&quot;,
+    1/au) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L&quot;,
+    &quot;pc&quot;,
+    1/pc) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/N&quot;,
+    &quot;m/C&quot;,
+    C/m) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/N&quot;,
+    &quot;m/mol&quot;,
+    mol/m) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific length&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L.M/N2&quot;,
+    &quot;H/m&quot;,
+    m/H) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific length times specific mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L.M/N2&quot;,
+    &quot;N/A2&quot;,
+    A^2/N) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific length times specific mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;J/L2&quot;,
+    &quot;cd/m2&quot;,
+    m^2/cd) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Luminance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;J/L2&quot;,
+    &quot;sb&quot;,
+    1/sb) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Luminance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;J.A2/L2&quot;,
+    &quot;lx&quot;,
+    1/lx) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Luminous emittance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;J&quot;,
+    &quot;cd&quot;,
+    1/cd) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Luminous intensity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A.L2.N/T&quot;,
+    &quot;J/T&quot;,
+    T/J) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Magnetic dipole moment&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A.L2.N/T&quot;,
+    &quot;mu_B&quot;,
+    1/mu_B) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Magnetic dipole moment&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A.N/(L.T)&quot;,
+    &quot;AT/m&quot;,
+    m/AT) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Auxiliary magnetic field&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A.N/(L.T)&quot;,
+    &quot;Oe&quot;,
+    1/Oe) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Auxiliary magnetic field&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(A.N.T)&quot;,
+    &quot;Wb&quot;,
+    1/Wb) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(A.N.T)&quot;,
+    &quot;Mx&quot;,
+    1/Mx) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(A.N.T)&quot;,
+    &quot;pole&quot;,
+    1/pole) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(A.N.T)&quot;,
+    &quot;T&quot;,
+    1/T) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Areic magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(A.N.T)&quot;,
+    &quot;Gs&quot;,
+    1/Gs) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Areic magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A.N.T/(L2.M)&quot;,
+    &quot;1/Wb&quot;,
+    Wb) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(A.N2.T)&quot;,
+    &quot;Wb/C&quot;,
+    C/Wb) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(A.N2.T)&quot;,
+    &quot;Mx/abC&quot;,
+    abC/Mx) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific magnetic flux&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A.N/T&quot;,
+    &quot;AT&quot;,
+    1/AT) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Magnetomotive force&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M&quot;,
+    &quot;g&quot;,
+    1/g) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M&quot;,
+    &quot;kg&quot;,
+    1/kg) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M&quot;,
+    &quot;u&quot;,
+    1/u) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M&quot;,
+    &quot;t&quot;,
+    1/t) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M&quot;,
+    &quot;M_e&quot;,
+    1/M_e) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/N&quot;,
+    &quot;g/mol&quot;,
+    mol/g) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Specific mass&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(A.T)&quot;,
+    &quot;J.s/rad&quot;,
+    rad/(J*s)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Rotational momentum&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(A.T)&quot;,
+    &quot;J/Hz&quot;,
+    Hz/J) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Rotational momentum&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(A.T)&quot;,
+    &quot;h&quot;,
+    1/h) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Rotational momentum&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;1&quot;,
+    &quot;&#39;%&#39;&quot;,
+    1/'%') <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Number&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L.M/(A2.N2)&quot;,
+    &quot;H/(m.cyc2)&quot;,
+    m*cyc^2/H) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Permeability&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L.M/(A2.N2)&quot;,
+    &quot;Wb/(AT.m)&quot;,
+    AT*m/Wb) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Permeability&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L.M/(A2.N2)&quot;,
+    &quot;mu_0&quot;,
+    1/mu_0) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Permeability&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N2.T2/(L3.M)&quot;,
+    &quot;F/m&quot;,
+    m/F) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Permittivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N2.T2/(L3.M)&quot;,
+    &quot;epsilon_0&quot;,
+    1/epsilon_0) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Permittivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N2.T2/(L3.M)&quot;,
+    &quot;k_C&quot;,
+    1/k_C) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Permittivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L3.M/(N2.T2)&quot;,
+    &quot;m/F&quot;,
+    F/m) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of permittivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L3.M/(N2.T2)&quot;,
+    &quot;1/epsilon_0&quot;,
+    epsilon_0) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of permittivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L3.M/(N2.T2)&quot;,
+    &quot;1/k_C&quot;,
+    k_C) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of permittivity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;J/mol&quot;,
+    mol/J) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Potential&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;V&quot;,
+    1/V) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Potential&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;abV&quot;,
+    1/abV) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Potential&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;K&quot;,
+    1/K) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Potential&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L3.M/(A.N.T2)&quot;,
+    &quot;K.m/rad&quot;,
+    rad/(K*m)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Potential per wavenumber&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L3.M/(A.N.T2)&quot;,
+    &quot;V.m/rad&quot;,
+    rad/(V*m)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Potential per wavenumber&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/T3&quot;,
+    &quot;W&quot;,
+    1/W) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Power&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L4.M/T3&quot;,
+    &quot;W.m2&quot;,
+    1/(W*m^2)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Power times area&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/T3&quot;,
+    &quot;W/m2&quot;,
+    m^2/W) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Areic power&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N4.T5/(L8.M3)&quot;,
+    &quot;W/(m2.K4)&quot;,
+    m^2*K^4/W) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Areic power per 4th power of potential&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;N4.T5/(L8.M3)&quot;,
+    &quot;sigma&quot;,
+    1/sigma) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Areic power per 4th power of potential&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;atm&quot;,
+    1/atm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;bar&quot;,
+    1/bar) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;kPa&quot;,
+    1/kPa) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;Pa&quot;,
+    1/Pa) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;mmHg&quot;,
+    1/mmHg) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;bar&quot;,
+    1/bar) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;Ba&quot;,
+    1/Ba) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;atm&quot;,
+    1/atm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;Torr&quot;,
+    1/Torr) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L2.T2)&quot;,
+    &quot;Pa/m&quot;,
+    m/Pa) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Lineic pressure&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(N2.T)&quot;,
+    &quot;ohm&quot;,
+    1/ohm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Resistance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(N2.T)&quot;,
+    &quot;abohm&quot;,
+    1/abohm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Resistance&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;d&quot;,
+    1/d) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;hr&quot;,
+    1/hr) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;us&quot;,
+    1/(Prefixes.u*s)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;ms&quot;,
+    1/(Prefixes.m*s)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;min&quot;,
+    1/min) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;s&quot;,
+    1/s) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;y&quot;,
+    1/y) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;t_n&quot;,
+    1/t_n) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;T&quot;,
+    &quot;t_H&quot;,
+    1/t_H) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;1/T&quot;,
+    &quot;1/s&quot;,
+    s) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;1/T&quot;,
+    &quot;Bq&quot;,
+    1/Bq) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Reciprocal of time&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;cm/s&quot;,
+    s/cm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;m/s&quot;,
+    s/m) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;mm/s&quot;,
+    s/mm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;um/s&quot;,
+    s/(Prefixes.u*m)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;c&quot;,
+    1/c) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/T&quot;,
+    &quot;kn&quot;,
+    1/kn) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2/T2&quot;,
+    &quot;J/g&quot;,
+    g/J) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Squared velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2/T2&quot;,
+    &quot;Sv&quot;,
+    1/Sv) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Squared velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2/T2&quot;,
+    &quot;Gy&quot;,
+    1/Gy) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Squared velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T)&quot;,
+    &quot;Pa.s&quot;,
+    1/(Pa*s)) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Viscosity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T)&quot;,
+    &quot;g/(cm.s)&quot;,
+    cm*s/g) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Viscosity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L3&quot;,
+    &quot;cc&quot;,
+    1/cc) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Volume&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L3&quot;,
+    &quot;L&quot;,
+    1/L) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Volume&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L3&quot;,
+    &quot;m3&quot;,
+    1/m^3) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Volume&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/A&quot;,
+    &quot;cm/cyc&quot;,
+    cyc/cm) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavelength&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/A&quot;,
+    &quot;m/cyc&quot;,
+    cyc/m) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavelength&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/A&quot;,
+    &quot;m/rad&quot;,
+    rad/m) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavelength&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L/A&quot;,
+    &quot;lambda_e&quot;,
+    1/lambda_e) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavelength&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2/(A.T)&quot;,
+    &quot;m2/(cyc.s)&quot;,
+    cyc*s/m^2) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavelength times velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2/(A.T)&quot;,
+    &quot;cm2/(cyc.s)&quot;,
+    cyc*s/cm^2) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavelength times velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2/(A.T)&quot;,
+    &quot;kappa&quot;,
+    1/kappa) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavelength times velocity&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A/L&quot;,
+    &quot;cyc/m&quot;,
+    m/cyc) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavenumber&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A/L&quot;,
+    &quot;rad/m&quot;,
+    m/rad) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavenumber&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;A/L&quot;,
+    &quot;cyc/(cm.s)&quot;,
+    cm*s/cyc) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Wavenumber&quot;</span>;
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// -------- end from QCalc/Resources/quantities.xlsx</span>
 
-  <span style="color: #006400">// -------------------------------------------------------------------------</span>
-  <span style="color: #006400">// Conversions with offsets</span>
-  <span style="color: #006400">// -------------------------------------------------------------------------</span>
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(N.T2)&quot;,
-      &quot;degC&quot;,
-      1/K,
-      -273.15) <span style="color: #006400">&quot;Temperature in degC&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;L2.M/(N.T2)&quot;,
-      &quot;degF&quot;,
-      9/(5*K),
-      32 - (9/5)*273.15) <span style="color: #006400">&quot;Temperature in degF&quot;</span>;
-  <span style="color: red">defineUnitConversion</span>(
-      &quot;M/(L.T2)&quot;,
-      &quot;Pag&quot;,
-      1/Pa,
-      -atm/Pa) <span style="color: #006400">&quot;Pressure in Pag&quot;</span>;
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// -------------------------------------------------------------------------</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// Conversions with offsets</span>
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// -------------------------------------------------------------------------</span>
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;degC&quot;,
+    1/K,
+    -273.15) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Temperature in degC&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;L2.M/(N.T2)&quot;,
+    &quot;degF&quot;,
+    9/(5*K),
+    32 - (9/5)*273.15) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Temperature in degF&quot;</span>;
+  <span style="color: red; font-weight: normal; font-style: normal;">defineUnitConversion</span>(
+    &quot;M/(L.T2)&quot;,
+    &quot;Pag&quot;,
+    1/Pa,
+    -atm/Pa) <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Pressure in Pag&quot;</span>;
 
-  <span style="color: #006400">// print(&quot;Done.&quot;);</span>
-<span style="color: blue">end </span>setup;
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// print(&quot;Done.&quot;);</span>
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>setup;
 </div>
 <hr>
 
@@ -2138,18 +2139,18 @@ recognized by Dymola.</p>
 
 <h3>Modelica definition</h3>
 
-<div class="modelica"><span style="color: blue">record</span> UnitSystem <span style="color: #006400">&quot;Base constants for the unit system&quot;</span>
-  <span style="color: blue">import </span><a href="index.html#QCalc">QCalc</a>;
-  <span style="color: blue">extends </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base">Bases.Base</a>(
-    <span style="color: blue">final </span>R_inf=QCalc.Units.R_inf,
-    <span style="color: blue">final </span>c=QCalc.Units.c,
-    <span style="color: blue">final </span>k_J=QCalc.Units.k_J,
-    <span style="color: blue">final </span>R_K=QCalc.Units.R_K,
-    <span style="color: blue">final </span>k_F=QCalc.Units.k_F,
-    <span style="color: blue">final </span>R=QCalc.Units.R,
-    <span style="color: blue">final </span>rational=QCalc.Units.base.rational);
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">record</span> UnitSystem <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Base constants for the unit system&quot;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">import </span><a href="index.html#QCalc">QCalc</a>;
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="QCalc_Units_Bases.html#QCalc.Units.Bases.Base">Bases.Base</a>(
+    <span style="color: blue; font-weight: normal; font-style: normal;">final </span>R_inf=QCalc.Units.R_inf,
+    <span style="color: blue; font-weight: normal; font-style: normal;">final </span>c=QCalc.Units.c,
+    <span style="color: blue; font-weight: normal; font-style: normal;">final </span>k_J=QCalc.Units.k_J,
+    <span style="color: blue; font-weight: normal; font-style: normal;">final </span>R_K=QCalc.Units.R_K,
+    <span style="color: blue; font-weight: normal; font-style: normal;">final </span>k_F=QCalc.Units.k_F,
+    <span style="color: blue; font-weight: normal; font-style: normal;">final </span>R=QCalc.Units.R,
+    <span style="color: blue; font-weight: normal; font-style: normal;">final </span>rational=QCalc.Units.base.rational);
 
-<span style="color: blue">end </span>UnitSystem;
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>UnitSystem;
 </div>
       </div>
     </div>
@@ -2158,7 +2159,7 @@ recognized by Dymola.</p>
 <div class="footer">
   Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies"><span id="_author5" itemprop="author" itemscope itemtype="http://schema.org/Person">
 <span itemprop="name">Kevin Davies</span></span></a>, <a href="http://www.hnei.hawaii.edu"><span id="_publisher7" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Mon Sep  8 11:20:24 2014.
+<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Thu Jan 22 14:34:21 2015.
 </div>
 
 </span></body></html>

@@ -1,0 +1,511 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>QCalc.Math</title>
+<meta name="title" content="Modelica units based on quantity calculus">
+<meta name="keywords" content="Modelica units quantities dimension natural unit system convert conversion SI CGS Gauss Hartree Planck">
+<meta name="date" content="2015-1-22">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Library of mathematical functions (e.g., sin, cos), where angle is a quantity">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="stylesheets/ModelicaDoc.css">
+<link rel="shortcut icon" href="images/favicon.ico">
+<script type="text/javascript" src="javascripts/analytics.js"></script>
+</head>
+<body>
+<span itemscope itemtype="http://schema.org/SoftwareApplication">
+<div class="sidebar">
+  <div class="sidebarwrapper">
+  <p align=center><a href="index.html">
+    <img src="images/logo.svg" alt="Logo" width=150>
+  </a></p>
+
+<h3>Library Contents</h3>
+
+    <ul>
+    <li><a href="QCalc_UsersGuide.html"><img src="images/QCalc.UsersGuideS.png" alt="QCalc.UsersGuide" width="20" height="20" align="top">&nbsp;User's Guide</a></li>
+    <li><a href="QCalc_Blocks.html"><img src="images/QCalc.BlocksS.png" alt="QCalc.Blocks" width="20" height="20" align="top">&nbsp;Blocks</a></li>
+    <li><a href="QCalc_Units.html"><img src="images/QCalc.UnitsS.png" alt="QCalc.Units" width="20" height="20" align="top">&nbsp;Units</a></li>
+    <li><a href="QCalc_Quantities.html"><img src="images/QCalc.QuantitiesS.png" alt="QCalc.Quantities" width="20" height="20" align="top">&nbsp;Quantities</a></li>
+    </ul>
+
+<h3>Search</h3>
+    <script>
+      (function() {
+        var cx = '001356158537703621276:zgkymhxjrkw';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//www.google.com/cse/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search>
+
+<h3>Download</h3>
+    <ul>
+      <li><span itemprop="downloadUrl"><a href="https://github.com/kdavies4/QCalc/archive/v0.3.3.zip">Latest version<br>(v0.3.3, 2015-01-22)</a></span></li>
+    </ul>
+  </div>
+</div>
+
+<div class="document">
+  <div class="documentwrapper">
+    <div class="bodywrapper">
+      <div class="body">
+<h2><a name="QCalc.Math"></a><a href="index.html#QCalc">QCalc</a>.Math</h2>
+
+<p>
+<b>Library of mathematical functions (e.g., sin, cos), where angle is a quantity</b><br>
+</p>
+
+<h3>Information</h3>
+
+<p>Extends from <a href="QCalc_Icons_Package.html#QCalc.Icons.Package">Icons.Package</a> (Icon for standard packages (from MSL 3.2.1)).</p>
+
+<h3>Package Contents</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Package Contents">
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><img src="images/QCalc.Math.sinS.png" alt="QCalc.Math.sin" width="20" height="20" align="top">&nbsp;<a href="QCalc_Math.html#QCalc.Math.sin">sin</a>
+</td>
+<td>Sine</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Math.cosS.png" alt="QCalc.Math.cos" width="20" height="20" align="top">&nbsp;<a href="QCalc_Math.html#QCalc.Math.cos">cos</a>
+</td>
+<td>Cosine</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Math.tanS.png" alt="QCalc.Math.tan" width="20" height="20" align="top">&nbsp;<a href="QCalc_Math.html#QCalc.Math.tan">tan</a>
+</td>
+<td>Tangent (<i>u</i> shall not be -&pi;/2 rad, &pi;/2  rad, 3&pi;/2 rad, &hellip;)</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Math.asinS.png" alt="QCalc.Math.asin" width="20" height="20" align="top">&nbsp;<a href="QCalc_Math.html#QCalc.Math.asin">asin</a>
+</td>
+<td>Inverse sine (-1 &le; <i>u</i> &le; 1)</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Math.acosS.png" alt="QCalc.Math.acos" width="20" height="20" align="top">&nbsp;<a href="QCalc_Math.html#QCalc.Math.acos">acos</a>
+</td>
+<td>Inverse cosine (-1 &le; <i>u</i> &le; 1)</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Math.atanS.png" alt="QCalc.Math.atan" width="20" height="20" align="top">&nbsp;<a href="QCalc_Math.html#QCalc.Math.atan">atan</a>
+</td>
+<td>Inverse tangent</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Math.atan2S.png" alt="QCalc.Math.atan2" width="20" height="20" align="top">&nbsp;<a href="QCalc_Math.html#QCalc.Math.atan2">atan2</a>
+</td>
+<td>Four quadrant inverse tangent</td>
+</tr>
+<tr>
+<td><img src="images/QCalc.Math.atan2S.png" alt="QCalc.Math.atan3" width="20" height="20" align="top">&nbsp;<a href="QCalc_Math.html#QCalc.Math.atan3">atan3</a>
+</td>
+<td>Four quadrant inverse tangent (with solution closest to given angle <i>y</i><sub>0</sub>)</td>
+</tr>
+</table>
+<hr>
+
+<h2><img src="images/QCalc.Math.sinI.png" alt="QCalc.Math.sin" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Math.sin"></a><a href="QCalc_Math.html#QCalc.Math">QCalc.Math</a>.sin</h2>
+<p>
+<b>Sine</b>
+<br>
+<br><img src="images/QCalc.Math.sinD.png" alt="QCalc.Math.sin">
+</p>
+
+<h3>Information</h3>
+
+<p>
+This function returns <i>y</i> = sin(<i>u</i>), where <i>u</i> is an angle.
+</p>
+
+<p>Extends from <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisLeft">Modelica.Math.Icons.AxisLeft</a> (Basic icon for mathematical function with y-axis on left side).</p>
+
+<h3>Inputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>u</td><td>&nbsp;</td><td>[ A]</td></tr>
+</table>
+
+<h3>Outputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>Real</td><td>y</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">function</span> sin <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Sine&quot;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisLeft">Modelica.Math.Icons.AxisLeft</a>;
+
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> u;
+  <span style="color: blue; font-weight: normal; font-style: normal;">output </span>Real y;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">algorithm </span>
+  y := <span style="color: red; font-weight: normal; font-style: normal;">Modelica.Math.sin</span>(u/U.rad);
+
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>sin;
+</div>
+<hr>
+
+<h2><img src="images/QCalc.Math.cosI.png" alt="QCalc.Math.cos" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Math.cos"></a><a href="QCalc_Math.html#QCalc.Math">QCalc.Math</a>.cos</h2>
+<p>
+<b>Cosine</b>
+<br>
+<br><img src="images/QCalc.Math.cosD.png" alt="QCalc.Math.cos">
+</p>
+
+<h3>Information</h3>
+
+<p>
+This function returns <i>y</i> = cos(<i>u</i>), where <i>u</i> is an angle.
+</p>
+
+<p>Extends from <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisLeft">Modelica.Math.Icons.AxisLeft</a> (Basic icon for mathematical function with y-axis on left side).</p>
+
+<h3>Inputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>u</td><td>&nbsp;</td><td>[ A]</td></tr>
+</table>
+
+<h3>Outputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>Real</td><td>y</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">function</span> cos <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Cosine&quot;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisLeft">Modelica.Math.Icons.AxisLeft</a>;
+
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> u;
+  <span style="color: blue; font-weight: normal; font-style: normal;">output </span>Real y;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">algorithm </span>
+  y := <span style="color: red; font-weight: normal; font-style: normal;">Modelica.Math.cos</span>(u/U.rad);
+
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>cos;
+</div>
+<hr>
+
+<h2><img src="images/QCalc.Math.tanI.png" alt="QCalc.Math.tan" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Math.tan"></a><a href="QCalc_Math.html#QCalc.Math">QCalc.Math</a>.tan</h2>
+<p>
+<b>Tangent (<i>u</i> shall not be -&pi;/2 rad, &pi;/2  rad, 3&pi;/2 rad, &hellip;)</b>
+<br>
+<br><img src="images/QCalc.Math.tanD.png" alt="QCalc.Math.tan">
+</p>
+
+<h3>Information</h3>
+
+<p>
+This function returns <i>y</i> = tan(<i>u</i>), where <i>u</i> is an angle
+(if <i>u</i> is a multiple of (<i>n</i> - 1/2)&nbsp;&pi;&nbsp;rad, then <i>y</i> = tan(<i>u</i>) is &plusmn;&infin;).
+</p>
+
+<p>Extends from <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a> (Basic icon for mathematical function with y-axis in the center).</p>
+
+<h3>Inputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>u</td><td>&nbsp;</td><td>[ A]</td></tr>
+</table>
+
+<h3>Outputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td>Real</td><td>y</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">function</span> tan <span style="color: #006400; font-weight: normal; font-style: normal;">
+  &quot;Tangent (<i>u</i> shall not be -&pi;/2 rad, &pi;/2  rad, 3&pi;/2 rad, &hellip;)&quot;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a>;
+
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> u;
+  <span style="color: blue; font-weight: normal; font-style: normal;">output </span>Real y;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">algorithm </span>
+  y := <span style="color: red; font-weight: normal; font-style: normal;">Modelica.Math.tan</span>(u/U.rad);
+
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>tan;
+</div>
+<hr>
+
+<h2><img src="images/QCalc.Math.asinI.png" alt="QCalc.Math.asin" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Math.asin"></a><a href="QCalc_Math.html#QCalc.Math">QCalc.Math</a>.asin</h2>
+<p>
+<b>Inverse sine (-1 &le; <i>u</i> &le; 1)</b>
+<br>
+<br><img src="images/QCalc.Math.tanD.png" alt="QCalc.Math.asin">
+</p>
+
+<h3>Information</h3>
+
+<p>
+This function returns <i>y</i> = asin(<i>u</i>), with -1 &le; <i>u</i> &le; +1, where <i>y</i> is an angle.
+</p>
+
+<p>Extends from <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a> (Basic icon for mathematical function with y-axis in the center).</p>
+
+<h3>Inputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>u</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Outputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>y</td><td>[ A]</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">function</span> asin <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Inverse sine (-1 &le; <i>u</i> &le; 1)&quot;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a>;
+
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span>Real u;
+  <span style="color: blue; font-weight: normal; font-style: normal;">output </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> y;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">algorithm </span>
+  y := <span style="color: red; font-weight: normal; font-style: normal;">Modelica.Math.asin</span>(u)*U.rad;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>asin;
+</div>
+<hr>
+
+<h2><img src="images/QCalc.Math.acosI.png" alt="QCalc.Math.acos" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Math.acos"></a><a href="QCalc_Math.html#QCalc.Math">QCalc.Math</a>.acos</h2>
+<p>
+<b>Inverse cosine (-1 &le; <i>u</i> &le; 1)</b>
+<br>
+<br><img src="images/QCalc.Math.acosD.png" alt="QCalc.Math.acos">
+</p>
+
+<h3>Information</h3>
+
+<p>
+This function returns <i>y</i> = acos(<i>u</i>), with -1 &le; <i>u</i> &le; +1, where <i>y</i> is an angle.
+</p>
+
+<p>Extends from <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a> (Basic icon for mathematical function with y-axis in the center).</p>
+
+<h3>Inputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>u</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Outputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>y</td><td>[ A]</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">function</span> acos <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Inverse cosine (-1 &le; <i>u</i> &le; 1)&quot;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a>;
+
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span>Real u;
+  <span style="color: blue; font-weight: normal; font-style: normal;">output </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> y;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">algorithm </span>
+  y := <span style="color: red; font-weight: normal; font-style: normal;">Modelica.Math.acos</span>(u)*U.rad;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>acos;
+</div>
+<hr>
+
+<h2><img src="images/QCalc.Math.atanI.png" alt="QCalc.Math.atan" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Math.atan"></a><a href="QCalc_Math.html#QCalc.Math">QCalc.Math</a>.atan</h2>
+<p>
+<b>Inverse tangent</b>
+<br>
+<br><img src="images/QCalc.Math.atanD.png" alt="QCalc.Math.atan">
+</p>
+
+<h3>Information</h3>
+
+<p>
+This function returns <i>y</i> = atan(<i>u</i>), with -&infin; &lt; <i>u</i> &lt; &infin;, where <i>y</i> is an angle.
+</p>
+
+<p>Extends from <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a> (Basic icon for mathematical function with y-axis in the center).</p>
+
+<h3>Inputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>u</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Outputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>y</td><td>[ A]</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">function</span> atan <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Inverse tangent&quot;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a>;
+
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span>Real u;
+  <span style="color: blue; font-weight: normal; font-style: normal;">output </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> y;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">algorithm </span>
+  y := <span style="color: red; font-weight: normal; font-style: normal;">Modelica.Math.atan</span>(u)*U.rad;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>atan;
+</div>
+<hr>
+
+<h2><img src="images/QCalc.Math.atan2I.png" alt="QCalc.Math.atan2" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Math.atan2"></a><a href="QCalc_Math.html#QCalc.Math">QCalc.Math</a>.atan2</h2>
+<p>
+<b>Four quadrant inverse tangent</b>
+<br>
+<br><img src="images/QCalc.Math.atanD.png" alt="QCalc.Math.atan2">
+</p>
+
+<h3>Information</h3>
+
+<p>
+This function returns <i>y</i> = atan2(<i>u</i><sub>1</sub>, <i>u</i><sub>2</sub>), where <i>y</i> is an angle, such that tan(<i>y</i>) = <i>u</i><sub>1</sub>/<i>u</i><sub>2</sub> and
+<i>y</i> is in the range -&pi;&nbsp;rad &lt; <i>y</i> &le; &pi;&nbsp;rad. <i>u</i><sub>2</sub> may be zero, provided
+<i>u</i><sub>1</sub> is not zero. Usually <i>u</i><sub>1</sub>, <i>u</i><sub>2</sub> is provided in such a form that
+<i>u</i><sub>1</sub> = sin(<i>y</i>) and <i>u</i><sub>2</sub> = cos(<i>y</i>).
+</p>
+
+<p>Extends from <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a> (Basic icon for mathematical function with y-axis in the center).</p>
+
+<h3>Inputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>u1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>u2</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table>
+
+<h3>Outputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>y</td><td>[ A]</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">function</span> atan2 <span style="color: #006400; font-weight: normal; font-style: normal;">&quot;Four quadrant inverse tangent&quot;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a>;
+
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span>Real u1;
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span>Real u2;
+  <span style="color: blue; font-weight: normal; font-style: normal;">output </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> y;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">algorithm </span>
+  y := <span style="color: red; font-weight: normal; font-style: normal;">Modelica.Math.atan2</span>(u1, u2)*U.rad;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>atan2;
+</div>
+<hr>
+
+<h2><img src="images/QCalc.Math.atan2I.png" alt="QCalc.Math.atan3" align="right" style="border: 1px solid" width="80" height="80">
+<a name="QCalc.Math.atan3"></a><a href="QCalc_Math.html#QCalc.Math">QCalc.Math</a>.atan3</h2>
+<p>
+<b>Four quadrant inverse tangent (with solution closest to given angle <i>y</i><sub>0</sub>)</b>
+<br>
+<br><img src="images/QCalc.Math.atan3D.png" alt="QCalc.Math.atan3">
+</p>
+
+<h3>Information</h3>
+
+<p>
+    This function returns <i>y</i> = atan2(<i>u</i><sub>1</sub>, <i>u</i><sub>2</sub>, <i>y</i><sub>0</sub>), where <i>y</i> is an angle,
+    such that tan(<i>y</i>) = <i>u</i><sub>1</sub>/<i>u</i><sub>2</sub> and
+    <i>y</i> is in the range -&pi;&nbsp;rad &lt; <i>y</i> - <i>y</i><sub>0</sub> &le; &pi;&nbsp;rad. <i>u</i><sub>2</sub> may be zero, provided
+    <i>u</i><sub>1</sub> is not zero.
+    </p>
+
+    <p>The difference from
+    <a href="QCalc_Math.html#QCalc.Math.atan2">atan2</a>() is the optional third argument <i>y</i><sub>0</sub> that
+    specifies which of the infinite many solutions is returned.
+    Note that for the default case (<i>y</i><sub>0</sub> = 0), the result is the same as from <a href="QCalc_Math.html#QCalc.Math.atan2">atan2</a>().
+</p>
+
+<p>Extends from <a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a> (Basic icon for mathematical function with y-axis in the center).</p>
+
+<h3>Inputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Inputs">
+<tr><th>Type</th><th>Name</th><th>Default</th><th>Description</th></tr>
+<tr><td>Real</td><td>u1</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>Real</td><td>u2</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>y0</td><td>0</td><td><i>y</i> shall be in the range: -&pi; &lt; <i>y</i> - <i>y</i><sub>0</sub> &le; &pi; [ A]</td></tr>
+</table>
+
+<h3>Outputs</h3>
+
+<table border="1" cellspacing="0" cellpadding="2" summary="Outputs">
+<tr><th>Type</th><th>Name</th><th>Description</th></tr>
+<tr><td><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Angle</a></td><td>y</td><td>[ A]</td></tr>
+</table>
+
+<h3>Modelica definition</h3>
+
+<div class="modelica"><span style="color: blue; font-weight: normal; font-style: normal;">function</span> atan3 <span style="color: #006400; font-weight: normal; font-style: normal;">
+  &quot;Four quadrant inverse tangent (with solution closest to given angle <i>y</i><sub>0</sub>)&quot;</span>
+  <span style="color: blue; font-weight: normal; font-style: normal;">extends </span><a href="file:////opt/dymola-2015FD01-x86_64/Modelica/Library/Modelica%203.2.1/help/Modelica_Math_Icons.html#Modelica.Math.Icons.AxisCenter">Modelica.Math.Icons.AxisCenter</a>;
+
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span>Real u1;
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span>Real u2;
+  <span style="color: blue; font-weight: normal; font-style: normal;">input </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> y0=0 <span style="color: #006400; font-weight: normal; font-style: normal;">
+    &quot;<i>y</i> shall be in the range: -&pi; &lt; <i>y</i> - <i>y</i><sub>0</sub> &le; &pi;&quot;</span>;
+  <span style="color: blue; font-weight: normal; font-style: normal;">output </span><a href="QCalc_Quantities.html#QCalc.Quantities.Angle">Q.Angle</a> y;
+
+<span style="color: blue; font-weight: normal; font-style: normal;">algorithm </span>
+  y := <span style="color: red; font-weight: normal; font-style: normal;">atan2</span>(u1, u2);
+  <span style="color: blue; font-weight: normal; font-style: normal;">if </span>y0 &lt;&gt; 0<span style="color: blue; font-weight: normal; font-style: normal;"> then</span>
+    y := y + <span style="color: red; font-weight: normal; font-style: normal;">integer</span>((y0 - y)/U.cyc + 0.5)*U.cyc;
+  <span style="color: blue; font-weight: normal; font-style: normal;">end if</span>;
+  <span style="color: #006400; font-weight: normal; font-style: normal;">// For the default (y0 = 0), return the same result as atan2().</span>
+
+<span style="color: blue; font-weight: normal; font-style: normal;">end </span>atan3;
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  Copyright &copy; 2009&ndash;2014, <a href="http://www.hnei.hawaii.edu/staff/kevin-davies"><span id="_author5" itemprop="author" itemscope itemtype="http://schema.org/Person">
+<span itemprop="name">Kevin Davies</span></span></a>, <a href="http://www.hnei.hawaii.edu"><span id="_publisher7" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<span itemprop="name">Hawaii Natural Energy Institute</span></span></a>. Last updated Thu Jan 22 14:34:22 2015.
+</div>
+
+</span></body></html>
