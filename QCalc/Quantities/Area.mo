@@ -1,2 +1,2 @@
 within QCalc.Quantities;
-type Area = Quantity (final unit="L2", min=0);
+type Area = Quantity (final unit=" L2", min=0);

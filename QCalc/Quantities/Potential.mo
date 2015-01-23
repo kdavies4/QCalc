@@ -1,2 +1,2 @@
 within QCalc.Quantities;
-type Potential = Quantity (final unit="L2.M/(N.T2)");
+type Potential = Quantity (final unit=" L2.M/(N.T2)");

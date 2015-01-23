@@ -1,2 +1,2 @@
 within QCalc.Quantities;
-type LuminousIntensity = Quantity (final unit="J") "Luminous intensity";
+type LuminousIntensity = Quantity (final unit=" J") "Luminous intensity";

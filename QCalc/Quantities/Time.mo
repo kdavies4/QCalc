@@ -1,2 +1,2 @@
 within QCalc.Quantities;
-type Time = Quantity (final unit="T");
+type Time = Quantity (final unit=" T");

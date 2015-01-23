@@ -1,2 +1,2 @@
 within QCalc.Quantities;
-type Wavelength = Quantity (final unit="L/A");
+type Wavelength = Quantity (final unit=" L/A");

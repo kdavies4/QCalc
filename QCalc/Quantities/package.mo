@@ -6,7 +6,8 @@ import QCalc.Quantities.Interfaces.Quantity;
 
 extends Icons.TypesPackage;
 
-// Generated from QCalc/Resources/quantities.xlsx, 2014-8-22
+// Generated from QCalc/Resources/quantities.xls, 2015-1-22
+
 // -------- end from from QCalc/Resources/quantities.xlsx
 
 // Aliases that imply special display units

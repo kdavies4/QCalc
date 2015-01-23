@@ -1,2 +1,2 @@
 within QCalc.Quantities;
-type Velocity = Quantity (final unit="L/T");
+type Velocity = Quantity (final unit=" L/T");
