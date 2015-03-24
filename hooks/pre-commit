@@ -81,6 +81,12 @@ git diff --cached --name-status --diff-filter=ACMR | while read STATUS FILE; do
 done
 
 # ------------------------------------------------------------------------------
+# Remove simulation files in case they're generated inside the repo.
+for f in dymosim dymosim.exe buildlog.txt dsfinal.txt dsin.txt dslog.txt dsmodel.c dsmodel.mof dsu.txt request request. status status. success success. "dsmodel*.c"; do
+    find . -type f -name "$f" -exec rm -f {} \;
+done
+
+# ------------------------------------------------------------------------------
 # Trim trailing whitespace.
 # Uses https://github.com/dietmarw/trimtrailingwhitespaces
 # ttws QCalc >/dev/null

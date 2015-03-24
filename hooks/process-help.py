@@ -170,6 +170,8 @@ RPLS = [
     <li><a href="QCalc_Blocks.html"><img src="QCalc.BlocksS.png" alt="QCalc.Blocks" width="20" height="20" align="top">&nbsp;Blocks</a></li>
     <li><a href="QCalc_Units.html"><img src="QCalc.UnitsS.png" alt="QCalc.Units" width="20" height="20" align="top">&nbsp;Units</a></li>
     <li><a href="QCalc_Quantities.html"><img src="QCalc.QuantitiesS.png" alt="QCalc.Quantities" width="20" height="20" align="top">&nbsp;Quantities</a></li>
+    <li><a href="QCalc_Math.html"><img src="QCalc.MathS.png" alt="QCalc.Math" width="20" height="20" align="top">&nbsp;Math</a></li>
+    <li><a href="QCalc_Icons.html"><img src="QCalc.IconsS.png" alt="QCalc.Icons" width="20" height="20" align="top">&nbsp;Icons</a></li>
     </ul>
   </div>
 </div>
