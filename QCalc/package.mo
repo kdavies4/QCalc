@@ -10,10 +10,6 @@ import Q = QCalc.Quantities;
 
 
 
-
-
-
-
 annotation (
   preferredView="info",
   Commands(executeCall=QCalc.Units.setup() "Re-initialize the units."),
@@ -85,5 +81,4 @@ the <a href=\"http://en.wikipedia.org//wiki/Pascal_(unit)\">pascal</a> from <a h
   version="",
   versionDate="",
   uses(Modelica(version="3.2.1")));
-
 end QCalc;
