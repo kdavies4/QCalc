@@ -55,7 +55,9 @@ replaceable function setup "Set up the units in Dymola"
   defineDefaultDisplayUnit("L2.M/(A.N2.T)", "Wb/C") "Specific magnetic flux";
   defineDefaultDisplayUnit("A.N/T", "AT") "Magnetomotive force";
   defineDefaultDisplayUnit("M", "g") "Mass";
+  defineDefaultDisplayUnit("M/T", "kg/s") "Rate of mass";
   defineDefaultDisplayUnit("M/N", "g/mol") "Specific mass";
+  defineDefaultDisplayUnit("M/L3", "kg/m3") "Volumic mass";
   defineDefaultDisplayUnit("L2.M/(A.T)", "J/Hz") "Rotational momentum";
   defineDefaultDisplayUnit("L.M/(A2.N2)", "Wb/(AT.m)") "Permeability";
   defineDefaultDisplayUnit("N2.T2/(L3.M)", "F/m") "Permittivity";
@@ -441,9 +443,26 @@ replaceable function setup "Set up the units in Dymola"
       "M_e",
       1/M_e) "Mass";
   defineUnitConversion(
+      "M/T",
+      "kg/s",
+      s/kg) "Rate of mass";
+  defineUnitConversion(
+      "M/T",
+      "g/s",
+      s/g) "Rate of mass";
+
+  defineUnitConversion(
       "M/N",
       "g/mol",
       mol/g) "Specific mass";
+  defineUnitConversion(
+      "M/L3",
+      "kg/m3",
+      m^3/kg) "Volumic mass";
+  defineUnitConversion(
+      "M/L3",
+      "g/cc",
+      cc/g) "Volumic mass";
   defineUnitConversion(
       "L2.M/(A.T)",
       "J.s/rad",
@@ -1176,6 +1195,7 @@ final constant Q.Mass u=g/(N_A*mol)
 final constant Q.Concentration M=mol/L
   "<html><a href=\"http://en.wikipedia.org/wiki/Molar_concentration#Units\">molar</a></html>";
 final constant Interfaces.kPag kPag "kilopascal, gauge";
+
 
 
 annotation (

@@ -28,7 +28,9 @@ MagneticFluxReciprocal
 MagneticFluxSpecific
 MagnetomotiveForce
 Mass
+MassRate
 MassSpecific
+MassVolumic
 MomentumRotational
 Number
 Permeability

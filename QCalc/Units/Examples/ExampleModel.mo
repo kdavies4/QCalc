@@ -39,7 +39,9 @@ model ExampleModel "Model that uses all of the quantities"
     "Specific magnetic flux";
   parameter Q.MagnetomotiveForce MagnetomotiveForce=1*AT "Magnetomotive force";
   parameter Q.Mass Mass=1*kg "Mass";
+  parameter Q.MassRate MassRate=1*kg/s "Rate of mass";
   parameter Q.MassSpecific MassSpecific=1*g/mol "Specific mass";
+  parameter Q.MassVolumic MassVolumic=1*kg/m^3 "Volumic mass";
   parameter Q.MomentumRotational MomentumRotational=1*J/Hz
     "Rotational momentum";
   parameter Q.Number Number=1 "Number";
